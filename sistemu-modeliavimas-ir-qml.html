@@ -193,7 +193,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis</a></li>
 <li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
 <li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
 </ul></li>
@@ -279,7 +279,7 @@ minėta Šriodingerio lygtis:
 yra nereikšmingi arba gali būti aproksimuojami efektyviu hamiltonianu
 <span class="math inline">\(H\)</span>. Tokio tipo sistemas čia ir aptarsime.</p>
 <div id="ising-hamiltonian-coding" class="section level3 hasAnchor" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> Aizingo modelis ir hamiltoniano kodavimas<a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">8.1.1</span> Aizingo modelis<a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pirmiausia pradėkime nuo teiginio, kad sudėtinės kvantinės sistemos,
 kurių būsenos matematiškai aprašomos identiškai kubitams, natūraliai
 tinka kvantinės kompiuterijos taikymams. Tai iš principo atstoja gerai
@@ -319,16 +319,7 @@ unitariojo operatoriaus <span class="math inline">\(U = \mathrm{e}^{\frac{-\math
 \tag{8.3}
 \end{equation}\]</span>
 Čia pradinė būsena <span class="math inline">\(|\psi(0) \rangle\)</span> laiku <span class="math inline">\(t = 0\)</span> yra
-bendrai <span class="math inline">\(n\)</span> kubitų superpozicija. Unitariojo operatoriaus formavimas iš
-ermitinio operatoriaus, šiuo atveju hamiltoniano <span class="math inline">\(H\)</span>, kvantinėje
-kompiuterijoje vadinamas <strong>hamiltoniano kodavimu</strong> (angl. <em>hamiltonian
-encoding</em>). Mat iš bet kokio ermitinio operatoriaus <span class="math inline">\(A\)</span> galime
-suformuoti unitarųjį operatorių <span class="math inline">\(U\)</span> imdami jo ekponentę
-<span class="math inline">\(\mathrm{e}^{\mathrm{i}At}\)</span>, ir šį
-unitarųjį operatorių realizuoti loginiais vartais. Pavyzdžiui, mašininio
-mokymosi algoritmuose operatorių realizuojanti matrica <span class="math inline">\(A\)</span> gali nusakyti
-mokymosi duomenis, o hamiltoniano kodavimas suteikia vieną būdą duomenis
-pateikti kvantiniam kompiuteriui.</p>
+bendrai <span class="math inline">\(n\)</span> kubitų superpozicija. Sekančiame poskyryje matysime vieną universalų metodą, kaip apskaičiuoti operatoriaus <span class="math inline">\(U\)</span> veiksmą.</p>
 </div>
 <div id="troterizacija" class="section level3 hasAnchor" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Troterizacija<a href="sistemu-modeliavimas-ir-qml.html#troterizacija" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1225,10 +1216,10 @@ Kadangi tankio matrica <span class="math inline">\(\rho\)</span> yra ermitinė, 
 <span class="math inline">\(U = \mathrm{e}^{-\mathrm{i}\rho t}\)</span>
 yra unitarusis. Tikrinių vektorių nustatymui kvantiniu
 kompiuteriu galima pritaikyti hamiltoniano kodavimą, aprašytą
-<a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding">8.1.1</a> skyriuje. Operatoriaus <span class="math inline">\(U\)</span> tikrines vertes <span class="math inline">\(\mathrm{e}^{\mathrm{i}\lambda_k t}\)</span> randamos
+(eq:a-kaip-unitarusis-op) lygtimi. Operatoriaus <span class="math inline">\(U\)</span> tikrines vertes <span class="math inline">\(\mathrm{e}^{\mathrm{i}\lambda_k t}\)</span> randamos
 panaudojant kvantinį fazės nustatymo algoritmą,
 aprašytą <a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas">7.4</a> poskyryje.</p>
-<p>Šiuose alogritmuose reikia apskaičiuoti matricos <span class="math inline">\(\rho\)</span> eksponentę. Šį skaičiavimą paspartina
+<p>Algoritme reikia apskaičiuoti matricos <span class="math inline">\(\rho\)</span> eksponentę. Šį skaičiavimą paspartina
 paprastas matematinis triukas pasitelkiant bet kokią pagalbinę
 tankio matricą <span class="math inline">\(\sigma\)</span>. Laiką <span class="math inline">\(t\)</span> padalijame į <span class="math inline">\(s\)</span> dalių, <span class="math inline">\(t = s\Delta t\)</span>, ir darome prielaidą, kad turime daug būsenos <span class="math inline">\(\rho\)</span> kopijų.
 Galima pastebėti, kad galioja tokia lygybė:
@@ -1239,8 +1230,8 @@ Galima pastebėti, kad galioja tokia lygybė:
 \mathrm{e}^{\mathrm{i}\rho\Delta t} + O(\Delta t^2)\,,
 \tag{8.47}
 \end{equation}\]</span>
-kur <span class="math inline">\(\mathrm{Tr}_P\)</span> yra dalinis pėdsakas per pirmą kintamąjį, o <span class="math inline">\(W\)</span> – SWAP
-operatorius. SWAP operatoriaus eksponentė gali būti efektyviai realizuota
+kur <span class="math inline">\(\mathrm{Tr}_P\)</span> yra dalinis pėdsakas per pirmą kintamąjį, o <span class="math inline">\(W\)</span> – <span class="math inline">\(SWAP\)</span>
+loginiai vartai. <span class="math inline">\(SWAP\)</span> operatoriaus eksponentė gali būti efektyviai realizuota
 kvantinėse grandinėse, todėl, naudojantis <a href="sistemu-modeliavimas-ir-qml.html#eq:swap-eksponente-pca">(8.47)</a> lygtimi,
 galima efektyviai realizuoti ir tankio matricos eksponentės skaičiavimą.</p>
 

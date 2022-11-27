@@ -193,7 +193,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis</a></li>
 <li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
 <li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
 </ul></li>
@@ -706,7 +706,7 @@ Todėl pirmojo registro būsenos matavimas su didele tikimybe grąžins
 rezultatą.</p>
 <p>Atvirkštinės <span class="math inline">\(\mathrm{FT}^{\dagger}\)</span> naudojimo reikšmę šiame algoritme galima pamatyti,
 jeigu fazę perteiksime dvejetainės trupmenos forma,
-<span class="math inline">\(\theta_u = 0.k_1 k_2 \cdots k_n\)</span> su <span class="math inline">\(n\)</span>­bitų tikslumu. Tada,
+<span class="math inline">\(\theta_u = 0.k_1 k_2 \cdots k_n\)</span> su <span class="math inline">\(n\)</span> bitų tikslumu. Tada,
 pritaikius <span class="math inline">\(H^{\otimes n}\)</span> ir <span class="math inline">\(cU^{2^n}\)</span> sekas, būsena
 <span class="math inline">\(|\psi\rangle\)</span> įgauna formą dvejetainėje sistemoje, kuri
 yra identiškai nusakoma FT atlikimu
@@ -758,18 +758,9 @@ bei reikalauja <span class="math inline">\(O(1/\epsilon)\)</span> sąlyginių lo
 pavardžių trumpinys) leidžia spręsti tiesinių lygčių sistemas ir
 suteikia žymų paspartinimą prieš klasikinius algoritmus: <strong>Gauso
 pašalinimą</strong> (angl. <em>Gauss elimination</em>) ir <strong>konjuguotojo gradiento
-metodą</strong> (angl. <em>conjugate gradient method</em>). Vadinamasis <strong>matricos
-sąlygos skaičius</strong> (angl. <em>condition number</em>) nusako didžiausios ir
-mažiausios matricos <span class="math inline">\(A\)</span> tikrinių verčių santykį,
-<span class="math inline">\(\kappa =\lambda_{\max}/\lambda_{\min}\)</span>. Didėjant <span class="math inline">\(\kappa\)</span> tampa
-sunkiau invertuoti matricą <span class="math inline">\(A\)</span>, ir todėl mažėja HHL algoritmo
-stabilumas. HHL algoritmo laiko vykdymo trukmė auga kaip
-<span class="math inline">\(O(\kappa^2\log 2^m)\)</span> ir suteikia eksponentinį paspartinimą sistemos
-dydžio atžvilgiu <span class="math inline">\(2^m\)</span> prieš klasikinius algoritmus, kurie pasižymi
-<span class="math inline">\(O(\kappa 2^m)\)</span>. HHL algoritmas yra aptinkamas kaip modulis kituose
-kvantiniuose algoritmuose, įskaitant mašininio mokymosi ir kvantinių
-sistemų modeliavimo, savo ruožtu leidžia paspartinti šiuos skaičiavimus.
-Pirmiausiai apžvelgsime šio algoritmo bendruosius veikimo principus ir
+metodą</strong> (angl. <em>conjugate gradient method</em>). HHL algoritmas yra aptinkamas kaip modulis kituose
+kvantiniuose algoritmuose, įskaitant mašininio mokymosi.
+Apžvelgsime šio algoritmo bendruosius veikimo principus ir
 pateiksime jo realizaciją kvantinėje grandinėje.</p>
 <p>Tiesinių lygčių sistema yra išreiškiama lygtimi:
 <span class="math display" id="eq:tiesiniu-lygciu-sistema">\[\begin{equation}
@@ -797,7 +788,7 @@ yra ermitinė:
 B =\begin{pmatrix}
 0 &amp; A\\
 A^{\dagger} &amp; 0
-\end{pmatrix}\,.
+\end{pmatrix}\,,
 \tag{7.33}
 \end{equation}\]</span>
 ir išspręsti susijusią lygčių sistemą:
@@ -847,8 +838,7 @@ Atkreipiame dėmesį, kad būsenų matavimas galiausiai yra
 atliekamas Pauli-<span class="math inline">\(Z\)</span> tikrinių vektorių bazėje
 {<span class="math inline">\(|0\rangle, |1\rangle\)</span>}, o ne
 {<span class="math inline">\(|a_k\rangle\)</span>}. Tačiau galima matematiškai
-patikrinti, kad šiuo atveju vis tiek bus gautos teisingos amplitudės
-tarp šių bazinių vektorių rinkinių saryšio, jeigu kubitai nėra
+patikrinti, kad šiuo atveju vis tiek bus gautos teisingos amplitudės, jeigu kubitai nėra
 supintieji.</p>
 <p>HHL algoritmo pagrindinis tikslas yra perteikti būseną
 <span class="math inline">\(|b\rangle\)</span> operatoriaus <span class="math inline">\(A\)</span> tikriniais vektoriais
@@ -857,17 +847,20 @@ supintieji.</p>
 nusako unitarinį operatorių, ir todėl galime panaudoti kvantinį fazės
 nustatymo algoritmą rasti norimoms vertėms. <strong>Hamiltoniano kodavimo
 metodas</strong> (angl. <em>hamiltonian encoding</em>) leidžia simuliuoti matricą <span class="math inline">\(A\)</span>
-unitariuoju operatoriumi ir todėl išreikšti loginiais vartais:
+unitariuoju operatoriumi ir išreikšti loginiais vartais:
 <span class="math display" id="eq:a-kaip-unitarusis-op">\[\begin{equation}
 U = \mathrm{e}^{\mathrm{i}At}\,.
 \tag{7.39}
 \end{equation}\]</span>
 Kodavimo pavadinime žodis „hamiltonianas” atsiranda dėl to, kad <span class="math inline">\(A\)</span> yra
 ermitinis operatorius ir todėl iš principo nusako tam tikros kvantinės
-sistemos energijos lygius. Tad iš <span class="math inline">\(A\)</span> suformuotas unitariusis
+sistemos energijos lygius. Tad iš <span class="math inline">\(A\)</span> suformuotas unitarusis
 operatorius <span class="math inline">\(U\)</span> nusako šios sistemos laiko evoliuciją
 (žr. <a href="kvantines-mechanikos-pagrindai.html#kvantines-mechanikos-pagrindai">3</a> skyrių),
-<a href="furjė-transformacija-ir-jos-taikymai.html#eq:a-kaip-unitarusis-op">(7.39)</a> lygybėje matome laiko kintamąjį <span class="math inline">\(t\)</span>. Ermitinio operatoriaus <span class="math inline">\(A\)</span>
+<a href="furjė-transformacija-ir-jos-taikymai.html#eq:a-kaip-unitarusis-op">(7.39)</a> lygybėje matome laiko kintamąjį <span class="math inline">\(t\)</span>. Pavyzdžiui, mašininio
+mokymosi algoritmuose operatorių realizuojanti matrica <span class="math inline">\(A\)</span> gali nusakyti
+mokymosi duomenis, o hamiltoniano kodavimas suteikia vieną būdą duomenis
+pateikti kvantiniam kompiuteriui. Ermitinio operatoriaus <span class="math inline">\(A\)</span>
 matematinė išraiška nusakys, kaip galima realizuoti eksponentę
 <span class="math inline">\(\mathrm{e}^{\mathrm{i}At}\)</span>. Tai gali būti itin paprasta diagonalioji matrica, kurią
 galima išreikšti be aproksimacijų, arba gali prireikti kitų metodų.
@@ -887,7 +880,7 @@ verčių apibrėžimus ir lyginant su šiuo,
 <span class="math inline">\(\mathrm{e}^{\mathrm{i}2\pi\theta_k} \rightarrow \mathrm{e}^{\mathrm{i}\lambda_k t}\)</span>,
 ermitinio operatoriaus <span class="math inline">\(A\)</span> tikrinė vertė susieta su faze
 <span class="math inline">\(\theta_k =\lambda_k t/2\pi\)</span>. Tai yra visi reikalingi matematiniai
-įrankiai, naudojami HHL algoritme. Toliau apibūdinkime jo žingsnius,
+įrankiai, naudojami HHL algoritme. Toliau apibūdinsime jo žingsnius,
 parodytus kvantinėje grandinėje <a href="furjė-transformacija-ir-jos-taikymai.html#fig:hhl-grandine">7.6</a> pav.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:hhl-grandine"></span>
 <img src="media/image7_6.svg" alt="HHL algoritmo realizavimas loginėje grandinėje.  Daroma prielaida, kad būsena $|b\rangle$ jau yra paruošta antrajame registre. Sąlyginiai $m + 1$ kubitų loginiai vartai $cR_y(\theta)$ yra kontroliuojami $m$ kubitais ir keičia adresato ancila kubito būseną. Kartu su parodytomis Furjė transformacijomis ir ancila kubito matavimu ši algoritmo dalis yra kartojama, kol ancila kubitas randamas $|1\rangle$ būsenoje" width="80%" />
@@ -973,10 +966,18 @@ Kadangi taikomas amplitudžių kodavimas, atsakymo
 <span class="math inline">\(|x\rangle\)</span> tiesiogiai nuskaityti nepavyks. Vis dėlto
 dažnai yra svarbiau sužinoti ne patį atsakymą, bet jo tam tikras
 savybes, vidutines vertes, momentus, santykinę būsenos orientaciją
-sprendinių erdvėje. Pasitelkdami Hadamardo testą (žr. 6.7 poskyrį) ar
-kitą panašų metodą, galime apskaičiuoti sprendinio
+sprendinių erdvėje. Pasitelkdami Hadamardo testą (<a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris">6.7.1</a> poskyrį) galime apskaičiuoti sprendinio
 funkciją <span class="math inline">\(f(x) =\langle x|M|x\rangle\)</span>,
 realizuojant ją atitinkamai suformuluotu kvantiniu operatoriumi <span class="math inline">\(M\)</span>.</p>
+<p>Vadinamasis <strong>matricos
+sąlygos skaičius</strong> (angl. <em>condition number</em>) nusako didžiausios ir
+mažiausios matricos <span class="math inline">\(A\)</span> tikrinių verčių santykį,
+<span class="math inline">\(\kappa =\lambda_{\max}/\lambda_{\min}\)</span>. Didėjant <span class="math inline">\(\kappa\)</span> tampa
+sunkiau invertuoti matricą <span class="math inline">\(A\)</span> ir mažėja HHL algoritmo
+stabilumas. HHL algoritmo laiko vykdymo trukmė auga kaip
+<span class="math inline">\(O(\kappa^2\log 2^m)\)</span> ir suteikia eksponentinį paspartinimą sistemos
+dydžio <span class="math inline">\(2^m\)</span> atžvilgiu prieš klasikinius algoritmus, kurie pasižymi
+<span class="math inline">\(O(\kappa 2^m)\)</span>.</p>
 
 </div>
 </div>
