@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 skyrius. Kvantinės kompiuterijos apžvalga | Kvantinė kompiuterija</title>
+  <meta name="description" content="1 skyrius. Kvantinės kompiuterijos apžvalga | Kvantinė kompiuterija" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 skyrius. Kvantinės kompiuterijos apžvalga | Kvantinė kompiuterija" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="1 skyrius. Kvantinės kompiuterijos apžvalga | Kvantinė kompiuterija" />
+  <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 skyrius. Kvantinės kompiuterijos apžvalga | Kvantinė kompiuterija" />
+  
+  <meta name="twitter:description" content="1 skyrius. Kvantinės kompiuterijos apžvalga | Kvantinė kompiuterija" />
+  
+
+<meta name="author" content="Tadas Paulauskas" />
+<meta name="author" content="Julius Ruseckas" />
+
+
+<meta name="date" content="2022-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="matematikos-skyrius.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kvantinė kompiuterija</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pratarmė</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#kaip-skaityti-šią-knygą"><i class="fa fa-check"></i>Kaip skaityti šią knygą</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#padėka"><i class="fa fa-check"></i>Padėka</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#apie-autorius"><i class="fa fa-check"></i>Apie autorius</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prisidėti-prie-knygos"><i class="fa fa-check"></i>Prisidėti prie knygos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencija"><i class="fa fa-check"></i>Licencija</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html"><i class="fa fa-check"></i><b>1</b> Kvantinės kompiuterijos apžvalga</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#įvadas"><i class="fa fa-check"></i><b>1.1</b> Įvadas</a></li>
+<li class="chapter" data-level="1.2" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys"><i class="fa fa-check"></i><b>1.2</b> Kvantinės kompiuterijos pradmenys</a></li>
+<li class="chapter" data-level="1.3" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina"><i class="fa fa-check"></i><b>1.3</b> Tiuringo mašina</a></li>
+<li class="chapter" data-level="1.4" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai"><i class="fa fa-check"></i><b>1.4</b> Skaičiavimų ištekliai</a></li>
+<li class="chapter" data-level="1.5" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai"><i class="fa fa-check"></i><b>1.5</b> Kvantiniai bitai</a></li>
+<li class="chapter" data-level="1.6" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas"><i class="fa fa-check"></i><b>1.6</b> Kvantinės informacijos apdorojimas</a></li>
+<li class="chapter" data-level="1.7" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas"><i class="fa fa-check"></i><b>1.7</b> Skaičiavimo procesas</a></li>
+<li class="chapter" data-level="1.8" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas"><i class="fa fa-check"></i><b>1.8</b> Kvantinių kompiuterių charakteristikų palyginimas</a></li>
+<li class="chapter" data-level="1.9" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris"><i class="fa fa-check"></i><b>1.9</b> Dekoherencijos trukmė ir loginių vartų tikslumas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html"><i class="fa fa-check"></i><b>2</b> Matematinių įrankių rinkinys</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesinė-algebra"><i class="fa fa-check"></i><b>2.1</b> Tiesinė algebra</a></li>
+<li class="chapter" data-level="2.2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kompleksiniai-skaičiai"><i class="fa fa-check"></i><b>2.2</b> Kompleksiniai skaičiai</a></li>
+<li class="chapter" data-level="2.3" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#vidinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.3</b> Vidinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.4" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje"><i class="fa fa-check"></i><b>2.4</b> Kubito reprezentacija Blocho sferoje</a></li>
+<li class="chapter" data-level="2.5" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos"><i class="fa fa-check"></i><b>2.5</b> Tiesiniai operatoriai ir matricos</a></li>
+<li class="chapter" data-level="2.6" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai"><i class="fa fa-check"></i><b>2.6</b> Unitariniai ir ermitiniai operatoriai</a></li>
+<li class="chapter" data-level="2.7" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija"><i class="fa fa-check"></i><b>2.7</b> Diadinė operatorių dekompozicija</a></li>
+<li class="chapter" data-level="2.8" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#matricos-pėdsakas"><i class="fa fa-check"></i><b>2.8</b> Matricos pėdsakas</a></li>
+<li class="chapter" data-level="2.9" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.9</b> Tenzorinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.10" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga"><i class="fa fa-check"></i><b>2.10</b> Tenzorinė operatorių sandauga</a></li>
+<li class="chapter" data-level="2.11" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#operatorių-funkcijos"><i class="fa fa-check"></i><b>2.11</b> Operatorių funkcijos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html"><i class="fa fa-check"></i><b>3</b> Kvantinės mechanikos pagrindai</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai"><i class="fa fa-check"></i><b>3.1</b> Kvantinės mechanikos postulatai</a></li>
+<li class="chapter" data-level="3.2" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas"><i class="fa fa-check"></i><b>3.2</b> Kvantinis supynimas</a></li>
+<li class="chapter" data-level="3.3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius"><i class="fa fa-check"></i><b>3.3</b> Tankio operatorius</a></li>
+<li class="chapter" data-level="3.4" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas"><i class="fa fa-check"></i><b>3.4</b> EPR paradoksas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html"><i class="fa fa-check"></i><b>4</b> Kvantiniai loginiai vartai ir grandinės</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai"><i class="fa fa-check"></i><b>4.1</b> Vieno kubito loginiai vartai</a></li>
+<li class="chapter" data-level="4.2" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai"><i class="fa fa-check"></i><b>4.2</b> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai</a></li>
+<li class="chapter" data-level="4.3" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas"><i class="fa fa-check"></i><b>4.3</b> Kubitų būsenų matavimas</a></li>
+<li class="chapter" data-level="4.4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot"><i class="fa fa-check"></i><b>4.4</b> Dviejų kubitų loginiai vartai <em>CNOT</em></a></li>
+<li class="chapter" data-level="4.5" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai"><i class="fa fa-check"></i><b>4.5</b> Tofoli loginiai vartai</a></li>
+<li class="chapter" data-level="4.6" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai"><i class="fa fa-check"></i><b>4.6</b> SWAP ir Fredkin loginiai vartai</a></li>
+<li class="chapter" data-level="4.7" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai"><i class="fa fa-check"></i><b>4.7</b> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai"><i class="fa fa-check"></i><b>4.8</b> Bendro tipo būsenų matavimai</a></li>
+<li class="chapter" data-level="4.9" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys"><i class="fa fa-check"></i><b>4.9</b> Universalių loginių vartų rinkinys</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html"><i class="fa fa-check"></i><b>5</b> Kvantinė informacija ir ryšiai</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas"><i class="fa fa-check"></i><b>5.1</b> Kvantinės informacijos kopijavimas</a></li>
+<li class="chapter" data-level="5.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija"><i class="fa fa-check"></i><b>5.2</b> Kvantinė teleportacija</a></li>
+<li class="chapter" data-level="5.3" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas"><i class="fa fa-check"></i><b>5.3</b> Kvantinio supynimo sukeitimas</a></li>
+<li class="chapter" data-level="5.4" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija"><i class="fa fa-check"></i><b>5.4</b> Kvantinė kriptografija</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.1</b> BB84 kvantinis rakto pasidalijimo protokolas</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
+<li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
+<li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
+<li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#algebrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.1</b> Algebrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#geometrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.2</b> Geometrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#groverio-paieška-su-n-8"><i class="fa fa-check"></i><b>6.6.3</b> Groverio paieška su <span class="math inline">\(N = 8\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamardo-swap-testai"><i class="fa fa-check"></i><b>6.7</b> Hadamardo ir SWAP testai</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris"><i class="fa fa-check"></i><b>6.7.1</b> Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#modifikuotas-hadamardo-testas"><i class="fa fa-check"></i><b>6.7.2</b> Modifikuotas Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#swap-testas"><i class="fa fa-check"></i><b>6.7.3</b> SWAP testas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html"><i class="fa fa-check"></i><b>7</b> Furjė transformacija ir jos taikymai</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinė-furjė-transformacija"><i class="fa fa-check"></i><b>7.1</b> Kvantinė Furjė transformacija</a></li>
+<li class="chapter" data-level="7.2" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#furjė-transformacijos-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>7.2</b> Furjė transformacijos realizavimas kvantinėje grandinėje</a></li>
+<li class="chapter" data-level="7.3" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#funkcijos-periodiškumo-paieška"><i class="fa fa-check"></i><b>7.3</b> Funkcijos periodiškumo paieška</a></li>
+<li class="chapter" data-level="7.4" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas"><i class="fa fa-check"></i><b>7.4</b> Kvantinis fazės nustatymo algoritmas</a></li>
+<li class="chapter" data-level="7.5" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#tiesinių-lygčių-sprendimas-hhl-algoritmu"><i class="fa fa-check"></i><b>7.5</b> Tiesinių lygčių sprendimas HHL algoritmu</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html"><i class="fa fa-check"></i><b>8</b> Kvantinių sistemų modeliavimas ir mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas"><i class="fa fa-check"></i><b>8.2</b> Erdvinės Šriodingerio lygties sprendimo algoritmas</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija"><i class="fa fa-check"></i><b>8.2.1</b> Banginė funkcija</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas"><i class="fa fa-check"></i><b>8.2.2</b> Diskretizavimas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.2.3</b> Perteikimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3</b> Mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.1</b> Klasikinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.2</b> Kvantinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius"><i class="fa fa-check"></i><b>8.3.3</b> Kvantinėmis grandinėmis paremtas klasifikatorius</a></li>
+<li class="chapter" data-level="8.3.4" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė"><i class="fa fa-check"></i><b>8.3.4</b> Pagrindinių komponentų analizė</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html"><i class="fa fa-check"></i><b>9</b> Kvantinių klaidų aptikimas ir taisymas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos"><i class="fa fa-check"></i><b>9.1</b> Klasikinės ir kvantinės klaidos</a></li>
+<li class="chapter" data-level="9.2" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#supynimas-ir-klaidu-atsiradimas"><i class="fa fa-check"></i><b>9.2</b> Kvantinis supynimas su aplinka ir klaidų atsiradimas</a></li>
+<li class="chapter" data-level="9.3" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bito-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.3</b> Bito apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.4" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#fazės-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.4</b> Fazės apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.5" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#tolydžiosios-klaidos"><i class="fa fa-check"></i><b>9.5</b> Tolydžiosios klaidos</a></li>
+<li class="chapter" data-level="9.6" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bendrieji-klaidų-taisymo-principai"><i class="fa fa-check"></i><b>9.6</b> Bendrieji klaidų taisymo principai</a></li>
+<li class="chapter" data-level="9.7" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinė-hamingo-riba"><i class="fa fa-check"></i><b>9.7</b> Kvantinė Hamingo riba</a></li>
+<li class="chapter" data-level="9.8" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#šoro-9-kubitų-kodas"><i class="fa fa-check"></i><b>9.8</b> Šoro 9 kubitų kodas</a></li>
+<li class="chapter" data-level="9.9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kodu-stabilizatoriai-poskyris"><i class="fa fa-check"></i><b>9.9</b> Kodų stabilizatoriai</a></li>
+<li class="chapter" data-level="9.10" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klaidoms-atsparus-skaičiavimas"><i class="fa fa-check"></i><b>9.10</b> Klaidoms atsparus skaičiavimas</a></li>
+<li class="chapter" data-level="9.11" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinis-tūris"><i class="fa fa-check"></i><b>9.11</b> Kvantinis tūris</a></li>
+</ul></li>
+<li class="appendix"><span><b>Priedai</b></span></li>
+<li class="chapter" data-level="A" data-path="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><a href="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><i class="fa fa-check"></i><b>A</b> Debesyje pasiekiami kvantiniai kompiuteriai ir simuliatoriai</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html"><i class="fa fa-check"></i>Literatūra</a>
+<ul>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#knygos"><i class="fa fa-check"></i>Knygos</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#moksliniai-straipsniai"><i class="fa fa-check"></i>Moksliniai straipsniai</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kvantinė kompiuterija</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kvantinės-kompiuterijos-apžvalga" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1 skyrius.</span> Kvantinės kompiuterijos apžvalga<a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-apžvalga" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="įvadas" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Įvadas<a href="kvantinės-kompiuterijos-apžvalga.html#įvadas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Šiandieniniai kompiuteriai, kuriuos čia vadinsime klasikiniais, atvėrė
+kelią į informacijos amžių. Puslaidininkinių tranzistorių išradimas
+XX a. viduryje ir jų pagrindu formuojami mikroprocesoriai leido
+nuosekliai didinti kompiuterių skaičiuojamąją galią bei kompiuterių
+miniatiūrizacijos lygį. Sunku nepervertinti kompiuterių vaidmens
+technologinėje ir socialinėje žmonijos raidoje – nuo naujų medžiagų ir
+medikamentų kūrimo, atliekamų skaičiavimų nustatant erdvėlaivių
+trajektorijas, mašininiu mokymusi grindžiamo savaeigio transporto, genų
+inžinerijos iki socialinių tinklų, paremtų į tinklą sujungtais
+kompiuteriais.</p>
+<p><strong>Moore’o dėsnis</strong> (angl. <em>Moore’s law</em>) yra artimai susietas su
+skaičiuojamosios galios didėjimu per pastaruosius 40 metų. Šis dėsnis
+teigia, kad tranzistorių skaičius integruotose mikroprocesorių
+grandinėse padvigubėja maždaug kas dvejus metus. Didesnis tranzistorių
+skaičius procesoriuose gali leisti atlikti sudėtingesnes skaičiavimų
+operacijas, suteikti daugiau greitai pasiekiamos atminties ir
+paralelizuoti skaičiavimus. Moore’o dėsnis savo ruožtu reiškia
+komponentų mažėjimą; puslaidininkinių procesorių komponentų dydžiai
+siekia 1–2 nanometrus. Dviejuose nanometruose galima išrikiuoti apie
+dešimt atomų, tad, be praktinės, matome ir fundamentinę ribą klasikinių
+kompiuterių komponentų dydžiui – vienas atomas. Tai nulems, jog
+netolimoje ateityje prireiks kitų būdų patenkinti didėjantiems
+skaičiavimų spartos poreikiams. Tačiau technologinei raidai svarbių
+užduočių skaičiavimo galimybės jau ir dabar yra itin ribotos.</p>
+<p>Mažėjant klasikinių kompiuterių komponentų dydžiui, tenka neišvengiamai
+atsižvelgti į <strong>kvantinius dydžio efektus</strong> (angl. <em>quantum
+size-effects</em>). Medžiagos apimtį sumažinus iki nanometro skalės, ima
+ryškėti krūvininkų energijos lygmenų persitvarkymai, taip pat didėja
+tikimybė krūvininkams pabėgti iš medžiagos <strong>kvantinio tuneliavimo</strong>
+principu (angl. <em>quantum tunneling</em>). Šie ir kiti kvantiniai efektai
+padaro puslaidininkinių tranzistorių veikimą nenuspėjamą, ir reikia
+papildomų priemonių norint išlaikyti jų funkcionavimą. Pažangesnių
+nanomedžiagų gamybos principų įsisavinimas veikiausiai leis klasikinius
+procesorius padaryti energetiškai efektyvesnius ir padidinti jų spartą.
+Tačiau yra ir kitas sprendimo būdas – keisti patį klasikinį skaičiavimo
+modelį į tokį, kuris paremtas kvantinėmis taisyklėmis.</p>
+<p>Kvantinė kompiuterija yra nauja skaičiavimų paradigma. Tai nulemia
+fundamentalaus klasikinės informacijos paketo bito pakeitimas kvantiniu
+bitu, vadinamuoju <strong>kubitu</strong> (angl. <em>qubit</em>). Šios technologijos
+privalumai kyla iš tipinių kvantinių efektų – kubito gebėjimo būti
+skirtingose būsenose vienu metu, vadinamojoje būsenų <strong>superpozicijoje</strong>
+(angl. <em>state</em> <em>superposition</em>), <strong>interferencijos efektų</strong>
+(angl. <em>interference</em>) ir <strong>kvantinio supynimo</strong> (angl. <em>quantum
+entanglement</em>). Kvantinis procesorius yra sudarytas iš daugelio kubitų,
+o bendroje visų kubitų būsenų superpozicijoje yra koduojama ir
+apdorojama informacija. Kadangi kvantinių būsenų transformacijos,
+kurioms vykstant atliekamas informacijos apdorojimas, veikia visas
+būsenas superpozicijoje vienu metu, kvantinis kompiuteris iš pagrindų
+pasižymi didelėmis paralelizavimo galimybėmis. Kubitu gali būti įvairios
+kvantinės fizinės sistemos, kuriose įmanoma tiksliai kontroliuoti ir
+nuskaityti dvi skirtingas būsenas. Tarp jų yra elektronų ir atomų
+branduolių sukininės būsenos, sklindančių fotonų poliarizacija,
+elektroniniai ir vibraciniai atomų lygmenys, elektromagnetinio lauko
+rezonansai uždaroje ertmėje, krūvininkų skaičius superlaidininkuose.</p>
+<p>Įdomu paminėti, kad skaičiavimai, pagrįsti kvantinėmis taisyklėmis, buvo
+pasiūlyti kur kas anksčiau, nei dydžio efektai klasikiniuose
+kompiuteriuose galėjo kelti rūpesčių, maždaug 1980 metais. Tada tai
+atrodė arti fantastikos ribų, nes kontroliuoti kvantinių sistemų būsenas
+ir apsaugoti jas pakankamai ilgai nuo sunykimo, norint spėti atlikti
+skaičiavimus, itin keblu. Šiuo požiūriu technologinėje raidoje kvantinė
+kompiuterija žymi pradžią, kai įspūdingu tikslumu gebama kontroliuoti
+fundamentalių gamtos ingredientų kitimą laike. Kvantinė kompiuterija yra
+tik vienas šios pažangos vaisius, tačiau potencialiai turintis esminę
+rolę paveikti žmonių kasdienybei.</p>
+<p>Rašydami šią knygą esame vadinamojoje
+<strong>triukšmingų tarpinės skalės kvantinių technologijų</strong> etape
+(angl. <em>noisy intermediate-scale quantum</em>, trumpinys NISQ). NISQ
+kvantiniai procesoriai turi 50-100 kubitų skaičių, pasižymi
+sparčiai atsirandančiomis klaidomis ir nenaudoja klaidų taisymo
+algoritmų. Tai neleidžia atlikti ilgų ir tikslių praktinės svarbos skaičiavimų.<br />
+Didėjant kvantinių kompiuterių skaičiuojamajai galiai verta tikėtis
+proveržių srityse, kuriose reikalingi intensyvūs skaičiavimai. Šios
+sritys apima medikamentų ir technologinių medžiagų kūrimą, branduolinę
+energetiką, fundamentinius mokslinius tyrimus, dirbtinio intelekto
+tobulinimą, finansinių rinkų modeliavimą, logistiką, klimato kaitos ir
+kitų kompleksinių sistemų vyksmų modeliavimą.</p>
+<p>Kvantiniai kompiuteriai veikiausiai neišstums klasikinių įrenginių,
+puikiai atliekančių daugybę funkcijų, bet bus naudojami greta. To
+pavyzdys – <strong>grafikos apdorojimo procesorius</strong> (angl. <em>graphics
+processing unit</em>), integruotas daugumoje kompiuterių. Palyginus su
+bendro naudojimo kompiuterio procesoriumi, grafikos procesoriaus
+elektroninė architektūra suteikia galimybes paralelizuoti ir itin
+paspartinti tam tikro tipo duomenų apdorojimą. Galima panašiai
+įsivaizduoti ir su klasikiniu kompiuteriu integruotą kvantinį
+procesorių, į kurį nukreipiamos užduotys, reikalaujančios jo suteikiamų
+privalumų, taip realizuojant hibridinį kvantinį-klasikinį skaičiavimo
+metodą.</p>
+<p>Knygoje pristatomi kvantinės kompiuterijos pagrindai vadinamiesiems
+<strong>universaliesiems kvantiniams kompiuteriams</strong> (angl. <em>universal quantum
+computers</em>). Universalumas čia reiškia, kad jie nėra specializuoti
+spręsti specifinius uždavinius, bet gali atlikti bet kokį suformuluotą
+skaičiavimą. Šiuo metu plačiausiai vystomas kvantinio skaičiavimo
+modelis yra <strong>grįstas loginiais vartais</strong> (angl. <em>gate-based model</em>);
+jis dar vadinamas <strong>kvantinių grandinių modeliu</strong> (angl. <em>quantum
+circuit model</em>). Kaip rodo pavadinimas, jų žemiausio lygmens
+programavimas yra pagrįstas kvantiniais loginiais vartais, kurie atlieka
+kubitų būsenų transformacijas. Kvantiniame procesoriuje pasitelkiama
+keletas skirtingų loginių vartų, sudarančių universalų rinkinį; jų
+kombinacijomis galima įvykdyti visus įmanomus skaičiavimus. Tokiu
+principu veikia ir klasikiniai kompiuterių procesoriai, kuriuose
+elektroninės loginės grandinės atlieka pateiktos dvejetainės skaičių
+sekos apdorojimą. Skaičiavimų universalumas leidžia atsiriboti nuo
+konkrečios fizinės sistemos, realizuojančios kubitus, ir susitelkti į
+skaičiavimo užduočių formulavimą bei programavimą. Skirtingi kvantiniai
+procesoriai gali naudoti skirtingo tipo loginius elementus; tačiau tai
+tik reiškia, kad kvantinį algoritmą teks perkompiliuoti naujais
+elementais – algoritmo pagrindas nekinta.</p>
+<p>Ankstyvieji kvantinės kompiuterijos tyrinėtojai turi pirmenybę
+apsiprantant su pasauliu, kuriame reikia žaisti pagal kvantines
+taisykles. Vertinant iš fizikos perspektyvos, kubitas – pati
+paprasčiausia kvantinė sistema, kuri nėra triviali. Kvantiniame
+kompiuteryje matome situaciją, kai iš daugelio paprastų sistemų iškyla
+nauji kompleksiškumo reiškiniai. Kvantinis superpozicijos principas yra
+pagrindinis to šaltinis; visgi tai kitokios prigimties superpozicija,
+nei aptinkama klasikinėse sistemose. Pavyzdžiui, skirtingi stygų
+vibracijos dažniai muzikos instrumente nusako skirtingas būsenas.
+Spragtelėjus stygą pirštu, ji greičiausiai bus sužadinta virpėti vienu
+metu keletu skirtingų dažnių, o tai savo ruožtu nusakys stovinčiųjų
+bangų (virpesių) superpoziciją. Taip pat ir bangos, keliaujančios
+sužadintu vandens paviršiumi skirtingomis kryptimis, yra būsenų
+superpozicija bei demonstruoja tokius reiškinius kaip interferencija,
+kada persiklojusių bangų amplitudė vietomis padidėja ir sumažėja.</p>
+<p>Norint pamatyti skirtumus tarp klasikinių ir kvantinių sistemų įsivaizduokime instrumento stygą, kuri gali vibruoti tik dviem
+skirtingais dažniais. Vadinsime juos <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span>. Stygos būseną galime užrašyti kaip šių
+virpesių sumą: <span class="math inline">\(|S\rangle = a|0\rangle + b|1\rangle\)</span>;
+čia <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> nusako atitinkamų virpesių amplitudę, tai yra garsumą.
+Siekdami padaryti šį pavyzdį artimesnį kvantinėms sistemoms,
+tvirtinsime, kad styga bet kuriuo metu negali nevibruoti bent vienu iš
+šių dviejų dažnių. Keturių stygų violončelėje jos bendrą būseną bet
+kuriuo metu galima nusakyti įvardijant keturių stygų būsenas –
+<span class="math inline">\(|S_1 \rangle\)</span>, <span class="math inline">\(|S_2 \rangle\)</span>,
+<span class="math inline">\(|S_3 \rangle\)</span>, <span class="math inline">\(|S_4 \rangle\)</span>, ir todėl
+iš viso aštuonias amplitudes <span class="math inline">\(\{(a_1,b_1),\ldots,(a_4,b_4)\}\)</span>. Tačiau, jeigu šios stygos būtų
+kvantinės sistemos taip pat su dviem skirtingomis būsenomis (kubitai),
+nusakyti violončelės būsenai reikėtų įvardyti šešiolika amplitudžių!
+Papildomos būsenos kvantinėje violončelės versijoje atsiranda dėl to,
+kad galima ne vien tos pačios stygos būsenų superpozicija, bet ir bendra
+skirtingų stygų būsenų superpozicija. Pavyzdžiui, dvi galimos klasikinės
+violončelės būsenos yra kai visos keturios stygos vibruoja tik
+<span class="math inline">\(|0 \rangle\)</span> dažniu, nusakoma amplitudėmis
+<span class="math inline">\(\{(a_1,0),(a_2,0),(a_3,0),(a_4,0)\}\)</span> ir kai
+vienu metu visos stygos vibruoja tik <span class="math inline">\(|1\rangle\)</span>
+dažniu, nusakoma amplitudėmis
+<span class="math inline">\(\{(0,b_1 ),(0,b_2 ),(0,b_3 ),(0,b_4 )\}\)</span>. Jeigu šios stygos būtų kvantinės, tada galima ir šių klasikinių
+būsenų superpozicija. Tai reiškia, vienu metu visos stygos vibruoja tik
+<span class="math inline">\(|0\rangle\)</span> dažniu ir nevibruoja
+<span class="math inline">\(|1\rangle\)</span>, taip pat vibruoja <span class="math inline">\(|1\rangle\)</span>
+dažniu ir nevibruoja <span class="math inline">\(|0\rangle\)</span>. Bendrai tariant, jeigu
+klasikinių stygų skaičius yra <span class="math inline">\(n\)</span>, tokiai sistemai nusakyti bet kuriuo
+metu reikia <span class="math inline">\(2n\)</span> amplitudžių verčių. O štai kvantinėje jos versijoje šis
+skaičius yra <span class="math inline">\(2^n\)</span>. Tad jeigu sutarsime, kad amplitudžių vertės koduoja
+informaciją, taps akivaizdu, jog kvantinės sistemos gali savyje laikyti
+eksponentiškai daugiau informacijos.</p>
+<p>Eksponentinis skirtumas tarp klasikinių ir kvantinių būsenų skaičiaus
+atsiranda dėl to, kad kvantinėse sistemose galimos <strong>supintosios
+būsenos</strong> (angl. <em>entangled states</em>). Minėta superpozicijos būsena yra
+kvantinio supynimo pavyzdys, leidžiantis keletui „stygų” elgtis kaip
+viena „superstyga”. Supintos sistemos pasižymi kvantinėmis
+koreliacijomis, kurių neįmanoma imituoti klasiškai ir paaiškinti
+klasikine tikimybių teorija. Jos elgiasi panašiai kaip vienas darinys,
+net jeigu yra atskirtos viena nuo kitos dideliais atstumais. Pavyzdžiui,
+dviejų klasikinių bitų būseną galima pakeisti į bet kurią kitą iš
+keturių galimų kombinacijų <span class="math inline">\(\{00, 01, 10, 11\}\)</span> tik keičiant kiekvieno
+individualaus bito būseną. Supintojoje 2 kubitų būsenoje pakanka
+kontroliuoti vieno pasirinkto kubito būseną norint akimirksniu pakeisti
+jų bendrą būseną į bet kurią iš analogiškai keturių skirtingų.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dvieju-kubitu-supynimas"></span>
+<img src="media/image1_1.svg" alt="Dviejų kubitų kvantinis supynimas" width="40%" />
+<p class="caption">
+1.1 pav. Dviejų kubitų kvantinis supynimas
+</p>
+</div>
+<p>Supintosiose sistemose (žr. <a href="kvantinės-kompiuterijos-apžvalga.html#fig:dvieju-kubitu-supynimas">1.1</a> pav.)
+dalis informacijos yra laikoma kvantinėse koreliacijose tarp kubitų
+būsenų. To gerą pavyzdį pateikia fizikas Johnas Preskillas.
+Įsivaizduokime, kad turime dvi šimto puslapių dydžio knygas – vieną
+įprastą klasikinę, o kitą kvantinę, kurioje informacija yra laikoma
+kvantinėse būsenose. Perskaitę vieną įprastos knygos puslapį sužinome
+1% visos joje pateikiamos informacijos, tad perskaitę šimtą puslapių
+žinome viską, kas joje yra. Tačiau skaitydami kvantinę knygą ir
+atversdami kiekvieną naują puslapį gauname nenuspėjamą turinį. Perskaitę
+visą šimtą puslapių turėsime tik mažą idėją, apie ką rašoma knygoje, nes
+eksponentiškai didesnė dalis informacijos yra laikoma ne atskiruose
+puslapiuose, bet koreliacijose tarp jų. Norint sužinoti visą
+informaciją, laikomą kvantinėje knygoje, reikia „skaityti” visus knygos
+puslapius vienu metu. Tai yra klasikinėje terpėje neturintis analogijų
+procesas.</p>
+<p>Informacija, kuri koduojama ir apdorojama kvantinėse sistemose, vadinama
+kvantine informacija. <strong>Kvantinės informacijos teorija</strong> (angl. <em>quantum
+information theory</em>) yra nauja informatikos šaka ir skiriasi nuo
+klasikinės informatikos keletu esminių principų. Didžioji dalis
+informacijos, esančios kvantinių būsenų erdvėje, nėra prieinama. Norint
+sužinoti anksčiau minėto kvantinio instrumento būseną esančioje
+superpozicijoje, galimi atsakymai yra: visos keturios stygos vibruoja
+pirmuoju <span class="math inline">\(|0\rangle\)</span> arba antruoju
+<span class="math inline">\(|1\rangle\)</span> dažniu. Kitaip tariant, atskleisdami
+kvantinėse superpozicijos būsenose laikomą informaciją gauname klasikinę
+informaciją, o superpozicija yra sugriaunama. Neįmanoma nuspėti, kuris
+rezultatas bus aptiktas; žinomos tik jų tikimybės, kurios yra
+proporcingos amplitudžių dydžiams. Wooterso ir Zureko <strong>uždraustojo
+kopijavimo teorema</strong> (angl. <em>no-cloning theorem</em>) nusako kitą esminį
+skirtumą tarp kvantinės ir klasikinės informacijos. Ši teorema teigia,
+kad kvantinės informacijos neįmanoma kopijuoti. Tai nereiškia, kad
+žinodami informacijos, tai yra kvantinės būsenos, paruošimo žingsnius
+negalime jos tiksliai atkartoti. Šis principas veikiau rodo, kad gavus
+kvantinės informacijos paketą su nežinomu turiniu neįmanoma sukurti šio
+turinio identiškos kopijos.</p>
+<p>Nors šie skirtumai atrodytų kaip keblumai, panaikinantys minėtus
+kvantinių sistemų privalumus, tačiau dar ne viskas prarasta. Pirmiausiai
+galima atkreipti dėmesį, kad nors apdorojamos informacijos apimtis tam
+tikrose užduotyse gali būti astronominio dydžio, tačiau praktikoje
+dažnai prireikia tik sąlygiškai mažos jos dalies, kad sužinotume norimą
+atsakymą ar perteiktume duomenis žmogiškuoju pavidalu. Dėl eksponentinio
+būsenų skaičiaus perteikti net ir 300 kubitų laikomą kvantinę
+informaciją į klasikinės atminties išteklius būtų neįmanoma, tam
+prireiktų maždaug <span class="math inline">\(10^{90}\)</span> amplitudžių verčių. Šis skaičius yra didesnis
+nei stebimoje Visatoje esančių atomų skaičius.</p>
+<p>Ekstravagantiškos kvantinių sistemų savybės pačios savaime neužtikrina,
+kad jomis pagrįstas skaičiavimas bus pranašesnis už klasikinius. Galima
+pateikti tris geras priežastis, kodėl kvantinis skaičiavimo modelis
+visgi demonstruoja pranašumą. Pirma (ir akivaizdžiausia) priežastis
+slypi kvantinių sistemų modeliavime. Dėl eksponentiškai didelės
+kvantinių būsenų erdvės nėra žinoma, kaip efektyviai jas modeliuoti
+klasikiniu kompiuteriu. Čia ištekliai auga eksponentiškai su sistemos
+dydžiu (kubitų skaičiumi), o štai modeliuojami kvantiniu kompiuteriu jie
+bendrai auga tiesiškai. Vienas pavyzdys, kuriame kvantinių sistemų
+modeliavimas galėtų suteikti globaliai svarbų proveržį, yra vadinamas
+<strong>azoto fiksacijos procesu</strong> (angl. <em>nitrogen fixation process</em>). Šiame
+procese stipriomis trigubomis kovalentinėmis jungtimis molekulėse <span class="math inline">\(\mathrm{N}_2\)</span>
+susijungę azoto atomai yra atskiriami ir kartu su kitais elementais
+transformuojami į amoniaką (<span class="math inline">\(\mathrm{NH}_3\)</span>) bei kitus nitratus, naudojamus
+pramoninei trąšų gamybai. Efektyviausiam žinomam procesui, vadinamam
+<strong>Haberio-Bošo procesu</strong> (angl. <em>Haber-Bosch process</em>), reikia itin
+didelių slėgių ir temperatūrų šiai transformacijai atlikti, ir todėl
+išeikvojama ypatingai daug energijos. Azoto fiksacija yra taip pat
+esminis procesas biologinėse sistemose atliekant biosintezę. Biologinės
+sistemos tai atlieka itin efektyviai įprastinėmis kambario sąlygomis
+naudojant nitrogenazės fermentą. Šio organinio cheminio proceso
+supratimas galėtų padaryti trąšų gamybą energetiškai žymiai efektyvesnę.
+Tačiau jis yra neįkandamas klasikiniams superkompiuteriams dėl per
+didelio laisvės laipsnių skaičiaus net ir sąlygiškai mažoje molekulėje.</p>
+<p>Antroji priežastis slypi neįveikiamų klasikinių užduočių skaičiavimuose
+kvantiniu kompiuteriu. Jau dabar yra atrasta eksponentiškai laiko
+išteklių atžvilgiu greitesnių kvantinių algoritmų už geriausius žinomus
+klasikinius tam tikroms problemoms spręsti ir naujų algoritmų skaičius sparčiai auga. Tai
+padaro klasikiniams kompiuteriams fundamentiškai neįveikiamas problemas įveikiamas
+kvantiniams.</p>
+<p>Galiausiai <strong>skaičiavimų sudėtingumo</strong> (angl. <em>computational
+complexity</em>) teorijos argumentai teigia, kad kvantiniu kompiuteriu
+galima efektyviau testuoti reikšmes iš <strong>koreliuotųjų tikimybinių
+funkcijų</strong> (angl. <em>correlated probability distribution</em>). Tokio tipo
+skaičiavimais yra dažnai grindžiami pirmieji <strong>kvantinės viršenybės</strong>
+(angl. <em>quantum supremacy</em>) demonstravimai prieš klasikinius
+kompiuterius pasitelkiant mažą skaičių kubitų.</p>
+<p>Esminiai kvantinės informacijos skirtumai taip pat atsispindi ir
+ryšiuose, kuriais siunčiama arba pasitelkiama kvantinė informacija.
+Kvantinis supynimas leidžia atlikti komunikacijų protokolus, neįmanomus
+naudojant vien klasikines būsenas. Tarp šių protokolų yra <strong>tankusis
+kodavimas</strong> (angl. <em>dense coding</em>), leidžiantis nusiųsti dvigubai
+daugiau bitų klasikinės informacijos su kiekvienu kubitu. <strong>Kvantinė
+teleportacija</strong> (angl. <em>quantum teleportation</em>) suteikia būdą persiųsti
+tolydžiosiose kubito būsenos amplitudėse koduojamą kvantinę informaciją
+naudojant tik du bitus informacijos. Ne mažiau svarbūs yra kvantinės
+informacijos principų taikymai kriptografijoje. Kvantiniai protokolai
+leidžia užtikrinti fizikos dėsniais apsaugotą komunikaciją. Itin didelio
+saugumo reikalaujančios komunikacijos ateityje veikiausiai kliausis
+kvantiniais ryšiais arba turės būti atnaujinamos naujais klasikiniais
+protokolais, kadangi šiandieniniai kriptografijos protokolai tampa
+įveikiami pažangiais kvantiniais kompiuteriais.</p>
+</div>
+<div id="kvantinės-kompiuterijos-pradmenys" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Kvantinės kompiuterijos pradmenys<a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kvantinių sistemų egzistavimas ir pagrindiniai jų elgsenos principai
+buvo laipsniškai atskleisti 1900–1930 metų laikotarpiu ieškant išeities
+iš absurdiškų spėjimų, kuriuos buvo galima prieiti taikant tuometines
+fizikos teorijas. Viena tokių problemų buvo vadinama <strong>ultravioletinės
+srities katastrofa</strong> (angl. <em>ultraviolet catastrophe</em>), privedanti prie
+begalinių energijų. Šios anomalijos ištaisymas ir interpretacija
+fizikiniame modelyje įvedant elektromagnetinio lauko energijos kvantą,
+dabar vadinamą fotonu, buvo pirmieji žingsniai link kvantinės mechanikos
+atsiradimo. Kvantinė mechanika suteikia rinkinį taisyklių, vadinamų
+postulatais, kurios padeda sujungti abstraktų jos matematinį formalizmą
+su tuo, ką įmanoma objektyviai išmatuoti ir apibūdinti fiziniame
+lygmenyje. Postulatai kvantinėje mechanikoje gali būti palyginami su
+aksiomomis matematinėse logikų sistemose, įvardijantys pradinius
+pasiūlymus ar principus, kurie savaime nėra įrodomi, tačiau pagal juos
+grindžiama likusi loginė sistema. Fizinių teorijų, pagrįstų kvantine
+mechanika, pavyzdžiai yra kvantinė elektrodinamika ir kvantinė
+chromodinamika, apibūdinančios šviesos (fotonų) sąveiką su elektros
+krūvį turinčia materija (elektronai, protonai, miuonai) ir branduolyje
+stipriąsias sąveikas tarp kvarkų bei gliuonų atitinkamai. Kitaip nei
+klasikinėje fizikoje, kvantinės sistemos būsena ir su ja susietos
+savybės, tokios kaip jos padėtis, judėjimo greitis ar energija, negali
+būti tiesiogiai stebimi nepaveikiant pačios sistemos būsenos. Tai savo
+ruožtu apibūdina tarsi paslėptą pasaulį, kurio nei tiesiogiai, nei
+tiksliai pasiekti negalime. Kiek žinoma, gamta yra fundamentaliai
+kvantinė, nors keistosios jos savybės atsiskleidžia tik esant
+specifinėms sąlygoms.</p>
+<p>Pirmąsias idėjas panaudoti kvantines sistemas skaičiavimo procesuose
+galima aptikti jau devintojo dešimtmečio pradžioje. Tokie žymūs fizikai
+kaip Richardas Feynmanas, Paulas Benioffas, Yuri Maninas, Davidas
+Deutschas ir kiti atkreipė dėmesį, kad klasikiniais kompiuteriais
+modeliuoti kvantines sistemas bendroje situacijoje yra neefektyvu ir
+daugeliu atvejų tiesiog neįmanoma. Kompiuterio atminties ištekliai,
+reikalingi apibūdinti kvantinės sistemos būsenai, auga eksponentiškai
+kartu su sistemos dydžiu. Tai brėžia praktinę ribą ties santykinai mažo
+dydžio sistemomis bei riboto tipo skaičiavimais ir todėl tiesiogiai
+veikia fundamentinių tyrimų spartą bei technologinę raidą. Kvantinio
+kompiuterio idėją pastūmėjo to meto technologiniai pasiekimai, pirmą
+kartą demonstruojantys individualių atominio lygmens sistemų kontrolę.
+Pavyzdžiui, galėjimas judinti ir sugrupuoti pavienius atomus medžiagos
+paviršiuje skenuojamuoju elektroniniu mikroskopu, jonų pagavimas
+elektromagnetinėse gaudyklėse, pavienių elektronų perkėlimas įvairiuose
+elektroniniuose dariniuose.</p>
+<p>Šie pasiekimai veikiau suteikė stimulo tolimesniems tyrimams, kadangi
+mechaniškai kontroliuoti atominio lygmens sistemas nebūtinai reiškia,
+kad kontroliuojamos ir jų kvantinės būsenos. Informacijos kodavimas ir
+apdorojimas kvantinėse sistemose yra pagrįstas jų būsenų <strong>koherentiniu
+valdymu</strong> (angl. <em>coherent control</em>)<em>.</em> Fizikiniais terminais tai
+reiškia gebėjimą išlaikyti ir keisti santykines fazes tarp kvantinių
+sistemų. Kad geriau suprastume koherencijos principą, įsivaizduokime
+dviejų žmonių irkluojamą valtį. Norint ja plaukti irkluotojams tenka
+sukoordinuoti periodinį irklų pakėlimą iš vandens, nuleidimą ir
+atsistūmimą nuo vandens. Jeigu jie tai idealiai sukoordinuoja, tada
+galime sakyti, kad jų santykinė fazė lygi nuliui. Koherentinis valdymas
+reiškia, kad jie gali tiksliai pasirinkti kokią tik pageidauja fazę ir
+ją išlaikyti. Tačiau jeigu šie irkluotojų atliekami judesiai nepastoviai
+kinta, tai lems nekoherentinį plaukimą ir tiesiog valties sukinėjimąsi
+vietoje. Viena iš esminių užduočių išlaikant kvantinių sistemų
+koherenciją – užtikrinti jų izoliavimą nuo nepageidaujamų sąveikų su
+aplinkos kvantinėmis sistemomis, kurios nenuspėjamai keičia jų santykines
+fazes ir priveda prie <strong>dekoherencijos</strong> (angl. <em>decoherence</em>).
+Dekoherencija yra didžiausias kvantinių kompiuterių priešas, jos efektai
+pasireiškia atsitiktiniais būsenų pokyčiais, sistemos triukšmu, ir dėl
+to atsirandančiomis skaičiavimų klaidomis. Žinoma, yra ir tokių
+kvantinių sistemų, kurios labai silpnai sąveikauja su kitomis
+sistemomis. Tačiau sąveikos yra reikalingos siekiant realizuoti logines
+operacijas ir skaičiavimų universalumą. Šie vienas kitam
+prieštaraujantys reikalavimai uždeda apribojimus sistemoms, kurios yra
+tinkamos realizuoti kubitus.</p>
+<p>Kvantinė kompiuterija įgavo pagreitį ir sulaukė platesnės bendruomenės
+susidomėjimo dešimtojo dešimtmečio pradžioje. Peteris Šoras sukūrė
+algoritmą, kuriuo parodė, kad kvantiniu kompiuteriu įmanoma pasiekti
+eksponentinį pagreitinimą siekiant atlikti itin didelės svarbos
+užduotis – pirminių skaičių faktorizavimą ir diskrečiojo logaritmo
+apskaičiavimą. Nėra žinomų efektyvių algoritmų spręsti šias problemas
+naudojant klasikinius kompiuterius, ir jos traktuojamos kaip
+neįveikiamos. Kadangi pirminių skaičių faktorizavimu yra pagrįsta
+didžioji dalis globaliai taikomos kriptografijos, tai indikuoja
+akivaizdžią praktinę svarbą ir kartu potencialiai egzistencinę krizę
+komunikacijų saugumui. Ne mažiau svarbūs buvo pirmieji kvantinių klaidų
+taisymo principai. Klaidų prevencijos ir taisymo algoritmai yra neatsiejama dalis
+praktinės svarbos skaičiavimuose.</p>
+<p>Kubitais pagrįstas modelis buvo pastūmėtas itin sėkmingo skaitmeninio
+kompiuterio modelio, naudojančio dvejetainę sistemą. Vertinant iš
+praktinės pusės, kontroliuoti dvi būsenas sistemoje yra paprasčiau ir
+tai išlaiko skaičiavimų universalumą – sudėtingesnis modelis nėra
+būtinas norint atlikti visus suformuluojamus skaičiavimus. Kubitais
+pagrįstuose skaičiavimo modeliuose pasirenkamos sistemos, kurios
+nusakomos dviem skirtingomis būsenomis arba kuriuose tarp daugelio
+galimų būsenų yra efektyviai kontroliuojamos tik dvi skaičiavimams
+atlikti. Pavyzdžiui, <strong>jonų gaudyklėmis</strong> (angl. <em>ion traps</em>) pagrįsti
+kvantiniai procesoriai išnaudoja dalį pagautų jonų elektroninių ir
+vibracinių energijos lygmenų. Ne vien išimtinai atominio lygmens
+sistemos demonstruoja kvantinius reiškinius. Makroskopinio skaičiaus
+elektronų bendrosios krūvio kvantinės būsenos, vadinamos <strong>transmonais</strong>
+(angl. <em>transmon</em>), stabilizuojasi superlaidininkuose esant itin mažoms
+temperatūroms ir yra naudojamos šios architektūros kvantiniuose
+kompiuteriuose. Kitos technologijos, galinčios tapti svarbios ateityje,
+yra grindžiamos fotonika ir atominiais defektais puslaidininkiuose.
+Verta išskirti fotoninius įrenginius, kurie turi natūralų privalumą, nes
+gali būti paprasčiau integruojami į kvantinius tinklus išnaudojant
+egzistuojančius šviesolaidinius tinklus ir palydovus. Kvantiniai tinklai
+suteikia galimybes taikyti <strong>išskaidytą skaičiavimų modelį</strong>
+(angl. <em>distributed computing</em>) tarp ne itin galingų ankstyvosios raidos
+kvantinių kompiuterių, tačiau juos kartu sujungus galima efektyviai
+pasiekti didesnę skaičiavimų galią.</p>
+</div>
+<div id="tiuringo-mašina" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Tiuringo mašina<a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Siekiant tiksliau palyginti kvantinių ir klasikinių kompiuterių
+skaičiavimų efektyvumą, verta trumpam grįžti prie klasikinio skaičiavimo
+modelio. Šiandieninių kompiuterių konceptas, apimantis pagrindinius jų
+ingredientus bei skaičiavimų universalumą, buvo suformuluotas <strong>Alano
+Tiuringo</strong> (angl. <em>Alan Turing</em>) 1930 metais. Tiuringo darbas šioje
+srityje buvo paskatintas kitų siekių ir tik vėliau buvo suprasta
+atradimo svarba universalaus kompiuterio gimimui. Tiuringas siekė
+atsakyti į žymaus matematiko <strong>Davido Hilberto</strong> (angl. <em>David Hilbert</em>)
+iškeltą klausimą ir iššūkį – surasti įrodymą: ar visada egzistuoja
+algoritmas, kuris naudodamas loginės sistemos aksiomas gali nuspręsti,
+ar pateiktas teiginys yra teisingas arba neteisingas?</p>
+<p>Prieš žygiuojant toliau priminsime, kad algoritmas – tai tiksliai
+nusakyta veiksmų seka ar instrukcijos, skirtos išspręsti užduotį. Su
+aritmetinio pobūdžio algoritmais susiduriama jau vidurinėje mokykloje,
+pavyzdžiui, naudojant <strong>Euklido</strong> (angl. <em>Euclid</em>) 2000 metų senumo
+algoritmus reikia atlikti dviejų skaičių dalybą su liekanomis arba
+didžiausio bendrojo daliklio paiešką. Algoritmų paskirtis gali būti
+įvairiausio pobūdžio, įskaitant duomenų apdorojimą ir automatizuotą
+sprendimų priėmimą. Algoritmus reikėtų atskirti nuo kompiuterio
+programų, kadangi algoritmai yra bendresnio pobūdžio instrukcijos ir
+egzistuoja nepriklausomai nuo programavimo kalbų. Skirtingos
+programavimo kalbos gali būti pavartojamos tam pačiam algoritmui
+įvykdyti.</p>
+<p>Hilbertas pats tikėjosi, kad visada galima rasti tokius algoritmus ir
+todėl iš principo įmanoma išspręsti visas problemas matematikoje.
+Įrodymas, kad matematikoje egzistuoja neišsprendžiamų problemų, dar tais
+pačiais metais buvo pateiktas <strong>Kurto Godelio</strong> (angl. <em>Kurt Gödel</em>) jo
+dviejose žymiose <strong>nepilnumo teoremose</strong> (angl. <em>Gödel’s</em>
+<em>incompleteness theorems</em>). Šios teoremos tvirtina, kad aksiomomis
+pagrįstose loginėse sistemose visada bus galima rasti teiginių, kurių
+neįmanoma nei įrodyti, nei paneigti. To nepavyks apeiti net ir įvedus
+papildomas aksiomas, t. y. išplečiant loginę sistemą, kadangi tokia
+sistema negalės užtikrinti savęs pačios nuoseklumo (užtikrinti
+neprieštaravimo pačiai sau).</p>
+<p>Tiuringas performulavo Gödelio rezultatus į algoritmų kalbą, kuriuos
+gali įvykdyti jo apibūdinta Tiuringo mašina. Tai idealizuotas
+konceptualus kompiuteris, turintis visus esminius šių dienų kompiuterio
+komponentus: skaitymo ir rašymo įrenginius, atmintį, procesorių.
+Tiuringo mašina gali atlikti visus skaičiavimus, kuriuos gali atlikti
+žmogus, tik efektyviai turi neribotą kiekį popieriaus ir rašymo
+priemonių. A. Tiuringas kartu su A. Churchu pateikė formalų algoritmo
+apibūdinimą (angl. <em>Church-Turing thesis</em>):</p>
+<p><em><strong>Churcho–Tiuringo tezė:</strong> visos funkcijų klasės, apskaičiuojamos
+Tiuringo mašina, yra ekvivalentiškos klasei funkcijų, apskaičiuojamų
+naudojant algoritmą.</em></p>
+<p>Kitaip tariant, Tiuringo mašina gali įvykdyti bet kokį suformuluojamą
+algoritmą. Tai taikydamas Tiuringas parodė, kad egzistuoja kompiuteriu
+neišsprendžiamų algoritmų, vienas toks yra vadinamas <strong>sustojimo
+problema</strong> (angl. <em>halting problem</em>). Šiuolaikiniai programuojami
+kompiuteriai yra pagrįsti <strong>fon Noimano architektūra</strong> (angl. <em>von</em>
+<em>Neumann architecture</em>), pristatyta šio žymaus matematiko (angl. <em>John
+von Neumann</em>) ir realizuota 1940–1950 metais. Fon Noimano architektūra
+atspindi realizuotą Tiuringo mašiną, naudojančią technologiškai
+praktiškesnius sprendimus ir aritmetinę loginę sistemą (Būlio algebrą).
+Skaičiavimo galios ir universalumo atžvilgiu programuojamų šiandieninių
+kompiuterių modelis yra ekvivalentiškas Tiuringo mašinai su ribota
+atmintimi. Šie bendri principai leidžia suprasti, kad kvantinis
+kompiuteris negalės atlikti to, ko negali atlikti universali Tiuringo
+mašina, kuria galima modeliuoti ir kvantinius kompiuterius. Kvantinių
+kompiuterių pranašumas atsiskleidžia kvantinių algoritmų efektyvumu.</p>
+</div>
+<div id="skaičiavimų-ištekliai" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Skaičiavimų ištekliai<a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Algoritmų kompleksiškumo analizės sritis parodo problemai spręsti
+reikalingus skaičiavimo išteklius – bendrai laiko, erdvės (atminties)
+ir energijos išteklius. Tradiciškai kompiuterių moksle laikas ir erdvė
+buvo pagrindiniai dominantys ištekliai. Jie leidžia nustatyti, ar tam
+tikros klasės problemos gali būti išsprendžiamos per atitinkamą laiką
+esant ribotai kompiuterio atminčiai. Yra nemažai problemų, kurios
+traktuojamos kaip sunkios ar net neįveikiamos dėl joms išspręsti
+reikalingų nepasiekiamo dydžio išteklių. Pavyzdžiui, geriausias žinomas
+klasikinis algoritmas skaičiaus faktorizavimui į dviejų pirminių skaičių
+sandaugą reikalauja eksponentiškai augančių laiko išteklių su
+faktorizuojamojo skaičiaus dydžiu. Ši problema neturi efektyvaus
+skaičiavimų metodo ir nuo sąlygiškai mažos įvesties dydžio tampa laiko
+atžvilgiu neįveikiama.</p>
+<p>Operacijų skaičius yra tiesiogiai susietas su laiko ištekliais,
+reikalingais atlikti algoritmą. Kompiuterio procesoriaus dažnis ir jo
+architektūros bei algoritmo paralelizavimo galimybės yra pagrindiniai
+veiksniai, kurie atspindi, kiek operacijų per laiko vienetą galima
+atlikti, ir todėl nusako bendrą algoritmo vykdymo laiką. Tiksliai
+nusakyti laiko išteklius yra keblu, kadangi net nežymiai pakeitus
+skaičiavimo modelį ar kompiuterio architektūrą tai gali juos paveikti.
+Tačiau dažnai mus domina esminė algoritmo elgsena bei viršutinės
+operacijų skaičiaus ribos. Asimptotinė algoritmo elgsena didėjant
+įvesties dydžiui leidžia tai įvertinti. Imkime pavyzdį: palyginkime du
+skirtingus algoritmus, atliekančius tą pačią užduotį. Reikalingas
+operacijų skaičius, kuris priklauso nuo įvesties tikslumo ar dydžio,
+nusakyto <em>n-</em>bitais, pirmajame algoritme yra
+<span class="math inline">\(f(n) = n^3 + 10n + 100\)</span>, o antrajame
+<span class="math inline">\(g(n) = 1000n + \log (n)\)</span>. Šių funkcijų
+asimptotinė elgsena, kai <span class="math inline">\(n\rightarrow \infty\)</span> (artėja prie labai
+didelio skaičiaus), yra atitinkamai <span class="math inline">\(O(n^3 )\)</span> ir
+<span class="math inline">\(O(n)\)</span>. Simbolis <span class="math inline">\(O\)</span> su skliausteliuose pažymėta funkcine
+forma yra vartojamas įvardyti funkcijos viršutinei elgsenos ribai ir
+blogiausiam scenarijui. Algoritmas <span class="math inline">\(g(n)\)</span> su tiesine
+<span class="math inline">\(O(n)\)</span> elgsena yra akivaizdžiai efektyvesnis, kai
+<span class="math inline">\(n\rightarrow \infty\)</span>, nepaisant didelio koeficiento šalia <span class="math inline">\(n\)</span>.</p>
+<p>Vertinant laiko išteklius, riba yra standartiškai nubrėžiama tarp
+algoritmų, kurių ištekliai auga: 1) kaip polinomas ir 2) kuriuose
+resursai auga greičiau nei bet koks polinomas (sakoma
+„superpolinomiškai”). Problema yra lengva, traktuojama, arba įmanoma,
+jeigu egzistuoja algoritmas, kuriam reikalingi polinominiai laiko
+ištekliai. Palyginimui, problema yra vadinama sunkia, netraktuojama,
+arba neįmanoma, jeigu ištekliai auga superpolinomiškai. Antruoju atveju
+įprasta sakyti, kad yra reikalaujama eksponentinio dydžio išteklių. Tai
+mažas piktnaudžiavimas eksponentinės funkcijos apibrėžimu, nes,
+pavyzdžiui, <span class="math inline">\(n^{\log n}\)</span> auga greičiau nei bet kuris polinomas, bet
+lėčiau nei tikra eksponentinė funkcija. Aišku, galima įsivaizduoti ir
+polinomą su itin dideliu koeficientu (pvz., <span class="math inline">\(n^{1000}\)</span>), kuriam gali
+prireikti daugiau operacijų nei kai kurioms eksponentėms (pvz.,
+<span class="math inline">\(2^{n/1000}\)</span>). Tačiau praktikoje algoritmų su dideliais koeficientais
+retai pasitaiko, ir istoriškai polinominiai algoritmai pasitvirtina
+esantys efektyvesni. <a href="kvantinės-kompiuterijos-apžvalga.html#fig:algoritmu-sudetingumas">1.2</a> pav. pateikiame kreives keleto dažnai aptinkamų
+kompleksiškumo klasės funkcijų, palyginančių, kaip auga operacijų
+skaičius didėjant įvesties dydžiui. Atkreipiame dėmesį, kad čia
+vertikalioji ašis užsibaigia tik ties 2000.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:algoritmu-sudetingumas"></span>
+<img src="media/image1_2.svg" alt="Keletas algoritmų sudėtingumo pavyzdžių. Nuo sparčiausiai iki lėčiausiai augančio operacijų skaičiaus: eksponentinė elgsena, polinominė, logtiesinė ir tiesinė" width="50%" />
+<p class="caption">
+1.2 pav. Keletas algoritmų sudėtingumo pavyzdžių. Nuo sparčiausiai iki lėčiausiai augančio operacijų skaičiaus: eksponentinė elgsena, polinominė, logtiesinė ir tiesinė
+</p>
+</div>
+<p>Galime palyginti laiko išteklius keletui kvantinių ir klasikinių
+algoritmų, skirtų atlikti tą pačią užduotį. Faktorizuojant pirminius
+skaičius geriausiam žinomam klasikiniam algoritmui reikalinga
+<span class="math inline">\(O\left( e^{n^{\frac{1}{3}}\log (n)^{\frac{2}{3}}} \right)\)</span>
+operacijų, o kvantiniam Šoro –
+<span class="math inline">\(O\big( n^2 \log (n)\log (\log(n))\big)\)</span>.
+Šis eksponentinis pagreitinimas yra artimai susietas su Šoro algoritme
+taikoma <strong>kvantine Furjė transformacija</strong> (angl. <em>quantum Fourier
+transform</em>), kuriai reikalinga <span class="math inline">\(O(n^2 )\)</span> operacijų.
+Klasikinei <strong>diskrečiajai Furjė transformacijai</strong> (angl. <em>fast Fourier
+transform</em>) reikalinga eksponentiškai daugiau operacijų,
+<span class="math inline">\(O(n2^n )\)</span>. Taip pat galima paminėti nestruktūrizuotų
+duomenų bazių <strong>Groverio kvantinės paieškos algoritmą</strong> (angl. <em>Grover
+algorithm</em>), kuriam reikia <span class="math inline">\(O\left(\sqrt{n}\right)\)</span> operacijų ir kuris
+suteikia kvadratinį pagreitinimą prieš klasikinę paiešką
+<span class="math inline">\(O(n)\)</span>.</p>
+<p>Algoritmui reikalingi erdvės ištekliai yra ne kas kita, kaip atminties
+ištekliai. Atminties išteklių esminis augimas didėjant įvesties dydžiui
+<span class="math inline">\(n\)</span> yra taip pat nusakomas <span class="math inline">\(O\)</span> simboliu. Laiko ir atminties ištekliai
+gali augti tokiu pačiu tempu, jeigu kiekviename algoritmo žingsnyje yra
+reikalaujama nauja atminties celė. Atminties ištekliai skiriasi nuo
+laiko, nes dažnai yra įmanoma atlaisvinti nenaudojamos atminties
+išteklius. Nėra įrodyta, kad kvantiniai algoritmai turi pranašumą
+atminties išteklių srityje.</p>
+<p>Nors tai neatspindi algoritmų atminties sudėtingumo, tačiau šioje
+vietoje verta pabandyti lyginti klasikinių bei kvantinių kompiuterių
+atminties talpą. Informacija yra įrašoma kvantinio kompiuterio kubitų
+registre. Registras, sudarytas iš <span class="math inline">\(n\)</span> kubitų, gali būti <span class="math inline">\(2^n\)</span>
+skirtingose būsenose vienu metu, o kiekvieną būseną nusakančios
+amplitudės yra kompleksiniai skaičiai. Galime pažiūrėti, kiek
+informacijos baitais atitiktų, pavyzdžiui, 50 kubitų registras
+klasikiniame kompiuteryje. Pirmiausiai atkreipiame dėmesį, kad nusakyti
+tolydžiai kintančią kubito amplitudę iš principo reikėtų begalinio
+tikslumo ir todėl formaliai begalinės informacijos kiekio. Tačiau
+praktiškai kvantiniame kompiuteryje tikslumas bus taip pat ribotas (dėl
+triukšmo, loginių vartų netikslumų), tad skaičiaus tikslumui
+apsiribosime <strong>32 bitais</strong> (angl. <em>single-precission floating-point
+number</em>). Nusakyti bendrai 50 kubitų sistemos būsenai reikia <span class="math inline">\(2^{50}\)</span>
+kompleksinių amplitudžių, kiekvienai iš jų reikia 2 realiųjų skaičių,
+kurių kiekvienas užima 32 bitus. Tad iš viso reikalaujama 8 petabaitų
+atminties. Tai yra artima darbinei atminčiai, kurią vienas iš
+pajėgiausių superkompiuterių (<em>IBM Summit</em>) šios knygos rašymo metu geba
+pasiūlyti. Dėl eksponentinio atminties reikalavimų augimo kvantinio
+kompiuterio veikimo modeliavimas pradedant nuo maždaug 50–60 kubitų
+ribos tampa labai greitai neįveikiamas net ir sudėjus visas planetos
+atminties saugyklas. Šiuo požiūriu kvantinis kompiuteris gali pasiūlyti
+didesnę atminties talpą, negu kada nors bus įmanoma pasiekti
+klasikiniais įrenginiais. Čia svarbus priminimas, kad tai yra kvantinė
+informacija, saugoma būsenų superpozicijose. Šią informaciją galima
+efektyviai apdoroti, tačiau, kitaip nei klasikinės, jos visos tiesiogiai
+nuskaityti neįmanoma. Galime sakyti, kad kvantinė informacija yra
+paslėpta arba potenciali. Minėtame pavyzdyje pamatavę 50 kubitų gausime
+50 bitų, o ne 8 petabaitų dvejetainių skaičių seką.</p>
+<p>Energija yra kitas svarbus skaičiavimų išteklius ir gali būti susietas
+su laiko bei erdvės ištekliais, reikalingais atlikti algoritmą. Su
+vadinamąja <strong>galios siena</strong> (angl. <em>power wall</em>) klasikiniai
+kompiuteriai susidūrė dar 2000 metų pradžioje, kai buvo pasiekti maždaug
+3,5 GHz procesorių dažniai. Kiekviename klasikinio procesoriaus cikle,
+kai tranzistorių loginės būsenos pasikeičia
+(<span class="math inline">\(0 \rightarrow 1\)</span>, <span class="math inline">\(1 \rightarrow 0\)</span>), yra išeikvojama energija ir
+išsklaidoma šilumos forma. Standartiniai <strong>CMOS</strong> (angl. <em>complementary
+metal-oxide-semiconductor</em>) tranzistorių technologija pagrįsti
+procesoriai itin pažengė mažinant energijos sąnaudas, daugiausia
+mažinant tranzistorių įtampą loginėms vertėms keisti. Norint toliau
+didinti klasikinių kompiuterių galią svarbu atrasti būdą, kaip tokiu
+pačiu greičiu ar sparčiau mažinti jų energijos sąnaudas. Nors šiuo metu
+klasikiniai procesoriai eikvoja energiją dėl neoptimalių technologijų,
+tačiau egzistuoja ir fundamentali riba, įvardijanti minimalią energijos
+kainą ištrinant informaciją. <strong>Landauerio principas</strong> (angl. <em>Landauer principle</em>)
+teigia, kad informacija ir energija yra
+artimai susietos:</p>
+<p><em><strong>Landauerio principas</strong>: kiekvieną kartą, kai ištrinamas vienas bitas
+informacijos, į aplinką yra išsklaidoma bent
+<span class="math inline">\(k_{\mathrm{B}}T\log (2)\)</span> energijos.</em></p>
+<p>Čia <span class="math inline">\(k_{\mathrm{B}}\)</span> yra Bolcmano konstanta, <span class="math inline">\(T\)</span> – kompiuterio aplinkos
+temperatūra. Tai suteikia užuominą, kad informacija nėra vien abstraktus
+konceptas, tačiau gali būti prilyginta kitiems fizikiniams dydžiams.
+Atliekant skaičiavimus klasikiniame procesoriuje dalis informacijos yra
+visada ištrinama dėl juose naudojamų negrįžtamųjų loginių vartų.
+Pavyzdžiui, plačiai naudojamuose loginiuose vartuose <strong><em>NAND</em></strong>
+(angl. <em>negated AND</em>) yra įvestis dviem bitams ir išvestis vienam bitui:
+<span class="math inline">\((0,0)\rightarrow 1\)</span>, <span class="math inline">\((0,1)\rightarrow 1\)</span>, <span class="math inline">\((1,0)\rightarrow 1\)</span>, <span class="math inline">\((1,1)\rightarrow 0\)</span>.
+Čia skliausteliuose nurodyta
+įvesties bitų vertė ir rodyklyte – išvesties bitas. Jeigu išvesties
+bito vertė yra 1, tada galimos trys skirtingos įvesties bitų
+kombinacijos. Todėl neįmanoma unikaliai pasakyti, kokie buvo įvesties
+bitai iš trijų kombinacijų, ir dėl šios priežasties vienas bitas
+informacijos yra negrįžtamai prarandamas.</p>
+<p>Landauerio ribą galima apeiti naudojant grįžtamuosius loginius vartus ir
+neištrinant informacijos skaičiavimo procese. Tam atliekamas įprastas
+skaičiavimas, o pabaigoje registras yra grąžinamas į pradinę loginę
+būseną termodinamiškai grįžtamuoju būdu. Klasikiniuose skaičiavimuose
+galima pasitelkti vien tik grįžtamuosius loginius vartus, tačiau
+procesorių architektūra sudėtingėja, tam reikia papildomų bitų ir
+loginių vartų. O štai kvantiniame kompiuteryje skaičiavimai yra pagrįsti
+grįžtamaisiais loginiais vartais, mat kvantinės fizikos dėsniai yra
+fundamentaliai grįžtamieji. Kitaip tariant, kvantiniame kompiuteryje
+galima atsukti laiką atgal. Tam tereikia pritaikyti atvirkštinius
+loginius vartus atvirkštine tvarka. Tiesa, informacija kvantiniame
+procesoriuje yra trinama kubitų būsenų matavimo ir dekoherencijos
+procesų metu. Tačiau išsklaidoma Landauerio energija auga tiesiškai su
+kubitu skaičiumi <span class="math inline">\(n\)</span>, o ne eksponentiškai su galimų būsenų skaičiumi
+<span class="math inline">\(2^n\)</span>. Tai bendrai yra gera žinia, kadangi kvantiniai kompiuteriai turi
+potencialą dominuoti ateityje atliekant intensyviausius skaičiavimus.</p>
+</div>
+<div id="kvantiniai-bitai" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Kvantiniai bitai<a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Klasikinėje kompiuterijoje informacija yra koduojama naudojant
+„abėcelę”, turinčią dvi skirtingas „raides”, standartiškai įvardijamas 0
+ir 1, kurios nusako elementariausią loginę sistemos būseną. Mažiausias
+klasikinės informacijos vienetas <strong>bitas</strong> (angl. <em>binary digit</em>)
+atspindi šią dvejetainę būseną. Kadangi dvejetainių skaičių seka yra
+diskrečioji, joje koduojama informacija vadinama skaitmenine. Tai galima
+palyginti su informacija, laikoma analoginiu pavidalu, pavyzdžiui,
+vinilinėse plokštelėse, kuriose garso įrašas kinta tolydžiai su
+paviršiaus įspaudimo gyliu ir deformacijomis.</p>
+<p>Bitas yra matematinis objektas, turintis dvejetainę savybę, ir nepriklauso nuo jį
+realizuojančių fizinių sistemų. Tai itin pravartu, kadangi naudojant
+vien abstrakčius matematinius objektus ir taikant su jais susietą
+operacijų logiką galima formuluoti skaičiavimo modelius ir testuoti
+informacines teorijas nesirūpinant dėl fizinio lygmens. Pagrindinis
+reikalavimas fiziniame lygmenyje yra tas, kad bitą realizuojantis
+darinys turėtų dvi būsenas, kurias būtų lengva atskirti ir keisti
+panorėjus. Fizinė sistema, realizuojanti skaitmeninę informaciją,
+neprivalo būti savaime diskreti. Tranzistoriais pagrįstuose
+procesoriuose bitų vertės yra koduojamos elektros įtampa, kuri nusako
+tolydžiai kintantį fizikinį dydį. Šis iš esmės analoginis signalas yra
+skaitmenizuojamas diskrečiosiomis elektroninių grandinių įtampomis
+<span class="math inline">\(V=0\)</span> ir <span class="math inline">\(V=V_0\)</span>, koduojančiomis bito būsenas 0 ir 1.</p>
+<p>Kvantinis bitas (kubitas) taip pat gali būti realizuojamas skirtingomis
+fizinėmis sistemomis. Kubitą apibūdiname nusakydami jo būseną, tačiau
+tai yra iš esmės kitoks matematinis objektas nei klasikinis bitas.
+Kubito būsena yra įvardijama vektoriumi 2 dimensijų kompleksinėje
+vektorių erdvėje ir bendrai užrašoma taip:
+<span class="math display" id="eq:kubito-busena">\[\begin{equation}
+|\psi \rangle = a|0\rangle + b|1\rangle\,.
+\tag{1.1}
+\end{equation}\]</span>
+Formaliai šis objektas leidžia apskaičiuoti rezultatų tikimybes
+nustatant kvantinės sistemos būseną, kuri buvo paruošta taikant žinomą
+procedūrų seką. Nei daugiau, nei mažiau. Kaip ir klasikinis bitas,
+kubitas gali būti būsenoje 0, nusakomoje
+<span class="math inline">\(|0\rangle\)</span>, būsenoje 1, nusakomoje
+<span class="math inline">\(|0\rangle\)</span>, tačiau kartu ir begalybėje kitų skirtingų
+būsenų kombinacijų tolydžiai keičiant koeficientus <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>. Terminai
+„kvantinė būsena” ir „vektorius” šiame kontekste dažnai vartojami
+pakaitomis ir reiškia tą patį, nes kvantinė būsena yra visiškai nusakoma
+vektoriumi. Vartojami skliausteliai <span class="math inline">\(|\ldots\rangle\)</span>
+indikuoja, kad šis objektas yra vektorius. Kubito būseną žymime savo
+nuožiūra pasirinktu simboliu, šiuo atveju viršuje graikiška raide <span class="math inline">\(\psi\)</span>
+(tariama <em>psi</em>).</p>
+<p>Vektorius <span class="math inline">\(|\psi\rangle\)</span> yra kitų dviejų vektorių,
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>, vadinamų
+<strong>skaičiuojamaisiais baziniais vektoriais</strong> (angl. <em>computational basis
+vectors</em>), kombinacija. Baziniai vektoriai atlieka panašią funkciją kaip
+ilguma ir platuma geografinėje sistemoje nusakyti objekto padėčiai Žemės
+paviršiuje. Santykinai su baziniais vektoriais yra įvardijama
+<span class="math inline">\(|\psi\rangle\)</span> orientacija vektorių erdvėje.
+Koeficientai <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>, formaliai vadinami amplitudėmis, yra
+kompleksiniai skaičiai (turi realiąją ir menamąją dalis). Amplitudės
+gali kisti tolydžiai, tačiau yra tarpusavyje susietos taip, kad jų
+(kompleksinių) kvadratų suma susidėtų į vienetą (sakoma, kad yra
+normuotos):
+<span class="math display" id="eq:normavimas">\[\begin{equation}
+|a|^2 + |b|^2 = 1\,.
+\tag{1.2}
+\end{equation}\]</span>
+Šis reikalavimas reiškia, kad kubitų būsenos
+<span class="math inline">\(|\psi\rangle\)</span> yra visada nusakytos vienetinio ilgio
+vektoriumi. Vieno kubito būsenas galime iliustruoti grafiškai
+pasitelkdami vadinamąją <strong>Blocho sferą</strong> (angl. <em>Bloch sphere</em>). Vieną
+kubitą perteikiame perrašę kompleksines amplitudes <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> taip, kad
+jos būtų parametrizuotos kampais <span class="math inline">\(\theta\)</span> ir <span class="math inline">\(\varphi\)</span>, nurodytais sferoje
+(žr. <a href="kvantinės-kompiuterijos-apžvalga.html#fig:blocho-sfera">1.3</a> pav.):
+<span class="math display" id="eq:blocho-kampai">\[\begin{equation}
+|\psi\rangle = \cos\left(\frac{\theta}{2}\right) |0\rangle +
+\mathrm{e}^{\mathrm{i}\varphi}\sin\left(\frac{\theta}{2}\right)|1\rangle\,.
+\tag{1.3}
+\end{equation}\]</span>
+Kubito būsena yra nusakoma Blocho vektoriumi, pavaizduotu nuo centro iki
+Blocho sferos paviršiaus. Matome, kad skirtingos kubito būsenos nusako
+skirtingą vektoriaus orientaciją, tačiau išlaiko vienetinį jo ilgį.
+Pavyzdžiui, būsenos <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> yra Blocho vektoriaus pozicijos išilgai <span class="math inline">\(z\)</span>
+ašies ir nukreiptos į viršų arba į apačią (<span class="math inline">\(\theta = 0^{\circ}\,,180^{\circ}\)</span>), atitinkamai.
+Sferos pusiaujas (<span class="math inline">\(\theta = 90^{\circ}\)</span>) nusako visas <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> būsenų superpozicijas, kurios skiriasi viena
+nuo kitos tik santykiniu <span class="math inline">\(\mathrm{e}^{\mathrm{i}\varphi}\)</span> fazės nariu, parametrizuojamu
+azimutiniu kampu <span class="math inline">\(\varphi\)</span>. Visi įmanomi vektoriai nuo centro iki bet
+kurio taško sferos paviršiuje įvardija visas galimas kubito būsenas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blocho-sfera"></span>
+<img src="media/image1_3.svg" alt="Blocho sfera" width="40%" />
+<p class="caption">
+1.3 pav. Blocho sfera
+</p>
+</div>
+<p>Siekdami sužinoti kubito būseną mes turime jį <strong>pamatuoti</strong>
+(angl. <em>state measurement</em>). Būsenų amplitudžių kvadratas nusako galimus
+matavimo rezultatus ir jų tikimybes. Matavimo procesą šiame skyriuje
+simboliškai rašysime <span class="math inline">\(M\)</span> raide, prišlieta prie kubito būsenos
+<span class="math inline">\(|\psi\rangle = a|0\rangle + b|1\rangle\)</span>.
+Atlikus kubito matavimą galima rasti <span class="math inline">\(|0\rangle\)</span> būseną
+su tikimybe <span class="math inline">\(p = |a|^2\)</span> arba <span class="math inline">\(|1\rangle\)</span>
+su tikimybe <span class="math inline">\(p = |b|^2\)</span>:
+<span class="math display" id="eq:matavimas-b" id="eq:matavimas-a">\[\begin{align}
+M|\psi\rangle \rightarrow &amp; |0\rangle\,,\qquad p = |a|^2\,,\tag{1.4}\\
+M|\psi\rangle \rightarrow &amp; |1\rangle\,,\qquad p = |b|^2\,.\tag{1.5}
+\end{align}\]</span>
+Matavimas priverčia kubitą „pasirinkti” vieną iš dviejų galimų būsenų,
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span>, o
+superpozicijos būsena yra negrįžtamai prarandama. Kartais dar sakoma,
+kad superpozicijos būsena suyra (angl. <em>state collapse</em>). Amplitudžių kvadratų vienetinė suma atspindi
+tai, kad tikimybė <span class="math inline">\(p\)</span> rasti <span class="math inline">\(|0\rangle\)</span> arba
+<span class="math inline">\(|1\rangle\)</span> būseną turi susidėti į 1.
+Čia naudojame trupmenas vietoj procentų nusakyti tikimybėms, pavyzdžiui,
+<span class="math inline">\(p = 0.75\)</span> nusako 75% tikimybę.</p>
+<p>Siekdami pabrėžti statistinį matavimų aspektą, imkime
+pavyzdį <span class="math inline">\(|\psi\rangle\)</span> būsenos, kurioje amplitudės yra
+<span class="math inline">\(a = \mathrm{i}\sqrt{0.7}\)</span> ir <span class="math inline">\(b = \sqrt{0.3}\)</span>. Paruošus daugybę kubitų
+identiškoje <span class="math inline">\(|\psi\rangle\)</span> būsenoje ir visiems atlikus
+būsenų matavimus, 0.7 visų kartų bus rasta būsena
+<span class="math inline">\(|0\rangle\)</span> bei 0.3 visų kartų
+<span class="math inline">\(|1\rangle\)</span>. Panašiai kaip metant monetą – nors ir
+žinome, kad tikimybė gauti vieną iš dviejų rezultatų turėtų būti
+<span class="math inline">\(p = 0.5\)</span>, tačiau norint šį statistinį faktą realizuoti reikia kartoti
+monetos metimą begalę kartų. Trumpoje sekoje ši statistika gali
+drastiškai skirtis nuo <span class="math inline">\(p = 0.5\)</span>, kadangi atskiri monetos metimo
+rezultatai nėra priklausomi vienas nuo kito.</p>
+<p>Net ir paruošus identišką kubito būseną ir ją pamatavus begalę kartų,
+koeficientų <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> unikaliai įvardyti taip nepavyks. Žinosime tik jų
+(kompleksinius) kvadratus <span class="math inline">\(|a|^2\)</span> ir
+<span class="math inline">\(|b|^2\)</span>, nusakančius tikimybes rasti
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> būsenas. Mat
+kubito amplitudės <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> yra kompleksiniai skaičiai, kuriuos bendrai
+užrašome <span class="math inline">\(z = |z| \mathrm{e}^{\mathrm{i}\varphi}\)</span>. Čia <span class="math inline">\(|z|\)</span> yra kompleksinio
+skaičiaus <span class="math inline">\(z\)</span> modulis, o narys <span class="math inline">\(\mathrm{e}^{\mathrm{i}\varphi}\)</span> nusako santykinę fazę.
+Santykinė fazė tarp kubitų būsenų <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> yra svarbi ir turi fiziškai stebimą efektą,
+tačiau informacija apie ją kompleksiniame kvadrate ir matavimo proceso
+metu yra prarandama.</p>
+<p>Tad galime klausti, jeigu neįmanoma atskleisti bendros kubito
+superpozicijos būsenos, kaip žinoti, kad visas šis reikalas nėra
+susigalvota matematinė iliuzija? Nors matavimas pakeičia kubito būseną
+atsitiktinai, tačiau iki matavimo būsenas kvantiniame kompiuteryje
+galime keisti deterministiškai. Būsenų transformacijose atsitiktinumų
+nėra, todėl pradėję nuo, pavyzdžiui, <span class="math inline">\(|1\rangle\)</span> būsenos,
+galime patikrinti, ar po sekos transformacijų matavimų tikimybės
+atitinka spėjimus, nusakomus <span class="math inline">\(|a|^2\)</span> ir
+<span class="math inline">\(|b|^2\)</span>. <strong>Kvantinių būsenų tomografija</strong> (angl. <em>quantum
+state tomography</em>) yra vienas metodas, leidžiantis unikaliai nusakyti
+būseną. Šis metodas reikalauja paruošti identišką kvantinę
+būseną daugybę kartų ir atlikti sumaniai parinktus skirtingo tipo būsenų
+matavimus. Kvantinių būsenų tomografija nėra įprastai taikoma
+kvantinėje kompiuterijoje, tačiau leidžia atlikti diagnostines užduotis.
+Vis dėlto, turint tik vieną kubitą nežinomoje superpozicijos būsenoje,
+atskleisti amplitudžių <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>, kitaip tariant, pasakyti, kokia yra
+būsena <span class="math inline">\(|\psi\rangle\)</span> prieš matavimą – iš esmės
+neįmanoma.</p>
+<p>Kiek žinoma, kvantiniuose matavimuose stebimas atsitiktinumas yra
+vienintelis <strong>tikras atsitiktinis procesas gamtoje</strong> (angl. <em>true
+quantum randomness</em>). Vis dar nėra suprastos to ištakos – kvantinėje
+fizikoje šis faktas tiesiog pateikiamas kaip postulatas. Vienas iš
+bandymų tai paaiškinti traktuoja viską, įskaitant matavimo įrenginį ir
+patį eksperimentuotoją, kvantiniu lygmeniu. Tada visas procesas turėtų
+būti unitarinis ir be atsitiktinumų. Kažkas panašaus į matavimo procesą
+galėtų atsirasti dėl mikroskopinio dydžio daiktų sparčios
+dekoherencijos. Nepaisant atliktų darbų šioje srityje, nėra sutarimo, ar
+taip įmanoma įrodyti matuojant stebimą atsitiktinumą. Tad nors kvantinė
+mechanika ir turi interpretacinių klaustukų, tačiau gali tiksliau nei
+bet kuri kita teorija apibūdinti stebimą pasaulį. Tuo mes ir
+vadovaujamės kvantinės kompiuterijos taikymuose nesigilindami į
+filosofinius aspektus. Šis pragmatinis principas yra Davido N. Mermino
+vadinamas <strong>„tylėk ir skaičiuok”</strong> (angl. <em>shut up and calculate</em>).
+Gebėjimas beprecedentiškai tiksliai kontroliuoti kvantines sistemas ir
+besivystantis kvantinės informatikos mokslas galbūt ateityje leis geriau
+suprasti keistąsias šios teorijos savybes.</p>
+<p>Dabar aptarsime, kaip perteikti būsenas, sudarytas iš daugiau nei vieno
+kubito. Tam pirmiausiai imkime du klasikinius bitus. Du bitai vienu metu
+gali būti vienoje iš keturių skirtingų būsenų <span class="math inline">\(\{00, 01, 10, 11\}\)</span>.
+Vadovaujantis kvantinės superpozicijos principu, bendra 2 kubitų būsena
+<span class="math inline">\(|\psi\rangle\)</span> yra visų šių klasikinių bitų būsenų
+superpozicija:
+<span class="math display" id="eq:dvieju-kubitu-superpozicija">\[\begin{equation}
+|\psi\rangle = a|00\rangle + b|01\rangle + c|10\rangle + d|11\rangle\,.
+\tag{1.6}
+\end{equation}\]</span>
+Vektorius <span class="math inline">\(|\psi\rangle\)</span> yra nusakomas įvardijant
+keturias amplitudes, prišlietas prie
+<span class="math inline">\(\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\}\)</span>
+2 kubitų skaičiuojamųjų bazinių vektorių. Pirmo kubito <span class="math inline">\(k_1\)</span> būsena yra
+įvardijama kairiuoju skaičiumi, o antro <span class="math inline">\(k_2\)</span> – dešiniuoju,
+<span class="math inline">\(|k_1 k_2 \rangle\)</span>. Formaliai
+<span class="math inline">\(|k_1 k_2 \rangle\)</span> nusako vektorių
+<span class="math inline">\(|k_1 \rangle\)</span> ir <span class="math inline">\(|k_2 \rangle\)</span>
+tenzorinę sandaugą, žymimą
+<span class="math inline">\(|k_1 k_2 \rangle \equiv |k_1\rangle\otimes |k_2 \rangle\)</span>,
+ir yra apibrėžtas 4 dimensijų kompleksinėje vektorių erdvėje. Keičiant
+amplitudes yra keičiama <span class="math inline">\(|\psi\rangle\)</span> vektoriaus
+orientacija šioje vektorių erdvėje. Amplitudės tarpusavyje vėlgi
+susietos taip, kad jų (kompleksinių) kvadratų suma susidėtų į vienetą:
+<span class="math display" id="eq:dvieju-kubitu-normavimas">\[\begin{equation}
+|a|^2 +|b|^2 + |c|^2 + |d|^2 = 1\,.
+\tag{1.7}
+\end{equation}\]</span>
+Matavimo <span class="math inline">\(M|\psi\rangle\)</span> pabaigoje gauname du bitus
+informacijos, susietus su viena iš keturių galimų būsenų. Tikimybė rasti
+bet kurią iš jų vėlgi nusakoma tos būsenos amplitudės kvadratu:
+<span class="math display" id="eq:dvieju-matavimas-d" id="eq:dvieju-matavimas-c" id="eq:dvieju-matavimas-b" id="eq:dvieju-matavimas-a">\[\begin{align}
+M|\psi\rangle \rightarrow &amp;|00 \rangle\,,\qquad p = |a|^2\,, \tag{1.8}\\
+M|\psi\rangle \rightarrow &amp;|01 \rangle\,,\qquad p = |b|^2\,, \tag{1.9}\\
+M|\psi\rangle \rightarrow &amp;|10 \rangle\,,\qquad p = |c|^2\,, \tag{1.10}\\
+M|\psi\rangle \rightarrow &amp;|11 \rangle\,,\qquad p = |d|^2\,. \tag{1.11}
+\end{align}\]</span>
+Galiausiai kvantinio registro, sudaryto iš <span class="math inline">\(n\)</span> kubitų, būsena yra
+įvardijama visų <span class="math inline">\(2^n\)</span> bazinių vektorių kombinacija ir nusakoma <span class="math inline">\(2^n\)</span>
+dimensijų vektorių erdvėje. Ši superpozicijos būsena glaustai užrašoma
+pasitelkiant sumos simbolį:
+<span class="math display" id="eq:n-kubitu-superpozicija-1">\[\begin{equation}
+|\psi\rangle = \sum_{x = 0}^{2^n - 1}c_x |x\rangle\,.
+\tag{1.12}
+\end{equation}\]</span>
+Čia <span class="math inline">\(c_x\)</span> yra <span class="math inline">\(|x\rangle\)</span> bazinio vektoriaus amplitudė,
+o amplitudžių kvadratų suma tenkina <span class="math inline">\(\sum_x |c_x|^2 = 1\)</span>.
+Kiekvienas bazinis vektorius <span class="math inline">\(|x\rangle\)</span> yra formaliai
+pavienių <span class="math inline">\(n\)</span> kubitų tenzorinė sandauga
+<span class="math inline">\(|x\rangle \equiv |k_1 \rangle\otimes |k_2 \rangle\otimes\ldots\otimes |k_n \rangle\)</span>, <span class="math inline">\(k_i \in \{ 0,1\}\)</span>.
+Atlikę visų <span class="math inline">\(n\)</span> kubitų būsenų matavimus rasime <span class="math inline">\(n\)</span> bitų seką, nusakomą
+vienu iš galimų superpozicijoje esančių būsenų
+<span class="math inline">\(|x\rangle\)</span> su tikimybe <span class="math inline">\(|c_x|^2\)</span>.</p>
+</div>
+<div id="kvantinės-informacijos-apdorojimas" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Kvantinės informacijos apdorojimas<a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kompiuterių mokslas teigia, kad pasitelkiant vos keletą skirtingų
+elementarių loginių elementų ir sujungiant juos kartu galima realizuoti
+visus įmanomus skaičiavimus. Klasikiniame procesoriuje dvejetainė
+informacija yra apdorojama pasitelkiant loginius vartus. Skirtingi
+loginiai vartai turi tam tikrą skaičių įvesties ir išvesties jungčių, į
+kurias galime įsivaizduoti ateinant laidus. Laidais tarp loginių vartų
+keliaujantis elektros signalas dviejų skirtingų verčių įtampos pavidalu
+nusako keliaujančius bitus. Loginiai vartai su atkeliavusiais bitais
+gali atlikti skirtingas elementariąsias bitų transformacijas.
+Pavyzdžiui, loginiai vartai, kurie turi po vieną įvesties ir išvesties
+bitą, gali būti tik dviejų rūšių. Pirma iš jų palieka išvesties bito
+vertę tokią pačią, kaip ir įvesties <span class="math inline">\(0\rightarrow 0\)</span>, <span class="math inline">\(1\rightarrow 1\)</span> ir nusako trivialų
+identitetą, dar vadinama <strong>tapatybės transformacija</strong> (angl. <em>identity</em>). Antrojo tipo vartai išvestyje apverčia įvesties bito vertę
+<span class="math inline">\(0\rightarrow 1\)</span>, <span class="math inline">\(1\rightarrow0\)</span> ir yra žinomi kaip <em>NOT</em>. Kiti elementarūs loginiai vartai <em>AND,
+OR, NAND</em> turi įvestį dviem bitams ir vieną išvesties bitą. Norint
+atlikti visus įmanomus klasikinius skaičiavimus, tai yra pasiekti
+skaičiavimų universalumą, pakanka vien <em>AND</em> ir <em>NOT</em>, arba vien tik
+<em>NAND</em> loginių vartų, iš kurių kombinacijų konstruojamos loginės
+grandinės. Dvejetainis elektros signalas, praėjęs tokią programuojamą
+loginę grandinę, yra pakeičiamas kita seka taip atliekant dvejetainių
+skaičių aritmetiką ir logines operacijas. Likusią kompiuterio įrangą
+galima vadinti išoriniais elementais, kurie padeda pateikti informaciją
+į procesoriaus loginių operacijų elementą ir iš jo paimti bei perteikti
+apdorotą informaciją.</p>
+<p>Norint suprasti pagrindinius kvantinės informacijos apdorojimo principus
+galima taip pat apsiriboti kvantinio procesoriaus veikimo funkcijomis.
+Kaip ir klasikinis procesorius, kvantinis procesorius vykdo pateiktas
+logines grandines, sudarytas iš loginių vartų sekų. Vieno kubito atveju
+kvantinių loginių vartų efektą galima iliustruoti kaip Blocho vektoriaus
+krypties keitimą Blocho sferoje. Kitaip nei klasikiniame procesoriuje,
+kuriame vieno bito galimos transformacijos yra tik tapatybės transformacija ir <em>NOT</em> loginiai vartai, skirtingų
+1 kubito transformacijų iš principo yra begalybė. Tai yra dėl to, kad
+amplitudės, nusakančios kubito būseną, gali kisti tolydžiai, tad Blocho
+vektoriaus pasukimas apie tam tikrą Blocho sferos ašį skirtingais
+kampais formaliai nusako skirtingus loginius vartus. Kaip ir
+klasikiniame, kvantiniame procesoriuje galima rasti universalų rinkinį
+loginių vartų, kurių kombinacijos leidžia atlikti visas įmanomas
+kvantinio registro būsenų transformacijas ir todėl galiausiai – visus
+suformuluojamus algoritmus.</p>
+<p>Kubitų loginiai vartai yra apibūdinami matematiniais objektais, kurie
+vadinami tiesiniais operatoriais. Šie operatoriai turi svarbią savybę –
+veikdami bendrą kvantinę būseną, nusakytą vektoriumi
+<span class="math inline">\(|\psi\rangle\)</span>, jie keičia tik šio vektoriaus orientaciją
+vektorių erdvėje, tačiau nekeičia vektoriaus ilgio. Ši savybė vadinama
+<strong>unitarumu</strong> (angl. <em>unitarity</em>) ir užtikrina, kad loginiai vartai
+nepažeidžia tikimybinio būsenų matavimo principo – visų galimų matavimo
+rezultatų tikimybės <span class="math inline">\(p\)</span> susidės į 1. Norint sužinoti kvantinių loginių
+vartų efektą bendrai superpozicijos būsenai pakanka žinoti, kaip
+atitinkamas operatorius <span class="math inline">\(U\)</span> veikia kiekvieną skaičiuojamąjį vektorių
+atskirai:
+<span class="math display" id="eq:efektas-superpozicijos-busenai">\[\begin{equation}
+U|\psi\rangle = U(a|0\rangle + b|1\rangle) = a( U|0\rangle) + b(U|1\rangle)\,.
+\tag{1.13}
+\end{equation}\]</span>
+Skaičius (amplitudes) <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> iškėlėme už skliaustelių norėdami
+aiškiau parodyti, kad operatoriai veikia vektorius ir kiekvieną jų
+superpozicijoje vienu metu. Pavyzdžiui, kvantiniai loginiai vartai
+<em>NOT</em>, žymimi simboliu <span class="math inline">\(X\)</span> ir veikiantys superpozicijos būseną
+<span class="math inline">\(|\psi\rangle\)</span>, turi šį efektą:
+<span class="math display" id="eq:not-vartai">\[\begin{equation}
+X|\psi\rangle = a(X|0\rangle) + b(X|1\rangle) =a|1\rangle + b|0\rangle\,.
+\tag{1.14}
+\end{equation}\]</span>
+Jų efektas baziniams vektoriams yra
+<span class="math inline">\(X|0\rangle = |1\rangle\)</span> ir
+<span class="math inline">\(X|1\rangle = |0\rangle\)</span>. Matome
+elementariausią kvantinio paralelizmo pavyzdį, kai pritaikius vieną
+loginę operaciją ji yra įvertinama visuose superpozicijos nariuose vienu
+metu. Klasikiniame kompiuteryje, norint apskaičiuoti funkcijos <span class="math inline">\(f(x)\)</span>
+vertes su reikšmėmis <span class="math inline">\(x\)</span>, reikia <span class="math inline">\(f(x)\)</span> įvertinti su kiekviena <span class="math inline">\(x\)</span>
+reikšme atskirai. Tad jeigu funkcijos reikšmes <span class="math inline">\(x\)</span> koduojame skirtingais
+kubitų skaičiuojamaisiais vektoriais, superpozicijos principas ir
+tiesinis operatorių veikimas leidžia įvertinti vienu funkcijos <span class="math inline">\(f\)</span>
+iškvietimu visas reikšmes tuo pačiu metu.</p>
+<p>Kvantinės būsenos ir jas transformuojantys operatoriai yra realizuojami
+tiesinėje algebroje stulpeliniais vektoriais ir matricomis, atitinkamai.
+Vieno kubito būsena gali būti išreikšta bet kuriuo iš šių būdų:
+<span class="math display" id="eq:busena-matrica">\[\begin{equation}
+|\psi\rangle = a|0\rangle + b|1\rangle = a\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix} + b\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix} = \begin{bmatrix}
+a \\
+b \\
+\end{bmatrix}\,.
+\tag{1.15}
+\end{equation}\]</span>
+Visi operatoriai, keičiantys 1 kubito būseną, yra realizuojami (<span class="math inline">\(2\times 2\)</span>)
+dydžio matricomis. Pavyzdžiui, kvantinių <em>NOT</em> bei vadinamųjų
+<strong>Hadamardo loginių vartų</strong> (angl. <em>Hadamard</em>, trumpinys <span class="math inline">\(H\)</span>) veiksmai
+kubito būsenai <span class="math inline">\(|1\rangle\)</span> atrodo taip:
+<span class="math display" id="eq:hadamard-matrica" id="eq:not-matrica">\[\begin{align}
+X|1\rangle = &amp;\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix} = \begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix} = |0\rangle\,, \tag{1.16}\\
+H|1\rangle = &amp;\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1 \\
+\end{bmatrix}\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+-1 \\
+\end{bmatrix} = \frac{|0\rangle - |1\rangle}{\sqrt{2}}\,.\tag{1.17}
+\end{align}\]</span>
+Iš pateiktų pavyzdžių matyti, kad <span class="math inline">\(H\)</span> ir <span class="math inline">\(X\)</span> vartai yra sau
+atvirkštiniai. Atlikus du veiksmus vieną po kito, pavyzdžiui, <span class="math inline">\(HH\)</span>,
+kubito būsena nepakinta. Iš tiesų visi loginiai vartai kvantinėje
+kompiuterijoje turi sau atvirkštinius loginius vartus arba yra patys sau
+atvirkštiniai. Pasukus būseną nusakantį vektorių tam tikra kryptimi,
+atvirkštiniai loginiai vartai atsuka šį vektorių atgal atbuline kryptimi
+išlaikydami jo ilgį.</p>
+<p>Tiesinėje algebroje <span class="math inline">\(n\)</span> kubitų būseną nusakantis vektorius yra stulpelis
+su <span class="math inline">\(2^n\)</span> elementų, o loginiai vartai yra <span class="math inline">\((2^n \times 2^n)\)</span> dydžio
+unitarinės matricos. Jos nusako <span class="math inline">\(n\)</span> kubitų būsenos transformaciją –
+vektoriaus posūkį <span class="math inline">\(2^n\)</span> dimensijų vektorių erdvėje. Tačiau norint
+atlikti visas įmanomas <span class="math inline">\(n\)</span> kubitų būsenų transformacijas nepakanka, kad
+kiekvienam kubitui atskirai veiktų 1 kubito loginiai vartai. Tai
+pirmiausiai matome todėl, kad didžioji dalis <span class="math inline">\(2^n\)</span> skirtingų
+superpozicijos būsenų yra supintos. Supynimas yra nelokalus efektas, jo
+neįmanoma nei įvesti, nei panaikinti atliekant kvantines transformacijas
+su pavieniais kubitais. Nelokalios transformacijos yra reikalingos
+sukurti supintosioms būsenoms ir taip atlikti bendresnes <em>n </em>kubitų
+būsenų transformacijas. Kaip tik galėjimas panaudoti visą eksponentiškai
+didelę būsenų erdvę suteikia kvantiniams kompiuteriams pranašumą prieš
+klasikinius įrenginius.</p>
+<p>Sąlyginiai 2 kubitų loginiai vartai <span class="math inline">\(CNOT\)</span> (angl. <em>controlled
+NOT</em>, trumpinys <span class="math inline">\(cX\)</span>) kartu su bendro tipo 1 kubito vartais leidžia
+realizuoti vieną galimą universalų rinkinį. Vartai <span class="math inline">\(cX\)</span> apverčia
+antrojo kubito būseną, jeigu pirmojo kubito būsena yra
+<span class="math inline">\(|1\rangle\)</span>, ir palieka ją nepakeistą, jeigu pirmasis yra
+<span class="math inline">\(|0\rangle\)</span>. Fiziškai tai apibūdina sąveikas tarp dviejų
+kubitų. Vienas pavyzdys <span class="math inline">\(cX\)</span>, veikiančių 2-kubitų būseną
+<span class="math inline">\(|11\rangle\)</span> tiesinėje algebroje:
+<span class="math display" id="eq:cX-matrica">\[\begin{equation}
+cX|11\rangle = \begin{bmatrix}
+\begin{matrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{matrix} &amp; \begin{matrix}
+0 &amp; 0 \\
+0 &amp; 0 \\
+\end{matrix} \\
+\begin{matrix}
+0 &amp; 0 \\
+0 &amp; 0 \\
+\end{matrix} &amp; \begin{matrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{matrix} \\
+\end{bmatrix}\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+1 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0 \\
+\end{bmatrix} = |10\rangle\,.
+\tag{1.18}
+\end{equation}\]</span>
+Tačiau kvantinėje kompiuterijoje galime pritaikyti <span class="math inline">\(cX\)</span>, kai
+pirmas kubitas yra <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> būsenų superpozicijoje. Tai nusako
+klasikinėje kompiuterijoje analogo neturinčią deterministinę
+operaciją – kvantinį supynimą:
+<span class="math display" id="eq:supynimas">\[\begin{equation}
+cX(a|0\rangle + b|1\rangle)\otimes |0\rangle = a|00\rangle + b|11\rangle\,.
+\tag{1.19}
+\end{equation}\]</span>
+Kubitų būsenų transformacijas galima itin paprastai ir intuityviai
+iliustruoti. Kiekvienam kubitui yra priskiriama atskira grandis –
+horizontali linija, o loginių vartų sekos yra išrikiuojamos iš kairės į
+dešinę ir pavaizduoja laike atliekamas būsenų tranformacijas.
+Skaičiavimo pradžioje kubitai yra standartiškai inicijuojami
+(angl. <em>reset</em>) į pradines <span class="math inline">\(|0\rangle\)</span> būsenas. Tokios
+diagramos yra vadinamos <strong>kvantinėmis grandinėmis</strong> (angl. <em>quantum
+circuits</em>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantine-grandine"></span>
+<img src="media/image1_4.svg" alt="Kvantinės grandinės pavyzdys" width="93%" />
+<p class="caption">
+1.4 pav. Kvantinės grandinės pavyzdys
+</p>
+</div>
+<p><a href="kvantinės-kompiuterijos-apžvalga.html#fig:kvantine-grandine">1.4</a> pav. kvantinėje grandinėje matome 1 kubito vadinamuosius Pauli-<span class="math inline">\(X\)</span>
+vartus (žali); loginiai vartai, veikiantys du ar daugiau kubitų, turi
+vertikalią kubitų grandines jungiančią liniją. Tarp jų yra 2 kubitų
+fazės vartai (oranžiniai) ir 3 kubitų vadinamieji Tofoli loginiai vartai
+(mėlyni). Parodyta kvantinė grandinė pritaiko jau paruoštai trijų kubitų
+(<span class="math inline">\(k_1\)</span>, <span class="math inline">\(k_2\)</span>, <span class="math inline">\(k_3\)</span>) būsenai <span class="math inline">\(|\psi\rangle\)</span> santykinę
+fazę. Kubitai <span class="math inline">\(a_1\)</span> ir <span class="math inline">\(a_2\)</span> pradinėse <span class="math inline">\(|0\rangle\)</span>
+būsenose čia atlieka juodraščio funkciją, į kurį užrašomi tarpiniai
+skaičiavimo rezultatai. Nuo jų būsenų priklauso, kuriam iš
+skaičiuojamųjų vektorių, sudarančių <span class="math inline">\(|\psi\rangle\)</span>, bus
+pritaikytos fazės <span class="math inline">\(\theta_1\)</span> ir <span class="math inline">\(\theta_2\)</span>.</p>
+<p>Kvantiniai loginiai vartai, veikiantys atskirus kubitus, gali būti
+atliekami vienu metu (paraleliai), jeigu kvantinio procesoriaus
+architektūra tai leidžia. Kvantinės <strong>grandinės gylis</strong> <span class="math inline">\(d\)</span>
+(angl. <em>circuit depth</em>) nusako ilgiausią loginių vartų seką grandinėje
+nuo pradžios iki algoritmo pabaigos, kuri nebegali būti padaroma
+trumpesnė didesniu paralelizavimu. Parodytos grandinės gylis yra
+<span class="math inline">\(d = 13\)</span>.</p>
+</div>
+<div id="skaičiavimo-procesas" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Skaičiavimo procesas<a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Apibendrinus, norint atlikti skaičiavimą kvantiniame procesoriuje
+reikalingi trys pagrindiniai elementai:</p>
+<ol style="list-style-type: decimal">
+<li><p><em>kvantinių bitų registras. Registras – tai kubitų rinkinys, kuriame
+koduojama ir apdorojama informacija. Registrą galima inicializuoti į
+mums žinomą pradinę būseną, standartiškai <span class="math inline">\(|0\rangle\)</span>
+visiems kubitams;</em></p></li>
+<li><p><em>universalių kvantinių loginių vartų rinkinys. Loginiai vartai atlieka
+registro būsenų keitimo operacijas, leidžiančias koduoti ir apdoroti
+informaciją;</em></p></li>
+<li><p><em>kubitų būsenų matavimai. Norint nuskaityti registre apdorotą
+informaciją, kubitų būsenos turi būti išmatuojamos.</em></p></li>
+</ol>
+<p>Šie trys elementai yra traktuojami, kaip esantys loginiame lygmenyje.
+Kubitų skaičius bei skaičiavimo klaidų efektyvus nebuvimas loginiame
+lygmenyje nebūtinai atspindi fizinio procesoriaus kubitų skaičių bei
+veikimo netikslumus. Fiziniame lygmenyje skaičiavimo klaidos gali
+atsirasti dėl kubitų būsenų dekoherencijos, netikslių loginių vartų
+atlikimo bei matavimo procedūrų klaidų. Loginis lygmuo atspindi fizinio
+lygmens procesoriaus funkcionavimą su jau atliktais <strong>klaidų taisymo
+kodais</strong> (angl. <em>error correction codes</em>). Klaidoms atspari skaičiavimo
+teorija teigia, kad jeigu klaidų atsiradimo dažnis yra mažesnis nei tam
+tikra riba, tada įmanoma transformuoti kvantines grandines į klaidoms
+atsparias, kuriose klaidos efektyviai aptinkamos ir ištaisomos. Tai
+leistų atlikti neribotos trukmės kvantinius skaičiavimus.</p>
+<p>Kvantinių klaidų taisyme, panašiai kaip ir klasikinėje skaitmeninėje
+kompiuterijoje bei ryšiuose, pasitelkiama <strong>perteklinė informacija</strong>
+(angl. <em>redundant information</em>). Vietoj vieno fizinio kubito,
+informacija yra koduojama kelete fizinių kubitų, kurie formuoja
+vadinamąjį loginį kubitą (angl. <em>logical qubit</em>). Loginiai vartai yra
+pakeičiami loginių vartų seka, kurią pritaikius fiziniams kubitams
+efektyviai atliekama norima loginė operacija su loginiais kubitais.
+Esminiai skirtumai nuo klasikinių klaidų taisymo atsiranda dėl to, kad
+kvantinės taisyklės neleidžia kopijuoti būsenų, o tiesioginis būsenų
+matavimas sugriauna superpoziciją ir joje saugomą informaciją. Kvantinių
+klaidų aptikimas ir taisymas yra įmanomas pasitelkiant vėlgi supintąsias
+kvantines būsenas.</p>
+<p>Dėl tolygiai galinčių kisti būsenų kvantinis kompiuteris iš pirmo
+žvilgsnio atrodytų analoginis įrenginys. Analoginiai klasikiniai
+kompiuteriai neprigijo praktikoje, nes jų klaidas taisyti itin keblu.
+Tačiau kvantinėje kompiuterijoje klaidos gali būti efektyviai
+skaitmenizuojamos, pakanka sugebėti taisyti tik tris skirtingo tipo
+klaidas norint ištaisyti bendriausio tipo (tolydžiai kintančias)
+klaidas. Tad klaidų taisymo skaitmeninimas bei išmatuotų būsenų
+skaitmeninis pavidalas rodo, kad kvantinis kompiuteris yra veikiau
+dualus analoginis–skaitmeninis įrenginys, ir galbūt tiksliausiai –
+tiesiog kvantinis.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantinio-skaiciavimo-procesas"></span>
+<img src="media/image1_5.svg" alt="Kvantinio skaičiavimo procesas" width="69%" />
+<p class="caption">
+1.5 pav. Kvantinio skaičiavimo procesas
+</p>
+</div>
+<p>Siekdami lengviau įsivaizduoti kvantinio skaičiavimo procesą, pateikiame
+jį visą sluoksniais (angl. <em>full quantum stack</em>) iliustracijoje
+<a href="kvantinės-kompiuterijos-apžvalga.html#fig:kvantinio-skaiciavimo-procesas">1.5</a> pav. Aukščiausiame loginiame lygmenyje kvantinio kompiuterio
+programavimą galima atlikti įvairiomis programavimo kalbomis,
+pavyzdžiui, <em>Python, C++</em>, ar specializuotose kvantinio programavimo
+aplinkose. Šiame lygmenyje yra pasitelkiami jau suformuluoti kvantiniai
+algoritmai ar įvairūs jų moduliai, kurie taip pat gali pasitelkti
+tarpinius klasikinius skaičiavimus.</p>
+<p>Programos yra toliau nukreipiamos į žemesnį kvantinių loginių grandinių
+lygį, kuriame algoritmai yra išreiškiami loginiais vartais. Kvantinio
+loginio lygmens programavimas yra nauja paradigma. Nors 10–20 kubitų
+dydžio procesoriui pateikiamo algoritmo loginių vartų sekas galima iš
+principo sudėlioti ir optimizuoti „rankomis”, tačiau to tampa
+nebeįmanoma padaryti procesoriui, turinčiam 1000 kubitų. Todėl
+neišvengiamai teks automatizuoti kvantinių grandinių kompiliavimą ir optimizavimą. Artimuoju kvantinių
+kompiuterių raidos laikotarpiu tai gali lemti, ar tam tikrus algoritmus
+apskritai įmanoma atlikti. Pavyzdžiui, Šoro algoritmą galima realizuoti
+renkantis panaudoti daugiau kubitų ir mažiau loginių operacijų, arba
+atvirkščiai. Ribotas kubitų skaičius, tarpusavio kubitų jungčių
+topologija, ribotas loginių vartų tikslumas bei jų atlikimo trukmė yra
+vieni iš pagrindinių faktorių, į kuriuos turėtų būti atsižvelgiama
+kvantinių grandinių kompiliavime. Kvantinis loginis lygmuo į tai
+neatsižvelgia ir todėl turi būti kompiliuojamas pasitelkiant kvantinių
+klaidų taisymo kodus. Šie kodai priklausys nuo kvantinio procesoriaus
+architektūros ir galbūt specifinės skaičiavimo užduoties.</p>
+<p>Loginės operacijos yra toliau išreiškiamos
+mašinine kalba, kuri įvardija, kokie fiziniai veiksmai (lazerių
+impulsai, grandinės įtampos keitimai ir t.t.) yra atliekami
+kontroliuoti kvantiniam procesoriui. Kvantiniame fiziniame lygmenyje yra fizinių kubitų sistema. Ji izoliuota
+nuo išorinių sąveikų ir veikiama tik per klasikinę–kvantinę ribą
+atlikti unitarinėms kvantinių būsenų transformacijoms bei matavimams.
+Pasitelkiama klasikinė kompiuterija atlikti kvantinio procesoriaus
+veikimo diagnostikai, papildomiems sistemą stabilizuojantiems ir klaidas
+mažinantiems protokolams.</p>
+</div>
+<div id="kvantinių-kompiuterių-charakteristikų-palyginimas" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Kvantinių kompiuterių charakteristikų palyginimas<a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Atsižvelgdami į kuriamų kvantinių kompiuterių neidealias veikimo
+charakteristikas norime geriau suprasti, kaip galima įvertinti jų
+gebėjimą įvykdyti pateiktą algoritmą, ir tarpusavyje palyginti
+skirtingus įrenginius. Vienas iš pagrindinių rodiklių palyginti
+skirtingų superkompiuterių skaičiuojamajai galiai yra <strong>flopai</strong>
+(angl. <em>floating-point operations per second</em>, trumpinys FLOPS). Flopais
+matuojama skaičiuojamoji galia nusako, kiek aritmetinių operacijų
+skaičių per sekundę sugeba atlikti superkompiuteriai. Pagrindiniai
+fiziniai rodikliai, turintys įtakos flopams, yra naudojamų procesorių
+dažniai ir procesorių lustų skaičius. Antrasis rodiklis nusako gebėjimą
+paralelizuoti skaičiavimus, tai leidžia atlikti daugiau loginių
+operacijų per tą patį procesoriaus laiko ciklą.</p>
+<p>Dominančiam kvantiniam algoritmui atlikti egzistuoja minimalūs kubitų
+bei loginių vartų skaičiaus reikalavimai. Jeigu klaidos neribotų
+kvantinių kompiuterių veikimo, jų skaičiavimo galia taip pat galiausiai
+atsiremtų į loginių operacijų skaičių per laiko vienetą. Imant konkretų
+pavyzdį, galima įvertinti Šoro algoritmui reikalingus laiko išteklius
+siekiant įveikti <span class="math inline">\(n = 1024\)</span> bitų RSA kriptografija užšifruotą turinį.
+Teoriniai skaičiavimai rodo, kad tam reikia maždaug <span class="math inline">\(2n\)</span> loginių kubitų,
+o sudėtingumas yra nulemtas <span class="math inline">\(O(n^3 \log n)\)</span> skaičiumi Tofoli loginių
+vartų. Tad reikėtų maždaug 2050 kubitų ir bent maždaug <span class="math inline">\(10^{10}\)</span> loginių
+vartų. Loginių vartų atlikimo trukmė skiriasi tarp fizinių kvantinio
+procesoriaus realizacijų, tačiau bendrai yra žymiai ilgesnė (veikia
+apytikriai MHz dažniu) nei klasikinių procesorių (veikiančių GHz
+dažniu). Pavyzdžiui, transmonais pagrįstuose IBM procesoriuose šios
+knygos rašymo metu 2 kubitų <em>cX</em> loginiai vartai, ribojantys bendrą
+loginių operacijų atlikimo trukmę, užtrunka maždaug 200 nanosekundžių. O
+štai jonų gardelėmis pagrįstuose procesoriuose <em>IonQ</em> 2 kubitų loginiai
+vartai atliekami žymiai lėčiau, apytikriai 200 mikrosekundžių per
+operaciją. Darant prielaidas, kad tiek užtrunka atlikti ir 3 kubitų
+Tofoli loginius vartus bei kad kvantinės grandinės gylis abiejose
+architektūrose yra toks pat kaip ir loginių vartų skaičius,
+apytikriai <span class="math inline">\(10^{10}\)</span> loginių vartų užtruktų apytikriai 1 ir apytikriai
+<span class="math inline">\(5\times 10^2\)</span> valandų, atitinkamai.</p>
+<p>Aktreipiame dėmesį, kad čia naudojome loginių kubitų skaičių. Vienam
+loginiam kubitui realizuoti gali prireikti <span class="math inline">\(10^1\)</span>–<span class="math inline">\(10^6\)</span> fizinių kubitų,
+loginių vartų skaičius didės taip pat. Vis dėlto tai yra veikiau
+pesimistinis įvertinimas – kvantinės technologijos itin sparčiai
+tobulėja ir tikėtina, kad atsiras sumanesni būdai, kaip sumažinti
+kvantinių skaičiavimų išteklius.</p>
+</div>
+<div id="dekoherencija-poskyris" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Dekoherencijos trukmė ir loginių vartų tikslumas<a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Artimuoju kvantinių kompiuterių raidos laikotarpiu yra svarbiau
+atsižvelgti į skaičiavimų trukmę ir tikslumą ribojančius faktorius.
+Elementariausi fiziniai rodikliai, nusakantys kvantinio procesoriaus
+gebėjimą atlikti skaičiavimus, yra kubitų dekoherencijos trukmė ir
+loginių vartų tikslumas. Dekoherencija yra procesas, kurio metu
+nekontroliuojamos kubitų sąveikos su kitomis kompiuterio vidinėmis ar
+išorinėmis kvantinėmis sistemomis nebeleidžia demonstruoti
+interferencinių savybių. Mūsų požiūriu, nežinant apie įvykusias sąveikas
+atrodys, kad laikui bėgant kubitų būsenos tampa atsitiktinės, praranda
+gebėjimą išlaikyti superpozicijas ir demonstruoti supynimą su kitais
+procesoriaus kubitais. Sakoma, kad kubitų būsenos sunyksta.</p>
+<p>Standartiškai yra išskiriamos dvi dekoherencijos trukmės <span class="math inline">\(T_1\)</span> ir
+<span class="math inline">\(T_2\)</span>. Tikimybė, kad kubitas, paruoštas į būseną
+<span class="math inline">\(|1\rangle\)</span> atskaitos laike <span class="math inline">\(t = 0\)</span>, joje išliks praėjus
+laiko intervalui <span class="math inline">\(t\)</span>, paprastai seka eksponentinę gesimo funkciją
+<span class="math inline">\(\mathrm{e}^{-\frac{t}{T_1}}\)</span>. Dekoherencijos laiko konstanta <span class="math inline">\(T_1\)</span> nusako
+vadinamąjį <strong>amplitudės slopinimo</strong> (angl. <em>amplitude-damping</em>), arba
+<strong>energijos relaksacijos</strong> (angl. <em>energy relaxation</em>) laiką. Istoriškai
+kubitų sistemose, pagrįstose superlaidžiomis grandinėmis ir jonų
+gaudyklėmis, kubitų būsenos <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> nusakomos žemiausio ir gretimo aukštesnio
+energijos lygmens kvantinės sistemos būsenomis. Energijos relaksacija
+šiame kontekste,
+<span class="math inline">\(|1\rangle \rightarrow |0\rangle\)</span>, yra
+procesas, kuriame aukštesnio energijos lygmens būsena savaime ar
+stimuliuojama iš išorės sugrįžta į žemesnį lygį. Pavyzdžiui, praėjus
+laikui <span class="math inline">\(t = T_1\)</span> tikimybė pamatavus kubitą vis dar jį rasti
+<span class="math inline">\(|1\rangle\)</span> būsenoje yra <span class="math inline">\(p = 0.37\)</span>.</p>
+<p>Dekoherencijos trukmės konstanta <span class="math inline">\(T_2\)</span>
+nusako <strong>fazės slopinimo</strong> (angl. <em>phase-damping</em>) trukmę, dar vadinamą
+<strong>depoliarizacijos</strong> trukme (angl. <em>depolarization</em>). Šis rodiklis
+įvardija kubitų, esančių būsenų superpozicijoje, gebėjimą išlaikyti
+santykinę fazę. Kaip ir laiko konstantą <span class="math inline">\(T_1\)</span>, <span class="math inline">\(T_2\)</span> galima
+nustatyti atlikus seriją matavimų naudojant skirtingus laiko intervalus,
+po kurių išmatuojamos būsenos. Fazės slopinimo konstantai rasti kubitas
+yra paruošiamas į superpozicijos būseną
+<span class="math inline">\(|0_x \rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}}\)</span>
+atskaitos laike <span class="math inline">\(t = 0\)</span>. Praėjus laiko intervalui <span class="math inline">\(t\)</span> yra pritaikoma
+Hadamardo transformacija ir išmatuojama būsena. Jeigu įvyko fazės
+klaida, kubito būsena pasikeičia taip:
+<span class="math inline">\(|0_x \rangle \rightarrow |1_x\rangle\)</span>,
+tad atlikus <span class="math inline">\(H\)</span> vartus bus rasta būsena <span class="math inline">\(|1\rangle\)</span>, o ne
+<span class="math inline">\(|0\rangle\)</span>. Tikimybė rasti <span class="math inline">\(|0\rangle\)</span>
+būseną seka eksponentinę gesimo funkciją
+<span class="math inline">\(\frac{\mathrm{e}^{-\frac{t}{T_2}} + 1}{2}\)</span>. Po pakankamai ilgo
+laiko <span class="math inline">\(t \gg T_2\)</span> tikimybės rasti <span class="math inline">\(|0\rangle\)</span> arba
+<span class="math inline">\(|1\rangle\)</span> būseną susivienodina. Abiejų minėtų procesų
+gesimo funkcijos yra parodytos <a href="kvantinės-kompiuterijos-apžvalga.html#fig:fazes-amplitudes-slopinimas">1.6</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fazes-amplitudes-slopinimas"></span>
+<img src="media/image1_6.svg" alt="Fazės ir amplitudės slopinimas. Parodytos kreivės nusako, kokia tikimybė rasti kubitą pradinėje nurodytoje būsenoje bėgant laikui. Iliustracijai panaudota $T_1 = T_2 = 300$ mikrosekundžių dekoherencijos trukmė" width="60%" />
+<p class="caption">
+1.6 pav. Fazės ir amplitudės slopinimas. Parodytos kreivės nusako, kokia tikimybė rasti kubitą pradinėje nurodytoje būsenoje bėgant laikui. Iliustracijai panaudota <span class="math inline">\(T_1 = T_2 = 300\)</span> mikrosekundžių dekoherencijos trukmė
+</p>
+</div>
+<p>Individualių kvantinių loginių <strong>vartų tikslumą</strong> (angl. <em>gate
+fidelity</em>) galima įvertinti palyginus, kiek būsenos, kurioms buvo
+atliekami šie loginiai vartai, yra artimos būsenoms, kurioms buvo
+atlikti idealiai veikiantys loginiai vartai. Idealiai veikiančių loginių
+vartų efektas kvantinei būsenai gali būti apskaičiuotas popieriaus lape
+arba klasikiniu kompiuteriniu modeliavimu. Gerai funkcionuojančių vartų
+tikslumas neturėtų priklausyti nuo pateiktos kvantinės būsenos, tad
+dažnai atliekant šį testą yra suvidurkinamas loginių vartų efektas
+daugeliui skirtingų pradinių būsenų. Loginių vartų netikslumų įvedamos
+klaidos sumuojasi su atliekamų vartų skaičiumi, tad kuo ilgesnis
+algoritmas, tuo tikslesni turėtų būti loginiai vartai. Norint sėkmingai
+vykdyti klaidų taisymo algoritmus ir pasiekti klaidoms atsparią
+skaičiavimų ribą, reikalingas tam tikras minimalus loginių vartų
+tikslumas. Įprastai kvantiniame procesoriuje tikslumą riboja 2 kubitų
+loginiai vartai, kuriuos yra fiziškai sudėtingiau realizuoti negu
+1 kubito loginius vartus.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="matematikos-skyrius.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["kvantinekompiuterija.pdf", "kvantinekompiuterija.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

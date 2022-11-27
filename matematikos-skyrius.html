@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 skyrius. Matematinių įrankių rinkinys | Kvantinė kompiuterija</title>
+  <meta name="description" content="2 skyrius. Matematinių įrankių rinkinys | Kvantinė kompiuterija" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 skyrius. Matematinių įrankių rinkinys | Kvantinė kompiuterija" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="2 skyrius. Matematinių įrankių rinkinys | Kvantinė kompiuterija" />
+  <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 skyrius. Matematinių įrankių rinkinys | Kvantinė kompiuterija" />
+  
+  <meta name="twitter:description" content="2 skyrius. Matematinių įrankių rinkinys | Kvantinė kompiuterija" />
+  
+
+<meta name="author" content="Tadas Paulauskas" />
+<meta name="author" content="Julius Ruseckas" />
+
+
+<meta name="date" content="2022-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="kvantinės-kompiuterijos-apžvalga.html"/>
+<link rel="next" href="kvantines-mechanikos-pagrindai.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kvantinė kompiuterija</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pratarmė</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#kaip-skaityti-šią-knygą"><i class="fa fa-check"></i>Kaip skaityti šią knygą</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#padėka"><i class="fa fa-check"></i>Padėka</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#apie-autorius"><i class="fa fa-check"></i>Apie autorius</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prisidėti-prie-knygos"><i class="fa fa-check"></i>Prisidėti prie knygos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencija"><i class="fa fa-check"></i>Licencija</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html"><i class="fa fa-check"></i><b>1</b> Kvantinės kompiuterijos apžvalga</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#įvadas"><i class="fa fa-check"></i><b>1.1</b> Įvadas</a></li>
+<li class="chapter" data-level="1.2" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys"><i class="fa fa-check"></i><b>1.2</b> Kvantinės kompiuterijos pradmenys</a></li>
+<li class="chapter" data-level="1.3" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina"><i class="fa fa-check"></i><b>1.3</b> Tiuringo mašina</a></li>
+<li class="chapter" data-level="1.4" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai"><i class="fa fa-check"></i><b>1.4</b> Skaičiavimų ištekliai</a></li>
+<li class="chapter" data-level="1.5" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai"><i class="fa fa-check"></i><b>1.5</b> Kvantiniai bitai</a></li>
+<li class="chapter" data-level="1.6" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas"><i class="fa fa-check"></i><b>1.6</b> Kvantinės informacijos apdorojimas</a></li>
+<li class="chapter" data-level="1.7" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas"><i class="fa fa-check"></i><b>1.7</b> Skaičiavimo procesas</a></li>
+<li class="chapter" data-level="1.8" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas"><i class="fa fa-check"></i><b>1.8</b> Kvantinių kompiuterių charakteristikų palyginimas</a></li>
+<li class="chapter" data-level="1.9" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris"><i class="fa fa-check"></i><b>1.9</b> Dekoherencijos trukmė ir loginių vartų tikslumas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html"><i class="fa fa-check"></i><b>2</b> Matematinių įrankių rinkinys</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesinė-algebra"><i class="fa fa-check"></i><b>2.1</b> Tiesinė algebra</a></li>
+<li class="chapter" data-level="2.2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kompleksiniai-skaičiai"><i class="fa fa-check"></i><b>2.2</b> Kompleksiniai skaičiai</a></li>
+<li class="chapter" data-level="2.3" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#vidinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.3</b> Vidinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.4" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje"><i class="fa fa-check"></i><b>2.4</b> Kubito reprezentacija Blocho sferoje</a></li>
+<li class="chapter" data-level="2.5" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos"><i class="fa fa-check"></i><b>2.5</b> Tiesiniai operatoriai ir matricos</a></li>
+<li class="chapter" data-level="2.6" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai"><i class="fa fa-check"></i><b>2.6</b> Unitariniai ir ermitiniai operatoriai</a></li>
+<li class="chapter" data-level="2.7" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija"><i class="fa fa-check"></i><b>2.7</b> Diadinė operatorių dekompozicija</a></li>
+<li class="chapter" data-level="2.8" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#matricos-pėdsakas"><i class="fa fa-check"></i><b>2.8</b> Matricos pėdsakas</a></li>
+<li class="chapter" data-level="2.9" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.9</b> Tenzorinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.10" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga"><i class="fa fa-check"></i><b>2.10</b> Tenzorinė operatorių sandauga</a></li>
+<li class="chapter" data-level="2.11" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#operatorių-funkcijos"><i class="fa fa-check"></i><b>2.11</b> Operatorių funkcijos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html"><i class="fa fa-check"></i><b>3</b> Kvantinės mechanikos pagrindai</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai"><i class="fa fa-check"></i><b>3.1</b> Kvantinės mechanikos postulatai</a></li>
+<li class="chapter" data-level="3.2" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas"><i class="fa fa-check"></i><b>3.2</b> Kvantinis supynimas</a></li>
+<li class="chapter" data-level="3.3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius"><i class="fa fa-check"></i><b>3.3</b> Tankio operatorius</a></li>
+<li class="chapter" data-level="3.4" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas"><i class="fa fa-check"></i><b>3.4</b> EPR paradoksas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html"><i class="fa fa-check"></i><b>4</b> Kvantiniai loginiai vartai ir grandinės</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai"><i class="fa fa-check"></i><b>4.1</b> Vieno kubito loginiai vartai</a></li>
+<li class="chapter" data-level="4.2" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai"><i class="fa fa-check"></i><b>4.2</b> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai</a></li>
+<li class="chapter" data-level="4.3" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas"><i class="fa fa-check"></i><b>4.3</b> Kubitų būsenų matavimas</a></li>
+<li class="chapter" data-level="4.4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot"><i class="fa fa-check"></i><b>4.4</b> Dviejų kubitų loginiai vartai <em>CNOT</em></a></li>
+<li class="chapter" data-level="4.5" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai"><i class="fa fa-check"></i><b>4.5</b> Tofoli loginiai vartai</a></li>
+<li class="chapter" data-level="4.6" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai"><i class="fa fa-check"></i><b>4.6</b> SWAP ir Fredkin loginiai vartai</a></li>
+<li class="chapter" data-level="4.7" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai"><i class="fa fa-check"></i><b>4.7</b> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai"><i class="fa fa-check"></i><b>4.8</b> Bendro tipo būsenų matavimai</a></li>
+<li class="chapter" data-level="4.9" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys"><i class="fa fa-check"></i><b>4.9</b> Universalių loginių vartų rinkinys</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html"><i class="fa fa-check"></i><b>5</b> Kvantinė informacija ir ryšiai</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas"><i class="fa fa-check"></i><b>5.1</b> Kvantinės informacijos kopijavimas</a></li>
+<li class="chapter" data-level="5.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija"><i class="fa fa-check"></i><b>5.2</b> Kvantinė teleportacija</a></li>
+<li class="chapter" data-level="5.3" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas"><i class="fa fa-check"></i><b>5.3</b> Kvantinio supynimo sukeitimas</a></li>
+<li class="chapter" data-level="5.4" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija"><i class="fa fa-check"></i><b>5.4</b> Kvantinė kriptografija</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.1</b> BB84 kvantinis rakto pasidalijimo protokolas</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
+<li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
+<li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
+<li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#algebrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.1</b> Algebrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#geometrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.2</b> Geometrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#groverio-paieška-su-n-8"><i class="fa fa-check"></i><b>6.6.3</b> Groverio paieška su <span class="math inline">\(N = 8\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamardo-swap-testai"><i class="fa fa-check"></i><b>6.7</b> Hadamardo ir SWAP testai</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris"><i class="fa fa-check"></i><b>6.7.1</b> Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#modifikuotas-hadamardo-testas"><i class="fa fa-check"></i><b>6.7.2</b> Modifikuotas Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#swap-testas"><i class="fa fa-check"></i><b>6.7.3</b> SWAP testas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html"><i class="fa fa-check"></i><b>7</b> Furjė transformacija ir jos taikymai</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinė-furjė-transformacija"><i class="fa fa-check"></i><b>7.1</b> Kvantinė Furjė transformacija</a></li>
+<li class="chapter" data-level="7.2" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#furjė-transformacijos-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>7.2</b> Furjė transformacijos realizavimas kvantinėje grandinėje</a></li>
+<li class="chapter" data-level="7.3" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#funkcijos-periodiškumo-paieška"><i class="fa fa-check"></i><b>7.3</b> Funkcijos periodiškumo paieška</a></li>
+<li class="chapter" data-level="7.4" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas"><i class="fa fa-check"></i><b>7.4</b> Kvantinis fazės nustatymo algoritmas</a></li>
+<li class="chapter" data-level="7.5" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#tiesinių-lygčių-sprendimas-hhl-algoritmu"><i class="fa fa-check"></i><b>7.5</b> Tiesinių lygčių sprendimas HHL algoritmu</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html"><i class="fa fa-check"></i><b>8</b> Kvantinių sistemų modeliavimas ir mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas"><i class="fa fa-check"></i><b>8.2</b> Erdvinės Šriodingerio lygties sprendimo algoritmas</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija"><i class="fa fa-check"></i><b>8.2.1</b> Banginė funkcija</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas"><i class="fa fa-check"></i><b>8.2.2</b> Diskretizavimas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.2.3</b> Perteikimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3</b> Mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.1</b> Klasikinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.2</b> Kvantinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius"><i class="fa fa-check"></i><b>8.3.3</b> Kvantinėmis grandinėmis paremtas klasifikatorius</a></li>
+<li class="chapter" data-level="8.3.4" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė"><i class="fa fa-check"></i><b>8.3.4</b> Pagrindinių komponentų analizė</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html"><i class="fa fa-check"></i><b>9</b> Kvantinių klaidų aptikimas ir taisymas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos"><i class="fa fa-check"></i><b>9.1</b> Klasikinės ir kvantinės klaidos</a></li>
+<li class="chapter" data-level="9.2" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#supynimas-ir-klaidu-atsiradimas"><i class="fa fa-check"></i><b>9.2</b> Kvantinis supynimas su aplinka ir klaidų atsiradimas</a></li>
+<li class="chapter" data-level="9.3" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bito-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.3</b> Bito apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.4" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#fazės-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.4</b> Fazės apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.5" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#tolydžiosios-klaidos"><i class="fa fa-check"></i><b>9.5</b> Tolydžiosios klaidos</a></li>
+<li class="chapter" data-level="9.6" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bendrieji-klaidų-taisymo-principai"><i class="fa fa-check"></i><b>9.6</b> Bendrieji klaidų taisymo principai</a></li>
+<li class="chapter" data-level="9.7" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinė-hamingo-riba"><i class="fa fa-check"></i><b>9.7</b> Kvantinė Hamingo riba</a></li>
+<li class="chapter" data-level="9.8" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#šoro-9-kubitų-kodas"><i class="fa fa-check"></i><b>9.8</b> Šoro 9 kubitų kodas</a></li>
+<li class="chapter" data-level="9.9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kodu-stabilizatoriai-poskyris"><i class="fa fa-check"></i><b>9.9</b> Kodų stabilizatoriai</a></li>
+<li class="chapter" data-level="9.10" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klaidoms-atsparus-skaičiavimas"><i class="fa fa-check"></i><b>9.10</b> Klaidoms atsparus skaičiavimas</a></li>
+<li class="chapter" data-level="9.11" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinis-tūris"><i class="fa fa-check"></i><b>9.11</b> Kvantinis tūris</a></li>
+</ul></li>
+<li class="appendix"><span><b>Priedai</b></span></li>
+<li class="chapter" data-level="A" data-path="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><a href="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><i class="fa fa-check"></i><b>A</b> Debesyje pasiekiami kvantiniai kompiuteriai ir simuliatoriai</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html"><i class="fa fa-check"></i>Literatūra</a>
+<ul>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#knygos"><i class="fa fa-check"></i>Knygos</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#moksliniai-straipsniai"><i class="fa fa-check"></i>Moksliniai straipsniai</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kvantinė kompiuterija</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="matematikos-skyrius" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2 skyrius.</span> Matematinių įrankių rinkinys<a href="matematikos-skyrius.html#matematikos-skyrius" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tiesinė-algebra" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Tiesinė algebra<a href="matematikos-skyrius.html#tiesinė-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tiesinė algebra yra kvantinės kompiuterijos matematinė kalba. Šiame
+skyriuje pateikiame jos pagrindinius konceptus bei kitus matematinius
+įrankius, kurių naudojimą bus galima aptikti įvairiose knygos vietose.
+Tai jokiu būdu nėra pilnutinis tiesinės algebros išdėstymas – išsamesnį pristatymą, esant poreikiui, galima
+rasti matematikos ir fizikos sričių literatūros šaltiniuose, kurių dalis
+yra pateikta knygos pabaigoje.</p>
+<p>Pagrindiniai objektai tiesinėje algebroje yra vektorių erdvės, kurių
+elementai – vektoriai. Kvantinėje kompiuterijoje aptinkamos vien
+baigtinio dimensijų skaičiaus vektorių erdvės. Taip yra todėl, kad
+naudojamas baigtinis <span class="math inline">\(n\)</span> skaičius kubitų, pavienių kubitų būsena yra
+nusakoma vektoriumi 2 dimensijų vektorių erdvėje, o jų bendra būsena
+<span class="math inline">\(2^n\)</span> dimensijose. Baigtinio dimensijų skaičiaus sistemas yra lengviau
+analizuoti – išvengiama matematinių komplikacijų, dažnai sutinkamų
+kitose kvantinėse sistemose su begaliniu dimensijų skaičiumi ir
+reikalaujančių papildomo žinių bagažo. Tad, šiuo požiūriu,
+koncentruojantis vien į baigtinio dimensijų skaičiaus sistemas galima
+žymiai greičiau įsisavinti esminius konceptus.</p>
+<p>Vektoriai yra aptinkami įvairiausiose srityse ir dažnai apibūdinami kaip
+rodyklytės erdvėje, turinčios tam tikrą ilgį bei orientaciją. Kvantinėje
+kompiuterijoje tik specifinėse situacijose tokia vektorių vaizdinė
+reprezentacija yra įmanoma, pavyzdžiui, perteikiant vieno kubito būseną
+vektoriumi Blocho sferoje. Panašios vizualizacijos, be abejo, yra
+naudingos įgauti pradinę intuiciją apie vektorius ir jų transformacijas.
+Vis dėlto yra tikslingiau galvoti apie vektorius tiesiog kaip apie
+abstrakčius objektus, turinčius nurodytas savybes. Jos nusako, kaip
+galima sudėti vektorius ir sudauginti juos su skaičiais. Vektorių
+vizualizacijos keblumas kvantinėje kompiuterijoje atsiranda dėl to, kad
+šie vektoriai yra apibrėžti kompleksinėje <strong>vektorių erdvėje</strong>
+(angl. <em>complex vector space</em>), o ne įprastinėje realiųjų skaičių
+<strong>Euklido erdvėje</strong> (angl. <em>Euclidean vector space</em>). Be to, kvantinės
+būsenos yra formaliai nusakomos <strong>spinduliais</strong> (angl. <em>rays</em>), nors ir
+įprasta sakyti, kad vektoriais. Spindulys yra grupė vektorių, kurie
+skiriasi tarp savęs tik globalia faze (čia reikia atskirti nuo
+santykinės fazės). Pavyzdžiui, kvantinė būsena, nusakyta
+<span class="math inline">\(|v\rangle\)</span> arba <span class="math inline">\(- |v\rangle\)</span>
+vektoriais, yra fiziškai identiška, nors tai ir reikštų skirtingus
+euklidinius vektorius, orientuotus antiparaleliai.</p>
+<p>Kvantinėje kompiuterijoje kompleksinių vektorių
+baigtinio dydžio <span class="math inline">\(d\)</span> dimensijų erdvę žymėsime simboliu <span class="math inline">\(V^d\)</span>.
+Viršuje užrašome erdvės dimensiją <span class="math inline">\(d\)</span> (natūralusis teigiamasis
+skaičius), jeigu yra poreikis specifinėje situacijoje ją įvardyti.
+Vektorių erdvės elementai yra vektoriai, kuriuos visada galime išreikšti
+sugrupuotų kompleksinių skaičių stulpeliu:
+<span class="math display" id="eq:vektorius-stulpelis">\[\begin{equation}
+|v\rangle = \begin{bmatrix}
+z_1 \\
+z_2 \\
+\vdots \\
+z_n \\
+\end{bmatrix}\,.
+\tag{2.1}
+\end{equation}\]</span>
+Skliausteliai, turintys formą <span class="math inline">\(|\ldots \rangle\)</span> yra
+naudojami įvardyti kad šis objektas yra vektorius stulpelis. Skaičius
+žymime indeksuotomis mažosiomis raidėmis <span class="math inline">\(z_i\)</span>. Norint glaustai
+parodyti, kad vektorius <span class="math inline">\(|v\rangle\)</span> priklauso tam tikrai
+vektorių erdvei <span class="math inline">\(V\)</span>, rašome <span class="math inline">\(|v\rangle \in V\)</span>. Simbolis
+<span class="math inline">\(\in\)</span> nusako, kad kairėje esantis objektas yra vienas iš dešinėje
+esančio objekto elementų.</p>
+<p>Elementų <span class="math inline">\(z_i\)</span> skaičius vektoriuje nusako vektorių erdvės dimensijų
+skaičių. Vektorius galima sudėti tik tuo atveju, jeigu jie priklauso tai
+pačiai vektorių erdvei. Apsistojant ties viena reprezentatyvia vektorių
+erdve <span class="math inline">\(V\)</span>, joje yra apibrėžtos vektorių sudėties operacijos,
+tenkinančios šias savybes:
+<span class="math display" id="eq:sudeties-savybe-2" id="eq:sudeties-savybe-1">\[\begin{align}
+|v_1 \rangle + |v_2 \rangle = &amp; |v_2 \rangle + |v_1 \rangle\,;
+\tag{2.2} \\
+|v_1 \rangle + \big( |v_2\rangle + |v_3 \rangle \big) = &amp; \big( |v_1 \rangle + |v_2 \rangle \big) + |v_3\rangle\,.
+\tag{2.3}
+\end{align}\]</span>
+Tai bendrai parodo, kad eiliškumas vektorių sudėčiai nėra svarbus.
+Vektorių erdvėje taip pat egzistuoja nulinis vektorius, analogiškas
+nuliniam skaičiui. Kvantinėje kompiuterijoje <span class="math inline">\(|0 \rangle\)</span>
+yra jau paskirtas kitkam, tad nusakyti nuliniam vektoriui vartojamas
+simbolis 0. Nulinio vektoriaus efektas apibūdinamas
+<span class="math inline">\(|v\rangle + 0 = |v \rangle\)</span>, iš to
+gauname <span class="math inline">\(|v\rangle - |v\rangle = 0\)</span>.</p>
+<p>Kompleksinio skaičiaus <span class="math inline">\(z_i\)</span> daugyba su vektoriais tenkina šias
+savybes:
+<span class="math display" id="eq:daugybos-savybe-3" id="eq:daugybos-savybe-2" id="eq:daugybos-savybe-1">\[\begin{align}
+z\big( |v_1 \rangle + |v_2 \rangle \big) = &amp; z |v_1\rangle + z |v_2\rangle\,;
+\tag{2.4} \\
+( z_1 + z_2 ) |v \rangle = &amp; z_1 |v \rangle + z_2 |v \rangle\,;
+\tag{2.5} \\
+( z_1 z_2 ) |v \rangle = &amp; z_1 \big(z_2 |v \rangle\big)\,.
+\tag{2.6}
+\end{align}\]</span>
+Atkreipiame dėmesį, kad sandaugose praleidžiame daugybos simbolį, tad du
+vienas šalia kito raidėmis nusakyti skaičiai (ar skaičius su vektoriumi)
+reiškia, kad jie yra sudauginami. Skaičių daugybai nesvarbu eiliškumas
+<span class="math inline">\(z_1 z_2 = z_2 z_1\)</span>. Taip pat galima daugyba su nuliniu skaičiumi,
+deja, taip pat žymimu <span class="math inline">\(0\)</span>, <span class="math inline">\(0 |v \rangle = 0\)</span>. Tai yra visos
+elementariosios ir itin intuityvios aritmetinės operacijos. Šių
+aritmetinių operacijų metu gautas vektorius vėlgi priklauso tai pačiai
+vektorių erdvei. Kvantinėse sistemose yra apibrėžta vadinamoji dviejų
+vektorių vidinė sandauga, žymima
+<span class="math inline">\(\langle v |u \rangle\)</span>, kurios rezultatas yra
+skaičius. Prie vidinės sandaugos šiame skyriuje dar sugrįšime.</p>
+<p>Toliau primename vektorių, išreikštų sugrupuotų skaičių stulpeliais,
+aritmetiką. Imant kaip pavyzdį trijų elementų vektorius, sudėtis
+nusakoma:
+<span class="math display" id="eq:triju-elementu-sudetis">\[\begin{equation}
+\begin{bmatrix}
+z_1 \\
+z_2 \\
+z_3 \\
+\end{bmatrix} + \begin{bmatrix}
+z_4 \\
+z_5 \\
+z_6 \\
+\end{bmatrix} = \begin{bmatrix}
+z_1 + z_4 \\
+z_2 + z_5 \\
+z_3 + z_6 \\
+\end{bmatrix}\,.
+\tag{2.7}
+\end{equation}\]</span>
+Čia kiekvienas elementas <span class="math inline">\(z_i\)</span> yra kompleksinis skaičius. Vektoriaus
+ir skaičiaus <span class="math inline">\(g\)</span> sandauga:
+<span class="math display" id="eq:vektoriaus-skaiciaus-sandauga">\[\begin{equation}
+g\begin{bmatrix}
+z_1 \\
+z_2 \\
+z_3 \\
+\end{bmatrix} = \begin{bmatrix}
+g z_1 \\
+g z_2 \\
+g z_3 \\
+\end{bmatrix}\,.
+\tag{2.8}
+\end{equation}\]</span>
+Kiti du svarbūs konceptai yra vektorių erdvę dengiantis vektorių
+rinkinys (angl. <em>spanning set</em>) ir vektorių <strong>tiesinė nepriklausomybė</strong>
+(angl. <em>linear independence</em>). Vektorių erdvę <span class="math inline">\(V\)</span> dengiantis rinkinys
+<span class="math inline">\(\big\{ |v_1\rangle , |v_2\rangle , |v_3 \rangle\ldots \big\}\)</span>
+yra toks vektorių rinkinys, kurių tiesinėmis kombinacijomis galima
+išreikšti bet kokį vektorių <span class="math inline">\(|v\rangle\)</span>, esantį <span class="math inline">\(V\)</span>. Tai
+yra:
+<span class="math display" id="eq:dengiantis-rinkinys">\[\begin{equation}
+|v \rangle = \sum_i z_i |v_i\rangle\,.
+\tag{2.9}
+\end{equation}\]</span>
+Tiesinė vektorių nepriklausomybė leidžia formaliai nusakyti vektorių
+erdvės dimensiją ir tuo pačiu rasti mažiausią skaičių vektorių,
+dengiančių vektorių erdvę <span class="math inline">\(V\)</span>. Vektoriai
+<span class="math inline">\(\big\{|v_1 \rangle , |v_2 \rangle ,\ldots , |v_n \rangle\big\}\)</span>
+yra tiesiškai priklausomi, jeigu bent vienas vektorius šiame rinkinyje,
+sakysime <span class="math inline">\(|v_2 \rangle\)</span>, gali būti išreikštas likusių
+<span class="math inline">\(n-1\)</span> vektorių tiesinėmis kombinacijomis:
+<span class="math display" id="eq:tiesiskai-priklausomi">\[\begin{equation}
+z_1 |v_1\rangle + z_3 |v_2 \rangle + \cdots + z_n |v_n \rangle = |v_2\rangle\,.
+\tag{2.10}
+\end{equation}\]</span>
+Tiesiškai nepriklausomų vektorių rinkinyje nė vieno iš jų neįmanoma
+išreikšti kitų likusiųjų suma. Formaliai, tiesiškai priklausomas
+vektorių rinkinys tenkina šią lygybę:
+<span class="math display" id="eq:tiesiskai-priklausomi-2">\[\begin{equation}
+z_1 |v_1 \rangle + z_2 |v_2\rangle + \cdots + z_n |v_n \rangle = 0\,.
+\tag{2.11}
+\end{equation}\]</span>
+Čia suma lygi nuliniam vektoriui ir joje egzistuoja skaičiai <span class="math inline">\(z_i\)</span>,
+kurie ne visi lygūs nuliui <span class="math inline">\(z_i \neq 0\)</span>. O štai tiesiškai
+nepriklausomame vektorių rinkinyje ši lygybė gali būti tenkinama tik tuo
+atveju, jeigu visi skaičiai <span class="math inline">\(z_i = 0\)</span>.</p>
+<p>Galima parodyti, kad bet kurie du skirtingi tiesiškai nepriklausomi
+vektorių rinkiniai, dengiantys tą pačią vektorių erdvę <span class="math inline">\(V\)</span>, turi vienodą
+skaičių vektorių. Vektoriai, priklausantys tokiam rinkiniui, yra
+vadinami <strong>baziniais vektoriais</strong> (angl. <em>basis vectors</em>), o jų skaičius
+rinkinyje formaliai nusako vektorių erdvės <em>V</em> dimensiją. Pavyzdžiui,
+imkime 3 dimensijų erdvės bazinių vektorių rinkinį:
+<span class="math display" id="eq:baziniai-vektoriai-3d">\[\begin{equation}
+|v_1 \rangle = \begin{bmatrix}
+1 \\
+0 \\
+0 \\
+\end{bmatrix},\quad |v_2\rangle = \begin{bmatrix}
+0 \\
+1 \\
+0 \\
+\end{bmatrix},\quad |v_3 \rangle = \begin{bmatrix}
+0 \\
+0 \\
+1 \\
+\end{bmatrix}\,.
+\tag{2.12}
+\end{equation}\]</span>
+Matome, kad bet kokį vektorių <span class="math inline">\(|v\rangle\)</span> šioje erdvėje
+galime išreikšti jų suma:
+<span class="math display" id="eq:isreiskimas-per-bazinius-3d">\[\begin{equation}
+|v\rangle = \begin{bmatrix}
+a \\
+b \\
+c \\
+\end{bmatrix} = a\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+\end{bmatrix} + b\begin{bmatrix}
+0 \\
+1 \\
+0 \\
+\end{bmatrix} + c\begin{bmatrix}
+0 \\
+0 \\
+1 \\
+\end{bmatrix}\,.
+\tag{2.13}
+\end{equation}\]</span>
+Taip pat akivaizdu, kad dviejų bazinių vektorių, pavyzdžiui
+<span class="math inline">\(|v_1 \rangle\)</span> ir <span class="math inline">\(|v_3 \rangle\)</span>,
+nepakaktų išreikšti visus įmanomus vektorius šioje erdvėje. Keturi
+baziniai vektoriai 3 dimensijose būtų perteklius, kadangi vieną iš jų
+visada galime išreikšti kitų suma. Egzistuoja begalė skirtingų bazinių
+vektorių rinkinių. Pavyzdžiui, kitas rinkinys:
+<span class="math display" id="eq:kitas-baziniu-rinkinys">\[\begin{equation}
+|v_1 \rangle = \begin{bmatrix}
+2 \\
+- 1 \\
+0 \\
+\end{bmatrix},\quad |v_2 \rangle = \begin{bmatrix}
+2 \\
+5 \\
+3 \\
+\end{bmatrix},\quad |v_3 \rangle = \begin{bmatrix}
+1 \\
+1 \\
+1 \\
+\end{bmatrix}\,.
+\tag{2.14}
+\end{equation}\]</span>
+Siekdami patikrinti šių vektorių tiesinę nepriklausomybę išspręstume
+trijų lygčių sistemą:
+<span class="math display" id="eq:vektoriu-nepriklausomybes-sistema">\[\begin{equation}
+\begin{aligned}
+2a + 2b + c =&amp; 0\,, \\
+-a + 5b + c =&amp; 0\,,\\
+3b + c  =&amp; 0\,. \\
+\end{aligned}
+\tag{2.15}
+\end{equation}\]</span>
+Sistemą išsprendę rastume, kad vieninteliai skaičiai, tenkinantys
+lygybę, yra <span class="math inline">\(a = b = c = 0\)</span>. Vienas svarbus skirtumas tarp šio bazinio
+vektorių rinkinio ir parodyto anksčiau yra tai, kad ankstesniame
+rinkinyje visi vektoriai tarpusavyje sudaro stačiuosius kampus.
+Kompleksinėje vektorių erdvėje statmenumo konceptas yra vadinamas
+ortogonalumu (angl. <em>orthogonality</em>). Dviejų vektorių ortogonalumą, kaip matysime vėliau, galima
+nustatyti atlikus jų vidinę sandaugą,
+<span class="math inline">\(\langle v_m |v_n \rangle\)</span>. Jeigu du
+(nenuliniai) vektoriai yra ortogonalieji, jų vidinė sandauga visada bus
+skaičius, lygus nuliui.</p>
+<p>Kvantinėje kompiuterijoje 2 dimensijų kompleksinių vektorių erdvės
+<span class="math inline">\(V^2\)</span> nusako individualių kubitų būsenų erdvę. Bendra vieno kubito
+būsena yra vektorius:
+<span class="math display" id="eq:bendra-kubito-busena">\[\begin{equation}
+|\psi\rangle = a|0\rangle + b|1\rangle\,.
+\tag{2.16}
+\end{equation}\]</span>
+Čia <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> yra
+standartiškai naudojami baziniai vektoriai, dar vadinami
+skaičiuojamaisiais baziniais vektoriais. Išreiškus juos stulpeliniu
+vektoriumi:
+<span class="math display" id="eq:baziniai-vektoriai-stulpeliais">\[\begin{equation}
+|0\rangle = \begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix},\quad |1\rangle = \begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix}\,.
+\tag{2.17}
+\end{equation}\]</span>
+Galima lengvai patikrinti, kad šis dviejų vektorių rinkinys
+<span class="math inline">\(\big\{|0\rangle , |1\rangle\big\}\)</span> yra tiesiškai
+nepriklausomas ir todėl jų kombinacijomis galima išreikšti bet kokį kitą
+vektorių <span class="math inline">\(|v\rangle\)</span> šioje 2 dimensijų erdvėje keičiant
+koeficientus <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>:
+<span class="math display" id="eq:bet-koks-vektorius-per-bazinius">\[\begin{equation}
+|v\rangle = a\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix} + b\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix} = \begin{bmatrix}
+a \\
+b \\
+\end{bmatrix}\,.
+\tag{2.18}
+\end{equation}\]</span>
+Kvantinėje mechanikoje koeficientai turi tenkinti lygybę
+<span class="math inline">\(|a|^2 + |b|^2 = 1\)</span>. Nors šis bazinių vektorių rinkinys kvantinėje
+kompiuterijoje naudojamas standartiškai, tačiau skirtingų bazinių
+rinkinių yra begalė. Kitas dažnai aptinkamas ortogonalus 1 kubito
+būsenas nusakantis rinkinys yra šis:
+<span class="math display" id="eq:kitas-busenu-rinkinys">\[\begin{equation}
+|0_x \rangle = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+1 \\
+\end{bmatrix},\quad
+|1_x \rangle = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+-1 \\
+\end{bmatrix}\,.
+\tag{2.19}
+\end{equation}\]</span>
+Palyginę su <span class="math inline">\(\big\{|0\rangle, |1\rangle\big\}\)</span>
+matome, kad
+<span class="math inline">\(\big\{|0_x \rangle, |1_x \rangle\big\}\)</span>
+rinkinyje bazinius vektorius galime išreikšti sudėję bei atėmę pirmųjų
+elementus, atitinkamai, naudojant koeficientus <span class="math inline">\(a = b = 1/\sqrt{2}\)</span>:
+<span class="math display" id="eq:isreiskimas-per-pirmuosius-bazinius">\[\begin{equation}
+|0_x \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\,,\quad
+|1_x \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle - |1\rangle\big)\,.
+\tag{2.20}
+\end{equation}\]</span>
+Dviejų bazinių vektorių suma kvantinėje kompiuterijoje yra vadinama
+būsenų superpozicija. Tiesinės algebros požiūriu, tai tiesiog atspindi
+vieną galimą būdą išreikšti vektorių sąlygiškai su kitais dviem.</p>
+<p>Užbaigdami šią dalį atitrūksime nuo kompleksinių skaičių ir kvantinių
+sistemų. Kompleksinių skaičių vartojimas komplikuoja vektorių, kaip
+matematinių objektų, iliustravimą. Siekiant susidaryti intuiciją yra
+palankiau sugrįžti prie realiosios Euklido vektorių erdvės, kurioje
+galima vektorius pavaizduoti rodyklyte. Euklido erdvėje vektorių daugyba
+yra galima tik su realiaisiais skaičiais. Realieji skaičiai yra
+vartojami nusakant kasdienius dydžius, tokius kaip atstumas, aukštis,
+valiutos kiekis sąskaitoje ir panašiai. Vektorius nusako dydį, bet dar
+pateikia ir informaciją apie kryptį. Paprastas pavyzdys būtų greičio
+vektorius, suteikiantis informaciją apie greitį bei judėjimo kryptį.
+Imkime kaip pavyzdį greitumo vektorių <span class="math inline">\(|g\rangle\)</span>,
+nusakantį greitį 2 dimensijose (plokštumoje):
+<span class="math display" id="eq:greicio-pvz">\[\begin{equation}
+|g \rangle = \begin{bmatrix}
+2 \\
+3 \\
+\end{bmatrix}\,.
+\tag{2.21}
+\end{equation}\]</span>
+Galime žvelgti į šiuos du skaičius stulpelyje, kaip suteikiančius
+koordinates <span class="math inline">\((x, y)\)</span>. Naudojant statmeną <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> koordinačių sistemą, šis
+vektorius pavaizduotas <a href="matematikos-skyrius.html#fig:vektoriaus-pvz">2.1</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vektoriaus-pvz"></span>
+<img src="media/image2_1.svg" alt="Vektoriaus pavyzdys plokštumoje. Joje priskirta stačiakampė $x$--$y$ kordinačių sistema; vienetiniai vektoriai pažymėti žalia spalva" width="28%" />
+<p class="caption">
+2.1 pav. Vektoriaus pavyzdys plokštumoje. Joje priskirta stačiakampė <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> kordinačių sistema; vienetiniai vektoriai pažymėti žalia spalva
+</p>
+</div>
+<p>Norėdami nubrėžti <span class="math inline">\(|g\rangle\)</span> vektorių, einame 2
+žingsnius <span class="math inline">\(x\)</span> ašimi į dešinę ir 3 <span class="math inline">\(y\)</span> ašimi į viršų. Šiuo atveju nėra
+svarbu, ar vektorius prasideda nuo 0, ar kitur, svarbu vektoriaus
+orientacija ir ilgis. Vektoriaus ilgis <span class="math inline">\(|g\rangle\)</span>
+nusakys šiame pavyzdyje greitį, kurį rodytų spidometras. Taikydami
+Pitagoro teoremą randame <span class="math inline">\(|g\rangle\)</span> ilgį
+<span class="math inline">\(\sqrt{2^2 + 3^2} = \sqrt{13}\)</span>. Vektoriaus iliustracijoje matome
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle,\)</span> pažymėtus
+rodyklytėmis, kurie atlieka, analogiškai su kubitais, bazinių vektorių
+vaidmenį. Jie yra statmeni (ortogonalieji) vienas kito atžvilgiu ir
+vienetinio ilgio. Vektorių <span class="math inline">\(|g\rangle\)</span> išreiškiame jais
+taip:
+<span class="math display" id="eq:greitis-per-bazinius">\[\begin{equation}
+|g\rangle = 2|0\rangle + 3|1\rangle = 2\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix} + 3\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix}\,.
+\tag{2.22}
+\end{equation}\]</span>
+Visi įmanomi vektoriai šioje plokštumoje gali būti sukonstruoti
+naudojant šiuos bazinius vektorius bei keičiant koeficientus <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>.
+Bazinių vektorių rinkinys, analogiškas minėtam kubitų rinkiniui
+<span class="math inline">\(\big\{ |0_x \rangle, |1_x \rangle\big\}\)</span>,
+šioje plokštumoje būtų gautas pasukus <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> kartu pagal laikrodžio rodyklę <span class="math inline">\(45^{\circ}\)</span> laipsnių
+kampu išlaikant tarp jų statųjį kampą.</p>
+</div>
+<div id="kompleksiniai-skaičiai" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Kompleksiniai skaičiai<a href="matematikos-skyrius.html#kompleksiniai-skaičiai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Šie skaičiai turi realiąją ir menamąją dalis ir yra bendrai išreiškiami
+<span class="math inline">\(z = a + b\mathrm{i}\)</span>. Čia <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> yra realieji skaičiai, kompleksinio
+skaičiaus realioji (Re) ir menamoji (Im) dalys yra atitinkamai <span class="math inline">\(a\)</span> ir
+<span class="math inline">\(b\)</span>. Tai dar gali būti rašoma <span class="math inline">\(\mathrm{Re}(z) = a\)</span>, <span class="math inline">\(\mathrm{Im}(z) = b\)</span>. Skaičių <span class="math inline">\(b\)</span>
+dauginantis raide <span class="math inline">\(\mathrm{i}\)</span> žymimas narys yra menamasis vienetas, turintis
+savybę:
+<span class="math display" id="eq:i-kvadratas">\[\begin{equation}
+\mathrm{i}^2 = -1\,.
+\tag{2.23}
+\end{equation}\]</span>
+Tad į realųjį skaičių galime žiūrėti kaip į kompleksinį skaičių, kuriame
+menamoji dalis <span class="math inline">\(b = 0\)</span>. Atliekant dviejų kompleksinių skaičių arba
+kompleksinio ir realiojo skaičiaus sudėtis, realiosios ir menamosios
+dalys yra sudedamos tarpusavyje atskirai:
+<span class="math display" id="eq:kompleksiniu-sudetis">\[\begin{equation}
+(a + b\mathrm{i}) + (c + d\mathrm{i}) = (a + c) + (b + d)\mathrm{i}\,.
+\tag{2.24}
+\end{equation}\]</span>
+Taikydami menamojo vieneto savybę bei kompleksinių skaičių sudėtį,
+dviejų kompleksinių skaičių sandaugą randame:
+<span class="math display" id="eq:kompleksiniu-sandauga">\[\begin{equation}
+(a + b\mathrm{i}) (c + d\mathrm{i}) = (ac - bd) + (ad + bc)\mathrm{i}\,.
+\tag{2.25}
+\end{equation}\]</span>
+Atliekant skaičiavimus kvantinėje kompiuterijoje dažnai naudojamas
+vadinamasis kompleksinis skaičiaus jungimas, dar įvardijamas kaip
+<strong>konjugacija</strong> (angl. <em>complex conjugation</em>). Apačioje parodytas ryšys
+tarp kompleksinio skaičiaus <span class="math inline">\(z\)</span> ir jo kompleksinės jungties, kuri yra
+žymima su žvaigždute <span class="math inline">\(z^{*}\)</span>:
+<span class="math display" id="eq:kompleksinis-jungtinumas">\[\begin{equation}
+z = a + b\mathrm{i}  \rightarrow z^{*} = a - b\mathrm{i}\,.
+\tag{2.26}
+\end{equation}\]</span>
+Kompleksinis jungimas apverčia menamosios dalies ženklą. Pavyzdžiui,
+kvantinės būsenos kompleksinės amplitudės <span class="math inline">\(z\)</span> kvadratas yra
+apskaičiuojamas naudojant kompleksinę jungtį:
+<span class="math display" id="eq:kompleksinis-amplitudes-kvadratas">\[\begin{equation}
+|z|^2 = z z^{*} = (a + b\mathrm{i}) (a - b\mathrm{i}) = a^2 + b^2\,.
+\tag{2.27}
+\end{equation}\]</span>
+Čia <span class="math inline">\(|z|\)</span> reiškia šio skaičiaus modulį ir
+matome, kad <span class="math inline">\(z z^{*}\)</span> visada yra realusis skaičius. Kompleksinius
+skaičius galime išreikšti grafiškai plokštumoje, kurioje horizontalioji
+ir vertikalioji ašys nusako realiąją (Re) ir menamąją (Im) dalis,
+atitinkamai.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kompleksinio-vaizdavimas"></span>
+<img src="media/image2_2.svg" alt="Kompleksinio skaičiaus pavaizdavimas stačiakampėje Re--Im koordinačių sistemoje pateikiant koordinates $(a, b)$. Naudojant polines koordinates, pateikiamas spindulio ilgis ir kampas ($|z|$, $\theta$)" width="30%" />
+<p class="caption">
+2.2 pav. Kompleksinio skaičiaus pavaizdavimas stačiakampėje Re–Im koordinačių sistemoje pateikiant koordinates <span class="math inline">\((a, b)\)</span>. Naudojant polines koordinates, pateikiamas spindulio ilgis ir kampas (<span class="math inline">\(|z|\)</span>, <span class="math inline">\(\theta\)</span>)
+</p>
+</div>
+<p>Viršuje parodyti du būdai išreikšti kompleksiniam skaičiui. Galime
+nusakyti kompleksinį skaičių <span class="math inline">\((a, b)\)</span> koordinatėmis Re–Im koordinačių
+sistemoje arba išreikšti <span class="math inline">\(z\)</span> polinėje koordinačių sistemoje. Nubrėžę
+spindulį nuo koordinačių centro iki <span class="math inline">\((a, b)\)</span> taško, spindulys sudaro
+<span class="math inline">\(\theta\)</span> kampą su Re ašimi. Kadangi spindulio ilgis yra
+<span class="math inline">\(|z| = \sqrt{a^2 + b^2}\)</span>, koordinates <span class="math inline">\((a, b)\)</span> galime išreikšti
+<span class="math inline">\(\big(a = |z|\cos(\theta), b = |z|\sin(\theta)\big)\)</span>. Tad polinėje koordinačių
+sistemoje nusakomi du parametrai, spindulio ilgis ir kampas (<span class="math inline">\(|z|\)</span>, <span class="math inline">\(\theta\)</span>).</p>
+<p>Jeigu imsime kompleksinį skaičių, kurio spindulio ilgis <span class="math inline">\(|z| = 1\)</span>,
+Oilerio formulė (angl. <em>Euler formula</em>) mums rodo:
+<span class="math display" id="eq:oilerio-formule">\[\begin{equation}
+\mathrm{e}^{\mathrm{i}\theta} = \cos(\theta) + \mathrm{i}\sin(\theta)\,.
+\tag{2.28}
+\end{equation}\]</span>
+Oilerio formulėje <span class="math inline">\(\mathrm{e}\)</span> yra natūraliojo logaritmo pagrindas, kurio reikšmė
+<span class="math inline">\(\mathrm{e}\sim 2.718\ldots\)</span> . Akivaizdu, kad Oilerio funkcijos modulis
+<span class="math inline">\(\big|\mathrm{e}^{\mathrm{i}\theta}\big| = 1\)</span>. Bet kokį kompleksinį skaičių <span class="math inline">\(z\)</span> galime išreikšti
+taip:
+<span class="math display" id="eq:kompleksinio-eksponentine-israiska">\[\begin{equation}
+z = |z|\mathrm{e}^{\mathrm{i}\theta}\,.
+\tag{2.29}
+\end{equation}\]</span>
+Taip išreikšto skaičiaus <span class="math inline">\(z\)</span> kompleksinė jungtis bei jo modulio
+kvadratas, minėti viršuje, gaunami atliekant konjugaciją eksponentėje:
+<span class="math display" id="eq:kompleksinis-modulis-eksponente" id="eq:kompleksinis-jungtinis-eksponente">\[\begin{align}
+z^{*} = &amp; |z|\mathrm{e}^{-\mathrm{i}\theta}\,;\tag{2.30}\\
+|z|^2 = &amp; |z| |z|\mathrm{e}^{-\mathrm{i}\theta}\mathrm{e}^{\mathrm{i}\theta}= |z|^2\,. \tag{2.31}
+\end{align}\]</span>
+Viršuje pritaikėme eksponenčių daugybos formulę,
+<span class="math inline">\(\mathrm{e}^{\mathrm{i}a}\mathrm{e}^{\mathrm{i}b} = \mathrm{e}^{\mathrm{i}(a + b)}\)</span> bei <span class="math inline">\(\mathrm{e}^0 = 1\)</span>.</p>
+</div>
+<div id="vidinė-vektorių-sandauga" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Vidinė vektorių sandauga<a href="matematikos-skyrius.html#vidinė-vektorių-sandauga" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Šioje dalyje apibūdiname kvantinėje kompiuterijoje dažnai aptinkamą
+<strong>vidinę dviejų vektorių sandaugą</strong> (angl. <em>inner product</em>), dar
+vadinama <strong>skaliarine sandauga</strong> (angl. <em>scalar product</em>)<em>.</em> Vektorius
+<span class="math inline">\(|\psi\rangle\)</span> su tokio tipo skliausteliais yra
+vadinamas <em>ket</em> ir yra asocijuojamas su stulpeliniu vektoriumi.
+Vektorius eilutė yra žymimas apsuktais skliausteliais,
+<span class="math inline">\(\langle\psi|\)</span> ir vadinamas <em>bra</em>. Iš bet kokio <em>ket</em>
+vektoriaus galime padaryti <em>bra</em> vektorių dviem žingsniais. Pavyzdžiui,
+turime <em>ket</em> su keturiais elementais:
+<span class="math display" id="eq:ket-pvz">\[\begin{equation}
+|\psi\rangle = \begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3 \\
+a_4 \\
+\end{bmatrix}\,.
+\tag{2.32}
+\end{equation}\]</span>
+Visi <span class="math inline">\(|\psi\rangle\)</span> vektoriaus elementai yra bendrai
+kompleksiniai skaičiai. Pirmame žingsnyje vektorius eilutė yra gaunamas
+atlikus vadinamąją <strong>transpoziciją</strong> (angl. <em>transposition</em>), žymimą <em>T</em>
+raide virš vektoriaus <span class="math inline">\(|\psi\rangle^T\)</span>. Elementai
+stulpelyje iš viršaus į apačią yra pergrupuojami eilutėje iš kairės į
+dešinę:
+<span class="math display" id="eq:transpozicijos-pvz">\[\begin{equation}
+|\psi\rangle^T = \lbrack a_1\: a_2\: a_3\: a_4\rbrack\,.
+\tag{2.33}
+\end{equation}\]</span>
+Galiausiai, <em>bra</em> vektorius yra gaunamas atlikus transponuotajam
+vektoriui kiekvieno jo elemento kompleksinę jungtį
+<span class="math inline">\(\big(|\psi\rangle^T\big)^{*}= |\psi\rangle^{\dagger} = \langle\psi|\)</span>.
+Ši dviguba operacija yra vadinama ermitine jungtimi, kuriai nurodyti
+vartojamas durklo formos ženklas <span class="math inline">\(\dagger\)</span>. Tad galiausiai randame:
+<span class="math display" id="eq:ermitine-jungtis-pvz">\[\begin{equation}
+|\psi\rangle^{\dagger} = \langle\psi|  = \lbrack a_1^{*}\: a_2^{*}\: a_3^{*}\: a_4^{*}\rbrack\,.
+\tag{2.34}
+\end{equation}\]</span>
+<em>Bra</em> vektoriai yra <strong>dualūs</strong> <em>ket</em> vektoriams (angl. <em>dual vector</em>) –
+kiekvienas <em>bra</em> turi vieną sau atitinkantį <em>ket</em>. Formaliai, jeigu
+<span class="math inline">\(|\psi\rangle\)</span> yra <span class="math inline">\(V\)</span> vektorių erdvės elementas, tai
+jam dualus <span class="math inline">\(\langle\psi|\)</span> vektorius yra dualios
+<span class="math inline">\(\overline{V}\)</span> vektorių erdvės elementas. Kadangi <em>ket</em> ir <em>bra</em> yra
+skirtingų erdvių elementai, jų tarpusavyje sudėti negalima, tai yra
+neapibrėžta operacija. Tačiau visos minėtos operacijos <em>bra</em> vektorių
+erdvėje <span class="math inline">\(\overline{V}\)</span> yra identiškos <em>ket</em> <span class="math inline">\(V\)</span> erdvei.</p>
+<p>Vidinė dviejų vektorių sandauga yra atliekama tarp <em>bra</em> ir <em>ket</em>
+vektorių, tiesinėje algebroje – tarp vektoriaus eilutės ir stulpelio.
+Imkime kaip pirmą pavyzdį vidinę <span class="math inline">\(|\psi\rangle\)</span>
+vektoriaus sandaugą su sau dualiu vektoriumi,
+<span class="math inline">\(\langle\psi|\psi\rangle\)</span>. Rašant
+vektoriaus elementais, vidinė sandauga formaliai išreiškiama:
+<span class="math display" id="eq:vidine-sandauga-su-dualiu">\[\begin{equation}
+\begin{aligned}
+\langle\psi|\psi\rangle = &amp; \lbrack a_1^{*}\: a_2^{*}\: a_3^{*}\: a_4^{*} \rbrack \begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3 \\
+a_4 \\
+\end{bmatrix} \\
+= &amp; a_1^{*} a_1 + a_2^{*} a_{2} + a_3^{*} a_{3} + a_4^{*} a_{4} \\
+= &amp; |a_1|^2 + |a_2|^2 + |a_3|^2 + |a_4|^2\,.
+\end{aligned}
+\tag{2.35}
+\end{equation}\]</span>
+Matome, kad atlikus vidinę vektoriaus sandaugą su sau dualiu vektoriumi
+rezultatas visada bus realusis neneigiamasis skaičius,
+<span class="math inline">\(\langle \psi|\psi\rangle \geq 0\)</span>. Šis
+skaičius nusako kompleksinių kvadratų sumą, kurią dar galime
+identifikuoti kaip <span class="math inline">\(|\psi\rangle\)</span> vektoriaus ilgio
+kvadratą. Kvantinės būsenos yra nusakomos normuotaisiais vektoriais, tai
+yra, turinčiais vienetinį vektoriaus ilgį. Tad normuotojo vektoriaus
+vidinė sandauga su savo dualiuoju vektoriumi visada lygi vienetui,
+<span class="math inline">\(\langle\psi |\psi\rangle = 1\)</span>. Galime bet
+kurį vektorių padaryti normuotuoju, jeigu jis toks nėra, padalindami jį
+iš skaičiaus, nusakančio vektoriaus ilgį
+<span class="math inline">\(\sqrt{\langle\psi |\psi\rangle}\)</span>:
+<span class="math display" id="eq:vektoriaus-sunormavimas">\[\begin{equation}
+|\hat{\psi}\rangle = |\psi\rangle/\sqrt{\langle\psi |\psi\rangle}\,.
+\tag{2.36}
+\end{equation}\]</span>
+Dviejų skirtingų tos pačios vektorių erdvės vektorių
+<span class="math inline">\(|\psi\rangle\)</span> ir <span class="math inline">\(|\phi\rangle\)</span> vidinė
+sandauga <span class="math inline">\(\langle\psi|\phi\rangle\)</span> yra:
+<span class="math display" id="eq:skirtingu-vidine-sandauga">\[\begin{equation}
+\langle\psi |\phi\rangle = \lbrack a_1^{*}\: a_2^{*}\: a_3^{*}\: a_4^{*}\rbrack\ \begin{bmatrix}
+b_1 \\
+b_2 \\
+b_3 \\
+b_4 \\
+\end{bmatrix} = a_1^{*} b_1 +a_2^{*} b_2 + a_3^{*} b_3 + a_4^{*} b_{4}\,.
+\tag{2.37}
+\end{equation}\]</span>
+Dviejų vektorių, turinčių <span class="math inline">\(n\)</span> elementų, vidinė sandauga
+<span class="math inline">\(\langle\psi |\phi\rangle\)</span> yra glaustai
+užrašoma:
+<span class="math display" id="eq:n-elementu-vidine-sandauga">\[\begin{equation}
+\langle\psi|\phi\rangle = \sum_{i = 1}^{n} a_i^{*} b_i\,.
+\tag{2.38}
+\end{equation}\]</span>
+<em>Ket</em> ir <em>bra</em> eiliškumas (kuris vektorius rašomas kairėje ir kuris –
+dešinėje) vidinėje sandaugoje gali būti svarbus, nes sudauginus
+skirtingus vektorius gaunamas skaičius yra bendrai kompleksinis.
+Skirtumas tarp jų eiliškumo slypi gauto skaičiaus kompleksiniame
+jungime. Šį principą galima išreikšti taip:
+<span class="math display" id="eq:kompleksiskai-jungtine-vidine-sandauga">\[\begin{equation}
+\langle\psi|\phi\rangle = \big(\langle\phi|\psi\rangle\big)^{*}\,.
+\tag{2.39}
+\end{equation}\]</span>
+Skaičius vidinėje sandaugoje galime visada iškelti už jos:
+<span class="math display" id="eq:skaiciaus-iskelimas-is-vidines">\[\begin{equation}
+\langle\psi|\big(z_1|\phi_1 \rangle + z_2|\phi_2\rangle\big) = z_1\langle\psi|\phi_1\rangle + z_2\langle\psi |\phi_2 \rangle\,.
+\tag{2.40}
+\end{equation}\]</span>
+Vidinės sandaugos modulio kvadratas,
+<span class="math inline">\(\big|\langle\psi|\phi\rangle\big|^2\)</span>,
+dar vadinamas kompleksiniu kvadratu, naudojant vektorių simboliką yra:
+<span class="math display" id="eq:vidines-sandaugos-modulio-kvadratas">\[\begin{equation}
+\big|\langle\psi|\phi\rangle\big|^2 = \langle\psi |\phi\rangle\langle\psi |\phi\rangle^{*}
+= \langle\psi |\phi\rangle\langle\phi |\psi\rangle = \langle\phi |\psi\rangle\langle\psi |\phi\rangle =
+\big|\langle\phi |\psi\rangle\big|^2\,.
+\tag{2.41}
+\end{equation}\]</span>
+Viršuje matome dviejų kompleksinių skaičių sandaugą, kuri yra gaunama iš
+dviejų vidinių vektorių sandaugų
+<span class="math inline">\(\langle\psi |\phi\rangle\)</span> ir
+<span class="math inline">\(\langle\phi |\psi\rangle\)</span>. Kadangi šie du
+nariai nusako skaičius, juos galime pergrupuoti, kaip pageidaujama,
+nekeičiant rezultato; tai ir parodyta viršuje. Kompleksiniame kvadrate
+vektorių eiliškumas nėra svarbus.</p>
+<p>Ortogonaliųjų vektorių normuotumas gali būti glaustai užrašytas taip:
+<span class="math inline">\(\langle v_i|v_j \rangle = \delta_{ij}\)</span>.
+Čia simbolis <span class="math inline">\(\delta_{ij}\)</span> vadinamas <strong>Kronekerio delta funkcija</strong>
+(angl. <em>Kronecker delta function</em>), kuri <span class="math inline">\(\delta_{ij} = 0\)</span>, jeigu
+<span class="math inline">\(i \neq j\)</span> (pavyzdžiui, baziniai vektoriai vidinėje sandaugoje skiriasi)
+bei <span class="math inline">\(\delta_{ij} = 1\)</span>, jeigu <span class="math inline">\(i = j\)</span>. Imkime vektorių
+<span class="math inline">\(|v\rangle\)</span>, išreikštą ortogonaliaisiais baziniais
+vektoriais <span class="math inline">\(\big\{|v_i \rangle\big\}\)</span> su atitinkamais
+koeficientais <span class="math inline">\(z_i\)</span>:
+<span class="math display" id="eq:vektoriaus-isreikstas-baziniais-pvz">\[\begin{equation}
+|v\rangle = \sum_i z_i |v_i \rangle\,.
+\tag{2.42}
+\end{equation}\]</span>
+Naudodami <span class="math inline">\(\delta_{ij}\)</span>, bet kurį <span class="math inline">\(i\)</span>-tąjį koeficientą <span class="math inline">\(z_i\)</span> galime
+rasti atlikę vektoriaus <span class="math inline">\(|v\rangle\)</span> vidinę sandaugą su
+atitinkamu <em>bra</em> <span class="math inline">\(\langle v_i|\)</span>:
+<span class="math display" id="eq:koeficiento-radimas">\[\begin{equation}
+z_i = \langle v_i |v \rangle\,.
+\tag{2.43}
+\end{equation}\]</span>
+Vidinės sandaugos geometrinę interpretaciją galime lengviau pamatyti
+naudodami 2 dimensijų Euklido vektorių erdvę. Imkime
+<span class="math inline">\(|\phi\rangle = a|0\rangle + b|1\rangle\)</span>
+normuotąjį vektorių, išreikštą <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> baziniais vektoriais, ir konkretų <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>
+koeficientų pavyzdį:
+<span class="math display" id="eq:konkretus-koeficientai-pvz">\[\begin{equation}
+|\phi\rangle = \frac{2}{\sqrt{13}}|0\rangle + \frac{3}{\sqrt{13}}|1\rangle = \frac{1}{\sqrt{13}}\begin{bmatrix}
+2 \\
+3 \\
+\end{bmatrix}\,.
+\tag{2.44}
+\end{equation}\]</span>
+Atlikę šio vektoriaus vidinę sandaugą su <span class="math inline">\(|0\rangle\)</span>
+vektoriumi rasime:
+<span class="math display" id="eq:vidine-sandauga-koeficientas-pvz">\[\begin{equation}
+\langle 0|\phi\rangle = \frac{2}{\sqrt{13}}\langle 0|0\rangle + \frac{3}{\sqrt{13}}\langle 0|1\rangle = \frac{2}{\sqrt{13}}\,.
+\tag{2.45}
+\end{equation}\]</span>
+Viršuje
+<span class="math inline">\(\langle 0|0\rangle = 1\)</span> ir
+<span class="math inline">\(\langle 0|1\rangle = 0\)</span>, naudojant bazinių
+vektorių ortogonalumą ir normuotumą, apibendrinta minėta delta funkcija
+<span class="math inline">\(\langle v_i |v_j \rangle = \delta_{ij}\)</span>.
+Galime šią vidinę sandaugą iliustruoti <a href="matematikos-skyrius.html#fig:vektoriaus-dekompozicija-pvz">2.3</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vektoriaus-dekompozicija-pvz"></span>
+<img src="media/image2_3.svg" alt="Vektoriaus $|\phi\rangle$ dekompozicija į statmenus vienetinius (bazinius) vektorius $|0\rangle$ ir $|1\rangle$. Vidinės sandaugos čia nusako $|\phi\rangle$ vektoriaus projekcijas (arba persiklojimą) į atitinkamus bazinius vektorius" width="35%" />
+<p class="caption">
+2.3 pav. Vektoriaus <span class="math inline">\(|\phi\rangle\)</span> dekompozicija į statmenus vienetinius (bazinius) vektorius <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>. Vidinės sandaugos čia nusako <span class="math inline">\(|\phi\rangle\)</span> vektoriaus projekcijas (arba persiklojimą) į atitinkamus bazinius vektorius
+</p>
+</div>
+<p>Nubrėžę brūkšniuotą statmeną liniją matome, kad vidinė sandauga
+<span class="math inline">\(\langle 0|\phi\rangle\)</span> indikuoja
+<span class="math inline">\(|\phi\rangle\)</span> vektoriaus projekcijos dydį (arba
+persiklojimą) santykinai su <span class="math inline">\(|0\rangle\)</span> vektoriumi. Tai
+atspindi koeficientas šalia <span class="math inline">\(|0\rangle\)</span> vektoriaus.
+Analogiškai randama projekcija į <span class="math inline">\(|1\rangle\)</span> bazinį
+vektorių vidinėje sandaugoje
+<span class="math inline">\(\langle 1|\phi\rangle\)</span>. Net ir
+kompleksinėje vektorių erdvėje yra teisinga sakyti, kad
+<span class="math inline">\(\langle 0|\phi \rangle\)</span> parodo, kokį
+komponentą <span class="math inline">\(|\phi\rangle\)</span> turi
+<span class="math inline">\(|0\rangle\)</span> atžvilgiu.</p>
+<p>Norėdami įvertinti, kiek du normuotieji kompleksiniai vektoriai
+persikloja, galime apskaičiuoti vidinės sandaugos modulį
+<span class="math display" id="eq:vektoriu-persiklojimo-nustatymas">\[\begin{equation}
+\big|\langle\psi |\phi \rangle \big| =
+\sqrt{\langle\psi |\phi\rangle\langle\phi |\psi\rangle} = \cos(\theta)\,.
+\tag{2.46}
+\end{equation}\]</span>
+<span class="math inline">\(\theta\)</span> nusako kampą tarp vektorių <span class="math inline">\(|\phi\rangle\)</span> ir
+<span class="math inline">\(|\psi\rangle\)</span>. Verta atkreipti dėmesį, kad kampas čia
+yra apibrėžtas <span class="math inline">\(0 \leq \theta \leq \pi/2\)</span>, kadangi modulis visada
+grąžina teigiamąjį skaičių. Matome, kad dviejų vienodų vektorių vidinės
+sandaugos modulis yra 1, o ortogonaliųjų (<span class="math inline">\(\theta = \pi/2\)</span>), žinoma, 0.</p>
+</div>
+<div id="kubito-reprezentacija-blocho-sferoje" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Kubito reprezentacija Blocho sferoje<a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vieno kubito būsenas
+<span class="math inline">\(|\psi\rangle = a |0\rangle + b|1\rangle\)</span>
+įmanoma išreikšti geometriškai naudojant vadinamąją Blocho sferos
+reprezentaciją. Kubitas šioje reprezentacijoje pavaizduojamas kaip
+orientuotasis vektorius realioje 3 dimensijų erdvės Blocho sferoje,
+prasidedantis nuo sferos centro ir užsibaigiantis jos paviršiuje. Tokį
+kubito būsenos pavaizdavimą galime rasti pirmiausiai išreiškę
+kompleksinius skaičius <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> Oilerio formule:
+<span class="math display" id="eq:koeficientai-oilerio-formule">\[\begin{equation}
+|\psi\rangle = |a|\mathrm{e}^{\mathrm{i}\phi_1}|0\rangle + |b|\mathrm{e}^{\mathrm{i}\phi_2}|1\rangle\,.
+\tag{2.47}
+\end{equation}\]</span>
+Kadangi <span class="math inline">\(\mathrm{e}^{\mathrm{i}\phi}\)</span> narių modulis yra <span class="math inline">\(|\mathrm{e}^{\mathrm{i}\phi}| = 1\)</span> ir
+amplitudės susideda <span class="math inline">\(|a|^2 + |b|^2 = 1\)</span>, galime atlikti keitimą
+<span class="math inline">\(|a| + |b| = \cos(\alpha) + \sin(\alpha)\)</span>. Kampams paprastai yra
+leidžiama kisti nuo 0 iki <span class="math inline">\(2\pi\)</span> apsukant visą ratą. Tačiau <span class="math inline">\(|a|\)</span> ir <span class="math inline">\(|b|\)</span>
+yra teigiamieji skaičiai, tad išsaugodami šį reikalavimą turime
+apibrėžti <span class="math inline">\(\alpha\)</span> kampą <span class="math inline">\(0 \leq \alpha \leq \pi/2\)</span>. Konvenciškai yra
+taikomas keitimas <span class="math inline">\(\alpha = \theta/2\)</span> ir kampas <span class="math inline">\(\theta\)</span> apibrėžiamas
+<span class="math inline">\(0 \leq \theta \leq \pi\)</span>, tad amplitudės tampa
+<span class="math inline">\(|a| + |b| = \cos(\theta/2) + \sin(\theta/2)\)</span>. Iškeldami <span class="math inline">\(\mathrm{e}^{\mathrm{i}\phi_1}\)</span>
+narį ir pervadindami <span class="math inline">\(\phi_2 - \phi_1 \equiv \phi\)</span>, gauname:
+<span class="math display" id="eq:koeficientu-pertvarkymas-1">\[\begin{equation}
+|\psi\rangle = \mathrm{e}^{\mathrm{i}\phi_1}\big(\cos(\theta/2)|0\rangle
++ \sin(\theta/2)\mathrm{e}^{\mathrm{i}\phi}|1\rangle\big)\,.
+\tag{2.48}
+\end{equation}\]</span>
+Kadangi globali kvantinės būsenos fazė neturi fizinės įtakos, galime
+panaikinti narį <span class="math inline">\(\mathrm{e}^{\mathrm{i}\phi_1}\)</span>. Taip prieiname prie kubito būsenos
+Blocho reprezentacijos:
+<span class="math display" id="eq:koeficientu-pertvarkymas-2">\[\begin{equation}
+|\psi\rangle = \cos(\theta/2)|0\rangle + \sin(\theta/2)\mathrm{e}^{\mathrm{i}\phi}|1\rangle\,.
+\tag{2.49}
+\end{equation}\]</span>
+Iš pirmo žvilgsnio atrodytų, kad turint dvi kompleksines amplitudes <span class="math inline">\(a\)</span>
+ir <span class="math inline">\(b\)</span> reikia bendrai keturių realiųjų skaičių nusakyti bendrai kubito
+būsenai. Tačiau dėl reikalavimo amplitudžių kvadratui susidėti į vienetą
+ir įtakos nedarančios globalios fazės pakanka tik dviejų realiujų
+skaičių. Pirmasis parametras <span class="math inline">\(0 \leq \theta \leq \pi\)</span> nusako ilgumos
+kampą, kurį šioje reprezentacijoje Blocho vektorius sudaro su Blochos
+sferos <span class="math inline">\(z\)</span> ašimi. Antrasis parametras <span class="math inline">\(0 \leq \phi &lt; 2\pi\)</span>, nusako
+azimutinį kampą, kurį šio vektoriaus projekcija sudaro <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span>
+plokštumoje (sferos pusiaujyje) skaičiuojant nuo teigiamosios <span class="math inline">\(x\)</span> ašies.
+Blocho vektorius, tolydžiai keičiant šiuos du parametrus, apibūdina
+visus įmanomus taškus Blocho sferos paviršiuje.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:blocho-sfera-2"></span>
+<img src="media/image2_4.svg" alt="Bendra kubito būsena $|\psi\rangle$ nusakoma Blocho vektoriumi, pažymėtu nuo Blocho sferos centro iki jos paviršiaus. Išilgai $x$, $y$ ir $z$ ašių pažymėtos dažnai algoritmuose pasitelkiamos būsenos" width="45%" />
+<p class="caption">
+2.4 pav. Bendra kubito būsena <span class="math inline">\(|\psi\rangle\)</span> nusakoma Blocho vektoriumi, pažymėtu nuo Blocho sferos centro iki jos paviršiaus. Išilgai <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> ir <span class="math inline">\(z\)</span> ašių pažymėtos dažnai algoritmuose pasitelkiamos būsenos
+</p>
+</div>
+<p>Patikrinkime keletą orientacijų, kad pamatytume, kaip Blocho sferoje
+pavaizduojamos skirtingos kubito būsenos. Jeigu imsime kampą
+<span class="math inline">\(\theta = 0\)</span>, tada <span class="math inline">\(\cos(0/2) = 1\)</span>, <span class="math inline">\(\sin(0/2) = 0\)</span> ir randame, kad į
+<span class="math inline">\(+z\)</span> orientuotas Blocho vektorius nusako <span class="math inline">\(|0\rangle\)</span>
+būseną. Jeigu imsime <span class="math inline">\(\theta = \pi\)</span>, tada <span class="math inline">\(\cos(\pi/2) = 0\)</span>,
+<span class="math inline">\(\sin(\pi/2) = 1\)</span> ir randame, kad į <span class="math inline">\(-z\)</span> orientuotas vektorius nusako
+<span class="math inline">\(|1\rangle\)</span> būseną. Šiame kubito parametrizavime
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> būsenos,
+kurios, kaip žinome, yra ortogonalios, vaizduojamos kaip antiparaleliai
+orientuoti Blocho vektoriai. Tai gali šiek tiek klaidinti ir šį
+skirtumą, atsirandantį perteikiant 1 kubito kompleksinę vektorių erdvę
+realioje sferoje, tiesiog reikia prisminti. Tad jeigu <span class="math inline">\(z\)</span> ašys nusako
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> būsenas,
+kokios būsenos yra išilgai <span class="math inline">\(x\)</span> ir <span class="math inline">\(y\)</span> ašių? Šias būsenas vadinsime
+atitinkamai <span class="math inline">\(|0_x \rangle\)</span> ir
+<span class="math inline">\(|1_x \rangle\)</span> bei <span class="math inline">\(|0_y \rangle\)</span> ir
+<span class="math inline">\(|1_y \rangle\)</span>. Išilgai <span class="math inline">\(x\)</span> ašies turime
+<span class="math inline">\(\theta = \pi/2,\)</span> o imdami <span class="math inline">\(\phi = 0\)</span> ir <span class="math inline">\(\phi = \pi\)</span> randame
+<span class="math inline">\(|0_x \rangle\)</span> ir <span class="math inline">\(|1_x \rangle\)</span>:
+<span class="math display" id="eq:busenos-isilgai-x">\[\begin{equation}
+|0_x \rangle = \frac{1}{\sqrt{2}}\big( |0\rangle + |1\rangle\big)\,,\quad
+|1_x \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle - |1\rangle\big)\,.
+\tag{2.50}
+\end{equation}\]</span>
+Išilgai <span class="math inline">\(y\)</span> ašies <span class="math inline">\(\theta = \pi/2\)</span> bei <span class="math inline">\(\phi = \ \pi/2\)</span> ir
+<span class="math inline">\(\phi = 3\pi/2\)</span>, randame <span class="math inline">\(|0_y \rangle\)</span> ir
+<span class="math inline">\(|1_y \rangle\)</span>:
+<span class="math display" id="eq:busenos-isilgai-y">\[\begin{equation}
+|0_y \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + \mathrm{i}|1\rangle\big)\,,\quad
+|1_y \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle - \mathrm{i}|1\rangle)\,.
+\tag{2.51}
+\end{equation}\]</span>
+Šios būsenos, kaip ir visos kitos <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plokštumoje, yra lygios
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> būsenų
+superpozicijos, besiskiriančios viena nuo kitos santykinėmis <span class="math inline">\(\phi\)</span>
+fazėmis. Galima patikrinti jų ortogonalumą,
+<span class="math inline">\(\langle 0_x|1_x \rangle = 0\)</span>,
+<span class="math inline">\(\langle 0_y |1_y \rangle = 0\)</span>.</p>
+<p>Trumpam grįžkime prie to, kodėl Blocho sferos reprezentacijoje atsiranda
+pusiniai kampai <span class="math inline">\(\theta/2\)</span>. Kvantiniai 1 kubito loginiai vartai yra
+visiškai nusakomi unitariniais operatoriais, priklausančiais <strong>SU(2)
+grupei</strong> (angl. <em>special unitary group</em>), kurie atlieka vektoriaus
+rotaciją 2 kompleksinių dimensijų erdvėje. Tačiau Blocho sferoje vartų
+efektą iliustruojame kaip vektoriaus rotacijas 3 dimensijų Euklido
+erdvėje, kurias apibūdina operatoriai, priklausantys <strong>SO(3) grupei</strong>
+(angl. <em>special orthogonal group</em>). Tarp šių grupių yra atsitiktinė
+sąsaja, ledžianti atlikti SU(2) elemento vizualizaciją, tačiau SU(2)
+grupė dvigubai dengia SO(3) grupę. Tai reiškia, kad du SU(2) elementus,
+besiskiriančius tik <span class="math inline">\(\pi\)</span> faze, galime perteikti tuo pačiu elementu SO(3)
+grupėje, išsaugodami visą likusią grupės struktūrą. Dėl to rotacija
+<span class="math inline">\(\theta\)</span> kampu Blocho sferoje nusako <span class="math inline">\(\theta/2\)</span> rotaciją kompleksinėje
+vektorių erdvėje. Turime apeiti Blocho sferą aplink du kartus
+(<span class="math inline">\(\theta = 4\pi\)</span>) siekdami sugrįžti į tą pačią būseną.</p>
+</div>
+<div id="tiesiniai-operatoriai-ir-matricos" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Tiesiniai operatoriai ir matricos<a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kvantiniai loginiai vartai matematikoje yra nusakomi objektais, kurie
+vadinami <strong>tiesiniais operatoriais</strong> (angl. <em>linear operator</em>).
+Operatoriai, veikdami vektoriais nusakytas kvantines būsenas, apibūdina
+šių vektorių transformacijas. Pavyzdžiui, 1 kubito Blocho sferos
+reprezentacijoje operatoriaus veiksmas yra keisti Blocho vektoriaus
+orientaciją sferoje. Formaliai, operatorius <span class="math inline">\(A\)</span> (vartojame didžiąsias
+raides žymėti operatoriams) transformuoja kiekvieną vektorių
+<span class="math inline">\(|v\rangle \in V\)</span> į kitą vektorių
+<span class="math inline">\(|u\rangle\)</span>, priklausantį tai pačiai vektorių erdvei,
+<span class="math inline">\(|u\rangle \in V\)</span>:
+<span class="math display" id="eq:tiesinio-operatoriaus-apibrezimas">\[\begin{equation}
+A|v\rangle = |u\rangle\,.
+\tag{2.52}
+\end{equation}\]</span>
+Operatoriaus veiksmas <em>ket</em> vektoriui yra užrašomas panašiai kaip jų
+tarpusavio sandauga, kurioje operatorius stovi kairėje <em>ket</em> pusėje.
+Toliau pateikiame elementarias operacijas tarp operatorių ir vektorių,
+operatorių ir operatorių.</p>
+<p>Skaičių, dauginantį vektorių, galima visada iškelti už operatoriaus ir
+vektoriaus:
+<span class="math display" id="eq:skaiciaus-iskelimas-pries-operatoriu">\[\begin{equation}
+A\big(z|v\rangle\big) = zA|v\rangle\,.
+\tag{2.53}
+\end{equation}\]</span>
+Visi loginiai vartai kvantinėje kompiuterijoje yra tiesiniai
+operatoriai. Operatoriaus tiesiškumo savybė jam veikiant bet kokius du
+(ar daugiau) vektorius:
+<span class="math display" id="eq:operatoriaus-tiesiskumo-savybe">\[\begin{equation}
+A\big(|v\rangle + |u\rangle\big) = A|v\rangle + A|u\rangle\,.
+\tag{2.54}
+\end{equation}\]</span>
+Tai parodo, kad operatorius <span class="math inline">\(A\)</span> veikia atskirai kiekvieną vektorių
+sumoje tiesiniu būdu. Kadangi bet kokį vektorių <span class="math inline">\(V\)</span> erdvėje galima
+išreikšti pasirinktais baziniais vektoriais, norint nustatyti
+<span class="math inline">\(A|\psi\rangle\)</span> pakanka žinoti, kaip tiesinis
+operatorius veikia pasirinktus bazinius vektorius.</p>
+<p>Du operatoriai <span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span> yra lygūs (<span class="math inline">\(A = B\)</span>), jeigu bet kokiam
+vektoriui galioja sąlygos <span class="math inline">\(|v\rangle \in V\)</span>,
+<span class="math inline">\(A|v\rangle = B|v\rangle\)</span>. Dviejų
+tiesinių operatorių suma nusako kitą tiesinį operatorių <span class="math inline">\(A + B = C\)</span>:
+<span class="math display" id="eq:operatoriu-sumos-apibrezimas">\[\begin{equation}
+C|v\rangle = (A + B)|v\rangle = A|v\rangle + B|v\rangle\,.
+\tag{2.55}
+\end{equation}\]</span>
+Operatorių sudėtyje eiliškumas nėra svarbus, <span class="math inline">\(A + B = B + A\)</span>. Vienas iš
+paprasčiausių operatorių yra <strong>identitetas</strong> (angl.<em> identity</em>), žymimas
+simboliu <span class="math inline">\(I\)</span> ir dar vadinamas <strong>vienetiniu operatoriumi</strong>.
+Identititetas, veikdamas vektorių, jo nekeičia
+<span class="math inline">\(I|v\rangle = |v\rangle\)</span>; tai yra
+analogiška vektoriaus sandaugai su skaičiumi 1. Taip pat egzistuoja ir
+nulinis operatorius, vadinsime jį <span class="math inline">\(N\)</span>, <span class="math inline">\(N|v\rangle = 0\)</span>.
+Dviejų operatorių sandauga <span class="math inline">\(AB = D\)</span> nusako kitą operatorių:
+<span class="math display" id="eq:operatoriu-sandaugos-apibrezimas">\[\begin{equation}
+AB|v\rangle = D|v\rangle\,.
+\tag{2.56}
+\end{equation}\]</span>
+Kairėje lygties dalyje operatorius <span class="math inline">\(B\)</span> veikia vektorių
+<span class="math inline">\(|v\rangle\)</span>, toliau operatorius <span class="math inline">\(A\)</span> veikia gautą vektorių
+<span class="math inline">\(B|v\rangle\)</span>. Eiliškumas operatorių
+sandaugoje bendrai yra svarbus, nes kvantinėje kompiuterijoje dažnai
+aptinkami operatoriai, kuriems <span class="math inline">\(AB \neq BA\)</span>. Tik itin specifinėse
+situacijose galima aptikti, kai eiliškumas nėra svarbus, <span class="math inline">\(AB = BA\)</span>. Kai
+dviejų ar daugiau operatorių sandaugos eiliškumas nėra svarbus, tokie
+operatoriai yra vadinami <strong>tarpusavyje komutatyviais</strong>
+(angl. <em>commutative operators</em>). Dviejų operatorių komutatyvumas yra
+standartiškai užrašomas įdedant juos į skliaustelius, kurios forma
+išskleidus reiškia:
+<span class="math display" id="eq:operatoriu-komutatorius">\[\begin{equation}
+\lbrack A,B\rbrack = AB - BA\,.
+\tag{2.57}
+\end{equation}\]</span>
+Operatoriai <span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span> yra komutatyvūs, jeigu <span class="math inline">\(\lbrack A,B\rbrack = 0\)</span>
+ir nekomutatyvūs, jeigu <span class="math inline">\(\lbrack A,B\rbrack \neq 0\)</span>. Kita savybė, dviejų
+operatorių <strong>antikomutatyvumas</strong> (angl. <em>anticommutative</em>), yra
+operacija, apibrėžta lenktiniais skliausteliais:
+<span class="math display" id="eq:operatoriu-antikomutatorius">\[\begin{equation}
+\big\{ A,B \big\} = AB + BA\,.
+\tag{2.58}
+\end{equation}\]</span>
+Du operatoriai yra antikomutatyvieji, jeigu <span class="math inline">\(\big\{ A,B \big\} = 0\)</span>.
+Sukeitus antikomutatyviuosius operatorius vietomis skliausteliuose, jų
+sandaugoje atsiranda minuso ženklas, nes <span class="math inline">\(AB = - BA\)</span>. Šios dvi
+operatorių klasės aptinkamos specifinėse kvantinių skaičiavimų
+užduotyse, kaip bus aptarta vėliau.</p>
+<p>Abstraktus operatorius kvantinėje kompiuterijoje gali būti visada
+realizuojamas tiesinėje algebroje matricos forma – sugrupuotų skaičių
+lentele. Tai yra vadinama operatoriaus <strong>vaizdavimas matrica</strong>
+(angl. <em>matrix representation</em>). Abstrakti operatoriaus forma ir
+matricos forma yra ekvivalentiškos, tad šiuos terminus dažnai vartosime
+pakaitomis. Verta atsiminti, kad jei norime realizuoti operatorių
+matricos forma, reikia pasirinkti tam tikrą vektorių erdvės <span class="math inline">\(V\)</span>, kuriame
+veikia operatorius <span class="math inline">\(A\)</span>, bazinių vektorių rinkinį. Mat operatorius gali
+būti išreikštas su skirtingais bazinių vektorių rinkiniais. Jeigu nėra
+nurodoma kitaip, operatoriai standartiškai išreiškiami skaičiuojamųjų
+vektorių bazėje
+<span class="math inline">\(\big\{|0\rangle , |1\rangle\big\}\)</span>.</p>
+<p>Išsamiau panagrinėkime, kaip tiesiniai operatoriai (loginiai vartai) yra
+išreiškiami matricų forma, kuo išsiskiria tokių matricų savybės ir jų
+aritmetika. Matrica, transformuojanti vektorių <span class="math inline">\(n\)</span> dimensijų vektorių
+erdvėje, yra kvadratinės formos kompleksinių skaičių lentelė, turinti
+(<span class="math inline">\(n\times n\)</span>) elementų (sakoma: <span class="math inline">\(n\)</span> stulpelių ir <span class="math inline">\(n\)</span> eilučių). Kadangi
+<span class="math inline">\(n\)</span> kubitų vektorių erdvė yra <span class="math inline">\(2^n\)</span> dimensijų, kvantinėje
+kompiuterijoje paprastai aptinkame tik kvadratines matricas su lyginiu
+skaičiumi eilučių ir stulpelių. Pavyzdžiui, visos vieno kubito būsenas
+nusakančios transformacijos yra išreiškiamos (<span class="math inline">\(2\times 2\)</span>) dydžio matricomis.
+Toliau pateikiame pagrindines aritmetines operacijas tarp matricų,
+iliustracijai naudodami (<span class="math inline">\(3\times 3\)</span>) matricų dydį.</p>
+<p>Matricų sudėtis galima tik tarp tokio paties dydžio matricų. Dviejų
+operatorių <span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span>, išreikštų matricomis, sudėtis:
+<span class="math display" id="eq:operatoriai-matricu-sudetis">\[\begin{equation}
+\begin{aligned}
+A + B = &amp;\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+\end{bmatrix} + \begin{bmatrix}
+b_{11} &amp; b_{12} &amp; b_{13} \\
+b_{21} &amp; b_{22} &amp; b_{23} \\
+b_{31} &amp; b_{32} &amp; b_{33} \\
+\end{bmatrix} \\
+= &amp; \begin{bmatrix}
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; a_{13} + b_{13} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; a_{23} + b_{23} \\
+a_{31} + b_{31} &amp; a_{32} + b_{32} &amp; a_{33} + b_{33} \\
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.59}
+\end{equation}\]</span>
+Matricų elementus, kurie yra bendrai kompleksiniai skaičiai, čia
+vadiname <span class="math inline">\(a_{ij}\)</span> ir <span class="math inline">\(b_{ij}\)</span>. Pirmasis simbolis <span class="math inline">\(i\)</span> padeda įvardyti
+eilutės numerį (skaičiuojant nuo viršaus), antrasis simbolis <span class="math inline">\(j\)</span> –
+stulpelio numerį (skaičiuojant iš kairės). Taip rašyti nebūtina, tačiau
+pravartu siekiant greičiau įvardyti matricos elementus. Norint sudėti
+dvi matricas <span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span> jų stulpelių ir eilučių skaičius turi būti
+vienodas. Sudėties tvarka yra nesvarbi <span class="math inline">\(A + B = B + A\)</span>, vadovaujantis
+minėta abstraktesne operatorių aritmetika. Skaičiaus ir matricos
+sandauga <span class="math inline">\(zA = Az\)</span> yra apibrėžta:
+<span class="math display" id="eq:skaiciaus-matricos-sandauga">\[\begin{equation}
+z\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+\end{bmatrix} = \begin{bmatrix}
+za_{11} &amp; za_{12} &amp; za_{13} \\
+za_{21} &amp; za_{22} &amp; za_{23} \\
+za_{31} &amp; za_{32} &amp; za_{33} \\
+\end{bmatrix}\,.
+\tag{2.60}
+\end{equation}\]</span>
+Dviejų matricų sandauga tarpusavyje galima, jeigu pirmosios matricos
+stulpelių skaičius yra lygus antrosios matricos eilučių skaičiui.
+Kadangi čia susiduriame tik su kvadratinės formos matricomis, tai
+reiškia, kad matricos sandaugoje turi būti tokio paties dydžio.
+Sandaugoje gautas naujas darinys yra tokio paties dydžio nauja matrica.
+Matricų <span class="math inline">\(AB = C\)</span> sandauga atliekama taip:
+<span class="math display" id="eq:matricu-sandauga-1">\[\begin{equation}
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+\end{bmatrix}\begin{bmatrix}
+b_{11} &amp; b_{12} &amp; b_{13} \\
+b_{21} &amp; b_{22} &amp; b_{23} \\
+b_{31} &amp; b_{32} &amp; b_{33} \\
+\end{bmatrix} = \begin{bmatrix}
+c_{11} &amp; c_{12} &amp; c_{13} \\
+c_{21} &amp; c_{22} &amp; c_{23} \\
+c_{31} &amp; c_{32} &amp; c_{33} \\
+\end{bmatrix}\,.
+\tag{2.61}
+\end{equation}\]</span>
+Kiekvienas elementas <span class="math inline">\(c_{ij}\)</span> yra atitinkamos <span class="math inline">\(A\)</span> eilutės ir <span class="math inline">\(B\)</span>
+stulpelio elementų sandaugų suma:
+<span class="math display" id="eq:matricu-sandauga-2">\[\begin{equation}
+C = \begin{bmatrix}
+a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} &amp; a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} &amp; a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\
+a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} &amp; a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} &amp; a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} \\
+a_{31}b_{11} + a_{12}b_{21} + a_{13}b_{31} &amp; a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} &amp; a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33} \\
+\end{bmatrix}\,.
+\tag{2.62}
+\end{equation}\]</span>
+Matricų daugyba yra asociatyvi, pavyzdžiui, trijų operatorių sandaugoje
+<span class="math inline">\(ABC = A(BC) = (AB)C\)</span>. Galime pasirinkdami sudauginti pirmiausiai <span class="math inline">\(BC\)</span>
+arba <span class="math inline">\(AB\)</span> tarpusavyje. Šiame skyriuje minėtos vektorių operacijos:
+vektoriaus transpozicija, kompleksinė bei ermitinė jungtys yra taip pat
+naudojamos matricoms. Matricos transpozicija <span class="math inline">\(A^T\)</span> sukeičia eilučių ir
+stulpelių elementus vietomis taip:
+<span class="math display" id="eq:matricos-transpozicija">\[\begin{equation}
+A^T = \begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+\end{bmatrix}^{T} = \begin{bmatrix}
+a_{11} &amp; a_{21} &amp; a_{31} \\
+a_{12} &amp; a_{22} &amp; a_{32} \\
+a_{13} &amp; a_{23} &amp; a_{33} \\
+\end{bmatrix}\,.
+\tag{2.63}
+\end{equation}\]</span>
+Matricų sandaugoje transpozicija sukeičia operatorių eiliškumą,
+<span class="math inline">\((AB)^T = B^T A^T\)</span>. Matricos kompleksinė jungtis <span class="math inline">\(A^{*}\)</span>
+kiekvienam jo elementui atlieka kompleksinę jungtį <span class="math inline">\(a_{ij}^{*}\)</span>.
+Ermitinė matricos jungtis taip pat yra kartu atliekama transpozicija ir
+elementų kompleksinė jungtis <span class="math inline">\(A^{\dagger} = \big(A^T\big)^{*}\)</span>:
+<span class="math display" id="eq:matricos-ermitine-jungtis">\[\begin{equation}
+A^{\dagger} = \begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+\end{bmatrix}^{\dagger} = \begin{bmatrix}
+a_{11}^{*} &amp; a_{21}^{*} &amp; a_{31}^{*} \\
+a_{12}^{*} &amp; a_{22}^{*} &amp; a_{32}^{*} \\
+a_{13}^{*} &amp; a_{23}^{*} &amp; a_{33}^{*} \\
+\end{bmatrix}\,.
+\tag{2.64}
+\end{equation}\]</span>
+Matricų sandaugoje tai sukeičia eiliškumą
+<span class="math inline">\((AB)^{\dagger} = B^{\dagger}A^{\dagger}\)</span>. Taip pat galima parodyti,
+kad <span class="math inline">\((A^{\dagger})^{\dagger} = A\)</span>,
+<span class="math inline">\((A + B)^{\dagger} = A^{\dagger} + B^{\dagger}\)</span> ir
+<span class="math inline">\((zA)^{\dagger} = z^{*}A^{\dagger}\)</span>.</p>
+<p>Pateikiame keturis kvantinėje kompiuterijoje dažnai aptinkamus
+operatorius ir jų matricų išraiškas skaičiuojamųjų
+vektorių bazėje
+<span class="math inline">\(\big\{|0\rangle , |1\rangle\big\}\)</span>:
+<span class="math display" id="eq:daznai-naudojami-operatoriai">\[\begin{equation}
+I = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}\,,\quad X = \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix}\,,\quad Y = \begin{bmatrix}
+0 &amp; - i \\
+i &amp; 0 \\
+\end{bmatrix}\,,\quad Z = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; - 1 \\
+\end{bmatrix}\,.
+\tag{2.65}
+\end{equation}\]</span>
+Šios matricos vadinamos fiziko <strong>Pauli vardu</strong> (angl. <em>Wolfgang Pauli</em>)
+ir sudaro vadinamąjį Pauli bazinių matricų rinkinį <span class="math inline">\(\{ I, X, Y, Z\}\)</span>.
+Trys Pauli matricos <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> yra tarpusavyje nekomutatyvios, bet
+kurių dviejų Pauli matricų sandauga gražina trečiąją:
+<span class="math display" id="eq:pauli-y-x-z" id="eq:pauli-x-y-z">\[\begin{align}
+XY = &amp; \mathrm{i}Z\,,\quad XZ = -\mathrm{i}Y\,,\quad YZ = \mathrm{i}X\,; \tag{2.66}\\
+YX = &amp; -\mathrm{i}Z\,,\quad ZX = \mathrm{i}Y\,,\quad ZZ = - \mathrm{i}X\,. \tag{2.67}
+\end{align}\]</span>
+Tai galime lengvai patikrinti, pavyzdžiui <span class="math inline">\(XY\)</span> ir <span class="math inline">\(YX\)</span>:
+<span class="math display" id="eq:pauli-y-x" id="eq:pauli-x-y">\[\begin{align}
+XY = &amp; \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+0 &amp; - \mathrm{i} \\
+\mathrm{i} &amp; 0 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \cdot 0 + 1 \cdot \mathrm{i} &amp; 0 \cdot 0 + 1 \cdot 0 \\
+1 \cdot 0 + 0 \cdot \mathrm{i} &amp; 1\cdot (-\mathrm{i}) + 0 \cdot 0 \\
+\end{bmatrix} = \mathrm{i}\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; - 1 \\
+\end{bmatrix} = \mathrm{i}Z\,; \tag{2.68}\\
+YX = &amp; \begin{bmatrix}
+0 &amp; -\mathrm{i} \\
+\mathrm{i} &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \cdot 0 + 1 \cdot (-\mathrm{i}) &amp; 0 \cdot 1 + 0 \cdot (-\mathrm{i}) \\
+\mathrm{i}\cdot 0 + 0 \cdot 1 &amp; \mathrm{i} \cdot 1 + 0 \cdot 0 \\
+\end{bmatrix} = \mathrm{i}\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix} = -\mathrm{i}Z\,. \tag{2.69}
+\end{align}\]</span>
+Akivaizdu, kad <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> Pauli operatoriai yra tarpusavyje
+antikomutatyvūs.</p>
+<p>Grįžkime prie vektorių veikimo operatoriumi, norėdami parodyti, kokios
+operacijos yra matematiškai apibrėžtos. Tą galime pavaizduoti matricų
+reprezentacija, nes vektorius gali būti taip pat formaliai vadinamas
+matrica. Pavyzdžiui, vieno kubito <em>ket</em> vektorius
+<span class="math inline">\(|v\rangle\)</span> yra išreiškiamas <span class="math inline">\((2\times 1)\)</span> dydžio matrica
+(vektorius stulpelis), tiesinėje algebroje turinčia dvi eilutes ir vieną
+stulpelį. O štai <em>bra</em> vektorius <span class="math inline">\(\langle v|\)</span> yra
+išreiškiamas <span class="math inline">\((1\times 2)\)</span> matrica (vektorius eilutė), turinčia vieną eilutę
+ir du stulpelius.</p>
+<p>Prisimenant matricų daugybą, leidžiama dauginti dvi <span class="math inline">\((n\times n)\)</span>, <span class="math inline">\((n\times 1)\)</span>
+dydžio matricas; tai atlikę gauname naują <span class="math inline">\((n\times 1)\)</span> dydžio matricą, o
+tiksliau – vektorių stulpelį (<em>ket</em>). Tačiau šių dviejų matricų
+atvirkštinė daugyba <span class="math inline">\((n\times 1)(n\times n)\)</span> nėra galima, nes stulpelių
+skaičius pirmojoje matricoje ir eilučių skaičius antrojoje neatitinka.
+Tai parodo, kad negalimas <em>ket</em> vektoriaus veikimas operatoriumi; jeigu
+<em>ket</em> stovi operatoriaus kairėje, <span class="math inline">\(|v\rangle A\)</span> yra
+neapibrėžta operacija. Teisingas eiliškumas yra
+<span class="math inline">\(A|v\rangle\)</span>. <em>Bra</em> vektoriaus veikimas operatoriumi
+atliekamas būtent <em>bra</em> esant operatoriaus kairėje
+<span class="math inline">\(\langle v|A\)</span>. Taip gaunamas kitas <em>bra</em> vektorius, nes
+<span class="math inline">\((1\times n)(n\times n) = (1\times n)\)</span>. Šioje situacijoje neteisingas
+eiliškumas būtų <span class="math inline">\(A\langle v|\)</span>. Iliustracijai imkime
+<span class="math inline">\(X|0\rangle\)</span> ir <span class="math inline">\(\langle 0|X\)</span>:
+<span class="math display" id="eq:0-x-pvz" id="eq:x-0-pvz">\[\begin{align}
+X|0\rangle = &amp; \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \cdot 1 + 1 \cdot 0 \\
+1 \cdot 1 + 0 \cdot 0 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix} = |1\rangle\,;\tag{2.70}\\
+\langle 0| X = &amp; \lbrack 1\: 0 \rbrack\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix} = \lbrack 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 + 0 \cdot 0  \rbrack = \lbrack 0\: 1 \rbrack = \langle 1|\,.
+\tag{2.71}
+\end{align}\]</span>
+Pamename, kad
+<span class="math inline">\(|v\rangle^{\dagger} = \langle v|\)</span> bei
+<span class="math inline">\((AB)^{\dagger} = B^{\dagger}A^{\dagger}\)</span>. Iš to gauname, kad
+<span class="math inline">\(\big( A|v\rangle\big)^{\dagger} = \langle v| A^{\dagger}\)</span>.
+Todėl dualioje erdvėje <span class="math inline">\(A|v\rangle\)</span> operacijos atitikmuo
+yra ermitinė <span class="math inline">\(A^{\dagger}\)</span> operatoriaus jungtis, veikianti <em>bra</em>
+vektorių iš dešinės <span class="math inline">\(\langle v| A^{\dagger}\)</span>. Viršuje <span class="math inline">\(X\)</span>
+operatorius turi tokią savybę – jo ermitinė jungtis yra lygi jam
+pačiam, tad <span class="math inline">\(X = X^{\dagger}\)</span>.</p>
+<p>Taip pat atkreipiame dėmesį į tokio tipo operaciją:
+<span class="math display" id="eq:op-matricinis-elementas">\[\begin{equation}
+\langle u | A | v \rangle = a_{uv}\,.
+\tag{2.72}
+\end{equation}\]</span>
+Dėl daugybos asociatyvumo šią operaciją galime atlikti dviem būdais:
+<span class="math inline">\(\langle u|A|v\rangle = \langle u|\big(A|v\rangle\big) = \big(\langle u|A\big)|v\rangle\)</span>.
+Naryje <span class="math inline">\(\langle u|\big(A|v\rangle\big)\)</span>
+operatorius <span class="math inline">\(A\)</span> veikia vektorių <span class="math inline">\(|v\rangle\)</span> iš kairės,
+grąžindamas bendrai kitą vektorių, sakykime,
+<span class="math inline">\(A|v\rangle = |g\rangle\)</span>. Iš to gaunamas
+vidinės sandaugos <span class="math inline">\(\langle u|g\rangle\)</span>
+rezultatas – skaičius <span class="math inline">\(a_{uv}\)</span>. Antruoju būdu naryje
+<span class="math inline">\(\big(\langle u|A\big)|v\rangle\)</span> pirmiausiai
+atliekama <span class="math inline">\(\langle u|A\)</span> ir toliau – vidinė sandauga su
+<span class="math inline">\(|v\rangle\)</span>.</p>
+</div>
+<div id="unitariniai-ir-ermitiniai-operatoriai" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Unitariniai ir ermitiniai operatoriai<a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Unitariniai operatoriai yra plačiausiai
+naudojama ir aptinkama operatorių klasė kvantinėje kompiuterijoje. Šie
+operatoriai matematiškai apibūdina kvantinių loginių vartų efektą – jie
+transformuoja vektoriais nusakomas kubitų būsenas į kitas būsenas.
+Unitarinis operatorius <span class="math inline">\(U\)</span> pasižymi savybe šia savybe:
+<span class="math display" id="eq:unitarinio-apibrezimas">\[\begin{equation}
+U^{\dagger}U = UU^{\dagger} = I\,.
+\tag{2.73}
+\end{equation}\]</span>
+Tai parodo, kad unitarinio operatoriaus sandauga su jo ermitine jungtimi
+<span class="math inline">\(U^{\dagger}\)</span> yra lygi vienetiniam operatoriui. Vadinasi, <span class="math inline">\(U^{\dagger}\)</span> yra
+atvirkštinis <span class="math inline">\(U\)</span> operatoriui (rašoma <span class="math inline">\(U^{\dagger}= U^{-1}\)</span>), ir todėl galima
+visada atstatyti pradinį vektorių:
+<span class="math inline">\(U^{\dagger}U|v\rangle = I|v\rangle = |v\rangle\)</span>.
+Unitariniai operatoriai turi kitą svarbią savybę – veikdami vektorių
+<span class="math inline">\(|v\rangle\)</span> transformuoja jį į kitą vektorių, tačiau
+nekeičia vektoriaus ilgio. Dėl šios priežasties veikiantys du skirtingus
+vektorius unitariniai operatoriai išsaugo jų vidinės sandaugos reikšmę.
+Imkime du, nebūtinai ortogonaliuosius, vektorius
+<span class="math inline">\(|v\rangle\)</span> ir <span class="math inline">\(|u\rangle\)</span>. Minėtas <span class="math inline">\(U\)</span>
+savybes galime paprastai parodyti:
+<span class="math display" id="eq:unitarinio-savybes">\[\begin{equation}
+\langle u|U^{\dagger}U|v\rangle = \langle u|I|v\rangle = \langle u|v\rangle\,.
+\tag{2.74}
+\end{equation}\]</span>
+Jeigu <span class="math inline">\(|v\rangle\)</span> yra
+normuotasis vektorius, <span class="math inline">\(U\)</span> išlaiko normuotumą
+<span class="math inline">\(\langle v|U^{\dagger}U |v\rangle = 1\)</span>. Tad
+unitarinių operatorių efektas gali būti apibūdintas kaip vektorių
+posūkis vektorių erdvėje. Jeigu <span class="math inline">\(U\)</span> veikia visus bazinius vektorius jų rinkinyje, tada naujai gauti vektoriai nusako kitą <strong>transformuotą
+bazinių vektorių rinkinį</strong> (angl. <em>basis transformation</em>).</p>
+<p>Kita svarbi operatorių klasė kvantinėje kompiuterijoje yra <strong>ermitiniai
+operatoriai</strong> (angl. <em>hermitian operator</em>). Operatorių <strong>tikrinių
+vektorių</strong> (angl. <em>eigenvector</em>) ir <strong>tikrinių verčių</strong>
+(angl. <em>eigenvalue</em>) konceptai leidžia geriau suprasti ermitinių ir
+unitarinių operatorių savybes bei jų vartojimą. Vektorius
+<span class="math inline">\(|\lambda\rangle\)</span> yra vadinamas tiesinio operatoriaus
+<span class="math inline">\(K\)</span> tikriniu vektoriumi, o <span class="math inline">\(\lambda\)</span> yra su šiuo vektoriumi susieta
+tikrinė vertė (skaičius), jeigu tenkinama lygybė:
+<span class="math display" id="eq:tikrines-vertes-apibrezimas">\[\begin{equation}
+K|\lambda\rangle = \lambda |\lambda\rangle\,.
+\tag{2.75}
+\end{equation}\]</span>
+Atkreipiame dėmesį, kad bendroje situacijoje operatorius, veikdamas
+vektorių, pakeičia jį į kitą vektorių. Tačiau jeigu
+<span class="math inline">\(|\lambda\rangle\)</span> yra <span class="math inline">\(K\)</span> operatoriaus vienas iš
+tikrinių vektorių, tada operatoriaus veiksmas šiam vektoriui yra lygus
+vektoriaus <span class="math inline">\(|\lambda\rangle\)</span> ir skaičiaus <span class="math inline">\(\lambda\)</span>
+sandaugai – pats vektorius nepakinta.</p>
+<p>Operatoriaus tikrinės vertės <span class="math inline">\(\lambda\)</span> tenkina charakteristinę
+determinantinę lygtį <span class="math inline">\(\det(K - \lambda I) = 0\)</span>. Charakteristinė lygtis
+yra bendrai <span class="math inline">\(n\)</span> laipsnio polinomas <span class="math inline">\(p(\lambda) = 0\)</span>, todėl egzistuoja
+<span class="math inline">\(n\)</span> skaičius tikrinių verčių
+<span class="math inline">\((\lambda_1 , \lambda_2 ,\ldots , \lambda_n )\)</span>, tenkinančių
+šią lygtį. Tikriniai vektoriai <span class="math inline">\(|\lambda_i \rangle\)</span> yra
+randami antrame žingsnyje iš
+lygties <span class="math inline">\((K - \lambda_i I)|\lambda_i \rangle = 0\)</span>,
+žinant su jais asocijuotas tikrines vertes <span class="math inline">\(\lambda_i\)</span>.</p>
+<p>Ermitinių operatorių tikrinės vertės <span class="math inline">\(\lambda_i\)</span> yra visada realieji
+skaičiai. Tai galima lengvai parodyti pradedant nuo
+<span class="math inline">\(K|\lambda\rangle = \lambda |\lambda\rangle\)</span>
+ir įvertinant šios lygties ermitinę jungtį
+<span class="math inline">\(\big(K|\lambda\rangle\big)^{\dagger} = \langle\lambda|K^{\dagger} = \langle\lambda|K = \langle\lambda|\lambda^{*}\)</span>.
+Tad:
+<span class="math display" id="eq:ermitinio-tikrines-vetes-realumas">\[\begin{equation}
+\langle\lambda |K|\lambda\rangle = \lambda^{*}\langle\lambda |\lambda\rangle = \lambda\langle\lambda |\lambda\rangle\,.
+\tag{2.76}
+\end{equation}\]</span>
+Matome, kad <span class="math inline">\(\lambda^{*} = \lambda\)</span>, ir todėl <span class="math inline">\(\lambda\)</span> gali būti tik
+realusis skaičius. Su skirtingomis tikrinėmis vertėmis <span class="math inline">\(\lambda_i\)</span>
+asocijuoti tikriniai vektoriai <span class="math inline">\(|\lambda_i\rangle\)</span> yra
+ortogonalieji,
+<span class="math inline">\(\langle\lambda_i |\lambda_j \rangle = 0\)</span> (jeigu
+<span class="math inline">\(i \neq j\)</span>). Imdami operatoriaus <span class="math inline">\(K\)</span> du tikrinius vektorius
+<span class="math inline">\(|\lambda_1 \rangle\)</span> ir
+<span class="math inline">\(|\lambda_2 \rangle\)</span> bei su jais susietas vertes
+<span class="math inline">\(\lambda_1\)</span> ir <span class="math inline">\(\lambda_2\)</span>, galime paprastai parodyti ortogonalumą:
+<span class="math display" id="eq:tikriniu-vektoriu-ortogonalumas">\[\begin{equation}
+\langle\lambda_2 |K|\lambda_1 \rangle = \lambda_1 \langle\lambda_2 |\lambda_1 \rangle =
+\lambda_2 \langle\lambda_2 |\lambda_1 \rangle \rightarrow (\lambda_1 - \lambda_2 )\langle\lambda_2 |\lambda_1\rangle = 0\,.
+\tag{2.77}
+\end{equation}\]</span>
+Matome, kad jeigu <span class="math inline">\(\lambda_2 \neq \lambda_1\)</span>, tada
+<span class="math inline">\(\langle\lambda_2 |\lambda_1 \rangle = 0\)</span>.
+Ermitinių operatorių tikrinių verčių realumas ir tikrinių vektorių
+ortogonalumas yra naudojamas kvantinėje mechanikoje nusakyti stebimiems
+fizikiniams dydžiams. Siekdami išsamiai aprašyti sistemą reikalaujame,
+kad ortogonaliųjų tikrinių vektorių skaičius atitiktų visų fiziškai
+skirtingų kvantinių būsenų skaičių. Jeigu turime <span class="math inline">\(K\)</span> ermitinę matricą
+<span class="math inline">\((d\times d)\)</span> dydžio, operuojančią <span class="math inline">\(d\)</span> dimensijų kompleksinių vektorių
+erdvėje, tada galime būti tikri, kad rasime <span class="math inline">\(d\)</span> tikrinių <span class="math inline">\(K\)</span> matricos
+vektorių. Ortogonalieji ir normuotieji <span class="math inline">\(K\)</span> operatoriaus tikriniai
+vektoriai gali būti naudojami kaip baziniai vektoriai toje vektorių
+erdvėje apibūdinti būsenoms, o fizikiniai dydžiai yra natūraliai
+nusakomi tikrinėmis vertėmis – realiaisiais skaičiais.</p>
+<p><strong>Vienalaikio diagonalizavimo teorema</strong> (angl. <em>simultaneous
+diagonalization theorem</em>) nusako, kad jeigu du operatoriai yra
+komutatyvūs <span class="math inline">\([A, B] = 0\)</span>, tada šie operatoriai dalijasi tais pačiais
+tikriniais vektoriais (su galimai skirtingomis tikrinėmis vertėmis). Mat
+pasitaiko atvejų, kai du ar daugiau operatoriaus tikrinių vektorių yra
+susieti su ta pačia tikrine verte <span class="math inline">\(\lambda\)</span>. Tokie vektoriai yra
+lietuviškai vadinami <strong>išsigimusiais</strong> (angl. <em>degenerate</em>).
+Išsigimusiuosius tiesiškai nepriklausomus vektorius visada galima
+užrašyti forma, kurioje jie yra vienas kitam ortogonalūs. Tad
+<span class="math inline">\(n\)</span> skaičius išsigimusių tikrinių vektorių su ta pačia tikrine verte
+<span class="math inline">\(\lambda\)</span> apibūdina <span class="math inline">\(n\)</span> dimensijų išsigimusį poerdvį. Kvantinės
+mechanikos praktikoje dažnai galima rasti papildomą operatorių (ar
+operatorius), kuris taip pat dalijasi tais pačiais tikriniais vektoriais
+(yra komutatyvusis), tačiau turi skirtingas tikrines vertes šiems
+vektoriams. Kartu jie leidžia panaikinti išsigimimą ir taip unikaliai
+atskirti fiziškai skirtingas būsenas.</p>
+<p>Kitaip nei ermitinių operatorių, unitarinių operatorių tikrinės vertės
+<span class="math inline">\(\lambda\)</span> gali būti kompleksiniai skaičiai. Jų tikrinių verčių modulis
+yra visada lygus vienetui, <span class="math inline">\(|\lambda| = 1\)</span>. Todėl unitarinių operatorių
+tikrinės vertės turi bendrą formą <span class="math inline">\(\lambda = \mathrm{e}^{\mathrm{i}\theta}\)</span>;
+<span class="math inline">\(\theta\)</span> yra realusis skaičius.</p>
+<p>Kvantinėje kompiuterijoje dažnai aptinkami <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> ir <span class="math inline">\(Z\)</span> yra
+ermitiniai operatoriai
+(<span class="math inline">\(X = X^{\dagger}\)</span>, <span class="math inline">\(Y = Y^{\dagger}\)</span>, <span class="math inline">\(Z = Z^{\dagger}\)</span>), bet tuo pačiu ir
+unitariniai (nes, pavyzdžiui, <span class="math inline">\(ZZ^{\dagger} = I\)</span>). Dėl to jie gali
+atlikti loginių vartų vaidmenį ir kartu apibūdinti fizines sistemos
+stebimas savybes. Vieno kubito baziniai vektoriai
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> buvo
+pasirinkti neatsitiktinai, jie yra Pauli-<span class="math inline">\(Z\)</span> operatoriaus tikriniai
+vektoriai. Pauli-<span class="math inline">\(Z\)</span> operatoriaus tikrines vertes <span class="math inline">\(\lambda_0\)</span> ir
+<span class="math inline">\(\lambda_1\)</span>, susietas su <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span>, galime patikrinti taip:
+<span class="math display" id="eq:pauli-z-tikrines">\[\begin{equation}
+\lambda_0 = \langle 0|Z|0 \rangle = 1\langle 0|0\rangle = 1\,,\quad
+\lambda_1 = \langle 1|Z|1 \rangle = -1\langle 1|1\rangle = -1\,.
+\tag{2.78}
+\end{equation}\]</span>
+Akivaizdu, kad Pauli-<span class="math inline">\(Z\)</span> tikriniai vektoriai <span class="math inline">\(|0\rangle\)</span>
+ir <span class="math inline">\(|1\rangle\)</span> nėra <span class="math inline">\(X\)</span> ir <span class="math inline">\(Y\)</span> operatorių tikriniai
+vektoriai. Šį dėsningumą pirmiausia matome iš to, kad <span class="math inline">\(X\)</span> ir <span class="math inline">\(Y\)</span>
+operatoriai veikdami <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> pakeičia šiuos vektorius, pavyzdžiui,
+<span class="math inline">\(X|0\rangle = |1\rangle\)</span>. Formaliai,
+Pauli <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> operatoriai yra tarpusavyje nekomutatyvūs ir todėl
+neturi bendrų tikrinių vektorių. Pauli-<span class="math inline">\(X\)</span> ir <span class="math inline">\(Y\)</span> operatorių tikriniai
+vektoriai yra jau minėti:
+<span class="math display" id="eq:pauli-y-tikriniai-2" id="eq:pauli-x-tikriniai-2">\[\begin{align}
+|0_x \rangle = &amp; \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+1 \\
+\end{bmatrix}\,,\quad
+|1_x \rangle = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+-1 \\
+\end{bmatrix}\,; \tag{2.79}\\
+|0_y \rangle = &amp; \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+\mathrm{i} \\
+\end{bmatrix}\,,\quad
+|1_y \rangle = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 \\
+-\mathrm{i} \\
+\end{bmatrix}\,. \tag{2.80}
+\end{align}\]</span>
+Pauli-<span class="math inline">\(X\)</span> ir <span class="math inline">\(Y\)</span> operatorių tikrinės vertės yra taip pat 1 ir -1,
+pavyzdžiui,
+<span class="math inline">\(\lambda_{0x} = \langle 0_x |X|0_x \rangle = 1\)</span>,
+<span class="math inline">\(\lambda_{1x} = \langle 1_x |X|1_x \rangle = -1\)</span>.
+Operatoriai, turintys identiškas tikrines vertes, yra <strong>unitariškai
+ekvivalentiški</strong> (angl. <em>unitary equivalent</em>). Tai reiškia, kad jie gali
+būti transformuojami vienas į kitą panaudojus tam tikrus unitarinius
+operatorius <span class="math inline">\(U\)</span>, <span class="math inline">\(A = UBU^{\dagger}\)</span>. Ši operacija matricos
+reprezentacijoje atlieka operatoriaus <span class="math inline">\(B\)</span> perteikimą kitais baziniais
+vektoriais.</p>
+<p>Panašiai kaip baziniai vektoriai leidžia išreikšti bet kuriuos kitus
+vektorius toje vektorių erdvėje, visos <span class="math inline">\((2\times 2)\)</span> dydžio unitarinės
+matricos <span class="math inline">\(U\)</span> gali būti išreikštos Pauli matricų <span class="math inline">\(\{I, X, Y, Z\}\)</span> suma su
+atitinkamais koeficientais:
+<span class="math display" id="eq:2-2-unitarinio-dekompozicija">\[\begin{equation}
+U = c_I I + c_x X + c_y Y + c_z Z\,.
+\tag{2.81}
+\end{equation}\]</span>
+Čia <span class="math inline">\(c_I\)</span> yra realusis skaičius, <span class="math inline">\((c_x\)</span>, <span class="math inline">\(c_y\)</span>, <span class="math inline">\(c_z\)</span> –
+kompleksiniai skaičiai, kurie kartu tenkina lygybę:
+<span class="math display" id="eq:dekompozicijos-koeficientu-normuotums">\[\begin{equation}
+|c_I|^2 + |c_x|^2 + |c_y|^2 + |c_z|^2 = 1\,.
+\tag{2.82}
+\end{equation}\]</span>
+Unitariniai ir ermitiniai operatoriai priklauso platesnei operatorių
+grupei, vadinamai <strong>normaliaisiais operatoriais</strong> (angl. <em>normal
+operators</em>). Normalieji operatoriai pasižymi <span class="math inline">\(AA^{\dagger}=A^{\dagger}A\)</span>, o jų
+tikriniai vektoriai, susieti su skirtingomis tikrinėmis vertėmis, yra
+ortogonalieji. Toliau matysime, kad normaliuosius operatorius galima
+paprastai išreikšti taikant vadinamąją spektrinę dekompoziciją.</p>
+</div>
+<div id="diadinė-operatorių-dekompozicija" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Diadinė operatorių dekompozicija<a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Šiame poskyryje pateikiame būdą išreikšti operatoriams taikant <em>bra</em> ir
+<em>ket</em> vektorių matematinę konstrukciją, vadinama <strong>išorine sandauga</strong>
+(angl. <em>outer product</em>), dar žinoma kaip <strong>diadinė</strong> (angl. <em>dyad</em>)
+<strong>dekompozicija</strong>. Ši matematinė konstrukcija itin supaprastina
+abstraktų operatorių ir vektorių veikimo skaičiavimą kvantinėje
+kompiuterijoje nereikalaujant naudoti matricų reprezentacijų.</p>
+<p>Pirmiausiai atkreipiame dėmesį, kad bendrą matricą galima visada
+išreikšti kitų matricų suma (nebūtinai unikalia). Imkime šį <span class="math inline">\((2\times 2)\)</span>
+matricos pavyzdį:
+<span class="math display" id="eq:matrica-kaip-suma">\[\begin{equation}
+\begin{bmatrix}
+a &amp; b \\
+c &amp; d \\
+\end{bmatrix} = a\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0 \\
+\end{bmatrix} + b\begin{bmatrix}
+0 &amp; 1 \\
+0 &amp; 0 \\
+\end{bmatrix} + c\begin{bmatrix}
+0 &amp; 0 \\
+1 &amp; 0 \\
+\end{bmatrix} + d\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}\,.
+\tag{2.83}
+\end{equation}\]</span>
+Kiekviena iš keturių <span class="math inline">\((2\times 2)\)</span> matricų yra vektoriaus stulpelio ir
+vektoriaus eilutės, vadinamosios išorinės sandaugos, rezultatas,
+<span class="math inline">\((2\times 1)(1\times 2)(2\times 2)\)</span>. Pavyzdžiui, šios išorinės sandaugos rezultatas
+yra antra matrica:
+<span class="math display" id="eq:isorine-sandauga-pvz">\[\begin{equation}
+\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix}\lbrack 0\: 1\rbrack = \begin{bmatrix}
+1 \cdot 0\  &amp; 1 \cdot 1 \\
+0 \cdot 0 &amp; 0 \cdot 1 \\
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; 1 \\
+0 &amp; 0 \\
+\end{bmatrix} = |1\rangle\langle 0|\,.
+\tag{2.84}
+\end{equation}\]</span>
+Tai priešinga vidinei vektorių sandaugai, kuri gaunama sudauginus eilutę
+ir stulpelį, o jos rezultatas yra skaičius. Prisiminę, kad vektorius
+stulpelis nusako <em>ket</em>, o eilutė <em>bra</em>, matome, kad viršuje pavyzdyje
+pateikta išorinė sandauga ir matrica gali būti užrašoma glaustai
+<span class="math inline">\(|1\rangle\langle 0|\)</span>. Čia
+<span class="math inline">\(|1\rangle\)</span> ir <span class="math inline">\(\langle 0|\)</span> yra kubito
+Pauli-<span class="math inline">\(Z\)</span> <em>ket</em> (<em>bra</em>) baziniai vektoriai. Todėl bet kokia <span class="math inline">\((2\times 2)\)</span>
+matrica yra išreiškiama diadine dekompozicija taip:
+<span class="math display" id="eq:2-2-diadine-dekompozicija">\[\begin{equation}
+\begin{bmatrix}
+a &amp; b \\
+c &amp; d \\
+\end{bmatrix} = a|0\rangle\langle 0| + b|1\rangle\langle 0| + c|0\rangle\langle 1|
++ d|1\rangle\langle 1|\,.
+\tag{2.85}
+\end{equation}\]</span>
+Apžvelkime diadų bendruosius principus ir jų taikymą. Imkime du
+vektorius <span class="math inline">\(|\nu\rangle\)</span> ir
+<span class="math inline">\(|\omega\rangle\)</span>, priklausančius <span class="math inline">\(V\)</span> vektorių erdvei. Jų
+išorinė sandauga užrašoma
+<span class="math inline">\(|\nu\rangle\langle\omega|\)</span> ir yra
+operatorius, veikiantis <span class="math inline">\(V\)</span> erdvėje. Galime patikrinti, kad diada yra
+tiesinis operatorius, veikdami ja vektorius
+<span class="math inline">\(a|\psi\rangle\)</span> ir <span class="math inline">\(b|\phi\rangle\)</span>:
+<span class="math display" id="eq:diados-tiesiskumas">\[\begin{equation}
+\begin{aligned}
+|\nu\rangle\langle\omega|\big(a|\psi\rangle + b|\phi\rangle\big) = &amp;
+a|\nu\rangle\langle\omega|\psi\rangle + b|\nu\rangle\langle\omega|\phi\rangle =
+az|\nu\rangle + bc|\nu\rangle \\
+= &amp; (az + bc)|\nu\rangle\,.
+\end{aligned}
+\tag{2.86}
+\end{equation}\]</span>
+Diada veikiant vektorių yra gaunamas kitas vektorius, analogiškai kaip
+veikiant vektorių operatoriumi. Matome, kad diada
+<span class="math inline">\(|\nu\rangle\langle\omega|\)</span> pasuka
+vektorius <span class="math inline">\(|\psi\rangle\)</span> ir
+<span class="math inline">\(|\phi\rangle\)</span> į <span class="math inline">\(|\nu\rangle\)</span>
+vektoriaus kryptį, priklauso nuo to, ar jie persikloja su
+<span class="math inline">\(|\omega\rangle\)</span>. Persiklojimą atspindi skaičius, gautas
+vidinėje sandaugoje,
+<span class="math inline">\(z = \langle\omega|\psi\rangle\)</span>,
+<span class="math inline">\(c = \langle\omega|\phi\rangle\)</span>. Dėl
+daugybos asociatyvumo į
+<span class="math inline">\(|\nu\rangle\langle\omega|\psi\rangle\)</span>
+galime žvelgti dviem būdais, nes
+<span class="math inline">\(|\nu\rangle\big(\langle\omega|\psi\rangle\big) = \big(|\nu\rangle\langle\omega|\big)|\psi\rangle\)</span>.
+Pirmuoju būdu nusakoma vektoriaus ir skaičiaus sandauga, antruoju –
+vektoriaus veikimas operatoriumi. Diada
+<span class="math inline">\(|\nu\rangle\langle\omega|\)</span> taip pat
+gali operuoti virš <em>bra</em> vektoriaus iš dešinės, pavyzdžiui, naryje
+<span class="math inline">\(\langle\psi|\nu\rangle\langle\omega|\)</span>.
+Šiuo atveju vidinė sandauga atliekama su <span class="math inline">\(|\nu\rangle\)</span>,
+o <em>bra</em> <span class="math inline">\(\langle\psi|\)</span> būtų pasuktas į
+<span class="math inline">\(\langle\omega|\)</span>.</p>
+<p>Diados
+<span class="math inline">\(D = |\nu\rangle\langle\omega|\)</span> ermitinė
+jungtis yra:
+<span class="math display" id="eq:diados-ermitine-jungtis">\[\begin{equation}
+D^{\dagger} = |\omega\rangle\langle\nu|\,.
+\tag{2.87}
+\end{equation}\]</span>
+Vienetinis <span class="math inline">\(V\)</span> vektorių erdvės operatorius <span class="math inline">\(I\)</span> yra išreiškiamas diadomis
+naudojant šios erdvės bazinių vektorių <span class="math inline">\(\big\{|m\rangle\big\}\)</span>
+rinkinį ir visus juos susumuojant:
+<span class="math display" id="eq:vienetinio-isskaidymas-diadomis">\[\begin{equation}
+I = \sum_m |m\rangle\langle m|\,.
+\tag{2.88}
+\end{equation}\]</span>
+Atkreipiame dėmesį, kad vienodi <em>bra</em> ir <em>ket</em> simboliai diadoje
+nurodo matricos pagrindinės įstrižainės elementus <span class="math inline">\(a_{mm}\)</span>. Visi
+tiesiniai operatoriai turi diadinę dekompoziciją. Šią dekompoziciją
+galime formaliai išreikšti įterpę <span class="math inline">\(A\)</span> operatorių tarp vienetinių
+operatorių ir panaudodami vienetinio operatoriaus diadines
+dekompozicijas:
+<span class="math display" id="eq:tiesinio-operatoriaus-diadine-dekompozicija">\[\begin{equation}
+\begin{aligned}
+A = &amp; IAI = \sum_{m,n} |m\rangle\langle m|A|n\rangle\langle n| =
+\sum_{m,n} \langle m|A|n\rangle |m\rangle\langle n| \\
+= &amp; \sum_{m,n} a_{mn}|m\rangle\langle n|\,.
+\end{aligned}
+\tag{2.89}
+\end{equation}\]</span>
+Čia <span class="math inline">\(a_{mn} = \langle m|A|n\rangle\)</span> yra
+jau matyta operacija. Ji įvardija matricos elementą <span class="math inline">\(a_{mn}\)</span>, <span class="math inline">\(m\)</span>
+eilutėje ir <span class="math inline">\(n\)</span> stulpelyje, pasirinktoje vektorių bazėje.
+Pauli operatorius ir Hadamardo transformaciją galima paprastai
+išreikšti diadomis vektorių
+<span class="math inline">\(\big\{|0\rangle , |1\rangle\big\}\)</span> bazėje:
+<span class="math display" id="eq:h-diadomis" id="eq:vienetinis-diadomis" id="eq:z-diadomis" id="eq:y-diadomis" id="eq:x-diadomis">\[\begin{align}
+X = &amp; \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix} = |0\rangle\langle 1| + |1\rangle\langle 0|\,; \tag{2.90} \\
+Y = &amp; \begin{bmatrix}
+0 &amp; -\mathrm{i} \\
+\mathrm{i} &amp; 0 \\
+\end{bmatrix} = - \mathrm{i}|0\rangle\langle 1| + \mathrm{i}|1\rangle\langle 0|\,; \tag{2.91}\\
+Z = &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; - 1 \\
+\end{bmatrix} = |0\rangle\langle 0| - |1\rangle\langle 1|\,; \tag{2.92}\\
+I = &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix} = |0 \rangle\langle 0| + |1\rangle\langle 1|\,; \tag{2.93}\\
+H = &amp; \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; - 1 \\
+\end{bmatrix} = \frac{1}{\sqrt{2}}\big(|0\rangle\langle 0| + |1\rangle\langle 0|
++ |0\rangle\langle 1| - |1\rangle\langle 1|\big) \,. \tag{2.94}
+\end{align}\]</span>
+Pavyzdžiui, Hadamardo matricos elementai <span class="math inline">\(h_{01} = 1\)</span>, <span class="math inline">\(h_{11} = -1\)</span>.
+Iliustruodami diadų naudojimą, pateikiame <span class="math inline">\(X|1\rangle\)</span>
+bei <span class="math inline">\(YX|0\rangle\)</span>:
+<span class="math display" id="eq:xy-0-diadomis" id="eq:x-1-diadomis">\[\begin{align}
+X|1\rangle = &amp; |1\rangle\langle 0|1\rangle + |0\rangle\langle 1|1\rangle = |0\rangle\,; \tag{2.95} \\
+YX|0\rangle = &amp; \big( -\mathrm{i}|0\rangle\langle 1| + \mathrm{i}|1\rangle\langle 0|\big)\big(|0\rangle\langle 1|
++ |1\rangle\langle 0|\big)|0\rangle\nonumber \\
+= &amp; -\mathrm{i}|0\rangle\langle 0|0\rangle + \mathrm{i}|1\rangle\langle 1|0\rangle = - \mathrm{i}|0\rangle\,.
+\tag{2.96}
+\end{align}\]</span>
+Taikant bazinių vektorių ortogonalumą, vidinės sandaugos
+<span class="math inline">\(\langle 0|0\rangle = 1\)</span>,
+<span class="math inline">\(\langle 1|0\rangle = 0\)</span>. Atkreipiame dėmesį, kad
+čia svarbus operatorių veikimo eiliškumas, kadangi Pauli operatoriai yra
+tarpusavyje nekomutatyvūs.</p>
+<p>Normaliuosius operatorius (<span class="math inline">\(AA^{\dagger}=A^{\dagger}A\)</span>), kuriems priklauso unitariniai
+ir ermitiniai operatoriai, galima visada išreikšti vadinamąja
+<strong>spektrine dekompozicija</strong> (angl. <em>spectral operator decomposition</em>):
+<span class="math display" id="eq:spektrine-dekompozicija">\[\begin{equation}
+A = \sum_k \lambda_k |k\rangle\langle k| = \sum_k \lambda_k P_k\,.
+\tag{2.97}
+\end{equation}\]</span>
+Skaičius <span class="math inline">\(\lambda_k\)</span> yra operatoriaus <span class="math inline">\(A\)</span> tikrinė vertė, asocijuota su
+tikriniu vektoriumi <span class="math inline">\(|k\rangle\)</span>. Tikrinių verčių
+rinkinys <span class="math inline">\(\{\lambda_k\}\)</span> yra operatoriaus <span class="math inline">\(A\)</span> spektras. Čia
+<span class="math inline">\(P_k = |k\rangle\langle k|\)</span> nusako
+svarbią, vadinamąją <strong>projekcinių operatorių</strong> (angl. <em>projection
+operator</em>) klasę. Jie atlieka projekciją į poerdvį, susietą su
+tikrine verte <span class="math inline">\(\lambda_k\)</span>, kurį dengia su ja susieti tikriniai
+vektoriai <span class="math inline">\(|k\rangle\)</span>. Tai matome iš išraiškos:
+<span class="math display" id="eq:projekcinis-v">\[\begin{equation}
+P_k |v\rangle = |k\rangle\langle k|v\rangle = \langle k|v\rangle |k\rangle = a|k\rangle\,.
+\tag{2.98}
+\end{equation}\]</span>
+Čia <span class="math inline">\(a = \langle k|v\rangle\)</span> nusako
+persiklojimą <span class="math inline">\(|v\rangle\)</span> vektoriaus išilgai
+<span class="math inline">\(|k\rangle\)</span>, kitaip tariant – jo projekciją. Jeigu
+sistemoje nėra <span class="math inline">\(|k\rangle\)</span> tikrinių vektorių išsigimimo,
+tada šis poerdvis yra 1 dimensijos, dengiamas
+<span class="math inline">\(|k\rangle\)</span> vektoriaus. Kitos projekcinių operatorių
+savybės yra:
+<span class="math display" id="eq:projekciniu-ortogonalumas" id="eq:projekciniu-pilnumas">\[\begin{align}
+\sum_k P_k = &amp; I\,; \tag{2.99}\\
+P_i P_j = &amp; P_i \delta_{ij}\,. \tag{2.100}
+\end{align}\]</span>
+Pirmoji savybė, vadinamoji <strong>pilnumo lygtis</strong> (angl. <em>completenes
+equation</em>) teigia, kad susumavę visus vektorių erdvės projekcinius
+operatorius gausime vienetinį operatorių <span class="math inline">\(I\)</span>. Antroji savybė rodo, kad
+dviejų skirtingų projekcinių operatorių sandauga yra nulinė
+(<span class="math inline">\(i \neq j\)</span>), arba lygia pačiam operatoriui (<span class="math inline">\(i = j\)</span>). Taip yra todėl,
+kad skirtingi <span class="math inline">\(P_k\)</span> atlieka vektorių projekcijas į ortogonaliuosius
+poerdvius.</p>
+<p>Verta paminėti, kad unitariniai operatoriai <span class="math inline">\(U\)</span> turi spektrinę
+dekompoziciją, kurios forma yra:
+<span class="math display" id="eq:unitariniu-spektrine-dekompozicija">\[\begin{equation}
+U = \sum_k \mathrm{e}^{\mathrm{i}\varphi_k}|k\rangle\langle k|\,.
+\tag{2.101}
+\end{equation}\]</span>
+Čia <span class="math inline">\(\varphi_k\)</span> yra realusis skaičius ir, kaip minėta, tikrinės vertės
+yra fazės faktoriai <span class="math inline">\(\lambda_k = \mathrm{e}^{\mathrm{i}\varphi_k}\)</span>.</p>
+<p>Matome, kad projekcinių operatorių dekompozicijoje yra tik matricos
+pagrindinės įstrižainės elementai (diagonalioji matrica). Tokią formą
+turi viršuje diadomis išreikštas Pauli-<span class="math inline">\(Z\)</span> operatorius, kadangi
+dekompozijoje buvo naudojami jo tikriniai vektoriai
+<span class="math inline">\(\big\{|0\rangle , |1\rangle\big\}\)</span>. Identiškai
+atrodytų ir Pauli-<span class="math inline">\(X\)</span> bei <span class="math inline">\(Y\)</span> operatoriai, jeigu operatorių diadinėje
+dekompozicijoje išreikštume juos su jų tikriniais vektoriais:
+<span class="math display" id="eq:pauli-y-diadom-3" id="eq:pauli-x-diadom-3">\[\begin{align}
+X = &amp; |0_x\rangle\langle 0_x| - |1_x\rangle\langle 1_x|\,; \tag{2.102}\\
+Y = &amp; |0_y\rangle\langle 0_y| - |1_y\rangle\langle 1_y|\,. \tag{2.103}
+\end{align}\]</span></p>
+</div>
+<div id="matricos-pėdsakas" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Matricos pėdsakas<a href="matematikos-skyrius.html#matricos-pėdsakas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Matricos <strong>pėdsakas</strong> (angl. <em>trace</em>) yra operacija, kuri sudeda visus
+matricos pagrindinės įstrižainės elementus
+<span class="math inline">\(a_{mm} = \langle m|A|m\rangle\)</span>:
+<span class="math display" id="eq:pedsako-apibrezimas">\[\begin{equation}
+\mathrm{Tr}(A) = \sum_m \langle m|A|m\rangle = \sum_m a_{mm}\,.
+\tag{2.104}
+\end{equation}\]</span>
+Operatoriaus pėdsakas yra apibrėžtas kaip šio operatoriaus matricos
+reprezentacijos pėdsakas. Matricos pėdsakas nepriklauso nuo to, su
+kokiais baziniais vektoriais išreiškiamas operatorius. Įterpdami
+vienetinį operatorių
+<span class="math inline">\(I = \sum_i |i\rangle\langle i|\)</span>
+išreikštą <span class="math inline">\(\big\{|i\rangle\big\}\)</span> vektorių bazėje į išraišką
+viršuje gauname:
+<span class="math display" id="eq:pedsakas-skirtingose-bazese">\[\begin{equation}
+\begin{aligned}
+\mathrm{Tr}(A) = &amp; \sum_m \langle m|A|m\rangle = \sum_{m,i} \langle m|i\rangle\langle i|A|m\rangle \\
+= &amp; \sum_{m,i} \langle i|A|m\rangle\langle m|i\rangle = \sum_i \langle i|A|i\rangle\,.
+\end{aligned}
+\tag{2.105}
+\end{equation}\]</span>
+Visi trys Pauli operatoriai <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span> turi nulinį pėdsaką.
+Pavyzdžiui:
+<span class="math display" id="eq:z-pedsakas-0" id="eq:y-pedsakas-0">\[\begin{align}
+\mathrm{Tr}(Y) = &amp; \mathrm{Tr}\left( \begin{bmatrix}
+0 &amp; -\mathrm{i} \\
+\mathrm{i} &amp; 0 \\
+\end{bmatrix} \right) = 0 + 0 = 0\,; \tag{2.106}\\
+\mathrm{Tr}(Z) = &amp; \mathrm{Tr}\left( \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; - 1 \\
+\end{bmatrix} \right) = 1 + ( -1) = 0\,.\tag{2.107}
+\end{align}\]</span>
+Matricos pėdsakas turi šias savybes:
+<span class="math display" id="eq:pedsako-savybe-3" id="eq:pedsako-savybe-2" id="eq:pedsako-savybe-1">\[\begin{align}
+\mathrm{Tr}(A + B) = &amp; \mathrm{Tr}(A) + \mathrm{Tr}(B)\,;\tag{2.108}\\
+\mathrm{Tr}(zA) = &amp; z\mathrm{Tr}(A)\,;\tag{2.109}\\
+\mathrm{Tr}(AB) = &amp; \mathrm{Tr}(BA)\,.\tag{2.110}
+\end{align}\]</span>
+Pirmoje eilutėje užrašyta savybė yra vadinamasis tiesiškumas; antroje
+eilutėje <span class="math inline">\(z\)</span> – skaičius. Trečia savybė nusako matricos pėdsako
+cikliškumą. Pavyzdžiui, <span class="math inline">\(\mathrm{Tr}(ABC) = \mathrm{Tr}(BCA) = \mathrm{Tr}(CAB)\)</span>. Taip pat galima
+lengvai patikrinti, kad diados <span class="math inline">\(|m\rangle\langle n|\)</span> pėdsakas yra
+<span class="math inline">\(\mathrm{Tr}\big(|m\rangle\langle n|\big) = \langle n|m\rangle = \delta_{nm}\)</span>.</p>
+</div>
+<div id="tenzorinė-vektorių-sandauga" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Tenzorinė vektorių sandauga<a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Norint apibūdinti sudėtinę kvantinę sistemą, sudarytą iš daugiau nei
+vieno kubito, pasitelkdami tenzorinę sandaugą formaliai konstruojame
+didesnę jų būsenas talpinančią vektorių erdvę. Imkime kaip pavyzdį du
+kubitus. Kiekvienas iš jų individualiai yra nusakytas identiškose
+2 dimensijų kompleksinėse vektorių erdvėse, vadinsime jas <span class="math inline">\(V\)</span> ir <span class="math inline">\(U\)</span>.
+Sistema, sudaryta iš dviejų kubitų, nusakoma erdvėje, kuri yra tenzorinė
+šių vektorių erdvių sandauga <span class="math inline">\(V\otimes U\)</span>, žymima ženklu
+<span class="math inline">\(\otimes\)</span>. Šios vektorių erdvės dimensija <span class="math inline">\(d\)</span> yra <span class="math inline">\(V\)</span> ir <span class="math inline">\(U\)</span>
+dimensijų sandauga, <span class="math inline">\(d = 2\times 2 = 4\)</span>. Bendrai <span class="math inline">\(n\)</span> kubitų erdvė nusakoma
+<span class="math inline">\(n\)</span> skaičiumi 2 dimensijų sandaugomis, tai yra <span class="math inline">\(2^n\)</span> dimensijų erdvė.</p>
+<p><span class="math inline">\(V\otimes U\)</span> erdvės elementai yra individualių erdvių vektorių
+tenzorinės sandaugos,
+<span class="math inline">\(|v\rangle\otimes|u\rangle\)</span>, ir jų
+tiesinės kombinacijos. Galime 2 kubitų vektorius išreikšti tiesinėje
+algebroje, imkime:
+<span class="math display" id="eq:du-kubitai">\[\begin{equation}
+|v\rangle = \begin{bmatrix}
+a \\
+b \\
+\end{bmatrix}\,,\quad |u\rangle = \begin{bmatrix}
+c \\
+d \\
+\end{bmatrix}\,.
+\tag{2.111}
+\end{equation}\]</span>
+Tada jų tenzorinė sandauga
+<span class="math inline">\(|v\rangle\otimes|u\rangle\)</span> yra:
+<span class="math display" id="eq:dvieju-kubitu-tenzorine-sandauga">\[\begin{equation}
+|v\rangle\otimes|u\rangle = \begin{bmatrix}
+a \\
+b \\
+\end{bmatrix}\otimes\begin{bmatrix}
+c \\
+d \\
+\end{bmatrix} = \begin{bmatrix}
+a\begin{bmatrix}
+c \\
+d \\
+\end{bmatrix} \\
+b\begin{bmatrix}
+c \\
+d \\
+\end{bmatrix}
+\end{bmatrix} = \begin{bmatrix}
+ac \\
+ad \\
+bc \\
+bd \\
+\end{bmatrix}\,.
+\tag{2.112}
+\end{equation}\]</span>
+Gautas vektorius stulpelis yra sudarytas iš keturių elementų. Naudodami
+<span class="math inline">\(V\)</span> ir <span class="math inline">\(U\)</span> vektorių erdvių bazinius vektorius galime iš jų suformuoti
+<span class="math inline">\(V\otimes U\)</span> erdvę dengiančius bazinius vektorius. Tokia erdvė yra
+4 dimensijų, tad turėtume rasti keturis bazinius vektorius.
+Skaičiuojamasis ortogonalus 2 kubitų rinkinys yra sudarytas iš <span class="math inline">\(V\)</span> ir
+<span class="math inline">\(U\)</span> erdvių <span class="math inline">\(\big\{|1\rangle , |0\rangle\big\}\)</span>
+bazinių vektorių tenzorinių sandaugų
+<span class="math inline">\(|0\rangle\otimes|0\rangle\)</span>,
+<span class="math inline">\(|1\rangle\otimes|0\rangle\)</span>,
+<span class="math inline">\(|0\rangle\otimes|1\rangle\)</span>,
+<span class="math inline">\(|1\rangle\otimes|1\rangle\)</span>:
+<span class="math display" id="eq:baziniu-vektoriu-tenzorines-sandaugos">\[\begin{equation}
+\begin{aligned}
+|0\rangle\otimes|0\rangle = &amp; \begin{bmatrix}
+1 \\
+0 \\
+0 \\
+0 \\
+\end{bmatrix}\,,\quad |1\rangle\otimes|0\rangle = \begin{bmatrix}
+0 \\
+1 \\
+0 \\
+0 \\
+\end{bmatrix}\,,\\
+|0\rangle\otimes|1\rangle = &amp; \begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0 \\
+\end{bmatrix}\,,\quad |1\rangle\otimes|1\rangle = \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+1 \\
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.113}
+\end{equation}\]</span>
+Skaičiuojamasis <span class="math inline">\(n\)</span> kubitų bazinių vektorių rinkinys analogiškai bus
+sudarytas iš visų skirtingų <span class="math inline">\(2^n\)</span> tenzorinių 1 kubito bazinių vektorių
+sandaugų kombinacijų. Kiekvienas toks vektorius stulpelis turės
+<span class="math inline">\(2^n\)</span> elementų, kuriame vienas iš elementų bus 1, o visi likusieji
+<span class="math inline">\(n - 1\)</span> elementai 0.</p>
+<p>Kai nėra rizikos suklaidinti skaitytoją, stengsimės supaprastinti
+vektorių simboliką praleisdami <span class="math inline">\(\otimes\)</span> ir sujungdami tenzorinę
+vektoriaus išraišką į vieną skaičių eilutę. Pavyzdžiui, 2 kubitų bazinių
+vektorių rinkinys identiškai rašomas <span class="math inline">\(\big\{|00\rangle , |10\rangle , |01\rangle, |11\rangle\big\}\)</span>. Literatūroje taip pat galima sutikti
+naudojamą tenzorinės vektorių sandaugos žymėjimą su praleistu tenzoriaus
+ženklu, pavyzdžiui,
+<span class="math inline">\(|\psi\rangle|\varphi\rangle = |\psi\rangle\otimes |\varphi\rangle\)</span>.
+Šioje knygoje vartojame tik du būdus – įterpdami <span class="math inline">\(\otimes\)</span> tarp
+vektorių arba sujungdami juos vienu vektoriaus simboliu.</p>
+<p>Pateikiame pagrindines aritmetines operacijas su vektoriais išreikštais
+tenzorinėmis sandaugomis. Sandauga su skaičiumi:
+<span class="math display" id="eq:tenzorine-sandauga-su-skaiciumi">\[\begin{equation}
+z\big(|\psi\rangle\otimes|\phi\rangle\big) = \big(z|\psi\rangle\big)\otimes|\phi\rangle
+= |\psi\rangle\otimes\big(z|\phi\rangle\big)\,.
+\tag{2.114}
+\end{equation}\]</span>
+Tenzorinė dviejų vektorių sandauga, kai vienas vektorius yra išreikštas
+kitų dviejų sudėtimi (superpozicijoje):
+<span class="math display" id="eq:tenzorine-sandauga-superpozicija">\[\begin{equation}
+\big(|\psi\rangle + |u\rangle\big)\otimes |\phi\rangle = |\psi\rangle\otimes|\phi\rangle + |u\rangle\otimes|\phi\rangle\,.
+\tag{2.115}
+\end{equation}\]</span>
+Dualusis tenzorinis vektorius (<em>bra</em>) yra formuojamas taip:
+<span class="math display" id="eq:tenzorine-sandauga-dualus">\[\begin{equation}
+\big(|\psi\rangle\otimes|\phi\rangle\big)^{\dagger} = \langle\psi|\otimes \langle\phi|\,.
+\tag{2.116}
+\end{equation}\]</span>
+Naudojame susitarimą, kuriame išlaikomas simbolių
+<span class="math inline">\((\phi, \psi, u\ldots)\)</span> eiliškumas ir tik pakeičiama skliaustelių forma
+iš <em>ket</em> į <em>bra</em>. Atliekant įvairias operacijas yra svarbu sekti, kuriai
+vektorių erdvei priskirtas posistemės vektorius tenzorinėje sandaugoje.
+Mat vidinė vektorių sandauga yra apibrėžta tik tarp tos pačios vektorių
+erdvės elementų. Imkime dvi tenzorines dviejų kubitų būsenas
+<span class="math inline">\(|\psi\rangle\otimes|\phi\rangle\)</span> ir
+<span class="math inline">\(|v\rangle\otimes|u\rangle\)</span>, kai
+<span class="math inline">\(|\psi\rangle , |v\rangle \in V\)</span> bei
+<span class="math inline">\(|\phi\rangle , |u\rangle \in U\)</span>. Vidinė
+sandauga atliekama tarp vektorių, priklausančių tai pačiai posistemei:
+<span class="math display" id="eq:tenzorine-vidine">\[\begin{equation}
+\big(\langle u|\otimes\langle\omega|\big)\big(|\psi\rangle\otimes|\phi\rangle\big) =
+\langle u|\psi\rangle\langle\omega |\phi\rangle\,.
+\tag{2.117}
+\end{equation}\]</span>
+Rezultatas bus vėlgi bendrai kompleksinis skaičius, kuris yra dviejų
+skaičių sandauga
+<span class="math inline">\(\langle u|\psi\rangle\langle\omega|\phi\rangle = cz\)</span>,
+gauta iš šių dviejų vidinių sandaugų:
+<span class="math inline">\(\langle u|\psi\rangle = c\)</span>,
+<span class="math inline">\(\langle\omega |\phi\rangle = z\)</span>.</p>
+</div>
+<div id="tenzorinė-operatorių-sandauga" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Tenzorinė operatorių sandauga<a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Operatoriai, gauti iš 1 kubito operatorių tenzorinių sandaugų, formaliai
+leidžia apibūdinti didesnės kubitų sistemos transformacijas. Dviejų
+1 kubito operatorių tenzorinę sandaugą <span class="math inline">\(A\otimes B\)</span>, veikiančią
+<span class="math inline">\(V\otimes U\)</span> vektorių erdvėje, galime išreikšti matricos forma taip:
+<span class="math display" id="eq:tenzorine-operatoriu-sandauga">\[\begin{equation}
+A\otimes B = \begin{bmatrix}
+a &amp; b \\
+c &amp; d \\
+\end{bmatrix}\otimes\begin{bmatrix}
+e &amp; f \\
+g &amp; h \\
+\end{bmatrix} = \begin{bmatrix}
+aB &amp; bB \\
+cB &amp; dB \\
+\end{bmatrix} = \begin{bmatrix}
+\begin{matrix}
+ae &amp; af \\
+ag &amp; ah \\
+\end{matrix} &amp; \begin{matrix}
+be &amp; bf \\
+bg &amp; bh \\
+\end{matrix} \\
+\begin{matrix}
+ce &amp; cf \\
+cg &amp; ch \\
+\end{matrix} &amp; \begin{matrix}
+de &amp; df \\
+dg &amp; dh \\
+\end{matrix} \\
+\end{bmatrix}\,.
+\tag{2.118}
+\end{equation}\]</span>
+Atkreipiame dėmesį į blokinę struktūrą bei <span class="math inline">\((4\times 4)\)</span> matricos dydį. Tokio
+matricos dydžio ir tikimės iš operatoriaus, veikiančio 4 dimensijų
+erdvėje, nusakančioje dviejų kubitų būsenas. Iš unitariųjų operatorių
+<span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span> sukonstruotas operatorius <span class="math inline">\(A\otimes B\)</span> yra taip pat
+unitarusis. Tai galima parodyti formaliai prisimenant, kad unitariojo
+operatoriaus ir jo ermitinės jungties sandauga yra vienetinis
+operatorius:
+<span class="math display" id="eq:unitariu-operatoriu-tenzorine-sandauga">\[\begin{equation}
+(A\otimes B)(A\otimes B)^{\dagger} = (A\otimes B)(A^{\dagger}\otimes B^{\dagger})
+= AA^{\dagger}\otimes BB^{\dagger} = I\otimes I = I\,.
+\tag{2.119}
+\end{equation}\]</span>
+Kitos operatorių, išreikštų tenzorinėmis sandaugomis, savybės:
+<span class="math display" id="eq:tenzorines-sandaugos-savybe-3" id="eq:tenzorines-sandaugos-savybe-2" id="eq:tenzorines-sandaugos-savybe-1">\[\begin{align}
+A\otimes(B + C) = &amp; A\otimes B + A\otimes C\,;\tag{2.120}\\
+(A\otimes B)(C\otimes D) = &amp; (AC\otimes BD)\,;\tag{2.121}\\
+\mathrm{Tr}(A\otimes B) = &amp; \mathrm{Tr}(A)\mathrm{Tr}(B)\,.\tag{2.122}
+\end{align}\]</span>
+Iliustruodami tenzorinės operatorių sandaugos naudojimą, imkime dviejų
+kubitų sistemą, kuriai atliekama pirmam kubitui Pauli-<span class="math inline">\(X\)</span>, o antram
+Pauli-<span class="math inline">\(Z\)</span> transformacijos:
+<span class="math display" id="eq:tenzorines-sandaugos-pvz-1">\[\begin{equation}
+X\otimes Z\big(|v\rangle\otimes|u\rangle\big) = X|v\rangle\otimes Z|u\rangle\,.
+\tag{2.123}
+\end{equation}\]</span>
+Tai yra tiesinis operatorius, o <span class="math inline">\(X\)</span> ir <span class="math inline">\(Z\)</span> veikia atitinkamo kubito
+vektorių erdvėje. Šią operaciją galime perteikti ir naudodami tiesinę
+algebrą:
+<span class="math display" id="eq:tenzorines-sandaugos-pvz-matricos">\[\begin{equation}
+\begin{aligned}
+X\otimes Z\big(|0\rangle\otimes|1\rangle\big) = &amp; \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix}\begin{bmatrix}
+1 \\
+0 \\
+\end{bmatrix}\otimes\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1 \\
+\end{bmatrix}\begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+1 \\
+\end{bmatrix}\otimes\begin{bmatrix}
+0 \\
+-1 \\
+\end{bmatrix} \\
+= &amp; \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+-1 \\
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.124}
+\end{equation}\]</span>
+Arba, pirmiau išskleidę tenzorines sandaugas, randame tą patį:
+<span class="math display" id="eq:tenzorines-sandaugos-pvz-3">\[\begin{equation}
+\begin{aligned}
+X\otimes Z\big(|0\rangle\otimes|1\rangle\big) = &amp; \begin{bmatrix}
+0 \cdot Z &amp; 1 \cdot Z \\
+1 \cdot Z &amp; 0 \cdot Z \\
+\end{bmatrix}\begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0 \\
+\end{bmatrix} = \begin{bmatrix}
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 0
+\end{bmatrix}\begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0 \\
+\end{bmatrix} \\
+= &amp; \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+-1 \\
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.125}
+\end{equation}\]</span>
+Galime parodyti, kad operatorių <span class="math inline">\(A\otimes B\)</span>, veikiančių
+<span class="math inline">\(V\otimes U\)</span> erdvėje, tikrinės vertės yra individualių operatorių <span class="math inline">\(A\)</span>
+ir <span class="math inline">\(B\)</span> tikrinių verčių sandaugos. Imkime
+<span class="math inline">\(A|k\rangle = \lambda_k |k\rangle\)</span> ir
+<span class="math inline">\(B|l\rangle = \lambda_l |l\rangle\)</span>, kai
+<span class="math inline">\(\lambda_k\)</span> ir <span class="math inline">\(\lambda_l\)</span> yra atitinkamų operatorių tikrinės
+vertės, asocijuotos su jų tikriniais vektoriais
+<span class="math inline">\(|k\rangle\)</span> bei <span class="math inline">\(|l\rangle\)</span>. Tada:
+<span class="math display" id="eq:tenzorines-sandaugos-tikrines-vertes">\[\begin{equation}
+(A\otimes B)\big(|k\rangle\otimes |l\rangle\big) =
+A|k\rangle\otimes B|l\rangle = \lambda_k |k\rangle\otimes\lambda_l |l\rangle
+= \lambda_k\lambda_l \big(|k\rangle\otimes |l\rangle\big)\,.
+\tag{2.126}
+\end{equation}\]</span>
+Matome, kad <span class="math inline">\(A\otimes B\)</span> operatoriaus tikriniai vektoriai yra
+<span class="math inline">\(\big\{|k\rangle\otimes |l\rangle\big\}\)</span>
+vektorių rinkinys, o tikrinės vertės <span class="math inline">\(\{\lambda_k \lambda_l\}\)</span>. Jeigu
+<span class="math inline">\(A\)</span> yra <span class="math inline">\((n\times n)\)</span> matrica, o <span class="math inline">\(B\)</span> <span class="math inline">\((p\times p)\)</span>, kai <span class="math inline">\(n\)</span> ir <span class="math inline">\(p\)</span> gali būti
+vienodi arba skirtingi, tada egzistuoja <span class="math inline">\(np\)</span>-skaičius tikrinių vektorių
+ir <span class="math inline">\(\big\{|k\rangle\otimes |l\rangle\big\}\)</span>
+rinkinys pateikia juos visus. Šie vektoriai yra tarpusavyje ortogonalūs:
+<span class="math display" id="eq:tenzorines-sandaugos-tikriniu-verciu-ortogonalumas">\[\begin{equation}
+\big(\langle k&#39;|\otimes\langle l&#39;|\big)\big(|k\rangle\otimes|l \rangle\big)
+= \langle k&#39;|k\rangle\langle l&#39;|l\rangle = \delta_{k&#39;k}\delta_{l&#39;l}\,.
+\tag{2.127}
+\end{equation}\]</span>
+Ir todėl gali būti naudojami kaip bazinių vektorių rinkinys. Toliau
+imkime normalųjį operatorių <span class="math inline">\(A\)</span>, išreikštą spektrine dekompozicija:
+<span class="math display" id="eq:operatoriaus-spektrine-dekompozicija-2">\[\begin{equation}
+A = \sum_k \lambda_k |k\rangle\langle k| = \sum_k \lambda_k P_k\,.
+\tag{2.128}
+\end{equation}\]</span>
+Tenzorinė dviejų normaliųjų operatorių sandauga <span class="math inline">\(A\otimes B\)</span> taip pat
+gali būti išreiškiama naudojant šių dviejų operatorių projekcinius
+operatorius:
+<span class="math display" id="eq:tenzorine-per-projekcinius">\[\begin{equation}
+\begin{aligned}
+A\otimes B = &amp; \sum_k \lambda_k |k\rangle\langle k|\otimes \sum_l \lambda_l |l\rangle\langle l|
+= \sum_{k,l} \lambda_k \lambda_l |k\rangle\langle k|\otimes |l\rangle\langle l| \\
+\equiv &amp; \sum_m \lambda_m |m\rangle\langle m|\,.
+\end{aligned}
+\tag{2.129}
+\end{equation}\]</span>
+Tai nusako diagonaliąją matricą, o
+<span class="math inline">\(\big\{|kl\rangle \equiv |k\rangle\otimes |l\rangle \equiv |m\rangle\big\}\)</span>
+yra bazinių vektorių rinkinys, dengiantis <span class="math inline">\(V\otimes U\)</span> erdvę. Čia
+<span class="math inline">\(A\otimes B\)</span> operatoriaus tikrinės vertės, asocijuotos su tikriniais
+vektoriais <span class="math inline">\(\big\{|m\rangle\big\}\)</span>, yra <span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span> operatorių
+tikrinių verčių sandaugos, <span class="math inline">\(\lambda_m = \lambda_k \lambda_l\)</span>.
+Pavyzdžiui, Pauli-<span class="math inline">\(Z\)</span> operatorių tenzorinė sandauga taikant spektrinę
+dekompoziciją išreiškiama:
+<span class="math display" id="eq:pauli-z-tenzorine-sandauga">\[\begin{equation}
+\begin{aligned}
+Z\otimes Z = &amp; |0\rangle\langle 0|\otimes |0\rangle\langle 0| -
+|1\rangle\langle 1|\otimes |0\rangle\langle 0| -
+|0\rangle\langle 0|\otimes |1\rangle\langle 1| +
+|1\rangle\langle 1|\otimes |1\rangle\langle 1| \\
+= &amp; |00\rangle\langle 00| - |10\rangle\langle 10|
+- |01\rangle\langle 01| + |11\rangle\langle 11| \\
+= &amp; \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.130}
+\end{equation}\]</span>
+Matome, kad yra tik dvi skirtingos operatoriaus <span class="math inline">\(Z\otimes Z\)</span> tikrinės
+vertės, <span class="math inline">\(\lambda_k \lambda_l \in (1, -1)\)</span>, ir keturi tikriniai
+vektoriai,
+<span class="math inline">\(|0\rangle\otimes |0\rangle\)</span>,
+<span class="math inline">\(|1\rangle\otimes |0\rangle\)</span>,
+<span class="math inline">\(|0\rangle\otimes |1\rangle\)</span>,
+<span class="math inline">\(|1\rangle\otimes |1\rangle\)</span>. Tad su
+šiomis tikrinėmis vertėmis susieti poerdviai yra dvigubai išsigimę.</p>
+<p>Kvantinėje kompiuterijoje dažnai aptinkami operatoriai, kurie vienu metu
+keičia tik vieno kubito būseną. Pavyzdžiui, operatorius trečiam kubitui
+4 kubitų registre, atliekantis Pauli-<span class="math inline">\(Y\)</span> vartus, nekeičiant kitų, yra
+išreiškiamas <span class="math inline">\(I\otimes I\otimes Y\otimes I\)</span>. Operatoriai,
+turintys formą <span class="math inline">\(A\otimes B\otimes C\otimes D\cdots\)</span>, yra
+vadinami lokaliaisiais, kadangi jie atlieka operacijas su atskirais
+kubitais nepriklausomai nuo kitų kubitų būsenos. Bendresnio pobūdžio,
+vadinamosios nelokaliosios transformacijos, yra nusakomos lokaliųjų
+operatorių sumomis, pavyzdžiui, veikiančios du kubitus
+<span class="math inline">\(A\otimes B + C\otimes D\)</span>.</p>
+</div>
+<div id="operatorių-funkcijos" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Operatorių funkcijos<a href="matematikos-skyrius.html#operatorių-funkcijos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kvantinėje kompiuterijoje dažnai sutinkamos transformacijos, nusakomos
+matricų funkcijomis. Kitaip nei įprastinės funkcijos, kurių reikšmės bei
+vertės yra skaičiai, matricų funkcijų reikšmės bei vertės yra matricos.
+Laimei, kvantinėje kompiuterijoje visos matricos, naudojamos atlikti
+būsenų transformacijoms, priklauso normaliųjų operatorių klasei. Šiuos
+operatorius galime perteikti spektrine dekompozicija:
+<span class="math display" id="eq:spektrine-dekompozicija-4">\[\begin{equation}
+A = \sum_k \lambda_k |k \rangle\langle k| = \sum_k \lambda_k P_k\,.
+\tag{2.131}
+\end{equation}\]</span>
+Analitinės normaliųjų operatorių funkcijos <span class="math inline">\(f(A)\)</span> tada randamos paprasta
+žinoma formule:
+<span class="math display" id="eq:analitine-operatoriaus-funkcija">\[\begin{equation}
+f(A) = \sum_k f(\lambda_k)P_k\,.
+\tag{2.132}
+\end{equation}\]</span>
+Operatoriaus funkcija <span class="math inline">\(f\)</span> yra įvertinama imant operatoriaus <span class="math inline">\(A\)</span> tikrines
+vertes <span class="math inline">\(\lambda_k\)</span>, kaip jos reikšmes, kurios daugina atitinkamus
+projekcinius operatorius <span class="math inline">\(P_k\)</span>. Pavyzdžiui, dažnai algoritmuose
+aptinkama ermitinio operatoriaus <span class="math inline">\(A\)</span> eksponentė,
+<span class="math inline">\(f(\alpha A) = \mathrm{e}^{\mathrm{i}\alpha A}\)</span>, kai <span class="math inline">\(\alpha\)</span> – realusis skaičius:
+<span class="math display" id="eq:operatoriaus-eksponente">\[\begin{equation}
+\mathrm{e}^{\mathrm{i}\alpha A} = \sum_k \mathrm{e}^{\mathrm{i}\alpha\lambda_k}P_k\,.
+\tag{2.133}
+\end{equation}\]</span>
+Šiuo principu galime rasti, pavyzdžiui, Pauli-<span class="math inline">\(Z\)</span> operatoriaus
+(<span class="math inline">\(\lambda_0 = 1\)</span>, <span class="math inline">\(\lambda_1 = -1\)</span>) eksponentę
+<span class="math inline">\(f(\alpha A) = \mathrm{e}^{\mathrm{i}\alpha Z}\)</span>:
+<span class="math display" id="eq:pauli-z-eksponente">\[\begin{equation}
+\mathrm{e}^{\mathrm{i}\alpha Z} = \mathrm{e}^{\mathrm{i}\alpha}|0\rangle\langle 0|
++ \mathrm{e}^{-\mathrm{i}\alpha}|1\rangle\langle 1| = \begin{bmatrix}
+\mathrm{e}^{\mathrm{i}\alpha} &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\alpha} \\
+\end{bmatrix}\,.
+\tag{2.134}
+\end{equation}\]</span>
+Kitas būdas rasti matricos eksponentę yra taikant <strong>Teiloro eilutę</strong>
+(angl. <em>Taylor series</em>):
+<span class="math display" id="eq:eksponente-teiloro-eilute">\[\begin{equation}
+\mathrm{e}^{\mathrm{i}\alpha Z} = \sum_{j = 0}^{\infty} \frac{(\mathrm{i}\alpha Z)^j}{j!}\,.
+\tag{2.135}
+\end{equation}\]</span>
+Atkreipiame dėmesį, kad Pauli operatoriai pasižymi savybe <span class="math inline">\(Z^j = Z\)</span>,
+kai <span class="math inline">\(j\)</span> – nelyginis skaičius, ir <span class="math inline">\(Z^j = I\)</span>, kai <span class="math inline">\(j\)</span> – lyginis
+skaičius. Sugrupavę lyginius bei nelyginius narius ir panaudodami
+kosinusų bei sinusų Teiloro eilutes randame:
+<span class="math display" id="eq:teiloro-eilutes-susumavimas">\[\begin{equation}
+\begin{aligned}
+\mathrm{e}^{\mathrm{i}\alpha Z} = &amp; \left( I - \frac{\alpha^{2}I}{2!} + \frac{\alpha^{4}I}{4!} - \cdots \right)
++ \left( \mathrm{i}\alpha Z - \frac{\mathrm{i}\alpha^{3}Z}{3!} + \frac{\mathrm{i}\alpha^{5}Z}{5!} - \cdots \right) \\
+= &amp; \cos(\alpha)I + \mathrm{i}\sin(a)Z\,.
+\end{aligned}
+\tag{2.136}
+\end{equation}\]</span>
+Perteikdami <span class="math inline">\(I\)</span> ir <span class="math inline">\(Z\)</span> matricų forma bei taikydami Oilerio formulę
+prieiname prie tos pačios išraiškos:
+<span class="math display" id="eq:eksponente-matrica-2">\[\begin{equation}
+\begin{aligned}
+\cos(\alpha)I + \mathrm{i}\sin(a)Z = &amp; \begin{bmatrix}
+\cos(\alpha) + \mathrm{i}\sin(a) &amp; 0 \\
+0 &amp; \cos(\alpha) - \mathrm{i}\sin(a) \\
+\end{bmatrix} \\
+= &amp; \begin{bmatrix}
+\mathrm{e}^{\mathrm{i}\alpha} &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\alpha} \\
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.137}
+\end{equation}\]</span>
+Taikydami spektrinę dekompoziciją galime taip pat rasti ir normaliųjų
+operatorių tenzorinės sandaugos funkcijas. Jos turi turi identiškas
+formas, pavyzdžiui, dviejų operatorių <span class="math inline">\(A\otimes B\)</span> funkcija:
+<span class="math display" id="eq:tenzorines-sandaugos-funkcija">\[\begin{equation}
+f(A\otimes B) = \sum_{k,l} f(\lambda_k \lambda_l )P_k \otimes P_l\,.
+\tag{2.138}
+\end{equation}\]</span>
+Funkcijos <span class="math inline">\(f\)</span> argumentai yra <span class="math inline">\(P_k\)</span> ir <span class="math inline">\(P_l\)</span> operatorius atitinkančių tikrinių
+verčių sandaugos <span class="math inline">\(\lambda_k \lambda_l\)</span>. Imkime Pauli-<span class="math inline">\(Z\)</span>
+operatorių eksponentę <span class="math inline">\(f(A\otimes B) = \mathrm{e}^{\mathrm{i}\alpha Z\otimes Z}\)</span>:
+<span class="math display" id="eq:pauli-z-sandaugos-eksponente">\[\begin{equation}
+\begin{aligned}
+\mathrm{e}^{\mathrm{i}\alpha Z\otimes Z} = &amp;
+\mathrm{e}^{\mathrm{i}\alpha}|0\rangle\langle 0|\otimes |0\rangle\langle 0| +
+\mathrm{e}^{-\mathrm{i}\alpha}|1\rangle\langle 1|\otimes |0\rangle\langle 0| \\
+&amp; + \mathrm{e}^{-\mathrm{i}\alpha}|0\rangle\langle 0|\otimes |1\rangle\langle 1| +
+\mathrm{e}^{\mathrm{i}\alpha}|1\rangle\langle 1|\otimes |1\rangle\langle 1| \\
+= &amp; \begin{bmatrix}
+\mathrm{e}^{\mathrm{i}\alpha} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\alpha} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \mathrm{e}^{-\mathrm{i}\alpha} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\alpha}
+\end{bmatrix}\,.
+\end{aligned}
+\tag{2.139}
+\end{equation}\]</span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="kvantinės-kompiuterijos-apžvalga.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kvantines-mechanikos-pagrindai.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["kvantinekompiuterija.pdf", "kvantinekompiuterija.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

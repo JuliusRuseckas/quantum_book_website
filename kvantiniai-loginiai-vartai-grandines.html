@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija</title>
+  <meta name="description" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
+  <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
+  
+  <meta name="twitter:description" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
+  
+
+<meta name="author" content="Tadas Paulauskas" />
+<meta name="author" content="Julius Ruseckas" />
+
+
+<meta name="date" content="2022-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="kvantines-mechanikos-pagrindai.html"/>
+<link rel="next" href="kvantinė-informacija-ir-ryšiai.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kvantinė kompiuterija</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pratarmė</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#kaip-skaityti-šią-knygą"><i class="fa fa-check"></i>Kaip skaityti šią knygą</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#padėka"><i class="fa fa-check"></i>Padėka</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#apie-autorius"><i class="fa fa-check"></i>Apie autorius</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prisidėti-prie-knygos"><i class="fa fa-check"></i>Prisidėti prie knygos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencija"><i class="fa fa-check"></i>Licencija</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html"><i class="fa fa-check"></i><b>1</b> Kvantinės kompiuterijos apžvalga</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#įvadas"><i class="fa fa-check"></i><b>1.1</b> Įvadas</a></li>
+<li class="chapter" data-level="1.2" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys"><i class="fa fa-check"></i><b>1.2</b> Kvantinės kompiuterijos pradmenys</a></li>
+<li class="chapter" data-level="1.3" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina"><i class="fa fa-check"></i><b>1.3</b> Tiuringo mašina</a></li>
+<li class="chapter" data-level="1.4" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai"><i class="fa fa-check"></i><b>1.4</b> Skaičiavimų ištekliai</a></li>
+<li class="chapter" data-level="1.5" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai"><i class="fa fa-check"></i><b>1.5</b> Kvantiniai bitai</a></li>
+<li class="chapter" data-level="1.6" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas"><i class="fa fa-check"></i><b>1.6</b> Kvantinės informacijos apdorojimas</a></li>
+<li class="chapter" data-level="1.7" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas"><i class="fa fa-check"></i><b>1.7</b> Skaičiavimo procesas</a></li>
+<li class="chapter" data-level="1.8" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas"><i class="fa fa-check"></i><b>1.8</b> Kvantinių kompiuterių charakteristikų palyginimas</a></li>
+<li class="chapter" data-level="1.9" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris"><i class="fa fa-check"></i><b>1.9</b> Dekoherencijos trukmė ir loginių vartų tikslumas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html"><i class="fa fa-check"></i><b>2</b> Matematinių įrankių rinkinys</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesinė-algebra"><i class="fa fa-check"></i><b>2.1</b> Tiesinė algebra</a></li>
+<li class="chapter" data-level="2.2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kompleksiniai-skaičiai"><i class="fa fa-check"></i><b>2.2</b> Kompleksiniai skaičiai</a></li>
+<li class="chapter" data-level="2.3" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#vidinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.3</b> Vidinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.4" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje"><i class="fa fa-check"></i><b>2.4</b> Kubito reprezentacija Blocho sferoje</a></li>
+<li class="chapter" data-level="2.5" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos"><i class="fa fa-check"></i><b>2.5</b> Tiesiniai operatoriai ir matricos</a></li>
+<li class="chapter" data-level="2.6" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai"><i class="fa fa-check"></i><b>2.6</b> Unitariniai ir ermitiniai operatoriai</a></li>
+<li class="chapter" data-level="2.7" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija"><i class="fa fa-check"></i><b>2.7</b> Diadinė operatorių dekompozicija</a></li>
+<li class="chapter" data-level="2.8" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#matricos-pėdsakas"><i class="fa fa-check"></i><b>2.8</b> Matricos pėdsakas</a></li>
+<li class="chapter" data-level="2.9" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.9</b> Tenzorinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.10" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga"><i class="fa fa-check"></i><b>2.10</b> Tenzorinė operatorių sandauga</a></li>
+<li class="chapter" data-level="2.11" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#operatorių-funkcijos"><i class="fa fa-check"></i><b>2.11</b> Operatorių funkcijos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html"><i class="fa fa-check"></i><b>3</b> Kvantinės mechanikos pagrindai</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai"><i class="fa fa-check"></i><b>3.1</b> Kvantinės mechanikos postulatai</a></li>
+<li class="chapter" data-level="3.2" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas"><i class="fa fa-check"></i><b>3.2</b> Kvantinis supynimas</a></li>
+<li class="chapter" data-level="3.3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius"><i class="fa fa-check"></i><b>3.3</b> Tankio operatorius</a></li>
+<li class="chapter" data-level="3.4" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas"><i class="fa fa-check"></i><b>3.4</b> EPR paradoksas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html"><i class="fa fa-check"></i><b>4</b> Kvantiniai loginiai vartai ir grandinės</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai"><i class="fa fa-check"></i><b>4.1</b> Vieno kubito loginiai vartai</a></li>
+<li class="chapter" data-level="4.2" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai"><i class="fa fa-check"></i><b>4.2</b> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai</a></li>
+<li class="chapter" data-level="4.3" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas"><i class="fa fa-check"></i><b>4.3</b> Kubitų būsenų matavimas</a></li>
+<li class="chapter" data-level="4.4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot"><i class="fa fa-check"></i><b>4.4</b> Dviejų kubitų loginiai vartai <em>CNOT</em></a></li>
+<li class="chapter" data-level="4.5" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai"><i class="fa fa-check"></i><b>4.5</b> Tofoli loginiai vartai</a></li>
+<li class="chapter" data-level="4.6" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai"><i class="fa fa-check"></i><b>4.6</b> SWAP ir Fredkin loginiai vartai</a></li>
+<li class="chapter" data-level="4.7" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai"><i class="fa fa-check"></i><b>4.7</b> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai"><i class="fa fa-check"></i><b>4.8</b> Bendro tipo būsenų matavimai</a></li>
+<li class="chapter" data-level="4.9" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys"><i class="fa fa-check"></i><b>4.9</b> Universalių loginių vartų rinkinys</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html"><i class="fa fa-check"></i><b>5</b> Kvantinė informacija ir ryšiai</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas"><i class="fa fa-check"></i><b>5.1</b> Kvantinės informacijos kopijavimas</a></li>
+<li class="chapter" data-level="5.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija"><i class="fa fa-check"></i><b>5.2</b> Kvantinė teleportacija</a></li>
+<li class="chapter" data-level="5.3" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas"><i class="fa fa-check"></i><b>5.3</b> Kvantinio supynimo sukeitimas</a></li>
+<li class="chapter" data-level="5.4" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija"><i class="fa fa-check"></i><b>5.4</b> Kvantinė kriptografija</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.1</b> BB84 kvantinis rakto pasidalijimo protokolas</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
+<li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
+<li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
+<li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#algebrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.1</b> Algebrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#geometrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.2</b> Geometrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#groverio-paieška-su-n-8"><i class="fa fa-check"></i><b>6.6.3</b> Groverio paieška su <span class="math inline">\(N = 8\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamardo-swap-testai"><i class="fa fa-check"></i><b>6.7</b> Hadamardo ir SWAP testai</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris"><i class="fa fa-check"></i><b>6.7.1</b> Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#modifikuotas-hadamardo-testas"><i class="fa fa-check"></i><b>6.7.2</b> Modifikuotas Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#swap-testas"><i class="fa fa-check"></i><b>6.7.3</b> SWAP testas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html"><i class="fa fa-check"></i><b>7</b> Furjė transformacija ir jos taikymai</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinė-furjė-transformacija"><i class="fa fa-check"></i><b>7.1</b> Kvantinė Furjė transformacija</a></li>
+<li class="chapter" data-level="7.2" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#furjė-transformacijos-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>7.2</b> Furjė transformacijos realizavimas kvantinėje grandinėje</a></li>
+<li class="chapter" data-level="7.3" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#funkcijos-periodiškumo-paieška"><i class="fa fa-check"></i><b>7.3</b> Funkcijos periodiškumo paieška</a></li>
+<li class="chapter" data-level="7.4" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas"><i class="fa fa-check"></i><b>7.4</b> Kvantinis fazės nustatymo algoritmas</a></li>
+<li class="chapter" data-level="7.5" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#tiesinių-lygčių-sprendimas-hhl-algoritmu"><i class="fa fa-check"></i><b>7.5</b> Tiesinių lygčių sprendimas HHL algoritmu</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html"><i class="fa fa-check"></i><b>8</b> Kvantinių sistemų modeliavimas ir mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas"><i class="fa fa-check"></i><b>8.2</b> Erdvinės Šriodingerio lygties sprendimo algoritmas</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija"><i class="fa fa-check"></i><b>8.2.1</b> Banginė funkcija</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas"><i class="fa fa-check"></i><b>8.2.2</b> Diskretizavimas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.2.3</b> Perteikimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3</b> Mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.1</b> Klasikinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.2</b> Kvantinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius"><i class="fa fa-check"></i><b>8.3.3</b> Kvantinėmis grandinėmis paremtas klasifikatorius</a></li>
+<li class="chapter" data-level="8.3.4" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė"><i class="fa fa-check"></i><b>8.3.4</b> Pagrindinių komponentų analizė</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html"><i class="fa fa-check"></i><b>9</b> Kvantinių klaidų aptikimas ir taisymas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos"><i class="fa fa-check"></i><b>9.1</b> Klasikinės ir kvantinės klaidos</a></li>
+<li class="chapter" data-level="9.2" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#supynimas-ir-klaidu-atsiradimas"><i class="fa fa-check"></i><b>9.2</b> Kvantinis supynimas su aplinka ir klaidų atsiradimas</a></li>
+<li class="chapter" data-level="9.3" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bito-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.3</b> Bito apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.4" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#fazės-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.4</b> Fazės apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.5" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#tolydžiosios-klaidos"><i class="fa fa-check"></i><b>9.5</b> Tolydžiosios klaidos</a></li>
+<li class="chapter" data-level="9.6" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bendrieji-klaidų-taisymo-principai"><i class="fa fa-check"></i><b>9.6</b> Bendrieji klaidų taisymo principai</a></li>
+<li class="chapter" data-level="9.7" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinė-hamingo-riba"><i class="fa fa-check"></i><b>9.7</b> Kvantinė Hamingo riba</a></li>
+<li class="chapter" data-level="9.8" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#šoro-9-kubitų-kodas"><i class="fa fa-check"></i><b>9.8</b> Šoro 9 kubitų kodas</a></li>
+<li class="chapter" data-level="9.9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kodu-stabilizatoriai-poskyris"><i class="fa fa-check"></i><b>9.9</b> Kodų stabilizatoriai</a></li>
+<li class="chapter" data-level="9.10" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klaidoms-atsparus-skaičiavimas"><i class="fa fa-check"></i><b>9.10</b> Klaidoms atsparus skaičiavimas</a></li>
+<li class="chapter" data-level="9.11" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinis-tūris"><i class="fa fa-check"></i><b>9.11</b> Kvantinis tūris</a></li>
+</ul></li>
+<li class="appendix"><span><b>Priedai</b></span></li>
+<li class="chapter" data-level="A" data-path="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><a href="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><i class="fa fa-check"></i><b>A</b> Debesyje pasiekiami kvantiniai kompiuteriai ir simuliatoriai</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html"><i class="fa fa-check"></i>Literatūra</a>
+<ul>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#knygos"><i class="fa fa-check"></i>Knygos</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#moksliniai-straipsniai"><i class="fa fa-check"></i>Moksliniai straipsniai</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kvantinė kompiuterija</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kvantiniai-loginiai-vartai-grandines" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4 skyrius.</span> Kvantiniai loginiai vartai ir grandinės<a href="kvantiniai-loginiai-vartai-grandines.html#kvantiniai-loginiai-vartai-grandines" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Šiame skyriuje pateikiame įprastinių kvantinių loginių elementų
+arsenalą. Juos pasitelkus formuojami žemiausio loginio lygio kvantiniai
+algoritmai. Matysime, kaip loginės registro būsenų operacijos yra
+pavaizduojamos grafiškai ir kaip iš jų sekų formuojamos kvantinės
+grandinės.</p>
+<div id="vieno-kubito-vartai" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Vieno kubito loginiai vartai<a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pradėkime nuo paprasčiausių loginių
+elementų, atliekančių 1 kubito būsenų transformacijas. Kaip pamename,
+kvantiniai loginiai vartai yra nusakomi unitariniais operatoriais. Tokio
+operatoriaus veiksmas būsenai <span class="math inline">\(|\psi\rangle\)</span> yra
+pavaizduojamas grafiškai (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:loginiu-vartu-veikimas-kubita">4.1</a> pav.).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:loginiu-vartu-veikimas-kubita"></span>
+<img src="media/image4_1.svg" alt="Loginių vartų $U$ veiksmas kubito būsenai $|\psi\rangle$." width="41%" />
+<p class="caption">
+4.1 pav. Loginių vartų <span class="math inline">\(U\)</span> veiksmas kubito būsenai <span class="math inline">\(|\psi\rangle\)</span>.
+</p>
+</div>
+<p>Kiekvienam kubitui yra priskiriama atskira
+grandis – horizontali linija. Kvantinė grandis pati nedaro įtakos
+kubito būsenai ir nusako jo laisvą evoliuciją laike. Grandys yra
+skaitomos iš kairės į dešinę ir atspindi laike atliekamas loginių vartų
+sekas. Kairėje pusėje nusakoma pradinė kubito būsena, čia
+<span class="math inline">\(|\psi\rangle\)</span>, jai atliekami loginiai vartai <span class="math inline">\(U\)</span> ir
+dešinėje išvedama pakitusi būsena <span class="math inline">\(U|\psi\rangle\)</span>. Visi
+1 kubito loginiai vartai turi vieną įvedimą ir vieną išvedimą, o bendras
+kubitų skaičius algoritmo metu nesikeičia. Žinoma, ne visi kubitai
+registre turi būti panaudojami.</p>
+<p>Čia pateikiame loginius vartus ir jų efektą skaičiuojamiesiems baziniams
+vektoriams <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>.
+Norint nusakyti, kaip loginiai vartai keičia kubito būseną, esančią
+superpozicijoje, pakanka žinoti, kaip loginiai vartai keičia
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> atskirai, nes
+operatoriai veikia tiesiniu būdu kiekvieną vektorių superpozicijoje:
+<span class="math display" id="eq:loginiai-vartai-superpozicija">\[\begin{equation}
+U\big(|0\rangle + |1\rangle\big) = U|0\rangle + U|1\rangle\,.
+\tag{4.1}
+\end{equation}\]</span>
+Skaičiavimuose galima atlikti bazinių vektorių transformaciją ir naudoti
+kitų bazinių vektorių rinkinį, pavyzdžiui Pauli-<span class="math inline">\(X\)</span> tikrinius vektorius
+<span class="math inline">\(|0_x\rangle\)</span> ir <span class="math inline">\(|1_x\rangle\)</span>.
+Svarbu prisiminti, kad loginių vartų efektas, pateiktas
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> baziniams
+vektoriams, bus bendrai kitoks, jeigu tie patys vartai pritaikomi,
+pavyzdžiui, <span class="math inline">\(|0_x\rangle\)</span> ir
+<span class="math inline">\(|1_x\rangle\)</span> ir jais išreikštoms būsenoms.</p>
+<p><a href="kvantiniai-loginiai-vartai-grandines.html#fig:dvieju-kubitu-grandine">4.2</a> pav. matome dviejų kubitų registro
+kvantinės grandinės pavyzdį.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dvieju-kubitu-grandine"></span>
+<img src="media/image4_2.svg" alt="2 kubitų registro kvantinė grandinė. Matomi individualius kubitus veikiantys loginiai vartai ir abu kubitus vienu metu veikiantys $U_3$" width="57%" />
+<p class="caption">
+4.2 pav. 2 kubitų registro kvantinė grandinė. Matomi individualius kubitus veikiantys loginiai vartai ir abu kubitus vienu metu veikiantys <span class="math inline">\(U_3\)</span>
+</p>
+</div>
+<p>Standartiškai algoritmo pradžioje kubitai yra inicijuojami į
+<span class="math inline">\(|0\rangle\)</span> būsenas (nurodome <em>ket</em> juodame fone), o
+atskiri kubitai sunumeruojami simboliais <span class="math inline">\(k_1, k_2,\ldots\)</span> . Viršuje
+kubitui <span class="math inline">\(k_1\)</span> yra atliekama 1 kubito loginių vartų seka <span class="math inline">\(U_1\)</span>,
+<span class="math inline">\(U_2\)</span>, abu kubitus veikiantis <span class="math inline">\(U_3\)</span> ir galiausiai <span class="math inline">\(U_4\)</span>.
+Atkreipiame dėmesį, kad tiesinėje algebroje pirmo kubito loginių vartų
+sekos efektas yra apskaičiuojamas taip:
+<span class="math inline">\(U_4 U_3 U_2 U_1 |0\rangle\)</span>. Tai yra, pirmiausiai
+operatorius <span class="math inline">\(U_1\)</span> iš kairės daugina dešinėje vektorių
+<span class="math inline">\(|0\rangle\)</span>, toliau jis dauginamas su <span class="math inline">\(U_2\)</span>, <span class="math inline">\(U_3\)</span>,
+ir galiausiai <span class="math inline">\(U_4\)</span>. Ši atvirkštinė tvarka tarp matematinio
+skaičiavimo ir atvaizdavimo kvantinėse grandinėse gali būti klaidinanti.
+Kadangi tai yra plačiai paplitusi ir standartine tapusi vartosena, šį
+skirtumą belieka tik įsiminti. Norėdami formaliai išsamiai aprašyti
+parodytas logines operacijas, veikiančias du kubitus
+<span class="math inline">\(|k_1\rangle\otimes |k_2\rangle\)</span>,
+rašytume jas taip
+<span class="math inline">\((U_4\otimes U_4)(U_3)(U_2\otimes I)(U_1\otimes U_1)(|0\rangle\otimes |0\rangle)\)</span>.
+Operatorius <span class="math inline">\(U_3\)</span> veikia abu kubitus, o <span class="math inline">\(U_2\)</span> atlikimo metu kubitui
+<span class="math inline">\(k_2\)</span> nepritaikoma jokia loginė operacija (laukimo stadija) – tai
+nusakoma vienetiniu operatoriumi <span class="math inline">\(I\)</span>.</p>
+<p>Pradėsime nuo Pauli-<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> ir <span class="math inline">\(Z\)</span>
+loginių vartų, kurių matematinės išraiškos ir savybės buvo pristatytos
+II skyriuje. Pauli-<span class="math inline">\(X\)</span> loginiai vartai yra klasikinių NE loginių vartų
+atitikmuo, jie sukeičia 0 ir 1 vertes (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:pauli-x-vartai">4.3</a> pav.)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pauli-x-vartai"></span>
+<img src="media/image4_3.svg" alt="Pauli-$X$ loginių vartų efektas skaičiuojamiesiems baziniams vektoriams" width="37%" />
+<p class="caption">
+4.3 pav. Pauli-<span class="math inline">\(X\)</span> loginių vartų efektas skaičiuojamiesiems baziniams vektoriams
+</p>
+</div>
+<p>Pauli-<span class="math inline">\(Y\)</span> vartai taip pat sukeičia 0 ir 1
+vertes, tačiau dar prideda <span class="math inline">\(\pm \pi/2\)</span> fazę
+(<span class="math inline">\(\mathrm{e}^{\pm\mathrm{i}\pi/2} = \pm\mathrm{i}\)</span>), nusakomą menamuoju skaičiumi
+<span class="math inline">\(\mathrm{i}\)</span> (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:pauli-y-vartai">4.4</a> pav.)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pauli-y-vartai"></span>
+<img src="media/image4_4.svg" alt="Pauli-$Y$ loginių vartų efektas" width="40%" />
+<p class="caption">
+4.4 pav. Pauli-<span class="math inline">\(Y\)</span> loginių vartų efektas
+</p>
+</div>
+<p>Pauli-<span class="math inline">\(Z\)</span> vartai (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:pauli-z-vartai">4.5</a> pav.) nekeičia
+įvedamos <span class="math inline">\(|0\rangle\)</span> būsenos, tačiau prideda <span class="math inline">\(\pi\)</span> fazę
+<span class="math inline">\(|1\rangle\)</span> būsenai (<span class="math inline">\(\mathrm{e}^{\mathrm{i}\pi} = -1\)</span>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pauli-z-vartai"></span>
+<img src="media/image4_5.svg" alt="Pauli-$Z$ loginių vartų efektas" width="39%" />
+<p class="caption">
+4.5 pav. Pauli-<span class="math inline">\(Z\)</span> loginių vartų efektas
+</p>
+</div>
+<p>Hadamardo vartai (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:hadamardo-vartai">4.6</a> pav.) suformuoja
+lygią <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> bazinių
+vektorių superpoziciją.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hadamardo-vartai"></span>
+<img src="media/image4_6.svg" alt="Hadamardo loginių vartų efektas skaičiuojamiesiems baziniams vektoriams" width="51%" />
+<p class="caption">
+4.6 pav. Hadamardo loginių vartų efektas skaičiuojamiesiems baziniams vektoriams
+</p>
+</div>
+<p>Kaip pamename, Blocho sferoje 1 kubito būsena yra parametrizuojama dviem
+kampais <span class="math inline">\(\theta\)</span> ir <span class="math inline">\(\varphi\)</span>. Čia <span class="math inline">\(\theta\)</span> nusako kampą su
+<span class="math inline">\(z\)</span> ašimi, o <span class="math inline">\(\varphi\)</span> kampas yra skaičiuojamas nuo <span class="math inline">\(x\)</span> ašies imant
+Blocho vektoriaus projekciją į <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plokštumą. Tačiau praktikoje
+atliekant Blocho vektoriaus posūkius kvantiniame kompiuteryje yra dažnai
+naudojami loginiai vartai, kurie nusako posūkį apie vieną iš trijų
+Blocho sferos (<span class="math inline">\(x, y, z\)</span>) ašių. Šie loginiai vartai yra vadinami
+<span class="math inline">\(R_x(\theta)\)</span>, <span class="math inline">\(R_y(\theta)\)</span> ir <span class="math inline">\(R_z(\theta)\)</span>, parametras <span class="math inline">\(\theta\)</span>
+nusako, kad posūkis atliekamas apie nurodytą ašį kampu <span class="math inline">\(\theta\)</span>:
+<span class="math display" id="eq:posukis-z" id="eq:posukis-y" id="eq:posukis-x">\[\begin{align}
+R_{x}(\theta) \equiv &amp; \mathrm{e}^{-\frac{\mathrm{i}\theta X}{2}} =
+\cos\left(\frac{\theta}{2}\right)I - \mathrm{i}\sin\left(\frac{\theta}{2}\right)X = \begin{bmatrix}
+\cos(\theta/2) &amp; -\mathrm{i}\sin(\theta/2) \\
+-\mathrm{i}\sin(\theta/2) &amp; \cos(\theta/2) \\
+\end{bmatrix}\,;\tag{4.2}\\
+R_y(\theta) \equiv &amp; \mathrm{e}^{-\frac{\mathrm{i}\theta Y}{2}} =
+\cos\left(\frac{\theta}{2}\right)I - \mathrm{i}\sin\left(\frac{\theta}{2}\right)Y =
+\begin{bmatrix}
+\cos(\theta/2) &amp; -\sin(\theta/2) \\
+\sin(\theta/2) &amp; \cos(\theta/2) \\
+\end{bmatrix}\,;\tag{4.3}\\
+R_z(\theta) \equiv &amp; \mathrm{e}^{-\frac{\mathrm{i}\theta Z}{2}} =
+\cos\left(\frac{\theta}{2}\right)I - \mathrm{i}\sin\left(\frac{\theta}{2}\right)Z =
+\begin{bmatrix}
+\mathrm{e}^{-\frac{\mathrm{i}\theta}{2}} &amp; 0 \\
+0 &amp; \mathrm{e}^{\frac{\mathrm{i}\theta}{2}} \\
+\end{bmatrix}\,.\tag{4.4}
+\end{align}\]</span></p>
+<p>Panagrinėkime šiek tiek plačiau
+<span class="math inline">\(R_z(\theta)\)</span> loginius vartus (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:posukis-blocho-z">4.7</a> pav.), kuriuos kvantinėje
+grandinėje ir supaprastinta matricos bei diadų forma išreiškiame:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:posukis-blocho-z"></span>
+<img src="media/image4_7.svg" alt="Posūkio apie Blocho sferos $z$ ašį $R_z(\theta)$ loginių vartų efektas skaičiuojamiesiems baziniams vektoriams" width="42%" />
+<p class="caption">
+4.7 pav. Posūkio apie Blocho sferos <span class="math inline">\(z\)</span> ašį <span class="math inline">\(R_z(\theta)\)</span> loginių vartų efektas skaičiuojamiesiems baziniams vektoriams
+</p>
+</div>
+<p><span class="math display" id="eq:r-z-diada" id="eq:r-z-matrica">\[\begin{align}
+R_z(\theta) \equiv &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \mathrm{e}^{\mathrm{i}\theta} \\
+\end{bmatrix}\,;\tag{4.5}\\
+R_z(\theta) = &amp; |0\rangle\langle 0| +
+\mathrm{e}^{\mathrm{i}\theta}|1\rangle\langle 1|\,.\tag{4.6}
+\end{align}\]</span>
+Supaprastinome <span class="math inline">\(R_z(\theta)\)</span> išraišką iškeldami bendrą
+<span class="math inline">\(\mathrm{e}^{-\mathrm{i}\theta/2}\)</span> narį, kurį toliau ištrynėme. Šį narį 1 kubito
+loginiuose vartuose galima ignoruoti, kadangi jis daugina bendrą kubito
+būseną ir nusako įtakos neturinčią globalią fazę. Dėl šio supaprastinimo
+kampas, kuriuo vartais <span class="math inline">\(R_z(\theta)\)</span> pasukamas Blocho vektorius apie
+<span class="math inline">\(z\)</span> ašį, yra, kaip nurodyta, <span class="math inline">\(\theta\)</span>, o ne <span class="math inline">\(\theta/2\)</span>.</p>
+<p>Kaip matome, <span class="math inline">\(R_z(\theta)\)</span> neturi įtakos <span class="math inline">\(|0\rangle\)</span>
+būsenai, bet prideda fazę <span class="math inline">\(\theta\)</span> būsenai <span class="math inline">\(|1\rangle\)</span>.
+Pavyzdžiui, jeigu ši būsena būtų
+<span class="math inline">\(|\psi\rangle = a|0\rangle + \mathrm{e}^{\mathrm{i}\alpha}b|1\rangle\)</span>,
+tada
+<span class="math inline">\(R_z(\theta)|\psi\rangle = a|0\rangle + \mathrm{e}^{\mathrm{i}(\alpha + \theta)} b|1\rangle\)</span>,
+tai yra <span class="math inline">\(\alpha \rightarrow \alpha + \theta\)</span>. Dėl šios savybės
+<span class="math inline">\(R_z(\theta)\)</span> yra dažnai vadinami 1 kubito <strong>fazės vartais</strong>
+(angl. <em>phase gate</em>). Pauli-<span class="math inline">\(Z\)</span> loginiai vartai yra ne kas kita, kaip
+<span class="math inline">\(R_z(\theta)\)</span> su <span class="math inline">\(\theta=\pi\)</span> (iki globalios fazės). Algoritmuose
+taip pat dažnai naudojami <span class="math inline">\(R_z(\pi/4)\)</span> ir <span class="math inline">\(R_z(\pi/2)\)</span>, kurie
+standartiškai yra nurodomi raidėmis <span class="math inline">\(T\)</span> ir <span class="math inline">\(S\)</span>, atitinkamai:
+<span class="math display" id="eq:s-posukis" id="eq:t-posukis">\[\begin{align}
+T = &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; e^{i\pi/4} \\
+\end{bmatrix}\,;\tag{4.7} \\
+S = &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; e^{i\pi/2} \\
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; i \\
+\end{bmatrix}\,.\tag{4.8}
+\end{align}\]</span>
+Loginiai vartai <span class="math inline">\(S\)</span> yra dar vadinami <span class="math inline">\(\sqrt{Z}\)</span>, kadangi <span class="math inline">\(S^2 = Z\)</span>.</p>
+<p>Naudojant trijų operatorių su trimis skirtingais parametrais seką,
+<span class="math inline">\(R_x(\theta)R_y(\gamma)R_z(\varphi)\)</span>, galima formaliai išreikšti
+bet kokią 1 kubito būsenos unitariąją transformaciją
+<span class="math inline">\(U_3(\theta,\gamma,\varphi)\)</span>. Tačiau praktikoje dažniau aptinkamos
+vadinamosios <strong>Oilerio dekompozicijos</strong> <span class="math inline">\(N\)</span>-<span class="math inline">\(M\)</span>-<span class="math inline">\(N\)</span> (angl. <em>Euler
+decomposition</em>)<em>,</em> kuriose <span class="math inline">\(N,M \in \{ R_z, R_y, R_z\}\)</span>.
+Pavyzdžiui, <span class="math inline">\(Z\)</span>-<span class="math inline">\(Y\)</span>-<span class="math inline">\(Z\)</span> dekompozicija, naudojanti du skirtingus rotacijos
+operatorius:
+<span class="math display" id="eq:z-y-z-dekompozicija">\[\begin{equation}
+U_3(\theta,\gamma,\varphi) =
+R_z(\theta)R_y(\gamma)R_z(\varphi) =
+\begin{bmatrix}
+\mathrm{e}^{-\mathrm{i}(\theta + \varphi)/2}\cos(\gamma/2) &amp;
+-\mathrm{e}^{\mathrm{i}(-\theta + \varphi)/2}\sin(\gamma/2) \\
+\mathrm{e}^{\mathrm{i}(\theta - \varphi)/2}\sin(\gamma/2) &amp;
+\mathrm{e}^{\mathrm{i}(\theta + \varphi)/2}\cos(\gamma/2) \\
+\end{bmatrix}\,.
+\tag{4.9}
+\end{equation}\]</span></p>
+</div>
+<div id="kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai<a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Yra begalė būdų pasukti vektorių Blocho sferoje į norimą orientaciją
+naudojant skirtingus loginius vartus. Pavyzdžiui, Hadamardo
+transformacija gali būti išreikšta rotacijų seka apie <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> ašis.
+Keletas būdų tai atlikti:
+<span class="math display" id="eq:hadamard-2" id="eq:hadamard-1">\[\begin{align}
+H = &amp; R_x(\pi)R_y\left(-\frac{\pi}{2}\right)\,; \tag{4.10}\\
+H = &amp; R_x\left(-\frac{\pi}{2}\right)R_z\left(-\frac{\pi}{2}\right)\,.\tag{4.11}
+\end{align}\]</span>
+Antrąją išraišką iliustruojame <a href="kvantiniai-loginiai-vartai-grandines.html#fig:ekvivalentinis-h-realizavimas">4.8</a> pav., kaip trajektoriją Blocho sferos
+paviršiuje, pradedant nuo <span class="math inline">\(|0\rangle\)</span> būsenos iki
+galutinės <span class="math inline">\(|0_x\rangle\)</span>. Atkreipiame dėmesį, kad
+žvelgiant į teigiamą <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, ar <span class="math inline">\(z\)</span> ašį nuo sferos centro į jos išorę,
+posūkis teigiamu kampu <span class="math inline">\(+\theta\)</span> apibūdinamas prieš laikrodžio rodyklę,
+o neigiamas <span class="math inline">\(-\theta\)</span> pagal laikrodžio rodyklę.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ekvivalentinis-h-realizavimas"></span>
+<img src="media/image4_8.svg" alt="Ekvivalentinis $H$ loginės operacijos realizavimas naudojant rotacijos loginius vartus $R_x$ ir $R_z$ pavaizduojant kubito $|0\rangle$ vektoriaus sukimo trajektoriją Blocho sferoje. Šalia $x, y, z$ ašių pažymėti atitinkami posūkio operatoriai ir nurodytos teigiamos $+\theta$ sukimo kryptys" width="43%" />
+<p class="caption">
+4.8 pav. Ekvivalentinis <span class="math inline">\(H\)</span> loginės operacijos realizavimas naudojant rotacijos loginius vartus <span class="math inline">\(R_x\)</span> ir <span class="math inline">\(R_z\)</span> pavaizduojant kubito <span class="math inline">\(|0\rangle\)</span> vektoriaus sukimo trajektoriją Blocho sferoje. Šalia <span class="math inline">\(x, y, z\)</span> ašių pažymėti atitinkami posūkio operatoriai ir nurodytos teigiamos <span class="math inline">\(+\theta\)</span> sukimo kryptys
+</p>
+</div>
+<p>Skirtingose kvantinių procesorių architektūrose gali būti apribotas tam
+tikrų 1 kubito loginių vartų naudojimas. Todėl gali atsirasti poreikis
+sukompiliuoti kvantinę grandinę kitomis loginių vartų sekomis ar ją
+supaprastinti sumažinant bendrą loginių vartų skaičių. Pateikiame keletą
+svarbesnių 1 kubito loginių vartų lygybių pavyzdžių:
+<span class="math display" id="eq:1-kubito-lygybes-3" id="eq:1-kubito-lygybes-2" id="eq:1-kubito-lygybes-1">\[\begin{align}
+HXH = &amp; Z\,,\quad HYH = -Y\,,\quad HZH = X\,; \tag{4.12}\\
+ZXZ = &amp; -X\,,\quad ZYZ = -Y\,,\quad ZZZ = Z\,;\tag{4.13} \\
+SXS^{\dagger} = &amp; Y\,,\quad SYS^{\dagger} = -X\,,\quad SZS^{\dagger} = Z\,.\tag{4.14}
+\end{align}\]</span>
+Kaip galime pastebėti, viršuje pateikiamos tokios operatorių sekos:
+<span class="math inline">\(KPK^{\dagger} = P&#39;\)</span>. Čia <span class="math inline">\(P\)</span> ir <span class="math inline">\(P&#39;\)</span> yra Pauli operatoriai {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>},
+o <span class="math inline">\(K\)</span> ir ermitinė jungtis <span class="math inline">\(K^{\dagger}\)</span> yra parenkama iš vadinamosios
+<strong>Klifordo grupės</strong> (angl. <em>Clifford group</em>) operatorių. Įprasti
+1 kubito Klifordo grupės operatoriai yra Pauli {<span class="math inline">\(I\)</span>, <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}, taip
+pat <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span>. Viena iš Klifordo grupės savybių yra ta, kad jie
+transformuoja vieną Pauli operatorių į kitą ir gali pridėti tik fazę
+<span class="math inline">\(\pm 1\)</span>. Ši operatorių grupė yra itin svarbi kvantiniuose algoritmuose
+bei klaidų taisymo koduose, pagrįstuose būsenų stabilizatoriais.
+Atkreipiame dėmesį, kad vien Klifordo vartais <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> galima
+realizuoti Pauli operatorius {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}:
+<span class="math display" id="eq:pauli-per-h-s">\[\begin{equation}
+HSSH = X\,,\quad SXS^{\dagger} = Y\,,\quad SS = Z\,.
+\tag{4.15}
+\end{equation}\]</span>
+Norėdami patikrinti, ar lygybės egzistuoja tarp skirtingų vartų sekų,
+galime jas nusakančias matricas papračiausiai sudauginti ir palyginti,
+ar jos vienodos, pavyzdžiui:
+<span class="math display" id="eq:patikrinimas-hxh">\[\begin{equation}
+HXH = \frac{1}{2}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; - 1 \\
+\end{bmatrix} \begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix} \begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; - 1 \\
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; - 1 \\
+\end{bmatrix} = Z\,.
+\tag{4.16}
+\end{equation}\]</span>
+Klifordo vartais taip pat galima tarpusavyje transformuoti tolydžiai
+parametrizuotus loginius vartus <span class="math inline">\(R_z(\theta)\)</span> ir <span class="math inline">\(R_x(\theta)\)</span>:
+<span class="math display" id="eq:hrzh">\[\begin{equation}
+HR_z(\theta)H = R_x(\theta)\,.
+\tag{4.17}
+\end{equation}\]</span>
+Naudodami matricų funkcijos <span class="math inline">\(R_z(\theta)\)</span> išraišką, lygybę viršuje
+patikriname:
+<span class="math display" id="eq:patikrinimas-hrzh">\[\begin{equation}
+\begin{aligned}
+H\big\lbrack \cos(\theta/2)I - \mathrm{i}\sin(\theta/2)Z \big\rbrack H
+= &amp; \cos(\theta/2)HIH - \mathrm{i}\sin(\theta/2)HZH \\
+= &amp; \cos(\theta/2)I - \mathrm{i}\sin(\theta/2)X = R_x(\theta)\,.
+\end{aligned}
+\tag{4.18}
+\end{equation}\]</span>
+Trys Pauli bei Hadamardo loginiai vartai yra ermitiniai operatoriai
+(<span class="math inline">\(U=U^{\dagger}\)</span>) ir todėl patys sau atvirkštiniai. Atliekant du ermitinius
+operatorius vieną po kito anuliuojamas jų efektas, pavyzdžiui, <span class="math inline">\(ZZ = I\)</span>,
+<span class="math inline">\(HH = I\)</span>. Kitaip nei Pauli ir Hadamardo vartai, dauguma kitų kvantinių
+loginių vartų nėra sau atvirkštiniai. Pavyzdžiui, jau minėti <span class="math inline">\(S\)</span> ir <span class="math inline">\(T\)</span>
+nėra ermitiniai operatoriai, nes <span class="math inline">\(S\ne S^{\dagger}\)</span> ir <span class="math inline">\(T\ne T^{\dagger}\)</span>.
+Tačiau, kaip
+ir visi unitariniai operatoriai, jie turi sau atvirkštinius operatorius.
+Tai yra jų ermitinės jungties operatoriai, žymimi su durklu, pavyzdžiui
+<span class="math inline">\(T^{\dagger}\)</span> ir <span class="math inline">\(S^{\dagger}\)</span>:
+<span class="math display" id="eq:s-inverse" id="eq:t-inverse">\[\begin{align}
+T^{\dagger} = &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\pi/4} \\
+\end{bmatrix}\,; \tag{4.19}\\
+S^{\dagger} = &amp; \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\pi/2} \\
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -\mathrm{i} \\
+\end{bmatrix}\,.\tag{4.20}
+\end{align}\]</span>
+Matome, kad ermitinėje jungtyje atsiranda minuso ženklas prie nario,
+nusakančio kampą. Atvirkštinių vartų efektą galima interpretuoti kaip
+Blocho vektoriaus sukimą apie tą pačią ašį priešinga kryptimi tokiu
+pačiu kampu. Dėl šios priežasties atlikus operaciją
+<span class="math inline">\(UU^{\dagger}|\psi\rangle = I|\psi\rangle = |\psi\rangle\)</span>
+būsena nepakinta. Tai savo ruožtu reiškia, kad kvantinėse
+transformacijose, nusakytose unitariaisiais operatoriais, visada įmanoma
+grąžinti kvantinę būseną į pradinę (kitaip tariant, atsukti laiką
+atgal). Tam tereikia atlikti atvirkštinius loginius vartus atbuline
+seka.</p>
+</div>
+<div id="kubitų-būsenų-matavimas" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Kubitų būsenų matavimas<a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Norint sužinoti kubito būseną, algoritmo vykdymo metu ar jo pabaigoje
+atliekamas matavimas. Matavimo operacija yra žymima pusapskritimiu su
+rodyklyte, nukreipta į klasikinį registrą, žymimą brūkšniuota linija ir
+raide <span class="math inline">\(c\)</span>. Taip pat taikomas principas, kad algoritmo gale visi kubitai
+yra pamatuojami, net jeigu tai nėra parodoma simboliais kvantinės
+grandinės pabaigoje. Matavimai standartiškai atliekami santykinai su
+Pauli-<span class="math inline">\(Z\)</span> operatoriaus tikriniais vektoriais, tai yra skaičiuojamaisiais
+baziniais vektoriais <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span>. Esant šių bazinių vektorių superpozicijos
+būsenai, galimi matavimo rezultatai yra Pauli-<span class="math inline">\(Z\)</span> tikrinės vertės +1
+arba -1. Radus +1 indikuojama, kad būsena yra
+<span class="math inline">\(|0\rangle\)</span>, bei <span class="math inline">\(|1\rangle\)</span>, jeigu
+tikrinė vertė yra -1. Tai nusako vieną klasikinį bitą informacijos, o
+atlikus matavimą gautas rezultatas yra įrašomas klaisikiniame bitų
+registre.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:grandine-bito-matavimas"></span>
+<img src="media/image4_9.svg" alt="Loginė grandinė sukuria kubito $k_1$ lygią superpoziciją ir atlieka jo būsenos matavimą. Rezultatas įrašomas klasikiniame registre $c$" width="39%" />
+<p class="caption">
+4.9 pav. Loginė grandinė sukuria kubito <span class="math inline">\(k_1\)</span> lygią superpoziciją ir atlieka jo būsenos matavimą. Rezultatas įrašomas klasikiniame registre <span class="math inline">\(c\)</span>
+</p>
+</div>
+<p>Grandinėje <a href="kvantiniai-loginiai-vartai-grandines.html#fig:grandine-bito-matavimas">4.9</a> pav. yra pateiktas vienas iš paprasčiausių praktinės
+svarbos kvantinių algoritmų, kuris atlieka atsitiktinių skaičių
+generavimą (angl. <em>random number generator</em>). Atlikę Hadamardo
+transformaciją gauname lygią superpoziciją:
+<span class="math display" id="eq:hadamard-superpozicija">\[\begin{equation}
+H|0\rangle = \frac{1}{\sqrt{2}}\big( |0\rangle + |1\rangle \big)\,.
+\tag{4.21}
+\end{equation}\]</span>
+Pamatavus šią būseną tikimybės rasti <span class="math inline">\(|0\rangle\)</span> arba
+<span class="math inline">\(|1\rangle\)</span> yra lygios:
+<span class="math display" id="eq:matavimas-lygios-tikimybes">\[\begin{equation}
+\big|\langle 0|\psi\rangle\big|^2 = \big|\langle 1|\psi\rangle\big|^2 = \frac{1}{2}\,.
+\tag{4.22}
+\end{equation}\]</span>
+Tad po kiekvieno šio algoritmo įvykdymo yra sugeneruojama atsitiktinė
+dvejetainė 0 ir 1 skaičių seka. Dėl kvantinio atsitiktinumo matavimo
+procese, šios sekos fundamentaliai neįmanoma nuspėti.</p>
+</div>
+<div id="dviejų-kubitų-loginiai-vartai-cnot" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Dviejų kubitų loginiai vartai <em>CNOT</em><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dviejų kubitų vartai, veikdami
+<span class="math inline">\(|k_1\rangle\otimes |k_2\rangle\)</span>
+būseną, atlieka sąlygines logines operacijas: „Jeigu kubitas <span class="math inline">\(k_1\)</span> yra
+būsenoje <span class="math inline">\(|x\rangle\)</span>, tada su kubitu <span class="math inline">\(k_2\)</span> atliekama
+operacija <span class="math inline">\(U\)</span>“. Čia <span class="math inline">\(U\)</span> gali būti bet kokia 1 kubito būsenos unitarioji
+transformacija. Vienas iš plačiausiai naudojamų 2 kubitų vartų yra
+<em>CNOT</em> (angl. <em>controlled not,</em> trumpinys <em>CNOT</em>), kuriuos grandinėse
+vadinsime <span class="math inline">\(cX\)</span>. Pasirinktas pirmas kubitas yra naudojamas kaip
+<strong>kontrolinis</strong> (angl. <em>control</em>), nuo kurio būsenos priklauso ar
+antram, adresatiniam kubitui, bus taikomi Pauli-<span class="math inline">\(X\)</span> loginiai vartai.
+Vartai <span class="math inline">\(cX\)</span> yra iliustruojami <a href="kvantiniai-loginiai-vartai-grandines.html#fig:cnot-vartai">4.10</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnot-vartai"></span>
+<img src="media/image4_10.svg" alt="2 kubitų sąlyginiai loginiai vartai $cX$ (arba *CNOT*)" width="33%" />
+<p class="caption">
+4.10 pav. 2 kubitų sąlyginiai loginiai vartai <span class="math inline">\(cX\)</span> (arba <em>CNOT</em>)
+</p>
+</div>
+<p><em>CNOT</em> vartus galime išreikšti diadomis ir matricos forma:
+<span class="math display" id="eq:cnot-matrica" id="eq:cnot-diada">\[\begin{align}
+cX = &amp;|0\rangle\langle 0|\otimes I + |1\rangle\langle 1|\otimes X\,;\tag{4.23}\\
+cX = &amp; \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}\,.\tag{4.24}
+\end{align}\]</span>
+Kaip pavyzdį imkime <span class="math inline">\(cX\)</span>, kuriame pirmas kubitas yra kontrolinis, ir
+pritaikykime jį
+<span class="math inline">\(|1\rangle\otimes|0\rangle\)</span> būsenai:
+<span class="math display" id="eq:cx-0-matrica" id="eq:cx-0-diadom">\[\begin{align}
+cX|1\rangle\otimes|0\rangle = &amp;
+|0\rangle\langle 0|1\rangle\otimes I|0\rangle +
+|1\rangle\langle 1|1\rangle\otimes X|0\rangle =
+|1\rangle\otimes X|0\rangle = |1\rangle\otimes|1\rangle\,;\tag{4.25}\\
+cX|1\rangle\otimes|0\rangle = &amp; \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix} \begin{bmatrix}
+0 \\
+0 \\
+1 \\
+0 \\
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+1 \\
+\end{bmatrix}\,.\tag{4.26}
+\end{align}\]</span>
+Apibendrinus, <span class="math inline">\(cX\)</span> vartų efektas 2 kubitų skaičiuojamiesiems baziniams
+vektoriams:
+<span class="math display" id="eq:cx-efektas-10" id="eq:cx-efektas-11" id="eq:cx-efektas-01" id="eq:cx-efektas-00">\[\begin{align}
+cX|0\rangle\otimes|0\rangle = &amp; |0\rangle\otimes|0\rangle\,;\tag{4.27} \\
+cX|0\rangle\otimes|1\rangle = &amp; |0\rangle\otimes|1\rangle\,;\tag{4.28} \\
+cX|1\rangle\otimes|0\rangle = &amp; |1\rangle\otimes|1\rangle\,;\tag{4.29} \\
+cX|1\rangle\otimes|1\rangle = &amp; |1\rangle\otimes|0\rangle\,.\tag{4.30}
+\end{align}\]</span>
+Matome, kad kai kontrolinis kubitas yra <span class="math inline">\(|0\rangle\)</span>,
+antro kubito būsena nesikeičia, o jeigu kontrolinis kubitas yra
+<span class="math inline">\(|1\rangle\)</span>, antro kubito vertė apverčiama. Tai lengva
+pamatyti žvelgiant į diadų formą, kurioje Pauli-<span class="math inline">\(X\)</span> vartai veikia kartu
+tik su pirmo kubito <span class="math inline">\(|1\rangle\)</span> būsena. <span class="math inline">\(cX\)</span> vartų
+efektą baziniams vektoriams galima interpretuoti ir kaip modulio(2) bitų
+sudėtį (<span class="math inline">\(0 + 0 = 0\)</span>, <span class="math inline">\(0 + 1 = 1\)</span>, <span class="math inline">\(1 + 0 = 1\)</span>, <span class="math inline">\(1 + 1 = 0\)</span>), naudojančią simbolį
+<span class="math inline">\(\oplus\)</span>. Pritaikius <span class="math inline">\(cX\)</span> tarp kubitų <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span>, kurių vertės
+yra bet kuri iš 0 ir 1 kombinacijų, tada mod(2) sudėtis yra užrašoma
+antro kubito būsenoje:
+<span class="math display" id="eq:cx-mod2">\[\begin{equation}
+cX|k_1 \rangle\otimes |k_2 \rangle = |k_1 \rangle\otimes |k_1 \oplus k_2 \rangle\,.
+\tag{4.31}
+\end{equation}\]</span>
+Galima atsakymą užrašyti ir pirmo kubito būsenoje naudojant <span class="math inline">\(cX\)</span> vartus,
+kuriuose antras kubitas yra kontrolinis, o pirmas adresatinis.</p>
+<p>Norint aiškiau pateikti matematines lygtis gali būti pravartu indikuoti
+operatoriuose kontrolinį ir adresatinį kubitus. Šioje knygoje, kai bus
+tą pravartu daryti, <em>CNOT</em> vartuose nurodysime kaip pirmą skaičių
+kontrolinį kubitą, antrą adresatinį, pavyzdžiui <span class="math inline">\(cX_{12}\)</span>.
+Formulėse <a href="kvantiniai-loginiai-vartai-grandines.html#eq:cnot-diada">(4.23)</a>–<a href="kvantiniai-loginiai-vartai-grandines.html#eq:cnot-matrica">(4.24)</a> pateikėme diadų ir matricų formas <span class="math inline">\(cX_{12}\)</span>,
+sukeitus juos vietomis, <span class="math inline">\(cX_{21}\)</span>, atitinkamai pasikeistų ir matematinės
+išraiškos:
+<span class="math display" id="eq:cx-21-matrica" id="eq:cx-21-diada">\[\begin{align}
+cX_{21} = &amp; I\otimes|0\rangle\langle 0| + X\otimes|1\rangle\langle 1|\,;\tag{4.32}\\
+cX_{21} = &amp; \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0
+\end{bmatrix}\,.\tag{4.33}
+\end{align}\]</span>
+Matėme, kaip 2 kubitų būsena keičiasi pritaikius <span class="math inline">\(cX\)</span>, kai kubitai yra
+viename iš bazinių vektorių. Gauti rezultatai yra identiški klasikiniams
+<span class="math inline">\(cX\)</span> vartams. Tačiau kvantinėje kompiuterijoje kontrolinio kubito būsena
+gali būti <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijoje. Koks yra <span class="math inline">\(cX\)</span> efektas, šiuo atveju panagrinėsime
+žvelgdami į <a href="kvantiniai-loginiai-vartai-grandines.html#fig:dvieju-kubitu-supynimo-grandine">4.11</a> pav. grandinę.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dvieju-kubitu-supynimo-grandine"></span>
+<img src="media/image4_11.svg" alt="Kvantinį 2 kubitų supynimą atliekanti grandinė" width="38%" />
+<p class="caption">
+4.11 pav. Kvantinį 2 kubitų supynimą atliekanti grandinė
+</p>
+</div>
+<p>Po Hadamardo transformacijos kontrolinis <span class="math inline">\(k_1\)</span> kubitas yra lygioje
+superpozicijoje. Toliau yra <span class="math inline">\(cX\)</span> vartai, kurie veikia tiesiškai
+kiekvieną narį superpozicijos būsenoje:
+<span class="math display" id="eq:cx-nuo-superpozicijos">\[\begin{equation}
+\begin{aligned}
+cX\frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes|0\rangle = &amp;
+\frac{1}{\sqrt{2}}\big(cX|0\rangle\otimes|0\rangle + cX|1\rangle\otimes|0\rangle\big) \\
+= &amp; \frac{1}{\sqrt{2}}\big(|0\rangle\otimes|0\rangle + |1\rangle\otimes|1\rangle\big)\,.
+\end{aligned}
+\tag{4.34}
+\end{equation}\]</span>
+Matome, kad po šių dviejų loginių vartų sekos gavome supintą 2 kubitų
+būseną <span class="math inline">\(|\chi^{+}\rangle\)</span> Belo bazinį vektorių.
+Naudojant Hadamardo ir <span class="math inline">\(cX\)</span> vartus šia tvarka galima unikaliai
+konvertuoti skaičiuojamuosius 2 kubitų bazinius vektorius į Belo
+bazinius vektorius:
+<span class="math display" id="eq:skaiciuojamieji-i-belo">\[\begin{equation}
+|00 \rangle \rightarrow |\chi^{+}\rangle\,,\quad
+|10 \rangle \rightarrow |\chi^{-}\rangle\,,\quad
+|01 \rangle \rightarrow |\eta^{+}\rangle\,,\quad
+|11 \rangle \rightarrow |\eta^{-}\rangle\,.
+\tag{4.35}
+\end{equation}\]</span>
+Pavyzdžiui, norėdami paruošti Belo <span class="math inline">\(|\eta^{-}\rangle\)</span>
+būseną, pirmiausia pakeičiame <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> pradines būsenas į
+<span class="math inline">\(|11\rangle\)</span> naudodami Pauli-<span class="math inline">\(X\)</span> vartus ir tada vėl
+atliekame <span class="math inline">\(H\)</span> ir <span class="math inline">\(cX\)</span>.</p>
+<p>Kadangi <span class="math inline">\(cX\)</span> operatorius yra ermitinis, atlikus vieną po kito du <span class="math inline">\(cX\)</span> su
+tais pačiais kontroliniu ir adresatiniu kubitais, jų būsenos nepakinta.
+Kvantinio supynimo panaikinimas tarp dviejų kubitų taip pat yra
+atliekamas naudojant <span class="math inline">\(cX\)</span> vartus. Pavyzdžiui, atliekant <span class="math inline">\(cX\)</span> vartus
+supintajai <span class="math inline">\(|\chi^{+}\rangle\)</span> Belo būsenai supynimas yra
+panaikinamas ir grįžtame į faktorizuojamąją būseną:
+<span class="math display" id="eq:cx-belo">\[\begin{equation}
+cX|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes
+|0\rangle\,.
+\tag{4.36}
+\end{equation}\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ghz-grandine"></span>
+<img src="media/image4_12.svg" alt="Kvantinį 2 kubitų supynimą atliekanti grandinė" width="49%" />
+<p class="caption">
+4.12 pav. Kvantinį 2 kubitų supynimą atliekanti grandinė
+</p>
+</div>
+<p>Kita gerai žinoma visiškai supinta
+3 kubitų GHZ būseną (angl. <em>Greenberger-Horne-Zeilinger</em>) galima gauti
+atlikę <a href="kvantiniai-loginiai-vartai-grandines.html#fig:ghz-grandine">4.12</a> pav. parodytą grandinę.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cx0-grandine"></span>
+<img src="media/image4_13.svg" alt="2 kubitų salyginių loginių vartų $cX$ variacija, kurioje antro kubito būsena keičiama, jeigu pirmojo būsena $|0\rangle$" width="72%" />
+<p class="caption">
+4.13 pav. 2 kubitų salyginių loginių vartų <span class="math inline">\(cX\)</span> variacija, kurioje antro kubito būsena keičiama, jeigu pirmojo būsena <span class="math inline">\(|0\rangle\)</span>
+</p>
+</div>
+<p><span class="math display" id="eq:ghz-busena">\[\begin{equation}
+|\mathrm{GHZ}\rangle = \frac{1}{\sqrt{2}}\big(|000\rangle +|111\rangle\big)\,.
+\tag{4.37}
+\end{equation}\]</span></p>
+<p>Užbaigdami šį poskyrį paminėsime naudingą <span class="math inline">\(cX\)</span> loginių vartų variaciją,
+kurioje adresatiniam kubitui pritaikomi Pauli-<span class="math inline">\(X\)</span> vartai, jeigu
+kontrolinio kubito būsena yra <span class="math inline">\(|0\rangle\)</span>, o ne
+<span class="math inline">\(|1\rangle\)</span>. Šio operatoriaus, vadinsime jį
+<span class="math inline">\(cX_0\)</span>, išraiška yra:
+<span class="math display" id="eq:cx0-israiska">\[\begin{equation}
+cX_0 = |0\rangle\langle 0|\otimes X + |1\rangle\langle 1|\otimes I\,.
+\tag{4.38}
+\end{equation}\]</span></p>
+<p>Kvantinėje grandinėje <span class="math inline">\(cX_0\)</span> vartai yra
+žymimi su tuščiu apskritimu kontroliniame kubite, bei gali būti
+paprastai konvertuojami iš standartinio <span class="math inline">\(cX\)</span> pasitelkiant dvejus Pauli-<span class="math inline">\(X\)</span>
+vartus (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:cx0-grandine">4.13</a> pav.). Pirmieji Pauli-<span class="math inline">\(X\)</span> sukeičia kontrolinio kubito būsenas
+<span class="math inline">\(|0\rangle \leftrightarrow |1\rangle\)</span>, o antrieji atstato jas atgal po atliktų standartinių <span class="math inline">\(cX\)</span>.</p>
+</div>
+<div id="tofoli-loginiai-vartai" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Tofoli loginiai vartai<a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trijų kubitų sąlyginiai loginiai vartai,
+kuriuose du kubitai naudojami kaip kontroliniai, yra vadinami
+<strong><em>CCNOT</em></strong> (angl. <em>controlled controlled NOT</em>, trumpinys <em>CCNOT</em>) ir
+yra geriau žinomi, kaip <strong>Tofoli vartai</strong> (angl. <em>Toffoli</em>). Grandinėse
+juos žymėsime <span class="math inline">\(ccX\)</span>. Kubito vertė yra apverčiama, jeigu abu kontroliniai
+kubitai yra <span class="math inline">\(|1\rangle\)</span> būsenose. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:toffoli-vartai">4.14</a> pav.
+iliustruojame šiuos vartus, veikiančius būseną
+<span class="math inline">\(|k_1\rangle\otimes|k_2\rangle\otimes|k_3\rangle\)</span>
+su <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> kontroliniais bei <span class="math inline">\(k_3\)</span> adresatiniu kubitu. Išreiškus <span class="math inline">\(ccX\)</span> vartus diadomis:
+<span class="math display" id="eq:tofoli-vartai-diadom">\[\begin{equation}
+ccX = \big(|00\rangle\langle 00| +|01\rangle\langle 10| + |10\rangle\langle 01|\big)
+\otimes I + |11\rangle\langle 11|\otimes X\,.
+\tag{4.39}
+\end{equation}\]</span>
+Kvantiniuose kompiuteriuose <span class="math inline">\(ccX\)</span> vartai paprastai nėra elementarūs,
+tačiau sukompiliuojami iš 1 kubito ir 2 kubitų loginių vartų sekų.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:toffoli-vartai"></span>
+<img src="media/image4_14.svg" alt="Toffoli loginiai vartai" width="32%" />
+<p class="caption">
+4.14 pav. Toffoli loginiai vartai
+</p>
+</div>
+</div>
+<div id="swap-ir-fredkin-loginiai-vartai" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> SWAP ir Fredkin loginiai vartai<a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Loginiai vartai SWAP, grandinėse žymimi sutrumpintai <span class="math inline">\(W\)</span>, veikdami tarp
+dviejų kubitų <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> sukeičia jų būsenas vietomis:
+<span class="math display" id="eq:swap-vartai">\[\begin{equation}
+W|\psi_1\rangle\otimes |\psi_2\rangle = |\psi_2\rangle\otimes |\psi_1\rangle\,.
+\tag{4.40}
+\end{equation}\]</span>
+Šie loginiai vartai efektyviai sukeičia kubitus vietomis ir todėl gali
+būti naudojami pergrupuoti kubitus registre. Tai yra itin naudinga
+situacijose, kuriuose kvantinis procesorius neturi fizinės galimybės
+atlikti, pavyzdžiui, <span class="math inline">\(cX\)</span> loginių vartų tarp tam tikrų kubitų porų.
+Siekiant apeiti šį apribojimą galima naudoti SWAP operacijas kaskadų
+principu sukeičiant kubitų pozicijas į vietas, kuriuose <span class="math inline">\(cX\)</span> loginiai
+vartai yra leidžiami, bei vėl grąžinti kubitus į pradines pozicijas.
+Šiuos vartus galima išreikšti diadomis arba matricos pavidalu taip:
+<span class="math display" id="eq:swap-matrica" id="eq:swap-diadom">\[\begin{align}
+W = &amp; |0\rangle\otimes|0\rangle\langle 0|\otimes\langle 0| +
+|0\rangle\otimes|1\rangle\langle 1|\otimes\langle 0| +
+|1\rangle\otimes|0\rangle\langle 0|\otimes\langle 1| +
+|1\rangle\otimes|1\rangle\langle 1|\otimes\langle 1| \nonumber\\
+= &amp; |00\rangle\langle 00| + |01\rangle\langle 10| + |10\rangle\langle 01|
++ |11\rangle\langle 11|\,; \tag{4.41} \\
+W = &amp;\begin{bmatrix}
+\begin{matrix}
+1 &amp; 0 \\
+0 &amp; 0 \\
+\end{matrix} &amp; \begin{matrix}
+0 &amp; 0 \\
+1 &amp; 0 \\
+\end{matrix} \\
+\begin{matrix}
+0 &amp; 1 \\
+0 &amp; 0 \\
+\end{matrix} &amp; \begin{matrix}
+0 &amp; 0 \\
+0 &amp; 1 \\
+\end{matrix} \\
+\end{bmatrix}\,. \tag{4.42}
+\end{align}\]</span>
+SWAP vartai iliustruojami <a href="kvantiniai-loginiai-vartai-grandines.html#fig:swap-vartai">4.15</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:swap-vartai"></span>
+<img src="media/image4_15.svg" alt="SWAP loginiai vartai" width="40%" />
+<p class="caption">
+4.15 pav. SWAP loginiai vartai
+</p>
+</div>
+<p>SWAP taip pat galima įkomponuoti į sąlyginius loginius vartus, kurie yra
+vadinami Fredkin vartais. Lygtyse juos žymėsime <span class="math inline">\(cW\)</span>. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:fredkin-vartai">4.16</a> pav.
+pavaizduoti Fredkin vartai sukeičia kubitų <span class="math inline">\(k_2\)</span> ir <span class="math inline">\(k_3\)</span> būsenas,
+jeigu kontrolinis kubitas <span class="math inline">\(k_1\)</span> yra būsenoje
+<span class="math inline">\(|1\rangle\)</span>.
+<span class="math display" id="eq:fredkin-vartai">\[\begin{equation}
+cW = |0\rangle\langle 0|\otimes I\otimes I + |1\rangle\langle 1|\otimes W\,.
+\tag{4.43}
+\end{equation}\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fredkin-vartai"></span>
+<img src="media/image4_16.svg" alt="Fredkin, arba kontroliuojami SWAP, loginiai vartai" width="30%" />
+<p class="caption">
+4.16 pav. Fredkin, arba kontroliuojami SWAP, loginiai vartai
+</p>
+</div>
+<p>Kaip ir Tofoli loginiai vartai, SWAP bei
+Fredkin paprastai nėra elementarios kubitų transformacijos fiziniame
+lygmenyje, tačiau yra konstruojami iš 1 kubito ir 2 kubitų loginių vartų
+sekų. Vienas būdas atlikti SWAP 2 kubitų būsenai naudojant <span class="math inline">\(cX\)</span> vartus
+parodytas <a href="kvantiniai-loginiai-vartai-grandines.html#fig:swap-realizavimas">4.17</a> pav.:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:swap-realizavimas"></span>
+<img src="media/image4_17.svg" alt="SWAP loginių vartų realizavimas pasitelkiant tris *cX* loginius vartus" width="65%" />
+<p class="caption">
+4.17 pav. SWAP loginių vartų realizavimas pasitelkiant tris <em>cX</em> loginius vartus
+</p>
+</div>
+</div>
+<div id="bendro-tipo-salyginiai-vartai" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bendro tipo 2 kubitų sąlyginiuose vartuose
+<span class="math inline">\(cU\)</span> adresatiniam kubitui pritaikoma bet kokia 1 kubito unitarinė
+transformacija <span class="math inline">\(U\)</span>, jeigu pirmas kubitas yra <span class="math inline">\(|1\rangle\)</span>
+būsenoje. Šiuos vartus diadų forma ir grandinėje išreiškiame:
+<span class="math display" id="eq:bendri-salyginiai-diadom">\[\begin{equation}
+cU = |0\rangle\langle 0|\otimes I + |1\rangle\langle 1|\otimes U\,.
+\tag{4.44}
+\end{equation}\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bendro-tipo-salyginiai-vartai"></span>
+<img src="media/image4_18.svg" alt="Bendro tipo 2 kubitų loginiai vartai $cU$, kuriuose antram kubitui pritaikomi bendro tipo 1 kubito loginiai vartai $U$, kontroliuojant pirmu kubitu" width="30%" />
+<p class="caption">
+4.18 pav. Bendro tipo 2 kubitų loginiai vartai <span class="math inline">\(cU\)</span>, kuriuose antram kubitui pritaikomi bendro tipo 1 kubito loginiai vartai <span class="math inline">\(U\)</span>, kontroliuojant pirmu kubitu
+</p>
+</div>
+<p>Prieš pereidami prie kitų temų, atkreipsime dėmesį į 1 kubito globalios
+fazės svarbą 2 kubitų (ir bendrai <span class="math inline">\(n\)</span> kubitų) loginiuose vartuose.
+Bendro tipo 2 kubitų transformacijose <span class="math inline">\(cU\)</span> globali pavienių kubitų fazė
+tampa svarbi santykinė fazė tarp atskirų kubitų. Kaip matėme šio
+skyriaus pirmoje dalyje, bendriausio tipo 1-kubito loginius vartus
+<span class="math inline">\(U_3(\theta,\gamma,\varphi)\)</span> galime išreikšti tokia matricos forma:
+<span class="math display" id="eq:bendro-tipo-1-kubito-vartai">\[\begin{equation}
+U_3 = \begin{bmatrix}
+a &amp; - b^{*} \\
+b &amp; a^{*}
+\end{bmatrix}\,.
+\tag{4.45}
+\end{equation}\]</span>
+Čia <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> yra kompleksiniai skaičiai, o matricos <span class="math inline">\(U_3\)</span>
+determinantas <span class="math inline">\(\det U_3 = |a|^{2} + |b|^{2} = 1\)</span>. Visos unitarinės
+<span class="math inline">\((2 \times 2)\)</span> dydžio matricos <span class="math inline">\(U\)</span>, kurių determinantas lygus vienetui, sudaro
+specialiają unitarinių matricų grupę <span class="math inline">\(\mathrm{SU}(2)\)</span>. Ši grupė išsamiai apibūdina
+visas 1 kubito transformacijas, tačiau yra platesnės unitarinių matricų
+<span class="math inline">\(\mathrm{U}(2)\)</span> grupės pogrupis,
+<span class="math inline">\(\mathrm{SU}(2) \subset \mathrm{U}(2)\)</span>. Unitarinę matricą <span class="math inline">\(U\)</span>,
+priklausančią <span class="math inline">\(\mathrm{U}(2)\)</span>, galime išreikšti sudauginant <span class="math inline">\(\mathrm{SU}(2)\)</span> matricą <span class="math inline">\(V\)</span> su
+fazės nariu, <span class="math inline">\(U = \mathrm{e}^{\mathrm{i}\eta}V\)</span>. Globalios fazės narys
+<span class="math inline">\(\mathrm{e}^{\mathrm{i}\eta}\)</span>,
+veikiantis 1 kubito būseną nedaro fizinės įtakos, nes
+<span class="math inline">\(\mathrm{e}^{\mathrm{i}\eta}V|\psi\rangle = V|\psi\rangle\)</span>.
+Todėl jį 1-kubito transformacijose ignoruojame. Tačiau sąlyginiuose
+2 kubitų loginiuose vartuose unitarinė (1 kubito) transformacija <span class="math inline">\(U\)</span>,
+pritaikoma adresatiniam kubitui, gali priklausyti <span class="math inline">\(U \in \mathrm{U}(2)\)</span>, o ne
+<span class="math inline">\(U \in \mathrm{SU}(2)\)</span> grupei. Pabrėždami šį aspektą toliau pateikiame sąlyginius
+posūkio apie <span class="math inline">\(z\)</span> ašį vartus <span class="math inline">\(cR_z(\theta)\)</span> bei fazės vartus
+<span class="math inline">\(cP(\theta)\)</span> (angl. <em>controlled phase gate</em>).</p>
+<p>Vartai <span class="math inline">\(cR_z(\theta)\)</span> pritaiko antram
+kubitui posūkio operatorių <span class="math inline">\(R_z(\theta)\)</span>, jeigu pirmojo būsena yra
+<span class="math inline">\(|1\rangle\)</span>. Grandinėje, diadų ir matricos formoje
+<span class="math inline">\(cR_{z}(\theta)\)</span> atrodo taip (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:salyginia-2-kubitu-vartai">4.19</a> pav.):</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:salyginia-2-kubitu-vartai"></span>
+<img src="media/image4_19.svg" alt="Salyginiai 2 kubitų loginiai vartai $cR_z(\theta)$" width="34%" />
+<p class="caption">
+4.19 pav. Salyginiai 2 kubitų loginiai vartai <span class="math inline">\(cR_z(\theta)\)</span>
+</p>
+</div>
+<p><span class="math display" id="eq:salyginiai-z-matrica" id="eq:salyginiai-z-diadom">\[\begin{align}
+cR_z(\theta) = &amp; |0\rangle\langle 0|\otimes I
++ |1\rangle\langle 1|\otimes R_z(\theta)\,; \tag{4.46} \\
+cR_{z}(\theta) = &amp; \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\theta/2} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\theta/2} \\
+\end{bmatrix}\,.  \tag{4.47}
+\end{align}\]</span>
+Pritaikę <span class="math inline">\(cR_z(\theta)\)</span> 2 kubitų bazinių vektorių superpozicijos
+būsenai
+<span class="math inline">\(|\psi\rangle = \big(|00\rangle + |10\rangle + |01\rangle + |11\rangle\big)/2\)</span>
+randame:
+<span class="math display" id="eq:salyginiai-z-superpozicija">\[\begin{equation}
+\begin{aligned}
+cR_z(\theta)|\psi\rangle = &amp;
+\frac{1}{2}\Big\lbrack \big(|00\rangle + |01\rangle\big)
++ |1\rangle\otimes R_z(\theta)\big(|0\rangle + |1\rangle\big)\Big\rbrack \\
+= &amp; \frac{1}{2}\left\lbrack |00\rangle + \mathrm{e}^{-\mathrm{i}\theta/2}|10\rangle
++ |01\rangle + \mathrm{e}^{\mathrm{i}\theta/2}|11\rangle \right\rbrack\,.
+\end{aligned}
+\tag{4.48}
+\end{equation}\]</span>
+Šio skyriaus pirmoje dalyje analizuodami 1 kubito vartus <span class="math inline">\(R_z(\theta)\)</span>
+iškėlėme fazės narį <span class="math inline">\(\mathrm{e}^{-\mathrm{i}\theta/2}\)</span>. Tačiau šioje situacijoje
+<span class="math inline">\(\mathrm{e}^{-\mathrm{i}\theta/2}\)</span> nusako svarbią santykinę fazę tarp 2 kubitų bazinių
+vektorių, o ne globalią visos 2 kubitų būsenos
+<span class="math inline">\(|\psi\rangle\)</span> fazę. Globali 2 kubitų fazė būtų vėlgi
+būtų nusakoma <span class="math inline">\(\mathrm{e}^{\mathrm{i}\eta}\)</span>, dauginančiu visą
+<span class="math inline">\(|\psi\rangle\)</span> būseną kartu.</p>
+<p>Sąlyginiai fazės vartai <span class="math inline">\(cP(\theta)\)</span> matricos forma atrodo taip:
+<span class="math display" id="eq:salyginiai-fazes">\[\begin{equation}
+cP(\theta) = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\theta} \\
+\end{bmatrix}\,.
+\tag{4.49}
+\end{equation}\]</span>
+Pritaikę juos tai pačiai visų 2 kubitų bazinių vektorių superpozicijos
+būsenai <span class="math inline">\(|\psi\rangle\)</span> randame, kad fazė suteikiama tik
+<span class="math inline">\(|11\rangle\)</span> baziniam vektoriui:
+<span class="math display" id="eq:salyginiai-fazes-superpozicija">\[\begin{equation}
+cP(\theta)|\psi\rangle = \frac{1}{2}\big\lbrack |00\rangle + |10\rangle +
+|01\rangle + \mathrm{e}^{\mathrm{i}\theta}|11\rangle\big\rbrack\,.
+\tag{4.50}
+\end{equation}\]</span>
+Vartų <span class="math inline">\(cP(\theta)\)</span> efektas skiriasi nuo <span class="math inline">\(cR_z(\theta)\)</span> santykine
+2 kubitų faze, kuri yra „globali” antrojo kubito fazė. Norėdami
+formaliau perteikti 1 kubito „globalią” fazę <span class="math inline">\(\mathrm{e}^{\mathrm{i}\eta}\)</span>, tokius
+1 kubito fazės vartus žymime <span class="math inline">\(\Phi(\eta)\)</span>:
+<span class="math display" id="eq:vieno-kubito-fazes-vartai">\[\begin{equation}
+\Phi(\eta) = \begin{bmatrix}
+\mathrm{e}^{\mathrm{i}\eta} &amp; 0 \\
+0 &amp; \mathrm{e}^{\mathrm{i}\eta} \\
+\end{bmatrix} = \mathrm{e}^{\mathrm{i}\eta}\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix} = \mathrm{e}^{\mathrm{i}\eta}I\,.
+\tag{4.51}
+\end{equation}\]</span>
+Sąlyginiai <span class="math inline">\(c\Phi(\eta)\)</span> vartai, kurie perteikia „globalią” <span class="math inline">\(\mathrm{e}^{\mathrm{i}\eta}\)</span>
+fazę adresatinio kubito <span class="math inline">\(|0\rangle\)</span> ir
+<span class="math inline">\(|1\rangle\)</span> būsenoms, jeigu kontrolinis kubitas
+<span class="math inline">\(|1\rangle\)</span> būsenoje, yra:
+<span class="math display" id="eq:salygine-globali-dekompozicija" id="eq:salyginiai-globali-faze">\[\begin{align}
+c\Phi(\eta) = &amp; \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \mathrm{e}^{\mathrm{i}\eta} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\eta}
+\end{bmatrix}\,; \tag{4.52} \\
+c\Phi(\eta) = &amp; |0\rangle\langle 0|\otimes I + |1\rangle\langle 1|\otimes\Phi(\eta)
+= \big( |0\rangle\langle 0| +
+\mathrm{e}^{\mathrm{i}\eta}|1\rangle\langle 1| \big)\otimes I\,.
+\tag{4.53}
+\end{align}\]</span>
+Iš diadinės <span class="math inline">\(c\Phi(\eta)\)</span> dekompozicijos galima atkreipti dėmesį, kad iš
+tiesų nereikia vykdyti 2 kubitų sąlyginių vartų. Šie loginiai vartai
+susiprastina į 1 kubito loginius vartus, veikiančius vien kontrolinį
+kubitą, su identitetu <span class="math inline">\(\otimes I\)</span> adresatiniam kubitui:
+<span class="math display" id="eq:salyginiai-glbali-supaprastinimas">\[\begin{equation}
+\begin{aligned}
+\Phi(\eta/2)R_z(\eta) = &amp; \big(\mathrm{e}^{\mathrm{i}\eta/2}|0\rangle\langle 0|
++ \mathrm{e}^{\mathrm{i}\eta/2}|1\rangle\langle 1|\big)
+\big(\mathrm{e}^{-\mathrm{i}\eta/2}|0\rangle\langle 0| +
+\mathrm{e}^{\mathrm{i}\eta/2}|1\rangle\langle 1|\big) \\
+= &amp; |0\rangle\langle 0| + \mathrm{e}^{\mathrm{i}\eta}|1\rangle\langle 1|\,.
+\end{aligned}
+\tag{4.54}
+\end{equation}\]</span>
+Tad sąlyginius 2 kubitų fazės vartus <span class="math inline">\(c\Phi(\eta)\)</span> galime perteikti
+1 kubito vartais, <span class="math inline">\(\Phi(\eta/2)R_z(\eta) \equiv D\)</span>:
+<span class="math display" id="eq:salyginiai-D">\[\begin{equation}
+c\Phi(\eta) = D\otimes I\,.
+\tag{4.55}
+\end{equation}\]</span>
+Dabar akivaizdu, kad sąlyginius 2 kubitų santykinės fazės vartus
+<span class="math inline">\(cP(\theta)\)</span> galime realizuoti pasitelkdami <span class="math inline">\(cR_z(\theta)\)</span> ir
+<span class="math inline">\(c\Phi(\eta)\)</span>. <a href="kvantiniai-loginiai-vartai-grandines.html#eq:salyginiai-z-superpozicija">(4.48)</a> lygtyje gautai būsenai
+<span class="math inline">\(cR_z(\theta)|\psi\rangle\)</span> pritaikome <span class="math inline">\(c\Phi(\eta)\)</span> su
+faze <span class="math inline">\(\eta = \theta/2\)</span>:
+<span class="math display" id="eq:salyginiai-faze-realizavimas">\[\begin{equation}
+c\Phi(\theta/2)cR_z(\theta)|\psi\rangle = cP(\theta)|\psi\rangle\,.
+\tag{4.56}
+\end{equation}\]</span>
+Realiame kvantiniame kompiuteryje 2 kubitų sąlyginių loginių vartų
+asortimentas gali būti itin ribotas, o bendro tipo sąlyginiai vartai
+<span class="math inline">\(cU\)</span> yra veikiau aukštesnio lygio loginių operacijų abstrakcija. Šios
+operacijos bus sudarytos iš kvantiniame kompiuteryje prieinamų
+elementariųjų loginių vartų. Dažnai daroma prielaida, kad iš 2 kubitų
+vartų yra prieinami tik <span class="math inline">\(cX\)</span>. Tad norint įvykdyti visas įmanomas
+<span class="math inline">\(n\)</span> kubitų registro transformacijas universaliame kompiuteryje
+reikalingas būdas, kaip perteikti <span class="math inline">\(cU\)</span> naudojant tik 1 kubito bendrus
+loginius vartus bei <span class="math inline">\(cX\)</span>.</p>
+<p>Pirma dekompozicija, realizuojanti <span class="math inline">\(cU\)</span>, yra:
+<span class="math display" id="eq:dekompozicija-realizuojanti-cu">\[\begin{equation}
+cU = AcXBcXC\,.
+\tag{4.57}
+\end{equation}\]</span>
+Čia <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> ir <span class="math inline">\(C\)</span> yra 1 kubito loginiai vartai, kurie veikdami būseną
+<span class="math inline">\(|\psi\rangle\)</span> tenkina lygybę
+<span class="math inline">\(ABC|\psi\rangle = I|\psi\rangle\)</span>. Ši
+dekompozicija yra pagrįsta teiginiu, kad bet kokį 1 kubito operatorių
+<span class="math inline">\(U \in \mathrm{SU}(2)\)</span> galima išreikšti <span class="math inline">\(U = AXBXC\)</span>. Operatoriai <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>
+turi būti rasti kiekvienam norimam <span class="math inline">\(U\)</span> ir yra bendrai sudaryti iš posūkio
+operatorių <span class="math inline">\(R_x(\theta)\)</span>, <span class="math inline">\(R_y(\theta)\)</span>, <span class="math inline">\(R_z(\theta)\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:abc-dekompozicija"></span>
+<img src="media/image4_20.svg" alt="Sąlyginių loginių vartų $cU$ realizavimas naudojant ABC dekompoziciją" width="82%" />
+<p class="caption">
+4.20 pav. Sąlyginių loginių vartų <span class="math inline">\(cU\)</span> realizavimas naudojant ABC dekompoziciją
+</p>
+</div>
+<p><a href="kvantiniai-loginiai-vartai-grandines.html#fig:abc-dekompozicija">4.20</a> pav. grandinėje matome, kad jeigu kontrolinis kubitas yra
+<span class="math inline">\(|0\rangle\)</span> būsenoje, tada adresatiniam kubitui
+pritaikomi paeiliui trys operatoriai,
+<span class="math inline">\(ABC|\psi\rangle = I|\psi\rangle\)</span> ir
+todėl nepakeičia jo būsenos. O štai jeigu kontrolinis kubitas yra
+<span class="math inline">\(|1\rangle\)</span> būsenoje,
+<span class="math inline">\(AXBXC|\psi\rangle = U|\psi\rangle\)</span>,
+kaip ir norima. Taip pat, jeigu sąlyginiuose vartuose <span class="math inline">\(cU\)</span> unitarusis operatorius
+<span class="math inline">\(U \in \mathrm{U}(2)\)</span>, tada
+<span class="math inline">\((D\otimes I)AXBXC|\psi\rangle = U|\psi\rangle\)</span>.
+Papildomi fazės vartai <span class="math inline">\(D\)</span>, veikiantys kontrolinį kubitą šios grandinės
+pabaigoje, leidžia teisingai perteikti norimą santykinę 2 kubitų būsenos
+fazę.</p>
+<p>Loginiuose vartuose gali būti daugiau nei
+vienas kontrolinis kubitas. Ši aukštesnio lygio operacijų abstrakcija
+yra itin pravarti konstruojant logines grandines, tačiau praktikoje taip
+pat reikia dekompozicijos į elementarius loginius vartus jai realizuoti.
+<a href="kvantiniai-loginiai-vartai-grandines.html#fig:ccu-realizavimas">4.21</a> pav. pateikti 3 kubitų bendro tipo <span class="math inline">\(ccU\)</span> ir jų dekompozicija
+naudojant elementarius <span class="math inline">\(cX\)</span>, 1 kubito loginius vartus <span class="math inline">\(V\)</span> ir
+atvirkštinius <span class="math inline">\(V^{\dagger}\)</span>, <span class="math inline">\(V^{\dagger}V = I\)</span>. Jie yra parenkami, kad
+tenkintų lygybę <span class="math inline">\(VV = U\)</span>. Pavyzdžiui, Tofoli loginiai vartai gali
+būti išreikšti šia dekompozicija pasirinkus <span class="math inline">\(V = (1 - \mathrm{i})(I + \mathrm{i}X)/2\)</span>, nes
+<span class="math inline">\(VV = X\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ccu-realizavimas"></span>
+<img src="media/image4_21.svg" alt="3 kubitų sąlyginių loginių vartų $ccU$ realizavimas" width="82%" />
+<p class="caption">
+4.21 pav. 3 kubitų sąlyginių loginių vartų <span class="math inline">\(ccU\)</span> realizavimas
+</p>
+</div>
+<p>Tofoli loginiai vartai <span class="math inline">\(ccX\)</span> yra plačiai naudojami kvantinėse
+grandinėse ir juos pasitelkus galima lengvai išreikšti <span class="math inline">\(k\)</span> skaičiumi
+kubitais kontroliuojamus loginius vartus <span class="math inline">\(c^{k}U\)</span>. Iliustracijai, <a href="kvantiniai-loginiai-vartai-grandines.html#fig:ccu-realizavimas-tofoli">4.22</a> pav. parodyta
+<span class="math inline">\(ccU\)</span> dekompozicija, naudojanti Tofoli sekas. Šį metodą panagrinėsime detaliau.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ccu-realizavimas-tofoli"></span>
+<img src="media/image4_22.svg" alt="3-kubitų sąlyginių loginių vartų *ccU* realizavimas pasitelkiant Tofoli loginius vartus" width="84%" />
+<p class="caption">
+4.22 pav. 3-kubitų sąlyginių loginių vartų <em>ccU</em> realizavimas pasitelkiant Tofoli loginius vartus
+</p>
+</div>
+<p>Tofoli vartais pagrįstas metodas naudoja papildomus kubitus, vadinamus
+<strong>ancilomis</strong> (angl. <em>ancilla qubits</em>), kurios atlieka juodraščio
+funkciją kvantinėse grandinėse. Ancilos yra inicijuojamos į
+<span class="math inline">\(|a_1 a_2 \rangle = |00\rangle\)</span>
+būsenas, o atlikus norimą operaciją vėl grąžinamos į pradines
+<span class="math inline">\(|00\rangle\)</span>. Imkime konkretų pavyzdį, kuriame
+<span class="math inline">\(ccU = ccP(\theta)\)</span> nusako minėtus, tačiau dvigubai kontroliuojamus,
+sąlyginius 3 kubitų fazės vartus. Pritaikius <span class="math inline">\(ccP(\theta)\)</span> 3-kubitų
+registrui būsena
+<span class="math inline">\(|k_1 k_2 k_3\rangle = |111\rangle\)</span>
+įgauna fazę, <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}|111\rangle\)</span>, o štai visi kiti
+baziniai vektoriai nėra paveikiami. Sakysime, kad 3 kubitų registras yra pradinėje lygioje visų bazinių
+vektorių superpozicijoje, tad kartu su dviem ancilomis (kubitais) jų
+būsena formoje
+<span class="math inline">\(|k_1 k_2 k_3 \rangle\otimes|a_1 a_2 \rangle\)</span>
+yra:
+<span class="math display" id="eq:3-lygi-superpozicija">\[\begin{equation}
+|\psi\rangle = \frac{1}{\sqrt{8}}\big(|000\rangle + |001\rangle + |010\rangle +
+|011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle\big)\otimes
+|00\rangle\,.
+\tag{4.58}
+\end{equation}\]</span>
+Paskutiniai du kubitai yra minėtos ancilos, atskirtos tenzorių daugybos
+ženklu dėl aiškumo. Tolesniuose žingsniuose pritaikysime dvejus Tofoli
+loginius <span class="math inline">\(ccX\)</span> vartus. Pirmasis, vadinsime jį <span class="math inline">\(ccX_1\)</span>, naudoja įvesties registro
+kubitus <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> kaip kontrolinius, o adresatinis yra pirmasis
+ancila kubitas <span class="math inline">\(a_1\)</span>. Iš to randame:
+<span class="math display" id="eq:tofoli-3-superpozicija">\[\begin{equation}
+\begin{split}
+ccX_1|\psi\rangle = &amp;
+\frac{1}{\sqrt{8}}\big(|000\rangle + |001\rangle + |010\rangle + |011\rangle +
+|100\rangle + |101\rangle\big)\otimes|00\rangle \\
+&amp; + \frac{1}{\sqrt{8}}\big(|110\rangle + |111\rangle\big)\otimes|10\rangle\,.
+\end{split}
+\tag{4.59}
+\end{equation}\]</span>
+Šie vartai parenka būsenas <span class="math inline">\(|11k_3\rangle\)</span> ir jas
+supina su pirmu ancila kubitu, kuriam būsena pakeičiama į
+<span class="math inline">\(|1\rangle\)</span>. Tolesnis <span class="math inline">\(ccX_2\)</span> naudoja įvesties
+registro kubitą <span class="math inline">\(k_3\)</span> ir ancilą <span class="math inline">\(a_1\)</span> kaip kontrolinį kubitą, o
+adresatinis yra antrasis ancila kubitas <span class="math inline">\(a_2\)</span>:
+<span class="math display" id="eq:2-tofoli-3-superpozicija">\[\begin{equation}
+\begin{split}
+(ccX_2)(ccX_1)|\psi\rangle = &amp;
+\frac{1}{\sqrt{8}}\big(|000\rangle + |001\rangle + |010\rangle + |011\rangle +
+|100\rangle + |101\rangle\big)\otimes|00\rangle \\
+&amp; + \frac{1}{\sqrt{8}}|110\rangle\otimes|10\rangle
++ \frac{1}{\sqrt{8}}|111\rangle\otimes|11\rangle\,.
+\end{split}
+\tag{4.60}
+\end{equation}\]</span>
+Šie vartai supina <span class="math inline">\(|111\rangle\)</span> būseną su ancilų
+<span class="math inline">\(|11\rangle\)</span> būsena. Trečiame žingsnyje pritaikome
+sąlyginius fazės vartus <span class="math inline">\(cP(\theta)\)</span>, kuriuose kontrolinis
+kubitas yra antra ancila <span class="math inline">\(a_2\)</span>, o adresatinis šiuo atveju gali būti
+bet kuris iš trijų įvesties kubitų, sakysime, <span class="math inline">\(k_3\)</span>:
+<span class="math display" id="eq:faze-tofoli-tofoli-superpozicija">\[\begin{equation}
+\begin{split}
+cP(\theta)(ccX_2)(ccX_1)|\psi\rangle = &amp;
+\frac{1}{\sqrt{8}}\big(|000\rangle + |001\rangle + |010\rangle + |011\rangle +
+|100\rangle + |101\rangle\big)\otimes|00\rangle \\
+&amp; + \frac{1}{\sqrt{8}}|110\rangle\otimes|10\rangle
++ \frac{\mathrm{e}^{\mathrm{i}\theta}}{\sqrt{8}}|111\rangle\otimes|11\rangle\,.
+\end{split}
+\tag{4.61}
+\end{equation}\]</span>
+Šie trys loginiai žingsniai efektyviai pritaikė fazę <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}\)</span>
+būsenai <span class="math inline">\(|111\rangle\)</span>. Tolesniuose dviejuose žingsniuose
+pritaikome Tofoli vartus atbuline tvarka siekdami atstatyti abiejų
+ancila kubitų būsenas atgal į <span class="math inline">\(|00\rangle\)</span>, taip
+paruošiant jas potencialiai tolimesniems skaičiavimams:
+<span class="math display" id="eq:tofoli-atbuline-tvarka">\[\begin{equation}
+\begin{split}
+(ccX_1)(ccX_2)(cP(\theta))(ccX_2) &amp; (ccX_1)|\psi\rangle =
+\frac{1}{\sqrt{8}}\big(|000\rangle + |001\rangle + |010\rangle \\
+&amp; + |011\rangle + |100\rangle + |101\rangle + |110\rangle +
+\mathrm{e}^{\mathrm{i}\theta}|111\rangle\big)\otimes|00\rangle\,.
+\end{split}
+\tag{4.62}
+\end{equation}\]</span>
+Bet kokia <span class="math inline">\(k\)</span> kontroliuojamų sąlyginių loginių vartų <span class="math inline">\(c^{k}U\)</span>
+dekompozicija, pagrįsta Tofoli vartais <span class="math inline">\(ccX\)</span>, paremta iliustruotu
+kaskadų principu. Šiam metodui reikalingi <span class="math inline">\(2(k - 1)\)</span> skaičius Tofoli
+vartų ir papildomų <span class="math inline">\(k - 1\)</span> ancila kubitų.</p>
+<p>Kvantinių ryšių protokoluose, klaidų
+taisymo ir kituose algoritmuose galima aptikti mišrių
+kvantinių-klasikinių loginių operacijų. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:misri-grandine">4.23</a> pav. parodytas grandinės
+pavyzdys, kuriame <span class="math inline">\(cX\)</span> yra kontroliuojami klasikinio registro <span class="math inline">\(c\)</span>
+būsenos.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:misri-grandine"></span>
+<img src="media/image4_23.svg" alt="Mišri kvantinė-klasikinė loginė grandinė, kurioje $k_2$ kubitui pritaikomi Pauli-$X$, kontroliuojami klasikiniu registru" width="48%" />
+<p class="caption">
+4.23 pav. Mišri kvantinė-klasikinė loginė grandinė, kurioje <span class="math inline">\(k_2\)</span> kubitui pritaikomi Pauli-<span class="math inline">\(X\)</span>, kontroliuojami klasikiniu registru
+</p>
+</div>
+<p>Šioje grandinėje po Hadamardo vartų kubitas <span class="math inline">\(k_1\)</span> yra lygioje būsenų
+superpozicijoje, o bendra būsena:
+<span class="math display" id="eq:busena-pries-matavima">\[\begin{equation}
+|\psi\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes|0\rangle\,.
+\tag{4.63}
+\end{equation}\]</span>
+Atlikus būsenos matavimą su <span class="math inline">\(k_1\)</span> kubitu, yra lygi tikimybė rasti jį
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenoje.
+Šis atsakymas yra įregistruojamas klasikiniame bitų registre <span class="math inline">\(c\)</span> kaip
+atitinkamai 0 arba 1 bito vertė. Jeigu bito vertė yra 1, kubitui <span class="math inline">\(k_2\)</span>
+atliekami <span class="math inline">\(X\)</span> vartai ir pakeičia būseną į <span class="math inline">\(|1\rangle\)</span>.
+Tad dviejų kubitų būsena tampa
+<span class="math inline">\(|1\rangle\otimes|1\rangle\)</span>. O štai,
+jeigu pirmo kubito matavimo rezultatas nusako
+<span class="math inline">\(|0\rangle\)</span> būseną, tada galutinė abiejų kubitų būsena
+lieka <span class="math inline">\(|0\rangle\otimes|0\rangle\)</span>.
+Grandinė generuoja mišrią kvantinę būseną, kurią galima užrašyti tankio
+operatoriumi:
+<span class="math display" id="eq:generuota-misri-busena">\[\begin{equation}
+\rho = \frac{1}{2}|00\rangle\langle 00| + \frac{1}{2}|11\rangle\langle 11|\,.
+\tag{4.64}
+\end{equation}\]</span>
+Atkreipiame dėmesį, kad <span class="math inline">\(\rho\)</span> yra nekoherentinė būsena, nes <span class="math inline">\(1/2\)</span>
+nusako klasikines tikimybes, o ne kvantines amplitudes. Tačiau, jeigu
+realizuotume šią grandinę daug kartų ir atliktume Pauli-<span class="math inline">\(Z\)</span> matavimus,
+rezultatuose matytume idealią koreliaciją tarp kubitų būsenų. Nežinant
+visos loginės procedūros tokiais matavimais būtų neįmanoma pasakyti, ar
+stebima supintoji 2 kubitų grynoji būsena nusakoma
+<span class="math inline">\(\rho = |\chi^{+}\rangle\langle\chi^{+}|\)</span>,
+ar faktorizuojamoji mišrioji <span class="math inline">\(\rho\)</span>. Kvantinių koreliacijų nebuvimas
+pasimatytų, pavyzdžiui, jeigu vietoj Pauli-<span class="math inline">\(Z\)</span> matavimo atliktume
+nelokalųjį Belo tipo matavimą. Prie to sugrįšime kitame poskyryje.</p>
+</div>
+<div id="bendro-tipo-būsenų-matavimai" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Bendro tipo būsenų matavimai<a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Projekciniai kubitų būsenų matavimai gali būti atliekami bet kokių
+vektorių bazėje. Niekaip ypatingai neišsiskiria standartiškai naudojama
+Pauli-<span class="math inline">\(Z\)</span> bazė {<span class="math inline">\(|0\rangle\)</span>, <span class="math inline">\(|1\rangle\)</span>}.
+Kvantinės kriptografijos protokoluose dažnai aptinkami projekciniai
+matavimai Pauli-<span class="math inline">\(Z\)</span> ir Pauli-<span class="math inline">\(X\)</span> tikrinių vektorių bazėje. Norint
+atlikti Pauli-<span class="math inline">\(X\)</span> matavimus praktiškai, nebūtina naudoti skirtingą
+fizinį matavimo įrenginį. Tam tereikia standartinius Pauli-<span class="math inline">\(Z\)</span> bazinius
+vektorius transformuoti į tuos, kurių atžvilgiu norima matuoti būsenas,
+ir atlikti įprastinį Pauli-<span class="math inline">\(Z\)</span> matavimą. Ekvivalentiškumas čia atsiranda
+dėl to, kad vidinės sandaugos modulio kvadrato reikšmė, randama
+skaičiuojant projekcinio matavimo tikimybes, nepriklauso nuo eiliškumo:
+<span class="math inline">\(\big|\langle\psi |\chi\rangle\big|^2 = \big|\langle\chi |\psi\rangle\big|^2\)</span>.</p>
+<p>Kaip konkretų pavyzdį atlikime būsenos, išreikštos Pauli-<span class="math inline">\(Z\)</span> tikriniais
+vektoriais
+<span class="math inline">\(|\psi\rangle = a|0\rangle + b|1\rangle\)</span>,
+projekcinius matavimus Pauli-X tikrinių vektorių bazėje:
+<span class="math display" id="eq:pauli-x-tikrines-4">\[\begin{equation}
+|0_x\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\,,\quad
+|1_x\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle - |1\rangle\big)\,.
+\tag{4.65}
+\end{equation}\]</span>
+Hadamardo loginiai vartai atlieka norimą transformaciją tarp šių bazinių
+vektorių: <span class="math inline">\(H|0\rangle = |0_x\rangle\)</span>,
+<span class="math inline">\(H|1\rangle = |1_x\rangle\)</span>. Atlikus
+kubito esančio <span class="math inline">\(|\psi\rangle\)</span> būsenoje projekcinį
+matavimą {<span class="math inline">\(|0_x\rangle\)</span>, <span class="math inline">\(|1_x\rangle\)</span>} Pauli-<span class="math inline">\(X\)</span> bazėje, tikimybės randamos
+<span class="math inline">\(p = \big|\langle 0_x |\psi\rangle\big|^2 = |a + b|^2 /2\)</span>
+ir
+<span class="math inline">\(p = \big|\langle 1_x |\psi\rangle\big|^2 = |a - b|^2 /2\)</span>.
+Tą patį gauname pirmiausiai atlikę <span class="math inline">\(|\psi\rangle\)</span>
+būsenos transformaciją,
+<span class="math inline">\(H|\psi\rangle \equiv |\psi_x\rangle\)</span>,
+ir toliau matuodami įprastiniu būdu Pauli-<span class="math inline">\(Z\)</span> bazėje:
+<span class="math inline">\(\big|\langle 0 |\psi_x \rangle\big|^2 = \big|\langle 0_x |\psi\rangle\big|^2\)</span>,
+<span class="math inline">\(\big|\langle 1 |\psi_x \rangle\big|^2 = \big|\langle 1_x |\psi\rangle\big|^2\)</span>.</p>
+<p>Kadangi pabaigoje vis tiek atliekame
+Pauli-<span class="math inline">\(Z\)</span> matavimą, galutinės būsenos bus tikriniai vektoriai
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span>. Todėl,
+jeigu norima pilnai imituoti Pauli-<span class="math inline">\(X\)</span> matavimą, reikia atlikti dar
+vieną Hadamardo transformaciją gautai būsenai po matavimo. Tokiu atveju,
+gavus bitą 0 arba 1, galutinė būsena bus deterministiškai pakeičiama į
+<span class="math inline">\(|0_x \rangle\)</span> arba <span class="math inline">\(|1_x \rangle\)</span>,
+atitinkamai. Grandinė, atliekanti Pauli-<span class="math inline">\(X\)</span> matavimą
+<span class="math inline">\(|0\rangle\)</span> būsenai, iliustruota <a href="kvantiniai-loginiai-vartai-grandines.html#fig:grandine-pauli-x-matavimas">4.24</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:grandine-pauli-x-matavimas"></span>
+<img src="media/image4_24.svg" alt="Grandinė, atliekanti Pauli-$X$ matavimą $|0\rangle$ būsenai" width="48%" />
+<p class="caption">
+4.24 pav. Grandinė, atliekanti Pauli-<span class="math inline">\(X\)</span> matavimą <span class="math inline">\(|0\rangle\)</span> būsenai
+</p>
+</div>
+<p>Atkreipiame dėmesį į praktikoje pasitaikančius iš eilės atliekamus
+skirtingo tipo matavimus. Pavyzdžiui, jeigu pirmiausiai
+<span class="math inline">\(|0_x \rangle\)</span> kubito būsenai atliksime Pauli-<span class="math inline">\(X\)</span>
+matavimus, užtikrintai rasime <span class="math inline">\(|0_x \rangle\)</span> būseną.
+Tačiau Pauli-<span class="math inline">\(Z\)</span> matavime rezultatas bus būsena
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> su
+<span class="math inline">\(p = 0.5\)</span> tikimybėmis. Po Pauli-<span class="math inline">\(Z\)</span> matavimo sekantys Pauli-<span class="math inline">\(X\)</span>
+matavimai taip pat suteiktų <span class="math inline">\(|0_x \rangle\)</span> arba
+<span class="math inline">\(|1_x \rangle\)</span> su <span class="math inline">\(p = 0.5\)</span> tikimybe, kadangi Pauli-<span class="math inline">\(Z\)</span>
+matavimas pakeičia <span class="math inline">\(|0_x \rangle\)</span> būseną į
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span>. Tai
+formaliai išplaukia iš Haizenbergo neapibrėžtumo principo (angl.
+<em>Heisenberg uncertainty principle</em>), kuris teigia, kad dviejų (ar
+daugiau) nekomutatyvių ermitinių operatorių <span class="math inline">\(A\)</span> ir <span class="math inline">\(B\)</span>,
+<span class="math inline">\(\lbrack A, B\rbrack \neq 0\)</span>, matavimuose, pirmojo operatoriaus matavimo
+rezultatas turi įtakos antrojo operatoriaus matavimo rezultatams. Kaip
+pamename, Pauli {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>} operatoriai yra visi tarpusavyje
+nekomutatyvūs.</p>
+<p>Belo projekcinis matavimo būdas (angl. <em>Bell measurement</em>) yra svarbus
+siekiant unikaliai atskirti supintąsias 2 kubitų būsenas. Vien tik
+1 kubito transformacijomis ir standartiniais lokaliais matavimais
+neįmanoma atskleisti Belo būsenų. Šiame skyriuje minėjome, kad
+skaičiuojamuosius 2 kubitų bazinius vektorius galima unikaliai
+asocijuoti su Belo būsenomis. Belo matavimas yra pagrįstas atvirkštine
+kvantinio supynimo grandine, kurioje kiekviena būsena pakeičiama atgal į
+su ja asocijuotą 2 kubitų skaičiuojamąjį bazinį vektorių:
+<span class="math display" id="eq:belo-matavimas">\[\begin{equation}
+|\chi^{+}\rangle \rightarrow |00\rangle\,,\quad
+|\chi^{-}\rangle \rightarrow |10\rangle\,,\quad
+|\eta^{+}\rangle \rightarrow |01\rangle\,,\quad
+|\eta^{-}\rangle \rightarrow |11\rangle\,.
+\tag{4.66}
+\end{equation}\]</span>
+Po šios transformacijos, atlikus Pauli-<span class="math inline">\(Z\)</span>
+projekcinius matavimus su abiem kubitais galima užtikrintai sužinoti,
+kokia tai Belo būsena. Tai yra nedestruktyvus matavimo būdas, nes po
+matavimo galime vėl deterministiškai atstatyti pradinę Belo būseną.
+Kvantinė grandinė, atliekanti Belo matavimą, yra parodyta <a href="kvantiniai-loginiai-vartai-grandines.html#fig:2-belo-matavimas">4.25</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:2-belo-matavimas"></span>
+<img src="media/image4_25.svg" alt="2 kubitų Belo matavimas" width="41%" />
+<p class="caption">
+4.25 pav. 2 kubitų Belo matavimas
+</p>
+</div>
+<p>Užbaigdami šį poskyrį sugrįžtame palyginti, kokie yra Belo matavimo
+rezultatai šio skyriaus ankstesniame poskyryje minėtai mišriai būsenai
+<span class="math inline">\(\rho\)</span>, kuri pasižymi klasikinėmis, o ne kvantinėmis koreliacijomis kaip
+grynoji supintoji būsena. Atlikę mišriąjai būsenai <span class="math inline">\(\rho\)</span> Belo matavime
+aptinkamą <span class="math inline">\(cX\)</span> ir <span class="math inline">\(H\)</span> transformacijų seką randame:
+<span class="math display" id="eq:belo-matavimas-misriai">\[\begin{equation}
+\begin{aligned}
+(H\otimes I)(cX)\rho(cX)^{\dagger}(H^{\dagger}\otimes I) = &amp;
+\frac{1}{2}|00\rangle\langle 00| + \frac{1}{2}|10\rangle\langle 10| \\
+= &amp; \frac{1}{2}\big(|0\rangle + |1\rangle\big)\big(\langle 0| + \langle 1|\big)\otimes
+|0\rangle\langle 0|\,.
+\end{aligned}
+\tag{4.67}
+\end{equation}\]</span>
+Akivaizdu, kad šis tankio operatorius yra faktorizuojamas
+<span class="math inline">\(\rho = \rho_1\otimes\rho_2\)</span>. Atlikus Pauli-<span class="math inline">\(Z\)</span> matavimą, antras
+kubitas visada bus rastas <span class="math inline">\(|0\rangle\)</span> būsenoje, nes
+<span class="math inline">\(\rho_2 = |0\rangle\langle 0|\)</span>. O štai
+pirmas kubitas gali būti rastas <span class="math inline">\(|0\rangle\)</span> arba
+<span class="math inline">\(|1\rangle\)</span> būsenoje su <span class="math inline">\(p = 0.5\)</span> tikimybe, tad galutinė
+dviejų kubitų būsena bus <span class="math inline">\(|00\rangle\)</span> arba
+<span class="math inline">\(|10\rangle\)</span>. Čia ir matome skirtumą, nes supintajai
+grynąjai būsenai
+<span class="math inline">\(\rho = |\chi^{+}\rangle\langle\chi^{+}|\)</span>
+atlikus tą pačią loginių vartų seką, kubitų pora bus visada randama
+<span class="math inline">\(|00\rangle\)</span> būsenoje. Galimybė aptikti
+<span class="math inline">\(|10\rangle\)</span> būseną pradingsta dėl destruktyvios
+interferencijos loginėse Belo matavimo operacijose.</p>
+</div>
+<div id="universalių-loginių-vartų-rinkinys" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Universalių loginių vartų rinkinys<a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Skirtingų loginių vartų rinkinys, leidžiantis įvykdyti bet kokią
+<em>n </em>kubitų registro būsenų transformaciją norimu tikslumu, yra vadinamas
+universaliu. Barenko teorema (angl. <em>Barenco theorem</em>) teigia, kad
+kvantinių loginių vartų rinkinys
+<span class="math inline">\(\big\{ U_3(\theta,\gamma,\varphi), cX\big\}\)</span> yra universalus. Todėl
+1 kubito <span class="math inline">\(U_3(\theta,\gamma,\varphi)\)</span> bei 2 kubitų <span class="math inline">\(cX\)</span> loginių vartų
+kombinacijomis galima įvykdyti bet kokį suformuluojamą algoritmą
+kvantiniame kompiuteryje. Matematiškai tai reiškia, kad bet kokią
+<span class="math inline">\((2^n\times 2^n)\)</span> dydžio unitarinę matricą <span class="math inline">\(U\)</span>, nusakančią vektoriaus
+transformaciją kompleksinėje <span class="math inline">\(d = 2^n\)</span> dimensijų vektorių erdvėje
+<span class="math inline">\(V^d\)</span>, galima išskaidyti į paprastesnes <span class="math inline">\((2^n \times 2^n)\)</span> matricas,
+kurių kiekviena netrivialiai veikia tik 1 kubito (2 dimensijų) ir
+2 kubitų (4 dimensijų) poerdvius. Jos yra vadinamos <strong>dviejų lygių
+unitariosiomis matricomis</strong> (angl. <em>two-level unitary matrix</em>).
+Tiksliau, <span class="math inline">\(U\)</span> galima išskaidyti į <span class="math inline">\(U = U_1 U_2\cdots U_N\)</span>, čia
+<span class="math inline">\(U_i\)</span> yra 2 lygių unitariosios matricos, atlikti dekompozicijai
+reikalingas jų skaičius <span class="math inline">\(N\)</span> tenkina <span class="math inline">\(N \leq d(d - 1)/2\)</span>.</p>
+<p>Norint įvykdyti visas įmanomas 1 kubito unitarines transformacijas
+<span class="math inline">\(U_3(\theta,\gamma,\varphi)\)</span> reikia, kad parametrizuoti loginiai
+vartai galėtų tolydžiai pasukti Blocho vektorių. Tačiau nėra žinoma,
+kaip atlikti tolydžiąsias transformacijas su begaliniu tikslumu turint
+ribotus išteklius. Tai yra viena iš priežasčių, kodėl klaidų taisymo
+algoritmai tokie svarbūs kvantinei kompiuterijai. Praktiškai yra
+naudingiau pakeisti riboto tikslumo tolydžiai parametrizuotas
+transformacijas diskrečiosiomis, bet tiksliau sukalibruotomis
+transformacijomis. Solovėjaus-Kitaevo teorema (angl. <em>Solovay-Kitaev
+theorem</em>) teigia, kad tolydžias 1 kubito transformacijas galima
+apytikriai pakeisti naudojant vien tik <span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, ir <span class="math inline">\(T\)</span> loginių vartų
+kombinacijas. Pageidaujamai mažo dydžio 1 kubito loginių vartų paklaida
+<span class="math inline">\(\varepsilon\)</span> (angl. <em>arbitrarily small error</em>) gali būti pasiekta su
+<span class="math inline">\(O\big(\log^2(1/\varepsilon)\big)\)</span> skaičiumi loginių vartų iš šio rinkinio.
+Tai bendrai yra priimtinas loginių vartų skaičiaus padidėjimas. Keturių
+loginių vartų rinkinys {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(T\)</span>, <span class="math inline">\(cX\)</span>}, vadinamas <strong>Klifordo-<em>T</em> grupe</strong>
+(angl. <em>Clifford-T group</em>), yra universalus ir dažnai aptinkamas
+praktikoje. Egzistuoja ir kitų universaliųjų rinkinių, pavyzdžiui, {<span class="math inline">\(H\)</span>,
+<span class="math inline">\(ccX\)</span>} ir {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>, <span class="math inline">\(ccX\)</span>}.</p>
+<p>Svarbi Gotsmano-Nilo teorema (angl. <em>Gottesman-Knill theorem</em>) teigia,
+kad kvantiniai algoritmai, naudojantys vien tik Klifordo grupės 1 ir
+2 kubitų loginius vartus {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>} gali būti efektyviai modeliuojami
+klasikiniu kompiuteriu su polinominiu laiko kompleksiškumu. Nors
+Klifordo grupe pagrįsti kvantiniai algoritmai gali sukurti daug įvairių
+supintųjų registro būsenų, tačiau šie algoritmai nesuteikia pranašumo
+prieš klasikinius algoritmus. Yra gerai žinoma, kad Klifordo grupė
+nesudaro universalaus loginių vartų rinkinio. Būtent <span class="math inline">\(T\)</span> loginiai
+vartai, įtraukti Klifordo-<em>T</em> grupėje, negali būti pageidaujamai
+tiksliai išreikšti vien su {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>}.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="kvantines-mechanikos-pagrindai.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kvantinė-informacija-ir-ryšiai.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["kvantinekompiuterija.pdf", "kvantinekompiuterija.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

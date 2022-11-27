@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 skyrius. Kvantinės mechanikos pagrindai | Kvantinė kompiuterija</title>
+  <meta name="description" content="3 skyrius. Kvantinės mechanikos pagrindai | Kvantinė kompiuterija" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 skyrius. Kvantinės mechanikos pagrindai | Kvantinė kompiuterija" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="3 skyrius. Kvantinės mechanikos pagrindai | Kvantinė kompiuterija" />
+  <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 skyrius. Kvantinės mechanikos pagrindai | Kvantinė kompiuterija" />
+  
+  <meta name="twitter:description" content="3 skyrius. Kvantinės mechanikos pagrindai | Kvantinė kompiuterija" />
+  
+
+<meta name="author" content="Tadas Paulauskas" />
+<meta name="author" content="Julius Ruseckas" />
+
+
+<meta name="date" content="2022-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="matematikos-skyrius.html"/>
+<link rel="next" href="kvantiniai-loginiai-vartai-grandines.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kvantinė kompiuterija</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pratarmė</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#kaip-skaityti-šią-knygą"><i class="fa fa-check"></i>Kaip skaityti šią knygą</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#padėka"><i class="fa fa-check"></i>Padėka</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#apie-autorius"><i class="fa fa-check"></i>Apie autorius</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prisidėti-prie-knygos"><i class="fa fa-check"></i>Prisidėti prie knygos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencija"><i class="fa fa-check"></i>Licencija</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html"><i class="fa fa-check"></i><b>1</b> Kvantinės kompiuterijos apžvalga</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#įvadas"><i class="fa fa-check"></i><b>1.1</b> Įvadas</a></li>
+<li class="chapter" data-level="1.2" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys"><i class="fa fa-check"></i><b>1.2</b> Kvantinės kompiuterijos pradmenys</a></li>
+<li class="chapter" data-level="1.3" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina"><i class="fa fa-check"></i><b>1.3</b> Tiuringo mašina</a></li>
+<li class="chapter" data-level="1.4" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai"><i class="fa fa-check"></i><b>1.4</b> Skaičiavimų ištekliai</a></li>
+<li class="chapter" data-level="1.5" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai"><i class="fa fa-check"></i><b>1.5</b> Kvantiniai bitai</a></li>
+<li class="chapter" data-level="1.6" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas"><i class="fa fa-check"></i><b>1.6</b> Kvantinės informacijos apdorojimas</a></li>
+<li class="chapter" data-level="1.7" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas"><i class="fa fa-check"></i><b>1.7</b> Skaičiavimo procesas</a></li>
+<li class="chapter" data-level="1.8" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas"><i class="fa fa-check"></i><b>1.8</b> Kvantinių kompiuterių charakteristikų palyginimas</a></li>
+<li class="chapter" data-level="1.9" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris"><i class="fa fa-check"></i><b>1.9</b> Dekoherencijos trukmė ir loginių vartų tikslumas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html"><i class="fa fa-check"></i><b>2</b> Matematinių įrankių rinkinys</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesinė-algebra"><i class="fa fa-check"></i><b>2.1</b> Tiesinė algebra</a></li>
+<li class="chapter" data-level="2.2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kompleksiniai-skaičiai"><i class="fa fa-check"></i><b>2.2</b> Kompleksiniai skaičiai</a></li>
+<li class="chapter" data-level="2.3" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#vidinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.3</b> Vidinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.4" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje"><i class="fa fa-check"></i><b>2.4</b> Kubito reprezentacija Blocho sferoje</a></li>
+<li class="chapter" data-level="2.5" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos"><i class="fa fa-check"></i><b>2.5</b> Tiesiniai operatoriai ir matricos</a></li>
+<li class="chapter" data-level="2.6" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai"><i class="fa fa-check"></i><b>2.6</b> Unitariniai ir ermitiniai operatoriai</a></li>
+<li class="chapter" data-level="2.7" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija"><i class="fa fa-check"></i><b>2.7</b> Diadinė operatorių dekompozicija</a></li>
+<li class="chapter" data-level="2.8" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#matricos-pėdsakas"><i class="fa fa-check"></i><b>2.8</b> Matricos pėdsakas</a></li>
+<li class="chapter" data-level="2.9" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.9</b> Tenzorinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.10" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga"><i class="fa fa-check"></i><b>2.10</b> Tenzorinė operatorių sandauga</a></li>
+<li class="chapter" data-level="2.11" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#operatorių-funkcijos"><i class="fa fa-check"></i><b>2.11</b> Operatorių funkcijos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html"><i class="fa fa-check"></i><b>3</b> Kvantinės mechanikos pagrindai</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai"><i class="fa fa-check"></i><b>3.1</b> Kvantinės mechanikos postulatai</a></li>
+<li class="chapter" data-level="3.2" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas"><i class="fa fa-check"></i><b>3.2</b> Kvantinis supynimas</a></li>
+<li class="chapter" data-level="3.3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius"><i class="fa fa-check"></i><b>3.3</b> Tankio operatorius</a></li>
+<li class="chapter" data-level="3.4" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas"><i class="fa fa-check"></i><b>3.4</b> EPR paradoksas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html"><i class="fa fa-check"></i><b>4</b> Kvantiniai loginiai vartai ir grandinės</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai"><i class="fa fa-check"></i><b>4.1</b> Vieno kubito loginiai vartai</a></li>
+<li class="chapter" data-level="4.2" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai"><i class="fa fa-check"></i><b>4.2</b> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai</a></li>
+<li class="chapter" data-level="4.3" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas"><i class="fa fa-check"></i><b>4.3</b> Kubitų būsenų matavimas</a></li>
+<li class="chapter" data-level="4.4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot"><i class="fa fa-check"></i><b>4.4</b> Dviejų kubitų loginiai vartai <em>CNOT</em></a></li>
+<li class="chapter" data-level="4.5" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai"><i class="fa fa-check"></i><b>4.5</b> Tofoli loginiai vartai</a></li>
+<li class="chapter" data-level="4.6" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai"><i class="fa fa-check"></i><b>4.6</b> SWAP ir Fredkin loginiai vartai</a></li>
+<li class="chapter" data-level="4.7" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai"><i class="fa fa-check"></i><b>4.7</b> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai"><i class="fa fa-check"></i><b>4.8</b> Bendro tipo būsenų matavimai</a></li>
+<li class="chapter" data-level="4.9" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys"><i class="fa fa-check"></i><b>4.9</b> Universalių loginių vartų rinkinys</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html"><i class="fa fa-check"></i><b>5</b> Kvantinė informacija ir ryšiai</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas"><i class="fa fa-check"></i><b>5.1</b> Kvantinės informacijos kopijavimas</a></li>
+<li class="chapter" data-level="5.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija"><i class="fa fa-check"></i><b>5.2</b> Kvantinė teleportacija</a></li>
+<li class="chapter" data-level="5.3" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas"><i class="fa fa-check"></i><b>5.3</b> Kvantinio supynimo sukeitimas</a></li>
+<li class="chapter" data-level="5.4" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija"><i class="fa fa-check"></i><b>5.4</b> Kvantinė kriptografija</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.1</b> BB84 kvantinis rakto pasidalijimo protokolas</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
+<li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
+<li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
+<li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#algebrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.1</b> Algebrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#geometrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.2</b> Geometrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#groverio-paieška-su-n-8"><i class="fa fa-check"></i><b>6.6.3</b> Groverio paieška su <span class="math inline">\(N = 8\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamardo-swap-testai"><i class="fa fa-check"></i><b>6.7</b> Hadamardo ir SWAP testai</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris"><i class="fa fa-check"></i><b>6.7.1</b> Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#modifikuotas-hadamardo-testas"><i class="fa fa-check"></i><b>6.7.2</b> Modifikuotas Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#swap-testas"><i class="fa fa-check"></i><b>6.7.3</b> SWAP testas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html"><i class="fa fa-check"></i><b>7</b> Furjė transformacija ir jos taikymai</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinė-furjė-transformacija"><i class="fa fa-check"></i><b>7.1</b> Kvantinė Furjė transformacija</a></li>
+<li class="chapter" data-level="7.2" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#furjė-transformacijos-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>7.2</b> Furjė transformacijos realizavimas kvantinėje grandinėje</a></li>
+<li class="chapter" data-level="7.3" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#funkcijos-periodiškumo-paieška"><i class="fa fa-check"></i><b>7.3</b> Funkcijos periodiškumo paieška</a></li>
+<li class="chapter" data-level="7.4" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas"><i class="fa fa-check"></i><b>7.4</b> Kvantinis fazės nustatymo algoritmas</a></li>
+<li class="chapter" data-level="7.5" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#tiesinių-lygčių-sprendimas-hhl-algoritmu"><i class="fa fa-check"></i><b>7.5</b> Tiesinių lygčių sprendimas HHL algoritmu</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html"><i class="fa fa-check"></i><b>8</b> Kvantinių sistemų modeliavimas ir mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas"><i class="fa fa-check"></i><b>8.2</b> Erdvinės Šriodingerio lygties sprendimo algoritmas</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija"><i class="fa fa-check"></i><b>8.2.1</b> Banginė funkcija</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas"><i class="fa fa-check"></i><b>8.2.2</b> Diskretizavimas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.2.3</b> Perteikimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3</b> Mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.1</b> Klasikinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.2</b> Kvantinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius"><i class="fa fa-check"></i><b>8.3.3</b> Kvantinėmis grandinėmis paremtas klasifikatorius</a></li>
+<li class="chapter" data-level="8.3.4" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė"><i class="fa fa-check"></i><b>8.3.4</b> Pagrindinių komponentų analizė</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html"><i class="fa fa-check"></i><b>9</b> Kvantinių klaidų aptikimas ir taisymas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos"><i class="fa fa-check"></i><b>9.1</b> Klasikinės ir kvantinės klaidos</a></li>
+<li class="chapter" data-level="9.2" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#supynimas-ir-klaidu-atsiradimas"><i class="fa fa-check"></i><b>9.2</b> Kvantinis supynimas su aplinka ir klaidų atsiradimas</a></li>
+<li class="chapter" data-level="9.3" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bito-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.3</b> Bito apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.4" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#fazės-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.4</b> Fazės apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.5" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#tolydžiosios-klaidos"><i class="fa fa-check"></i><b>9.5</b> Tolydžiosios klaidos</a></li>
+<li class="chapter" data-level="9.6" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bendrieji-klaidų-taisymo-principai"><i class="fa fa-check"></i><b>9.6</b> Bendrieji klaidų taisymo principai</a></li>
+<li class="chapter" data-level="9.7" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinė-hamingo-riba"><i class="fa fa-check"></i><b>9.7</b> Kvantinė Hamingo riba</a></li>
+<li class="chapter" data-level="9.8" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#šoro-9-kubitų-kodas"><i class="fa fa-check"></i><b>9.8</b> Šoro 9 kubitų kodas</a></li>
+<li class="chapter" data-level="9.9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kodu-stabilizatoriai-poskyris"><i class="fa fa-check"></i><b>9.9</b> Kodų stabilizatoriai</a></li>
+<li class="chapter" data-level="9.10" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klaidoms-atsparus-skaičiavimas"><i class="fa fa-check"></i><b>9.10</b> Klaidoms atsparus skaičiavimas</a></li>
+<li class="chapter" data-level="9.11" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinis-tūris"><i class="fa fa-check"></i><b>9.11</b> Kvantinis tūris</a></li>
+</ul></li>
+<li class="appendix"><span><b>Priedai</b></span></li>
+<li class="chapter" data-level="A" data-path="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><a href="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><i class="fa fa-check"></i><b>A</b> Debesyje pasiekiami kvantiniai kompiuteriai ir simuliatoriai</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html"><i class="fa fa-check"></i>Literatūra</a>
+<ul>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#knygos"><i class="fa fa-check"></i>Knygos</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#moksliniai-straipsniai"><i class="fa fa-check"></i>Moksliniai straipsniai</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kvantinė kompiuterija</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kvantines-mechanikos-pagrindai" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3 skyrius.</span> Kvantinės mechanikos pagrindai<a href="kvantines-mechanikos-pagrindai.html#kvantines-mechanikos-pagrindai" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Kvantinė mechanika yra šiuo metu bendriausia fizikinė teorija ir iš
+principo pritaikoma nuo subatominio lygio iki kasdieninių daiktų skalės.
+Siekiant paaiškinti kvantinius reiškinius ši teorija buvo suformuluota
+naudojant tiesinės algebros matematinę struktūrą, kurios elementus
+pristatėme ankstesniame skyriuje. Šiame skyriuje pateikiame kvantinės
+mechanikos postulatus. Postulatai yra taikomi siekiant sujungti
+abstraktų šios teorijos matematinį formalizmą su stebimu fiziniu
+pasauliu ir suteikia pagrindines taisykles, kuriomis remiantis
+perteikiami skaičiavimai kvantiniame kompiuteryje.</p>
+<div id="kvantinės-mechanikos-postulatai" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Kvantinės mechanikos postulatai<a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong><em>I postulatas – kvantinės būsenos.</em></strong> <em>Uždaros kvantinės sistemos būsena
+yra visiškai nusakoma normuotuoju vektoriumi
+<span class="math inline">\(|\psi\rangle\)</span> Hilberto vektorių erdvėje.</em></p>
+<p>Kvantinė būsena, aprašyta <span class="math inline">\(|\psi\rangle\)</span> vektoriumi,
+atspindi visą informaciją, kurią galima sužinoti apie kvantinę sistemą.
+Hilberto erdvė <span class="math inline">\((\mathcal{H})\)</span> – tai kompleksinių vektorių erdvė su
+matematiškai apibrėžta vidine sandauga
+<span class="math inline">\(\langle\psi|\psi\rangle\)</span>. Reikalavimas,
+kad vektorius <span class="math inline">\(|\psi\rangle\)</span> būtų normuotasis,
+išreiškiamas <span class="math inline">\(\langle\psi|\psi\rangle = 1\)</span>.
+Kiekvienai fizinei sistemai priskiriame atskirą <span class="math inline">\(\mathcal{H}\)</span> erdvę,
+kurioje galime aprašyti jos visas būsenas. Kvantinė mechanika nenurodo,
+kokia yra specifinės kvantinės sistemos Hilberto erdvė, tai bendrai gali
+būti nelengva užduotis sudėtingose sistemose. Tačiau kubito
+<span class="math inline">\(\mathcal{H}\)</span> erdvė yra viena iš paprasčiausių: tai 2 dimensijų
+kompleksinė vektorių erdvė. Jeigu <span class="math inline">\(|\psi\rangle\)</span>,
+<span class="math inline">\(|\phi\rangle\)</span> yra du vektoriai, priklausantys tai
+pačiai <span class="math inline">\(\mathcal{H}\)</span> erdvei, tada
+<span class="math inline">\(|u\rangle = a|\psi\rangle + b|\phi\rangle\)</span>
+yra kita galima tos pačios sistemos būsena, vadinamoji superpozicija.
+Būsenų normuotumas naudojant amplitudes išreiškiamas
+<span class="math inline">\(\langle u|u\rangle = |a|^2 + |b|^2 + 2\mathrm{Re}(a^{*}b\langle\psi|\phi\rangle) = 1\)</span>.
+Jeigu <span class="math inline">\(|\psi\rangle\)</span> ir <span class="math inline">\(|\phi\rangle\)</span>
+yra ortogonalieji vektoriai, tada trečiasis narys, nusakantis
+interferenciją tarp būsenų
+<span class="math inline">\(2\mathrm{Re}(a^{*}b\langle\psi |\phi\rangle) = 0\)</span>,
+iškrenta iš lygybės ir randame
+<span class="math inline">\(\langle u|u\rangle = |a|^2 + |b|^2\)</span>.</p>
+<p>Pirmąjį postulatą galima matematiškai tiksliau perfrazuoti sakant, kad
+kvantinės būsenos yra nusakomos spinduliu. Spindulys
+čia reiškia klasę vektorių, kurie vienas nuo kito skiriasi tik globalia
+faze <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}\)</span>. Kadangi globali fazė nėra stebima matavimuose, visos
+kvantinės būsenos, besiskiriančios tik fazės nariu, yra tarpusavyje
+ekvivalenčios. Pavyzdžiui, vektoriai <span class="math inline">\(|\psi\rangle\)</span> ir
+<span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}|\psi\rangle\)</span> nusako identišką būseną.
+Matome, kad dėl kompleksinės jungties naudojimo vidinėje sandaugoje
+globalios fazės narys pradingsta:
+<span class="math display" id="eq:globali-faze-dingsta">\[\begin{equation}
+\langle\psi |\mathrm{e}^{-\mathrm{i}\theta}\mathrm{e}^{\mathrm{i}\theta}|\psi\rangle
+= \mathrm{e}^{0}\langle\psi |\psi\rangle = 1\,.
+\tag{3.1}
+\end{equation}\]</span>
+Atitinkamai ir matavimų metu jis nėra stebimas. Tačiau svarbu pabrėžti
+skirtumą tarp globalios ir santykinės fazės. Santykinė fazė yra fiziškai
+svarbi ir jos įtaka stebima matavimų rezultatuose. Matematiškai, globali
+fazė superpozicijos būsenoje daugina abu narius kartu, pavyzdžiui,
+<span class="math inline">\(|\psi\rangle = \mathrm{e}^{\mathrm{i}\theta}\big(a|0\rangle + b|1\rangle\big)\)</span>.
+O štai santykinė fazė atrodytų bendrai taip:
+<span class="math inline">\(|\psi\rangle = a|0\rangle + \mathrm{e}^{\mathrm{i}\theta}b|1\rangle\)</span>.
+Kaip pavyzdį imkime Pauli-<span class="math inline">\(X\)</span> bazinių vektorių būsenas
+<span class="math inline">\(|0_x\rangle\)</span> ir <span class="math inline">\(|1_x\rangle\)</span>,
+kurios nusako <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijas bei skiriasi santykine faze:
+<span class="math display" id="eq:santykines-fazes-skirtumas">\[\begin{equation}
+|0_x\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}}\,,\quad
+|1_x\rangle = \frac{|0\rangle - |1\rangle}{\sqrt{2}}\,.
+\tag{3.2}
+\end{equation}\]</span>
+Akivaizdu, kad šios dvi būsenos yra skirtingos, o tiksliau –
+ortogonalios, nes
+<span class="math inline">\(\langle 0_x |1_x \rangle = 0\)</span>.</p>
+<p><strong><em>II(a) postulatas – būsenų evoliucija laike.</em></strong> <em>Kvantinės sistemos,
+izoliuotos nuo išorinių sąveikų, evoliucija laike yra nusakoma unitarine
+transformacija. Sistemos būsena <span class="math inline">\(|\psi(t_0)\rangle\)</span>
+laiku <span class="math inline">\(t_0\)</span> yra susiejama su būsena
+<span class="math inline">\(|\psi(t_1)\rangle\)</span> vėlesniu laiku <span class="math inline">\(t_1\)</span> unitarine
+transformacija <span class="math inline">\(U(t_0, t_1)\)</span>:</em>
+<span class="math display" id="eq:evoliucija-laike">\[\begin{equation}
+|\psi(t_1)\rangle = U(t_0, t_1)|\psi(t_0)\rangle\,.
+\tag{3.3}
+\end{equation}\]</span></p>
+<p>Antrasis postulatas nusako, kad žinant pradinę uždaros sistemos būseną
+laiku <span class="math inline">\(t_0\)</span>, galima tiksliai ir unikaliai pasakyti, kokia bus sistemos
+būsena laiku <span class="math inline">\(t_1\)</span>, <span class="math inline">\(|\psi(t_1)\rangle\)</span>. Matematiškai
+tai yra sandauga tarp unitariojo operatoriaus <span class="math inline">\(U(t_0, t_1)\)</span>,
+nulemiančio laiko evoliuciją, ir būseną laiku <span class="math inline">\(t_0\)</span> nusakančio
+vektoriaus <span class="math inline">\(|\psi(t_0)\rangle\)</span>. Kitaip tariant, uždarų
+kvantinių sistemų, kaip ir klasikinių, evoliucija laike yra
+deterministinė. Unitarinėse evoliucijose nėra tikimybėmis nusakomų
+būsenų kitimų. Toliau pateikiame antrojo postulato versiją, naudojančią
+Šriodingerio lygtį (angl. <em>Schrödinger equation</em>), kuri yra labiau
+tinkama apibūdinti fizikinėms sąveikoms.</p>
+<p><strong><em>II(b) postulatas –</em></strong> <em>Uždaros kvantinės sistemos būsena laike yra
+nusakoma Šriodingerio lygtimi:
+<span class="math display" id="eq:schroedingerio-lygtis">\[\begin{equation}
+\mathrm{i}\hbar\frac{d|\psi(t)\rangle}{dt} = H|\psi(t)\rangle\,.
+\tag{3.4}
+\end{equation}\]</span></em>
+Šriodingerio diferencialinėje lygtyje <span class="math inline">\(\hbar\)</span> yra Planko konstanta,
+<span class="math inline">\(\mathrm{i}\)</span> – menamasis vienetas, <span class="math inline">\(H\)</span> – uždaros sistemos hamiltonianas (deja,
+čia vartojame tą pačia raidę, kaip ir Hadamardo transformacijai).
+Hamiltonianas – ermitinis operatorius, kurio tikrinės vertės yra
+sistemos energijos lygmenys. Pavyzdžiui, jeigu
+<span class="math inline">\(|k\rangle\)</span> yra <span class="math inline">\(H\)</span> operatoriaus tikrinis vektorius,
+tada yra tenkinama lygybė
+<span class="math inline">\(H|k\rangle = \lambda_k|k\rangle\)</span>,
+kurioje tikrinė vertė <span class="math inline">\(\lambda_k\)</span> nusako būsenos
+<span class="math inline">\(|k\rangle\)</span> energiją.</p>
+<p>Sąryšis tarp antrojo postulato dviejų versijų slypi Šriodingerio lygties
+integracijoje laiko intervale nuo <span class="math inline">\(t_0\)</span> iki <span class="math inline">\(t_1\)</span>. Neprarasdami
+bendrumo darome prielaidą, kad šiuo laiko intervalu hamiltonianas
+nekinta. Tada, atlikę integraciją laike, gauname:
+<span class="math display" id="eq:shroedinger-unitarus">\[\begin{equation}
+|\psi(t_1)\rangle = \mathrm{e}^{-\frac{\mathrm{i}H(t_1 - t_0)}{\hbar}}
+|\psi(t_0)\rangle\,.
+\tag{3.5}
+\end{equation}\]</span>
+Palyginę su unitarinės evoliucijos laike forma, matome jos bendrą
+išraišką:
+<span class="math display" id="eq:unitarus-laike">\[\begin{equation}
+U(t_0, t_1) = \mathrm{e}^{-\frac{\mathrm{i}H(t_1 - t_0)}{\hbar}}\,.
+\tag{3.6}
+\end{equation}\]</span>
+Kadangi hamiltonianas yra ermitinis operatorius, ši operatoriaus
+eksponentė nusako unitarųjį operatorių. Kvantiniame kompiuteryje be
+išorinių sąveikų kubito bendra būsena
+<span class="math inline">\(|\psi\rangle = a|0\rangle + b|1\rangle\)</span>
+laike nekinta, tad <span class="math inline">\(U(t) = I\)</span> efektyviai nusako vienetinį operatorių.
+Kvantiniai loginiai vartai fiziniame lygmenyje yra laike atliekama
+kubito būsenos transformacija. Hamiltonianas tuo laiko intervalu yra
+„įjungiamas” pridedant sąveikas, nusakančius narius, vadinamąsias
+sistemos perturbacijas. Algoritmas nusako seką sistemos perturbacijų,
+trunkančių tam tikrus laiko intervalus <span class="math inline">\(\Delta t\)</span>. Pavyzdžiui,
+laiko intervale <span class="math inline">\(\Delta t= t_1 - t_0\)</span> gali būti
+atliekama kubito sąveika su elektromagnetinio lauko pulsu, toliau gali
+sekti kitas pulsas, taip atliekant seką skirtingų unitarinių
+transformacijų
+<span class="math inline">\(\cdots U(t_1, t_2 )U(t_0, t_1 )|\psi(t_0)\rangle\)</span>.
+Analizuojant algoritmus loginiu lygmeniu laiko kintamųjų (svarbių
+fiziniame lygmenyje) neberašome, kadangi <span class="math inline">\(U(t)\)</span> yra perteikiamas jo
+suminį efektą baziniams vektoriams išreiškiančiu efektyviu unitariniu
+operatoriumi <span class="math inline">\(U(t) \rightarrow U\)</span>.</p>
+<p>Be loginius vartus nusakančių sąveikų kvantiniame kompiuteryje galima
+išskirti dar dviejų tipų sąveikas, kuriose sistema traktuojama kaip
+nebeuždara. Pirmasis tipas – tai nepageidaujamos ir nekontroliuojamos
+sąveikos su išorinėmis kvantinėmis sistemomis. Jos įveda nežinomas
+unitarines transformacijas ir nenuspėjamai paveikia kubitų būsenas.
+Vienintelė tikra uždara kvantinė sistema yra (veikiausiai) pati visata.
+Kai sakoma, kad kubitai apibūdina uždaras kvantines sistemas, turima
+omenyje, kad išorinės sąveikos yra itin retos ir todėl galima gerai
+aproksimuoti jas esant uždaras. Antrojo tipo sąveika yra su
+makroskopiniais įrenginiais, naudojamais pamatuoti kvantinei būsenai.
+Pastaruoju atveju sistemos evoliucijos laike negalime nusakyti taikydami
+antrąjį postulatą (net ir išplėtus tai, ką vadiname uždara sistema), nes
+jos dinamika tampa nedeterministinė. Trečiasis postulatas nusako, kaip
+kvantinė sistema keičiasi atlikus jos būsenos matavimą.</p>
+<p><strong><em>III postulatas – fizikinių dydžių matavimai.</em></strong> <em>Kiekvienam stebimam kvantinės
+sistemos fizikiniam dydžiui egzistuoja ermitinis operatorius <span class="math inline">\(P\)</span>,
+veikiantis tos sistemos Hilberto erdvėje. Atlikus fizikinio dydžio
+matavimą galimi rezultatai yra viena iš <span class="math inline">\(P\)</span> operatoriaus tikrinių verčių
+<span class="math inline">\(\lambda_k\)</span>. Tikimybė <span class="math inline">\(p(\lambda_k)\)</span> gauti <span class="math inline">\(\lambda_k\)</span> pamatavus
+sistemą esančią būsenoje <span class="math inline">\(|\psi\rangle\)</span> randama
+<span class="math inline">\(p(\lambda_k) = \langle\psi|P_k |\psi\rangle = \big|\langle k |\psi\rangle\big|^2\)</span>;
+čia <span class="math inline">\(P_k\)</span> yra projekcinis operatorius
+<span class="math inline">\(P_k = |k\rangle\langle k|\)</span>. Kvantinės
+sistemos būsena iš karto po matavimo yra <span class="math inline">\(P\)</span> operatoriaus tikrinis
+vektorius <span class="math inline">\(|k\rangle\)</span>, susietas su rasta tikrine verte
+<span class="math inline">\(\lambda_k\)</span>.</em></p>
+<p>Šiame postulate nurodomas būdas apskaičiuoti tikimybes yra dar žinomas
+kvantinėje mechanikoje kaip <strong>Borno taisyklė</strong> (angl. <em>Born rule</em>).
+Kvantinė mechanika nepasako, kokie ermitiniai operatoriai susieti su
+fizikiniais dydžiais. Analizuojant fizinės sistemos savybes ir matavimo
+konfigūraciją vis dėlto galima tokius operatorius aprašyti. Selektyvus
+matavimas, naudojantis projekcinius operatorius, yra dažniausiai
+aptinkamas būsenų matavimo būdas kvantinėje kompiuterijoje. Kaip
+minėjome antrame skyriuje, ermitinis operatorius gali būti išreikštas
+spektrine dekompozicija:
+<span class="math display" id="eq:spektrine-dekompozija-4">\[\begin{equation}
+P = \sum_k \lambda_k P_k\,.
+\tag{3.7}
+\end{equation}\]</span>
+Projekcinis operatorius <span class="math inline">\(P_k\)</span> atlieka vektoriaus projekciją į
+ortogonalų poerdvį, asocijuotą su tikrine verte <span class="math inline">\(\lambda_k\)</span>. Kubito
+būsenos <span class="math inline">\(|\psi\rangle\)</span> selektyvusis matavimas
+pasitelkiant <span class="math inline">\(P_k\)</span> nusako tikimybę gauti būtent <span class="math inline">\(\lambda_k\)</span>
+rezultatą. Būseną po <span class="math inline">\(P_k\)</span> projekcinio matavimo, vadinsime ją bendrai
+<span class="math inline">\(|\varphi\rangle\)</span>, galima formaliai rasti:
+<span class="math display" id="eq:busena-po-matavimo">\[\begin{equation}
+|\varphi\rangle =
+\frac{P_k|\psi\rangle}{\sqrt{\langle\psi |P|\psi\rangle}}
+= \frac{|k\rangle\langle k|\psi\rangle}{\sqrt{p(\lambda_k)}} =
+\frac{a_k |k\rangle}{\sqrt{p(\lambda_k)}}\,.
+\tag{3.8}
+\end{equation}\]</span>
+Skaitiklyje, <span class="math inline">\(P_k|\psi\rangle\)</span> atlieka
+<span class="math inline">\(|\psi\rangle\)</span> būsenos projekciją į
+<span class="math inline">\(|k\rangle\)</span> vektoriaus poerdvį, o vidinė sandauga
+<span class="math inline">\(\langle k|\psi\rangle= a_k\)</span> nusako
+šių vektorių persiklojimą. Vardiklyje esantis narys,
+<span class="math inline">\(\sqrt{p(\lambda_k)} = \sqrt{|a_k|^2} = |a_k|\)</span>,
+atlieka užduotį sunormuoti vektorių <span class="math inline">\(a_k|k\rangle\)</span>.</p>
+<p>Dažniausiai susidursime su projekciniais matavimais į ortogonalias
+kubitų <span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span>
+būsenų poerdvius (1 dimensijos poerdviai), susietus su tikrinėmis
+vertėmis <span class="math inline">\(\lambda_0 = 1\)</span> ir <span class="math inline">\(\lambda_1 = -1\)</span>, atitinkamai. Tai
+atlieka Pauli-<span class="math inline">\(Z\)</span> operatorius, kurį galima išreikšti:
+<span class="math display" id="eq:pauli-z-4">\[\begin{equation}
+Z = \sum_k \lambda_k P_k =
+\lambda_0 |0\rangle\langle 0| + \lambda_1 |1\rangle\langle 1|
+= |0\rangle\langle 0| - |1\rangle\langle 1|\,.
+\tag{3.9}
+\end{equation}\]</span>
+Projekcinį matavimą, naudojant Pauli-<span class="math inline">\(Z\)</span>, čia vadinsime pakaitomis
+„standartiniu”, „Pauli-<span class="math inline">\(Z\)</span> operatoriaus matavimu”, arba „matavimu vektorių
+<span class="math inline">\(\big\{|0\rangle, |1\rangle\big\}\)</span> bazėje”.
+Be Pauli-<span class="math inline">\(Z\)</span> taip pat kvantinių ryšių protokoluose galima
+aptikti Pauli-<span class="math inline">\(X\)</span> operatoriaus matavimą. Projekciniais operatoriais jį
+išreiškiame:
+<span class="math display" id="eq:pauli-x-4">\[\begin{equation}
+X = \sum_k \lambda_k P_k =
+\lambda_0|0_x\rangle\langle 0_x| + \lambda_1 |1_x\rangle\langle 1_x|
+= |0_x \rangle\langle 0_x| - |0_x \rangle\langle 0_x|\,.
+\tag{3.10}
+\end{equation}\]</span>
+Čia <span class="math inline">\(\big\{|0_x \rangle, |1_x \rangle\big\}\)</span>
+yra Pauli-<span class="math inline">\(X\)</span> tikriniai vektoriai, į kurių dengiamą poerdvį atliekama
+<span class="math inline">\(|\psi\rangle\)</span> būsenos projekcija.</p>
+<p>Grįžtant prie standartinių Pauli-<span class="math inline">\(Z\)</span> matavimų, jeigu kubitas yra
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenoje,
+bet ne jų superpozicijoje, tada projekcinis matavimas užtikrina, kad šią
+būseną ir rasime, o pats matavimas būsenos nepakeičia. Pavyzdžiui, jeigu
+<span class="math inline">\(|\psi\rangle = |1\rangle\)</span>, tada
+tikimybė rasti <span class="math inline">\(|1\rangle\)</span> yra <span class="math inline">\(p(-1)\)</span>:
+<span class="math display" id="eq:tikimybe-1-z">\[\begin{equation}
+p(-1) = \langle 1|1\rangle\langle 1|1\rangle = \big|\langle 1|1\rangle\big|^2 = 1\,,
+\tag{3.11}
+\end{equation}\]</span>
+ir būsena iškart po matavimo <span class="math inline">\(|\varphi\rangle\)</span>:
+<span class="math display" id="eq:busena-1-z">\[\begin{equation}
+|\varphi\rangle =
+\frac{|1\rangle\langle 1|1\rangle}{\sqrt{\big|\langle 1|1\rangle\big|^2}} =
+|1\rangle\,,
+\tag{3.12}
+\end{equation}\]</span>
+Pakartoję tą patį kubito būsenos matavimą esame užtikrinti, kad rasime
+vėl tą pačią būseną kaip ir po pirmojo matavimo. Mat formaliai
+projekcinis operatorius šiuo atveju nepakeičia būsenos
+<span class="math inline">\(P_k|k\rangle = |k\rangle\)</span>, <span class="math inline">\(k \in \{ 0, 1\}\)</span>.</p>
+<p>Panagrinėkime, kaip matavimas veikia bendrą normuotą kubito būseną,
+esančią superpozicijoje
+<span class="math inline">\(|\psi\rangle = a|0\rangle + b|1\rangle\)</span>.
+Jeigu norime sužinoti, kokia tikimybė rasti kubitą būsenoje
+<span class="math inline">\(|1\rangle\)</span>, tam vėl renkamės
+<span class="math inline">\(P_1 = |1\rangle\langle 1|\)</span> projekcinį
+operatorių. Trečiasis postulatas formaliai parodo, kaip vektorių
+amplitudės yra susietos su matavimo rezultatų tikimybėmis. Randame:
+<span class="math display" id="eq:tikimybes-amplitudes">\[\begin{equation}
+\begin{aligned}
+p(-1) = &amp; \langle\psi |1\rangle\langle 1|\psi\rangle \\
+= &amp; b^{*}b\langle 1|1\rangle\langle 1|1\rangle
++ a^{*}a\langle 0|1\rangle\langle 1|0\rangle
++ a^{*}b\langle 0|1\rangle\langle 1|1\rangle
++ b^{*}a\langle 1|1\rangle\langle 1|0\rangle \\
+= &amp; b^{*}b = |b|^2\,.
+\end{aligned}
+\tag{3.13}
+\end{equation}\]</span>
+Viršuje pritaikėme kubito būsenų ortogonalumą, tad nariai
+<span class="math inline">\(\langle 1|0\rangle = \langle 0|1\rangle = 0\)</span>.
+Kaip ir tikėjomės, tikimybė rasti kubitą <span class="math inline">\(|0\rangle\)</span>
+arba <span class="math inline">\(|1\rangle\)</span> būsenoje yra lygi tos būsenos
+amplitudės (kompleksiniam) kvadratui. Po šio matavimo, kubito būsena
+yra:
+<span class="math display" id="eq:busena-po-matavimo-2">\[\begin{equation}
+|\varphi\rangle = \frac{|1\rangle\langle 1|\psi\rangle}{\sqrt{|b|^{2}}}
+= \frac{b|1\rangle}{|b|}= \mathrm{e}^{\mathrm{i}\theta}|1\rangle
+= |1\rangle\,.
+\tag{3.14}
+\end{equation}\]</span>
+Gavome <span class="math inline">\(|1\rangle\)</span> su koeficientu <span class="math inline">\(b/|b|\)</span> ir
+pasinaudojome sąlyga, kad kompleksinį skaičių <span class="math inline">\(b\)</span> galima išreikšti
+<span class="math inline">\(b = |b|\mathrm{e}^{\mathrm{i}\theta}\)</span>. Kadangi kvantinių būsenų vektoriai yra nusakomi
+iki globalios fazės, narys <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}\)</span> gali būti praleidžiamas
+galutinėje išraiškoje. Atitinkamai naudotume
+<span class="math inline">\(P_0 = |0\rangle\langle 0|\)</span> norint
+apskaičiuoti tikimybę rasti kubitą <span class="math inline">\(|0\rangle\)</span> būsenoje,
+o <span class="math inline">\(p(1) = |a|^2\)</span>.</p>
+<p>Viršuje atliktas matavimas bendrai kubito būsenai, esančiai
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijoje parodo, kad po matavimo ši superpozicija yra
+sugriaunama. Tai literatūroje dar vadinama kvantinės būsenos suirimu. Po superpozicijos suirimo būsena tampa
+<span class="math inline">\(|0\rangle\)</span> su tikimybe <span class="math inline">\(|a|^2\)</span>, arba
+<span class="math inline">\(|1\rangle\)</span> su tikimybe <span class="math inline">\(|b|^2\)</span>. Tai reiškia, kad
+jeigu daug kartų pakartosime šį eksperimentą atlikdami kubito paruošimą
+į identišką pradinę būseną bei matavimus, statistinis rezultatas bus
+nusakomas <span class="math inline">\(p(\lambda_{k})\)</span>.</p>
+<p>Kvantinėje mechanikoje tik būsenos, kurios yra viena kitai ortogonalios,
+gali būti patikimai atskirtos. Jeigu dvi būsenos, nusakytos
+<span class="math inline">\(|\psi\rangle\)</span> ir <span class="math inline">\(|\phi\rangle\)</span>
+vektoriais, yra skirtingos, bet ne ortogonalios
+<span class="math inline">\(\langle\psi|\phi\rangle \neq 0\)</span>, tai
+reiškia, kad jos iš dalies persikloja. Kitaip tariant,
+<span class="math inline">\(|\phi\rangle\)</span> būsena turi savyje statmeną ir lygiagretų
+komponentą <span class="math inline">\(|\psi\rangle\)</span> vektoriaus atžvilgiu. Dėl
+esamo lygiagretaus komponento atsiranda tikimybė, kad
+<span class="math inline">\(|\phi\rangle\)</span> būsenos matavimo metu bus rasta
+<span class="math inline">\(|\psi\rangle\)</span> būsena. Tai yra viena iš priežasčių,
+kodėl kvantinėje kompiuterijoje naudojami ortogonalieji baziniai
+vektoriai bei projekciniai matavimai į ortogonaliuosius poerdvius.</p>
+<p>Viršuje pateikėme selektyvų matavimo būdą, kuris figūruoja kvantinėje
+kompiuterijoje. Be šio būdo, galima sutikti eksperimentinėje fizikoje
+labiau įprastą <strong>neselektyvų būsenų matavimo metodą</strong>
+(angl. <em>non-selective measurement</em>). Jis suteikia matuojamo fizikinio
+dydžio, nusakomo tikrinėmis vertėmis <span class="math inline">\(\lambda_k\)</span>, <strong>vidurkį</strong>
+(angl. <em>expectation value</em>). Pavyzdžiui, 1 kubito atveju, atlikę jo
+bendros superpozicijos būsenos <span class="math inline">\(|\psi\rangle\)</span> Pauli-<span class="math inline">\(Z\)</span>
+matavimus <span class="math inline">\(n\)</span> kartų, rastume <span class="math inline">\(\lambda_1\)</span> tikrinę vertę ir <span class="math inline">\(m\)</span> kartų
+<span class="math inline">\(\lambda_{-1}\)</span>. Tad šių tikrinių verčių vidurkis
+<span class="math inline">\(\langle\psi |Z|\psi\rangle\)</span> yra:
+<span class="math display" id="eq:vidurkio-matavimas">\[\begin{equation}
+\langle\psi |Z|\psi\rangle = \frac{n\lambda_1 + m\lambda_{-1}}{n + m}
+= p(1)\lambda_1 + p(-1)\lambda_{-1}\,.
+\tag{3.15}
+\end{equation}\]</span>
+Viršuje pateikta formulė, kurią taikytume atlikdami eksperimentą.
+Apibūdinsime, kaip formaliai apskaičiuojame
+<span class="math inline">\(\langle\psi |Z|\psi\rangle\)</span>. Matuojamą
+fizikinį dydį nusako ermitinis operatorius <span class="math inline">\(P\)</span>, turintis <span class="math inline">\(\lambda_k\)</span>
+tikrines vertes, susietas su vektoriais <span class="math inline">\(|k\rangle\)</span>.
+Viršuje naudojome Pauli-<span class="math inline">\(Z\)</span> operatorių, <span class="math inline">\(P = Z\)</span>. Imkime normuotą,
+nebūtinai kubito, superpozicijos būseną <span class="math inline">\(|\psi\rangle\)</span>:
+<span class="math display" id="eq:superpozicijos-busenos-pvz">\[\begin{equation}
+|\psi\rangle = \sum_k a_k |k\rangle\,.
+\tag{3.16}
+\end{equation}\]</span>
+Čia <span class="math inline">\(|\psi\rangle\)</span> yra išreikšta <span class="math inline">\(P\)</span> operatoriaus
+tikriniais vektoriais <span class="math inline">\(|k\rangle\)</span> su amplitudėmis
+<span class="math inline">\(a_k\)</span>. Daug kartų atlikę operatoriaus <span class="math inline">\(P\)</span> neselektyvųjį matavimą,
+trumpai užrašant <span class="math inline">\(\langle P\rangle\)</span>, identiškai paruoštai
+būsenai <span class="math inline">\(|\psi\rangle\)</span>, randame:
+<span class="math display" id="eq:operatoriaus-vidurkio-matavimas">\[\begin{equation}
+\begin{aligned}
+\langle P\rangle = &amp; \langle\psi |P|\psi\rangle =
+\left(\sum_{k&#39;} a_{k&#39;}^{*}\langle k&#39;|\right)
+\left(\sum_k \lambda_k P_k \right)
+\left(\sum_{k&#39;&#39;} a_{k&#39;&#39;}|k&#39;&#39;\rangle\right) \\
+= &amp; \sum_k |a_k |^2 \lambda_k\,.
+\end{aligned}
+\tag{3.17}
+\end{equation}\]</span>
+Viršuje formaliai panaudojome
+<span class="math inline">\(\langle k&#39;|P_k |k&#39;&#39;\rangle = \delta_{k&#39;k}\delta_{kk&#39;&#39;}\)</span>
+panaikindami du suminius indeksus. Tad vidurkis yra nulemtas tikimybių
+<span class="math inline">\(p(\lambda_k)=|a_k |^2\)</span>, nusakančių
+rasti <span class="math inline">\(|k\rangle\)</span> būsenas, sietinas su atitinkamomis
+tikrinėmis vertėmis <span class="math inline">\(\lambda_k\)</span>. Tai identiška išraiška tai, kurią
+naudojome aprašyti eksperimente apskaičiuojamą 1 kubito
+<span class="math inline">\(\langle\psi |Z|\psi\rangle\)</span>.</p>
+<p><strong><em>IV postulatas – sudėtinės sistemos.</em></strong> <em>Sudėtinės kvantinės sistemos
+būsenų erdvė yra nusakoma ją sudarančių individualių posistemės erdvių
+tenzorių sandauga,
+<span class="math inline">\(\mathcal{H}^{\otimes n} = \mathcal{H}_1\otimes\mathcal{H}_2\otimes\cdots\mathcal{H}_n\)</span>,
+o sistemos būsena yra tenzorinė vektorių sandauga,
+<span class="math inline">\(|\psi\rangle = |\phi_1 \rangle\otimes|\phi_2 \rangle\otimes\cdots\otimes |\phi_n \rangle\)</span>.
+Vektorių, išreikštų tenzorinėmis sandaugomis superpozicija, pavyzdžiui,
+<span class="math inline">\(|\psi\rangle = a|\phi_1 \rangle\otimes\cdots\otimes|\phi_n \rangle + b|\phi_1 \rangle\otimes\cdots\otimes|\phi_n \rangle\)</span>,
+yra kita galima būsena <span class="math inline">\(\mathcal{H}^{\otimes n}\)</span> erdvėje.</em></p>
+<p>Ketvirtasis postulatas praplečia pirmąjį postulatą ir formaliai nusako,
+kaip matematiškai aprašyti sudėtinės sistemos būsenas. Sistemos,
+sudarytos iš <span class="math inline">\(n\)</span> kubitų būsenos, vektorius yra nusakomas <span class="math inline">\(2^n\)</span>
+dimensijų Hilberto vektorių erdvėje. Ši erdvė yra formuojama iš
+individualių posistemės erdvių taikant tenzorių sandaugą, kuri žymima
+simboliu <span class="math inline">\(\otimes\)</span>. Matematinį formulavimą bei sudėtinių sistemų
+transformacijas jau trumpai apibendrinome antrame skyriuje.</p>
+<p>Norint supaprastinti simboliką, vietoj
+<span class="math inline">\(|\phi_1 \rangle\otimes|\phi_2 \rangle\otimes\cdots\)</span>
+galime rašyti <span class="math inline">\(|\phi_1 \phi_2\cdots \rangle\)</span>. Kaip
+pavyzdį imkime 2 kubitų sistemą. Naudojant skaičiuojamąjį bazinių
+vektorių rinkinį, {<span class="math inline">\(|00\rangle\)</span>,
+<span class="math inline">\(|01\rangle\)</span>, <span class="math inline">\(|10\rangle\)</span>,
+<span class="math inline">\(|11\rangle\)</span>}, galima išreikšti bet kokią kubito
+<span class="math inline">\(|\psi\rangle\)</span> būseną 4 dimensijų Hilberto erdvėje
+pritaikius jų tiesinę sumą:
+<span class="math display" id="eq:busena-2-kubitu-sistemoje">\[\begin{equation}
+|\psi\rangle = a|00\rangle + b|01\rangle + c|10\rangle + d|11\rangle\,.
+\tag{3.18}
+\end{equation}\]</span>
+Čia naudojame kubitų numeraciją <span class="math inline">\(|k_1 k_2 \rangle\)</span>.
+Kadangi kvantinės būsenos yra nusakomos normuotais vektoriais,
+amplitudžių modulių kvadratų suma susideda į vienetą:
+<span class="math display" id="eq:koeficientu-normavimas-4">\[\begin{equation}
+|a|^2 + |b|^2 + |c|^2 + |d|^2 = 1\,.
+\tag{3.19}
+\end{equation}\]</span>
+Atlikus 2 kubitų matavimus <span class="math inline">\(|\psi\rangle\)</span> būsenoje,
+tikimybę rasti bitų sekas, nurodytas baziniuose vektoriuose, galima
+nuskaityti tiesiogiai iš prie jų prišlietų amplitudžių. Rasime
+<span class="math inline">\(|00\rangle\)</span> su tikimybe <span class="math inline">\(|a|^2\)</span>,
+<span class="math inline">\(|01\rangle\)</span> su <span class="math inline">\(|b|^2\)</span> ir kitas analogiškai. Norėdami
+apskaičiuoti tikimybę rasti, pavyzdžiui, vien tik pirmą kubitą būsenoje
+<span class="math inline">\(|1\rangle\)</span>, formaliai pasitelkiame trečiąjį postulatą
+apskaičiuoti
+<span class="math inline">\(\langle\psi |P_1^1 |\psi\rangle\)</span>.
+Dirbdami 2 kubitų erdvėje naudojame
+<span class="math inline">\(P_1^1 = |1\rangle\langle 1|\otimes I\)</span>
+projekcinį operatorių, kuris per <span class="math inline">\(\otimes\)</span> ženklą nusako, kad
+projekcinis matavimas į poerdvį, dengiamą <span class="math inline">\(|1\rangle\)</span>
+būsenos, bus atliekamas su pirmuoju kubitu:
+<span class="math display" id="eq:projekcinis-matavimas-poerdvis">\[\begin{equation}
+\langle\psi |P_1^1 |\psi\rangle =
+\big(\langle 10| c^{*} + \langle 11|d^{*}\big)
+\big(c|10\rangle + d|11\rangle\big) = |c|^2 + |d|^2\,.
+\tag{3.20}
+\end{equation}\]</span>
+Normuotą būseną <span class="math inline">\(|\varphi\rangle\)</span> po šio matavimo
+randame:
+<span class="math display" id="eq:busena-po-matavimo-5">\[\begin{equation}
+|\varphi\rangle = \frac{P_1^1 |\psi\rangle}{\sqrt{\langle\psi |P_1^1 |\psi\rangle}}
+= \frac{c|10\rangle + d|11\rangle}{\sqrt{|c|^2 + |d|^2}}\,.
+\tag{3.21}
+\end{equation}\]</span>
+Norėdami nusakyti, kokia tikimybė rasti <span class="math inline">\(|\psi\rangle\)</span>,
+pavyzdžiui, <span class="math inline">\(|01\rangle\)</span> būsenoje, naudotume
+<span class="math inline">\(P_{0,1}^{1,2} = |0\rangle\langle 0|\otimes|1\rangle\langle 1| = |01\rangle\langle 01|\)</span>
+projekcinį operatorių.</p>
+<p>Kvantinės mechanikos postulatas, nusakantis sistemos evoliuciją laike,
+yra analogiškai taikomas ir sudėtinėse sistemose. Pavyzdžiui, jeigu
+unitarusis operatorius <span class="math inline">\(U_1\)</span> nusako pirmo kubito evoliuciją laike, o
+<span class="math inline">\(U_2\)</span> antro, tai <span class="math inline">\(U = U_1 \otimes U_2\)</span> formaliai aprašo
+sudėtinės 2 kubitų sistemos
+<span class="math inline">\(|\chi\rangle = |\phi_1 \rangle\otimes|\phi_2 \rangle\)</span>
+unitarinę evoliuciją:
+<span class="math display" id="eq:evoliucija-sudetine-sistema">\[\begin{equation}
+U|\chi\rangle = (U_1 \otimes U_2 )|\phi_1 \rangle\otimes|\phi_2 \rangle
+= U_1 |\phi_1 \rangle\otimes U_2|\phi_2 \rangle\,.
+\tag{3.22}
+\end{equation}\]</span>
+Viršuje pateikti <span class="math inline">\(U_1 \otimes U_2\)</span> operatoriai yra vadinami
+lokaliaisiais, kadangi jie transformuoja individualius posistemės
+kubitus nepriklausomai nuo kitų būsenos. Bendresnio pobūdžio
+išplėstiniai operatoriai yra išreiškiami naudojant lokaliųjų operatorių
+sumas. Pavyzdžiui, 2 kubitų
+<span class="math inline">\(U = U_1 \otimes U_2 + I\otimes U_1\)</span>:
+<span class="math display" id="eq:lokali-evoliucija">\[\begin{equation}
+U|\chi\rangle = U_1 |\phi_1 \rangle\otimes U_2 |\phi_2 \rangle +
+|\phi_1 \rangle\otimes U_1 |\phi_2 \rangle\,.
+\tag{3.23}
+\end{equation}\]</span>
+Išplėstiniai operatoriai gali perteikti fizines sąveikas tarp atskirų
+kubitų ir yra svarbūs realizuojant universalius kvantinių loginių vartų
+rinkinius. Dėl sąveikų tarp kubitų gali atsirasti kvantinis supynimas,
+kuris aptariamas toliau.</p>
+</div>
+<div id="kvantinis-supynimas" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Kvantinis supynimas<a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Klasikinėje fizikoje sistemą galima išsamiai aprašyti nusakant, kokioje
+būsenoje yra jos atskiros posistemės. Kvantinėje fizikoje galimos ir
+tokios būsenos, kuriose atskiros posistemės praranda individualią
+reikšmę ir sistema elgiasi efektyviai kaip vienas darinys. Tokios
+kvantinės sistemos yra supintosios, jų neįmanoma išsamiai apibūdinti
+sužinant, kokioje būsenoje yra atskiros posistemės.</p>
+<p>Sudėtinės kubitų sistemos būseną galima klasifikuoti įvertinant, ar jos
+posistemės yra supintosios, ar vis tik galima aprašyti kiekvieną kubitą
+individualiai. Jeigu sudėtinės sistemos vektorių galima faktorizuoti į
+atskirus kubitus, pavyzdžiui,
+<span class="math inline">\(|\kappa\rangle = |\phi_1 \rangle\otimes|\phi_2 \rangle\)</span>,
+tokia sistema nėra supintoji. Kad tai parodytume formaliau, imkime du
+kubitus būsenose:
+<span class="math inline">\(|\phi_1 \rangle = e|0\rangle + f|1\rangle\)</span>
+ir
+<span class="math inline">\(|\phi_2 \rangle = g|0\rangle + h|1\rangle\)</span>.
+Šių dviejų kubitų sudėtinė būsena yra nusakyta jų tenzorių sandauga:
+<span class="math display" id="eq:kubitu-tenzorine-sandauga-4">\[\begin{equation}
+\begin{aligned}
+|\phi_1 \phi_2 \rangle = &amp; \big(e|0\rangle + f|1\rangle\big)\otimes
+\big(g|0\rangle + h|1\rangle\big) \\
+= &amp; eg|00\rangle + eh|01\rangle + fg|10\rangle + fh|11\rangle\,.
+\end{aligned}
+\tag{3.24}
+\end{equation}\]</span>
+Tokia būsena leidžia interpretaciją, nusakančią, kad pirmas kubitas yra
+<span class="math inline">\(|\phi_1 \rangle\)</span> būsenoje, o antras
+<span class="math inline">\(|\phi_2 \rangle\)</span>. Tai yra dviejų klasikinių bitų
+būsenos kvantinis atitikmuo. Tolesnę būseną taip pat galima
+faktorizuoti:
+<span class="math display" id="eq:faktorizuojama-busena">\[\begin{equation}
+|\tau\rangle = a|00\rangle + b|10\rangle\,,
+\tag{3.25}
+\end{equation}\]</span>
+nes <span class="math inline">\(|\phi_1 \phi_2 \rangle\)</span> būsenoje galima rasti
+koeficientus <span class="math inline">\(h = 0\)</span>, <span class="math inline">\(a = eg\)</span>, <span class="math inline">\(b = fg\)</span>. Vienas supintosios būsenos
+pavyzdys būtų:
+<span class="math display" id="eq:supintos-busenos-pvz">\[\begin{equation}
+|\chi\rangle = a|00\rangle + b|11\rangle\,.
+\tag{3.26}
+\end{equation}\]</span>
+Atkreipiame dėmesį, kad neįmanoma rasti {<span class="math inline">\(e\)</span>, <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span>} koeficientų
+<span class="math inline">\(|\phi_1 \phi_2 \rangle\)</span> būsenoje, kuri leistų
+išreikšti <span class="math inline">\(|\chi\rangle\)</span>. Šios būsenos neįmanoma
+faktorizuoti, ir todėl individualių kubitų būsenos yra neapibrėžtos.
+Supintuosiuose kubituose dalis informacijos yra laikoma kvantinėse
+koreliacijose tarp kubitų. Kadangi šios informacijos fundamentaliai
+negalime priskirti nei vienam, nei kitam kubitui, sakoma, kad ji yra
+delokalizuota.</p>
+<p>Kad iliustruotume koreliacijų vaidmenį, panagrinėkime sudėtinės 2 kubitų
+sistemos būsenų matavimus. Imkime viršuje minėtas dvi būsenas,
+faktorizuojamą <span class="math inline">\(|\tau\rangle\)</span> ir supintą
+<span class="math inline">\(|\chi\rangle\)</span>. Atlikime pirmo kubito projekcinius
+matavimus naudodami
+<span class="math inline">\(P_0^1 = |0\rangle\langle 0|\otimes I\)</span>
+ir
+<span class="math inline">\(P_1^1 = |1\rangle\langle 1|\otimes I\)</span>.
+Pradėdami nuo faktorizuojamos būsenos <span class="math inline">\(|\tau\rangle\)</span>,
+norime nusakyti, kokia yra tikimybė rasti pirmą kubitą
+<span class="math inline">\(|0\rangle\)</span> būsenoje:
+<span class="math display" id="eq:tikimybe-1-1">\[\begin{equation}
+\langle\tau |P_0^1 |\tau\rangle = |a|^2\,.
+\tag{3.27}
+\end{equation}\]</span>
+Bendra 2 kubitų būsena, vadinsime ją <span class="math inline">\(|\tau&#39;\rangle\)</span>, po
+šio matavimo yra:
+<span class="math display" id="eq:busena-po-matavimo-6">\[\begin{equation}
+|\tau&#39;\rangle = \frac{P_0^1 |\tau\rangle}{\sqrt{\langle\tau |P_0^1 |\tau\rangle}}
+= |0\rangle\otimes |0\rangle\,.
+\tag{3.28}
+\end{equation}\]</span>
+Tą patį pakartokime nusakyti, kokia tikimybė rasti pirmą kubitą
+<span class="math inline">\(|1\rangle\)</span> būsenoje, bei galutinę 2 kubitų būseną:
+<span class="math display" id="eq:busena-po-matavimo-7" id="eq:tikimybe-1-2">\[\begin{align}
+\langle\tau |P_1^1 |\tau\rangle = &amp; |b|^2 \tag{3.29} \\
+|\tau&#39;\rangle = &amp; \frac{P_1^1 |\tau\rangle}{\sqrt{\langle\tau |P_1^1 |\tau\rangle}}
+= |1\rangle\otimes |0\rangle\,. \tag{3.30}
+\end{align}\]</span>
+Akivaizdu, kad nepriklausomai nuo to, ar pirmas kubitas randamas
+<span class="math inline">\(|0\rangle\)</span>, ar <span class="math inline">\(|1\rangle\)</span> būsenoje,
+tai nepaveikia antro kubito būsenos, kuri lieka visada
+<span class="math inline">\(|0\rangle\)</span>. Tačiau atlikę tuos pačius matavimus su
+supintąja kubitų būsena <span class="math inline">\(|\chi\rangle\)</span> matome, kad radus
+pirmą kubitą <span class="math inline">\(|0\rangle\)</span> būsenoje (<span class="math inline">\(|a|^2\)</span> tikimybė),
+galutinė būsena yra
+<span class="math inline">\(|0\rangle\otimes |0\rangle\)</span>; tai
+parodo, kad antras kubitas yra užtikrintai <span class="math inline">\(|0\rangle\)</span>.
+O štai radus pirmą kubitą <span class="math inline">\(|1\rangle\)</span> būsenoje
+(<span class="math inline">\(|b|^2\)</span> tikimybė), galutinė būsena yra
+<span class="math inline">\(|1\rangle\otimes |1\rangle\)</span>, tad
+antras kubitas yra <span class="math inline">\(|1\rangle\)</span> būsenoje. Nesvarbu, kurį
+kubitą matuosime pirmą, supintojoje būsenoje po atlikto <span class="math inline">\(P_0^1\)</span> ar
+<span class="math inline">\(P_1^1\)</span> matavimo antrojo kubito būsena tampa tiksliai žinoma.</p>
+<p>Be viršuje pateikto 2 kubitų bazinių vektorių skaičiuojamojo rinkinio,
+<strong>Belo 2 kubitų bazinių vektorių rinkinys</strong> (angl. <em>Bell basis</em>) yra
+taip pat dažnai aptinkamas. Visos būsenos jame yra supintosios ir
+tarpusavyje ortogonalios:
+<span class="math display" id="eq:belo-busenos-2" id="eq:belo-busenos-1">\[\begin{align}
+|\chi^{+}\rangle = &amp; \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\,,\quad
+|\chi^{-}\rangle = \frac{1}{\sqrt{2}}\big(|00\rangle - |11\rangle\big)\,; \tag{3.31}\\
+|\eta^{+}\rangle = &amp; \frac{1}{\sqrt{2}}\big(|01\rangle + |10\rangle\big)\,,\quad
+|\eta^{-}\rangle = \frac{1}{\sqrt{2}}\big(|01\rangle - |10\rangle\big)\,.\tag{3.32}
+\end{align}\]</span>
+Įsivaizduokime situaciją, kurioje Evelina paruošia vieną iš keturių Belo
+būsenų ir nusiunčia vieną kubitą Agnei, o kitą Benui, neatskleisdama,
+kokia tai Belo būsena. Ar Agnė ir Benas, turėdami galimybę atlikti
+matavimus su savo individualiais kubitais, gali pasakyti, kokia tai Belo
+būsena? Sakykime, kad Agnė ir Benas abu atlieka matavimus su kubitais ir
+perduoda vienas kitam savo rezultatus, rasdami
+<span class="math inline">\(|00\rangle\)</span> būseną. Tad jie gali spėti, kad tai buvo
+<span class="math inline">\(|\chi^{+}\rangle\)</span> arba
+<span class="math inline">\(|\chi^{-}\rangle\)</span>, tačiau kuri iš šių dviejų – žinoti
+tiksliai neįmanoma. Šis neapribrėžtumas atspindi faktą, kad supintojoje
+kubitų būsenoje dalis informacijos yra laikoma kvantinėse koreliacijose,
+kurios vien lokaliais atskirų sistemų matavimais pasiekti neįmanoma.</p>
+<p>Belo baziniai vektoriai yra visi supintieji – tai akivaizdu iš jų
+būsenos išraiškų. Vis dėlto įvertinti, ar pateikta išraiška nusako
+supintus kubitus, ne visada paprasta net ir 2 kubitų būsenose. Kaip
+pavyzdį imkime šią būseną:
+<span class="math display" id="eq:dvieju-kubitu-busena-pvz">\[\begin{equation}
+|\psi\rangle = \frac{1}{2}\big(|00\rangle + |01\rangle + |10\rangle - |11\rangle\big)\,.
+\tag{3.33}
+\end{equation}\]</span>
+Ją galimą pergrupuoti taip:
+<span class="math display" id="eq:busenos-pergrupavimas">\[\begin{equation}
+|\psi\rangle = \frac{1}{2}\Big\lbrack\big(|0\rangle + |1\rangle)\otimes |0\rangle +
+\big(|0\rangle - |1\rangle\big)\otimes |1\rangle\Big\rbrack\,.
+\tag{3.34}
+\end{equation}\]</span>
+Matome, kad atlikę antro kubito matavimą, rasime
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> su lygiomis
+1/2 tikimybėmis. Tačiau pirmo kubito būsena lieka superpozicijoje
+<span class="math inline">\(1/\sqrt{2}\big(|0\rangle + |1\rangle\big)\)</span>,
+jeigu antro būsena randama <span class="math inline">\(|0\rangle\)</span>, arba
+<span class="math inline">\(1/\sqrt{2}\big(|0\rangle - |1\rangle\big)\)</span>,
+jeigu antro kubito būsena <span class="math inline">\(|1\rangle\)</span>. Kitaip nei Belo
+būsenose, šiuo atveju pirmas 2 kubitų būsenos
+<span class="math inline">\(|\psi\rangle\)</span> matavimas neleidžia tiksliai sužinoti,
+kokia bus rasta kito kubito būsena (vektorių
+{<span class="math inline">\(|0\rangle\)</span>, <span class="math inline">\(|1\rangle\)</span>} bazėje). Būsena <span class="math inline">\(|\psi\rangle\)</span> vis dėlto yra
+supintoji, ją gavome atlikę <span class="math inline">\(|\chi^{+}\rangle\)</span> lokalią
+unitariąją pirmo kubito transformaciją (Hadamardo transformaciją), kuri
+pakeičia {<span class="math inline">\(|0\rangle\)</span>, <span class="math inline">\(|1\rangle\)</span>}
+Pauli-<span class="math inline">\(Z\)</span> bazinius vektorius į Pauli-<span class="math inline">\(X\)</span> bazinius
+{<span class="math inline">\(|0_x \rangle\)</span>, <span class="math inline">\(|1_x \rangle\)</span>}. Šie
+yra išreikšti <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijomis. Sakome, kad <span class="math inline">\(|\psi\rangle\)</span> ir
+<span class="math inline">\(|\chi^{+}\rangle\)</span> yra <strong>lokaliai unitariškai
+ekvivalenčios</strong> (angl. <em>local unitary equivalence</em>). Svarbu atsiminti,
+kad lokalios unitariosios transformacijos negali nei panaikinti, nei
+įvesti kvantinio supynimo tarp kubitų. Kvantinis supynimas išlieka
+sistemoje, nebent ji yra veikiama nelokalios unitariosios
+transformacijos arba atliekamas lokalus projekcinis matavimas.</p>
+<p>Nusakyti, ar pateikta kvantinė 2 kubitų būsena yra supintoji, galima
+taikant minėtą tenzorinę faktorizaciją bei vadinamąją Šmito
+dekompoziciją (angl. <em>Schmidt decomposition</em>). Tačiau, kitaip nei
+2 kubituose, <span class="math inline">\(n\)</span> kubitų registre (<span class="math inline">\(n &gt; 2\)</span>) galimos ir tokios būsenos,
+kuriose tik dalis kubitų yra tarpusavyje supinti. Vis dar nėra
+standartinio būdo, kaip tiksliai klasifikuoti supynimą didesnėse
+kvantinėse sistemose.</p>
+</div>
+<div id="tankio-operatorius" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Tankio operatorius<a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Praktikoje kvantinių sistemų pakartotinis būsenų paruošimas gali būti ne itin
+tikslus dėl įrangos netikslumų ar klasikinių atsitiktinių
+procesų. Pavyzdžiui, <strong>termioninėje elektronų emisijoje</strong>
+(angl.<em> thermionic electron emission</em>) volframo metalas yra pakaitinamas
+iki itin didelės temperatūros, kuri suteikia elektronams pakankamai
+kinetinės energijos, kad šie galėtų pasprukti iš medžiagos. Tačiau neįmanoma iš anksto
+tiksliai nuspėti kiekvieno pasprukusio elektrono galutinę kinetinę
+energiją, galime nusakyti tik jų statistinį pasiskirstymą. Šiuo atveju,
+mūsų informacija apie elektronų energijos būseną yra neišsami; galime
+tik pasakyti, kad su klasikine tikimybe <span class="math inline">\(p_i\)</span> (realusis skaičius,
+<span class="math inline">\(0 \leq p_i \leq 1)\)</span> elektronas <span class="math inline">\(i\)</span> bus rastas būsenoje
+<span class="math inline">\(|\psi_i \rangle\)</span>.</p>
+<p>Jeigu užtikrintai žinoma, kad kvantinė sistema yra tam tikroje būsenoje
+<span class="math inline">\(|\psi_k \rangle\)</span>, tokia būsena vadinama <strong>grynąja</strong>
+(angl. <em>pure state</em>). Remiantis klasikinėmis tikimybėmis, tai reiškia
+<span class="math inline">\(p_{i = k} = 1\)</span> ir <span class="math inline">\(p_{i \neq k} = 0\)</span>. Visas galimų sistemos būsenų
+(nebūtinai ortogonaliųjų) rinkinys su atitinkamomis tikimybėmis rasti
+tam tikrą būseną, <span class="math inline">\(\{ p_i, |\psi_i \rangle\}\)</span>, yra
+vadinamas <strong>grynųjų būsenų ansambliu</strong> (angl. <em>ensemble of pure
+states</em>). Reikalaujame, kad susumavus visas tikimybes <span class="math inline">\(p_i\)</span> jos
+susidėtų į vienetą, <span class="math inline">\(\sum_i p_i = 1\)</span>. Žinant grynąsias būsenas
+<span class="math inline">\(|\psi_i \rangle\)</span> ir klasikines tikimybes <span class="math inline">\(p_i\)</span>,
+kurias nustato atitinkamas eksperimentinis paruošimo metodas, vėl galima
+apskaičiuoti pavienių kvantinių sistemų būsenų matavimo tikimybes.</p>
+<p>Pavyzdžiui, jeigu norėtume atlikti selektyvų kinetinės energijos
+matavimą termioninių elektronų ansambliui
+<span class="math inline">\(\{ p_i , |\psi_i \rangle\}\)</span>, tikimybė <span class="math inline">\(p(E_k)\)</span>,
+kad rasime elektroną su energija <span class="math inline">\(E_k\)</span>, yra:
+<span class="math display" id="eq:tikimybe-su-energija">\[\begin{equation}
+p(E_k) = \sum_i p_i \langle \psi_i |P_k |\psi_i \rangle
+= \sum_i p_i p_i (E_k)\,.
+\tag{3.35}
+\end{equation}\]</span>
+Čia <span class="math inline">\(P_k\)</span> atlieka projekciją į būsenų su energija <span class="math inline">\(E_k\)</span> poerdvį, o
+<span class="math inline">\(\langle\psi_i |P_k |\psi_i \rangle = p_i (E_k)\)</span>
+nusako tikimybę, kad atlikus grynosios būsenos
+<span class="math inline">\(|\psi_i \rangle\)</span> energijos matavimą bus rasta energija
+<span class="math inline">\(E_k\)</span>. Išraiškoje matome dvi tikimybes – klasikinę tikimybę <span class="math inline">\(p_i\)</span>
+bei grynai kvantinio pobūdžio tikimybę <span class="math inline">\(p_i (E_k)\)</span>, kuri atsiranda
+dėl būsenos matavimo proceso. Kvantinei tikimybei negalime priskirti
+informacijos trūkumo interpretacijos, šis procesas yra fundamentaliai
+nenuspėjamas.</p>
+<p>Termioninių elektronų emisija yra vienas iš galimų kvantinių sistemos
+būsenų paruošimo būdų. Kadangi, kaip ir grynųjų būsenų atveju, galime
+tiksliai apibūdinti pavienių ansamblio kvantinių sistemų matavimo
+rezultatus, taip paruoštos kvantinės sistemos būseną formaliai vadiname
+<strong>statistiniu grynųjų būsenų mišiniu</strong> (angl. <em>mixed state</em>). Būsenų
+mišinio neįmanoma apibūdinti vektoriumi ar vidutiniu vektoriumi Hilberto
+erdvėje. Norint pilnai aprašyti tokią kvantinę sistemą – apimti
+klasikines tikimybes bei kvantines amplitudes būsenų mišinyje, formaliai
+yra pasitelkiamas <strong>tankio operatorius</strong> (angl. <em>density operator</em>),
+arba jo realizacija tiesinėje algebroje – <strong>tankio matrica</strong>
+(angl. <em>density matrix</em>). Visi kvantinės mechanikos postulatai gali būti
+paprastai performuluojami taikant tankio operatorius vietoj grynąsias
+būsenas nusakančių vektorių. Tai yra bendriausio pobūdžio kvantinės
+mechanikos formalizmas. Kadangi apibūdindami kvantinės kompiuterijos ir
+ryšių principus šioje knygoje daugiausia naudosime grynąsias būsenas,
+čia pateikiame tik pagrindines tankio operatorių savybes.</p>
+<p>Tankio operatorius, <span class="math inline">\(\rho\)</span>, nusakantis bendriausią kvantinės sistemos
+būseną, turi šią matematinę išraišką:
+<span class="math display" id="eq:tankio-operatoriaus-apibrezimas">\[\begin{equation}
+\rho = \sum_i p_i |\psi_i \rangle\langle\psi_i|\,.
+\tag{3.36}
+\end{equation}\]</span>
+Čia <span class="math inline">\(|\psi_i \rangle\langle\psi_i |\)</span>
+yra projekcinis operatorius į normuotojo
+<span class="math inline">\(|\psi_i \rangle\)</span> vektoriaus dengiamą poerdvį, šalia
+prišlietos klasikinės tikimybės <span class="math inline">\(p_i\)</span> susideda
+<span class="math inline">\(\sum_i p_i = 1\)</span>. Grynosios būsenos irgi aprašomos tankio
+operatoriumi, šiuo atveju <span class="math inline">\(p_i = 1\)</span> tam tikram
+<span class="math inline">\(|\psi_i \rangle\)</span> ir todėl:
+<span class="math display" id="eq:grynosios-busenos-tankio-operatorius">\[\begin{equation}
+\rho = |\psi_i \rangle\langle\psi_i|\,.
+\tag{3.37}
+\end{equation}\]</span>
+Pavyzdžiui, kubito, esančio grynojoje superpozicijos būsenoje
+<span class="math inline">\(|\psi\rangle = \big(|0\rangle + |1\rangle\big)/\sqrt{2}\)</span>,
+tankio operatorius ir jo realizacija matrica, naudojant
+<span class="math inline">\(\{|0\rangle , |1\rangle\}\)</span> bazinius
+vektorius, yra:
+<span class="math display" id="eq:superpozicijos-tankio-operatorius">\[\begin{equation}
+\rho = |\psi\rangle\langle \psi| = \frac{1}{2}\big(|0\rangle\langle 0|
++ |0\rangle\langle 1| + |1\rangle\langle 0| + |1\rangle\langle 1|\big) =
+\frac{1}{2}\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 1 \\
+\end{pmatrix}\,.
+\tag{3.38}
+\end{equation}\]</span>
+O štai kubito būsenų mišinio, kuriame yra lygios klasikinės tikimybės
+rasti <span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span>,
+tankio operatorius yra:
+<span class="math display" id="eq:busenu-misinio-tankio-operatorius">\[\begin{equation}
+\rho = \frac{1}{2}|0\rangle\langle 0| + \frac{1}{2}|1\rangle\langle 1|
+= \frac{1}{2}\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{pmatrix} = \frac{1}{2}I\,.
+\tag{3.39}
+\end{equation}\]</span>
+Tankio operatorius <span class="math inline">\(\rho = \frac{1}{2}I\)</span> nusako <strong>maksimaliai sumaišytą
+būseną</strong> (angl. <em>maximally mixed state</em>). Kitaip tariant, turima
+informacija apie tokią sistemos būseną yra mažiausia, kokia tik gali
+būti.</p>
+<p>Tankio operatorius <span class="math inline">\(\rho\)</span> yra ermitinis operatorius
+(<span class="math inline">\(\rho = \rho^{\dagger}\)</span>), nes <span class="math inline">\(p_i\)</span> yra realieji skaičiai. Taip pat,
+<span class="math inline">\(\rho\)</span> yra neneigiamasis operatorius <span class="math inline">\(\rho \geq 0\)</span>, nes panaudojus bet
+kokį vektorių <span class="math inline">\(|\varphi\rangle\)</span> Hilberto erdvėje,
+<span class="math inline">\(\langle\varphi |\rho |\varphi\rangle \geq 0\)</span>:
+<span class="math display" id="eq:tankio-operatorius-neneigiamas">\[\begin{equation}
+\langle\varphi |\rho |\varphi\rangle =
+\langle\varphi| \left(\sum_i p_i |\psi_i \rangle\langle \psi_i|\right)|\varphi\rangle
+= \sum_i p_i \big|\langle\varphi |\psi_i \rangle\big|^{2} \geq 0\,.
+\tag{3.40}
+\end{equation}\]</span>
+Kadangi <span class="math inline">\(|\psi\rangle\)</span> visada galime išreikšti
+pasirinktais baziniais vektoriais,
+<span class="math inline">\(|\psi\rangle = \sum_k a_k |k\rangle\)</span>,
+nėra unikalaus būdo perteikti tankio matricai. Viršuje nurodytą grynąją
+būseną galėtume perteikti pasitelkdami patį
+<span class="math inline">\(|\psi\rangle\)</span> kaip vieną iš bazinių vektorių rinkinyje:
+{<span class="math inline">\(|\psi\rangle = |0_x \rangle = \big(|0\rangle + |1\rangle\big)/\sqrt{2}\)</span>,
+<span class="math inline">\(|1_x \rangle = \big(|0\rangle - |1\rangle\big)/\sqrt{2}\)</span>}.
+Šiuo atveju, tankio matrica turėtų išraišką:
+<span class="math display" id="eq:tankio-matricos-neunikalumas">\[\begin{equation}
+\rho = |\psi\rangle\langle\psi| = |0_x \rangle\langle 0_x| = \begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0 \\
+\end{pmatrix}\,.
+\tag{3.41}
+\end{equation}\]</span>
+Iš tiesų, kadangi <span class="math inline">\(\rho\)</span> yra ermitinis operatorius, galima visada <span class="math inline">\(\rho\)</span>
+išreikšti diagonaliąja matrica. Vis dėlto yra keletas būdų grynąsias
+būsenas matematiškai atskirti nuo mišriųjų. Vienas būdas – pasitelkiant
+matricos pėdsaką. Tankio matricos pėdsakas yra:
+<span class="math display" id="eq:tankio-matricos-pedsakas">\[\begin{equation}
+\mathrm{Tr}(\rho) = \sum_i p_i \mathrm{Tr}\big(|\psi_i \rangle\langle \psi_i|\big)
+= \sum_i p_i = 1\,.
+\tag{3.42}
+\end{equation}\]</span>
+O štai tankio matricos kvadrato pėdsakas:
+<span class="math display" id="eq:tankio-matricos-kvadrato-pedsakas">\[\begin{equation}
+\mathrm{Tr}(\rho^2 ) = \sum_{i,j} p_i p_j \mathrm{Tr}\big(|\psi_i \rangle
+\langle\psi_i |\psi_j \rangle\langle\psi_j |\big)
+= \sum_i p_i^2 \leq 1\,.
+\tag{3.43}
+\end{equation}\]</span>
+Viršuje panaudojome
+<span class="math inline">\(\langle\psi_i|\psi_j \rangle = \delta_{ij}\)</span>
+bei <span class="math inline">\(0 \leq p_i \leq 1\)</span>. Lygybė tenkinama, jeigu <span class="math inline">\(p_i = 1\)</span> su tam
+tikru <span class="math inline">\(i\)</span> ir lygi nuliui su visais kitais. Todėl grynosios būsenos
+tenkina sąlygą: <span class="math inline">\(\mathrm{Tr}(\rho^2 ) = \mathrm{Tr}(\rho) = 1\)</span>, na o
+mišriosios – sąlygą: <span class="math inline">\(\mathrm{Tr}(\rho) = 1\)</span> ir <span class="math inline">\(\mathrm{Tr}(\rho^2 ) &lt; 1\)</span>.
+Toks būdas atskirti mišriąsias ir grynąsias būsenas yra paprastas, nes
+matricos pėdsakas nepriklauso nuo bazinių vektorių, kuriais išreiškiama
+matrica.</p>
+<p>Diagonaliojoje reprezentacijoje grynosios būsenos visada turi tik vieną
+matricos elementą, o štai mišrioji – daugiau negu vieną. Dėl to dažnai
+sakoma, kad diagonalieji tankio matricos elementai įvardija statistinę
+būsenų populiaciją. Nediagonalieji elementai (angl. <em>off-diagonal</em>)
+suteikia informacijos apie koherencijos buvimą, nes jie yra kvantinių
+būsenų amplitudžių sandaugos, <span class="math inline">\(a_k a_l^{*}\)</span>. Tai matėme anksčiau
+perteikdami superpozicijos būsenos
+<span class="math inline">\(|\psi\rangle = \big(|0\rangle + |1\rangle\big)/\sqrt{2}\)</span>
+tankio matricą. Dekoherencijos procesas yra sietinas su nediagonaliųjų
+tankio matricos elementų sunykimu ir artėjimu prie maksimaliai
+sumaišytos būsenos.</p>
+<p>Toliau panagrinėsime, kaip formaliai apskaičiuoti kvantinės sistemos,
+apibūdintos tankio operatoriumi <span class="math inline">\(\rho\)</span>, selektyvaus matavimo tikimybes.
+Grįžkime prie anksčiau pateikto selektyvaus matavimo termioninių
+elektronų ansambliui <span class="math inline">\(\{p_{i}, |\psi_i \rangle\}\)</span>,
+nusakytam mišria būsena
+<span class="math inline">\(\rho = \sum_i p_i |\psi_i \rangle\langle\psi_i|\)</span>.
+Įterpdami vienetinį operatorių
+<span class="math inline">\(I = \sum_j |j\rangle\langle j|\)</span>
+tarp <span class="math inline">\(\langle\psi_i|\)</span> ir <span class="math inline">\(P_k\)</span> randame:
+<span class="math display" id="eq:energijos-tikimybes-apskaiciavimas">\[\begin{equation}
+\begin{aligned}
+p(E_k) = &amp; \sum_i p_i \langle\psi_i |P_k |\psi_i\rangle
+= \sum_{i,j} p_i \langle j|P_k |\psi_i \rangle\langle\psi_i|j\rangle
+= \sum_j \langle j|P_k \rho |j\rangle \\
+= &amp; \mathrm{Tr}(P_k \rho)\,.
+\end{aligned}
+\tag{3.44}
+\end{equation}\]</span>
+Tad tikimybė <span class="math inline">\(p(E_k)\)</span> randama atlikus projekcinės ir tankio matricų
+sandaugos pėdsaką. Įterpę <span class="math inline">\(I\)</span> tarp <span class="math inline">\(P_k\)</span> ir
+<span class="math inline">\(|\psi_i \rangle\)</span> matytume, kad
+<span class="math inline">\(\mathrm{Tr}(P_k \rho) = \mathrm{Tr}(\rho P_k )\)</span>; tai dar
+kartą parodo matricų pėdsako cikliškumo savybę. Selektyvus matavimas,
+pavyzdžiui, norint nusakyti tikimybę <span class="math inline">\(p(1)\)</span> rasti kubitą
+<span class="math inline">\(|0\rangle\)</span> būsenoje, gali būti atliktas pasitelkiant
+<span class="math inline">\(P_1 = |0\rangle\langle 0|\)</span> projekcinį
+operatorių:
+<span class="math display" id="eq:tikimybes-1-1-apskaiciavimas">\[\begin{equation}
+\begin{aligned}
+p(1) = &amp; \mathrm{Tr}(\rho P_1 ) = \mathrm{Tr}\left(
+\sum_i p_i |\psi_i \rangle\langle\psi_i |P_1 \right)
+= \sum_i p_i \big|\langle 0 |\psi_i \rangle\big|^2 \\
+= &amp; \sum_i p_i |a_{i,0}|^2\,.
+\end{aligned}
+\tag{3.45}
+\end{equation}\]</span>
+Selektyvus būsenų mišinio matavimas, jeigu nėra būsenų išsigimimo,
+sukuria galutinę grynąją būseną. Tai išplaukia iš trečiojo kvantinės
+mechanikos postulato ir yra vienas būdas, kaip paruošti grynąsias
+būsenas. O štai neselektyvus <em>P</em> operatoriaus matavimas būsenų mišiniui
+apskaičiuojamas iš <span class="math inline">\(\langle P\rangle = \mathrm{Tr}(\rho P)\)</span> ir
+bendrai sukuria kitą būsenų mišinį.</p>
+<p>Kvantinių sistemų, aprašytų tankio operatoriumi, evoliucija laike nuo
+<span class="math inline">\(t_0\)</span> iki <span class="math inline">\(t_1\)</span> nusakoma unitariniu operatoriumi <span class="math inline">\(U(t_0 ,t_1)\)</span>
+taip:
+<span class="math display" id="eq:tankio-matricos-evoliucija">\[\begin{equation}
+\rho (t_1 ) = U(t_0 ,t_1)\rho (t_0 )U^{\dagger}(t_0 ,t_1 )
+= \sum_i p_i U(t_0 ,t_1 )|\psi_i (t_0) \rangle\langle \psi_i (t_0 )|
+U^{\dagger}(t_0 ,t_1 )\,.
+\tag{3.46}
+\end{equation}\]</span>
+Norint apibūdinti loginių vartų <span class="math inline">\(U\)</span> efektą pradinei būsenai, apibūdintai
+tankio matrica <span class="math inline">\(\rho\)</span>, glaustai rašome:
+<span class="math display" id="eq:loginiu-vartu-efektas-tankio-matricai">\[\begin{equation}
+\rho&#39; = U\rho U^{\dagger}\,.
+\tag{3.47}
+\end{equation}\]</span>
+II(b) postulatas, nusakantis sistemos evoliuciją Šriodingerio lygtimi,
+yra paprastai performuluojamas taikant fon Noimano–Luivilio (angl. <em>von
+Neumann–Liouville</em>) lygtį:
+<span class="math display" id="eq:von-neumann-liouville">\[\begin{equation}
+\mathrm{i}\hbar\frac{d\rho(t)}{dt} = \lbrack H,\rho(t) \rbrack\,.
+\tag{3.48}
+\end{equation}\]</span>
+Lygtyje <span class="math inline">\(H\)</span> nusako sistemos hamiltonianą, skliausteliai indikuoja <span class="math inline">\(H\)</span> ir
+<span class="math inline">\(\rho\)</span> komutatorių.</p>
+<p>Sudėtinę kvantinę sistemą, kurios būsena yra faktorizuojama, galima
+išreikšti tenzorine tankio operatorių sandauga,
+<span class="math inline">\(\rho = \rho_1\otimes\rho_2\otimes\rho_3\otimes\cdots\)</span>;
+čia <span class="math inline">\(\rho_i\)</span> nusako posistemės <span class="math inline">\(i\)</span> būseną. Jeigu tankio matricos
+išreikšti tenzorine posistemių sandauga neįmanoma,
+<span class="math inline">\(\rho \neq \rho_1\otimes\rho_2\)</span>, tokia sistema yra supintoji.
+Imkime kaip pavyzdį 2 kubitų supintą grynąją būseną
+<span class="math inline">\(|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\)</span>.
+Jos tankio operatorius ir matrica, vektorių
+{<span class="math inline">\(|0\rangle\)</span>, <span class="math inline">\(|1\rangle\)</span>} bazėje yra:
+<span class="math display" id="eq:supintos-busenos-tankio-matrica">\[\begin{equation}
+\begin{aligned}
+\rho = &amp; |\chi^{+}\rangle\langle\chi^{+}|
+= \frac{1}{2}\big(|00\rangle\langle 00| + |00\rangle\langle 11| +
+|11\rangle\langle 00| + |11\rangle\langle 11|\big) \\
+= &amp; \frac{1}{2}\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\,.
+\end{aligned}
+\tag{3.49}
+\end{equation}\]</span>
+Tankio operatorių formalizmas suteikia būdą aprašyti posistemės būseną
+nepriklausomai nuo to, ar sudėtinė sistema yra supinta, ar
+faktorizuojama. Tam pasitelkiamas <strong>dalinis matricų pėdsakas</strong>
+(angl. <em>partial trace</em>), kuriame atliekamas pėdsakas tik vienai iš
+pasirinktų posistemių. Imkime, kad <span class="math inline">\(\rho_{AB}\)</span> nusako dviejų sistemų <span class="math inline">\(A\)</span>
+ir <span class="math inline">\(B\)</span> tankio matricą, tada:
+<span class="math display" id="eq:dalinis-pedsakas">\[\begin{equation}
+\mathrm{Tr}_A (\rho_{AB}) = \rho_{B}\,,\quad
+\mathrm{Tr}_B (\rho_{AB}) = \rho_{A}\,.
+\tag{3.50}
+\end{equation}\]</span>
+Gautas darinys <span class="math inline">\(\rho_A\)</span> arba <span class="math inline">\(\rho_B\)</span> yra vadinamas <strong>redukuota
+tankio matrica</strong> (angl. <em>reduced density matrix</em>) ir nusako atitinkamos
+posistemės būseną. Formaliai tariant, dalinis pėdsakas yra operatorius,
+veikiantis tik vieną posistemę. Pavyzdžiui, jeigu
+<span class="math inline">\(\rho_{AB} = |a_1 \rangle\langle a_2|\otimes |b_1\rangle\langle b_2|\)</span>,
+tada:
+<span class="math display" id="eq:dalinis-pedsakas-2">\[\begin{equation}
+\mathrm{Tr}_A(\rho_{AB}) = \sum_j \big(\langle j|\otimes I\big)\rho_{AB}
+\big(|j\rangle\otimes I\big) = \mathrm{Tr}\big(|a_1 \rangle\langle a_2|\big)
+|b_1 \rangle\langle b_2|\,.
+\tag{3.51}
+\end{equation}\]</span>
+Kaip ir tikėtasi, faktorizuojama būsenos <span class="math inline">\(\rho_{AB}\)</span> redukuota tankio
+matrica yra <span class="math inline">\(|b_1\rangle\langle b_2|\)</span>
+(iki globalios konstantos). Grįžtant prie supintosios 2 kubitų grynosios
+būsenos
+<span class="math inline">\(\rho = |\chi^{+}\rangle\langle\chi^{+}|\)</span>,
+įdomu įvertinti jos redukuotą tankio matricą <span class="math inline">\(\rho_{1}\)</span> arba <span class="math inline">\(\rho_{2}\)</span>.
+Atlikdami dalinį pėdsaką pirmąjam kubitui randame:
+<span class="math display" id="eq:dalinis-pedsakas-3">\[\begin{equation}
+\rho_2 = \mathrm{Tr}_1(\rho) =
+\sum_{j = 0,1} \big(\langle j|\otimes I\big)\rho\big(|j\rangle\otimes I\big) =
+\frac{1}{2}\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{pmatrix} = \frac{1}{2}I\,.
+\tag{3.52}
+\end{equation}\]</span>
+Matome, kad redukuota tankio matrica apibūdina maksimaliai sumaišytą
+būseną, nepaisant to, kad sudėtinės sistemos <span class="math inline">\(\rho\)</span> būsena yra grynoji
+(žinoma užtikrintai). Tai – dar vienas supintųjų kvantinių būsenų
+skiriamasis ženklas.</p>
+</div>
+<div id="epr-paradoksas" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> EPR paradoksas<a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Į kvantinių koreliacijų įtaką supintųjų būsenų matavimui atkreipė dėmesį
+ir A. Einšteinas, su kolegomis 1935 metais publikavęs žinomą darbą,
+dabar vadinamą <strong>EPR paradoksu</strong> (angl. <em>Einstein-Podolsky-Rosen
+paradox</em>). Čia pateikiame jų įsivaizduojamo eksperimento versiją,
+pasiūlytą Davido Bohmo ir naudojančią dviejų lygių kvantinę sistemą
+(kubitus). Įsivaizduokime, kad yra paruošiama supintoji 2 kubitų būsena,
+pavyzdžiui, ši:
+<span class="math display" id="eq:supinta-busena-6">\[\begin{equation}
+|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\,.
+\tag{3.53}
+\end{equation}\]</span>
+Pirmas fizinis kubitas paliekamas Žemėje, o antras nusiunčiamas į tolimą
+planetą pavadinimu <span class="math inline">\(W\)</span>. Nors šių supintųjų kubitų būsena yra grynoji ir
+tiksliai žinoma, tačiau pavienių kubitų būsenos neapibrėžtos. Atlikus
+matavimą yra lygios tikimybės rasti pirmą kubitą
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenoje.
+Tačiau pamatavus pirmą kubitą Žemėje ir radus, pavyzdžiui,
+<span class="math inline">\(|1\rangle\)</span> būseną, antro kubito būsena planetoje <span class="math inline">\(W\)</span>
+bus taip pat užtikrintai rasta <span class="math inline">\(|1\rangle\)</span>,
+(<span class="math inline">\(|\chi^{+}\rangle \rightarrow |11\rangle\)</span>).
+Einšteinas su kolegomis čia įžvelgė potencialų prieštaravimą reliatyvumo
+teorijai, kadangi vienos sistemos būsenos matavimas akimirksniu paveikia
+kitos sistemos būseną, nepaisant atstumo tarp jų. Kvantinė mechanika,
+EPR kompanijos požiūriu, negali būti išsami teorija, apibūdinanti gamtą.
+Nors jų argumentai neįtikino fizikų bendruomenės, tačiau tai buvo
+svarbus darbas, atkreipiantis dėmesį į kvantinės mechanikos įvariuose
+kontekstuose pasikartojančias keistąsias savybes.</p>
+<p>Norėdami iliustruoti EPR paradoksui artimą gyvenimišką pavyzdį imkime,
+kad Benas turi dvi identiškas dėžutes ir vienoje iš jų paslepia raudoną
+kamuolį, o kitoje – mėlyną. Agnė ir Benas žino, kad dėžutėse yra dviejų
+skirtingų spalvų kamuoliai, tačiau tik Benas žino, kuriose jie paslėpti.
+Agnės požiūriu, tikimybė atidarius pasirinktą dėžutę rasti vieną ar kitą
+kamuolį yra <span class="math inline">\(p=0.5\)</span>. Tačiau atidariusi vieną dėžutę ji automatiškai žinos,
+kokios spalvos kamuolys yra kitoje. Šiuo atveju Agnės nežinojimas apie
+išankstinį Beno kamuolių išdėstymą jai suteikė koreliacijos pagrindą,
+panašų į atsirandantį dėl kubitų supynimo.</p>
+<p>Sekant Pagal šį klasikinį pavyzdį vienas argumentas paaiškinti EPR
+paradoksą būtų agituojant, kad kubitai kažkaip susimokė nuo pat pradžių
+ir jų būsena vis dėlto buvo <span class="math inline">\(|00\rangle\)</span> arba
+<span class="math inline">\(|11\rangle\)</span>, tačiau mes šios informacijos neturėjome.
+Norėdami patikrinti tokį argumentą, galime žvelgti į EPR paradoksą kitu
+būdu. Kaip pamename, kvantinę būseną visada galima išreikšti bet kuriais
+kitais pageidaujamais baziniais vektoriais, nieko ypatingo nėra
+išraiškoje <span class="math inline">\(\{|0\rangle , |1\rangle\}\)</span>.
+Vietoj anksčiau naudotų Pauli-<span class="math inline">\(Z\)</span>, imkime Pauli-<span class="math inline">\(X\)</span> bazinius vektorius
+<span class="math inline">\(\{|0_x\rangle , |1_x\rangle\}\)</span>.
+Perteikę jais <span class="math inline">\(|\chi^{+}\rangle\)</span> randame:
+<span class="math display" id="eq:supinta-busena-x">\[\begin{equation}
+|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|0_x \rangle\otimes |0_x\rangle +
+|1_x \rangle\otimes|1_x \rangle\big)\,.
+\tag{3.54}
+\end{equation}\]</span>
+Šiuo atveju, <span class="math inline">\(|\chi^{+}\rangle\)</span> turi identišką formą,
+kaip ir naudojant Pauli-<span class="math inline">\(Z\)</span> bazinius vektorius. Taip pat galime
+pasirinkti skirtingą matavimo būdą. Su pirmu kubitu būsenoje
+<span class="math inline">\(|\chi^{+}\rangle\)</span> galime atlikti ne standartinius
+Pauli-<span class="math inline">\(Z\)</span> operatoriaus matavimus:
+<span class="math inline">\(P_0^1 = |0\rangle\langle 0|\otimes I\)</span>
+ir
+<span class="math inline">\(P_1^1 = |1\rangle\langle 1|\otimes I\)</span>,
+bet pasirinkti Pauli-<span class="math inline">\(X\)</span>:
+<span class="math inline">\(P_{0x}^1 = |0_x \rangle\langle 0_x|\otimes I\)</span>
+ir
+<span class="math inline">\(P_{1x}^1 = |1_x \rangle\langle 1_x|\otimes I\)</span>.
+Fiziškai tai galėtų reikšti, kad fotono poliarizacijos būseną matuojame
+ne išilgai su horizontaliąja–vertikaliąja poliarizacijos ašimis, tačiau
+pasukę šias abi matavimo kryptis <span class="math inline">\(45^{\circ}\)</span> kampu (įstrižoji poliarizacija).
+Vėlgi matome, kad atlikus <span class="math inline">\(P_{0x}^1\)</span> ir <span class="math inline">\(P_{1x}^1\)</span> būsenai
+<span class="math inline">\(|\chi^{+}\rangle\)</span> yra lygios tikimybės rasti pirmą
+kubitą <span class="math inline">\(|0_x \rangle\)</span> arba
+<span class="math inline">\(|1_x \rangle\)</span> būsenoje. Galutinės dviejų kubitų
+būsenos po tokio matavimo tampa:
+<span class="math display" id="eq:galutine-busena-po-matavimo">\[\begin{equation}
+|\chi^{+}\rangle \rightarrow \frac{P_{0x}^1|\chi^{+}\rangle}{\sqrt{
+\langle\chi^{+}|P_{0x}^1 |\chi^{+}\rangle}}
+= |0_x \rangle\otimes |0_x \rangle\,.
+\tag{3.55}
+\end{equation}\]</span>
+Arba:
+<span class="math display" id="eq:galutine-busena-po-matavimo-2">\[\begin{equation}
+|\chi^{+}\rangle \rightarrow \frac{P_{1x}^1|\chi^{+}\rangle}{\sqrt{
+\langle\chi^{+}|P_{1x}^1 |\chi^{+}\rangle}}
+= |1_{x} \rangle\otimes|1_x \rangle\,.
+\tag{3.56}
+\end{equation}\]</span>
+Tai, kokį matavimo būdą pasirinksime pirmam kubitui Žemėje, nulems,
+kokia bus antro kubito būsena planetoje <span class="math inline">\(W\)</span>. Jeigu renkamės Pauli-<span class="math inline">\(Z\)</span>
+operatoriaus matavimus, tada antro kubito būsenos galimi variantai bus
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span>, o jeigu
+renkamės Pauli-<span class="math inline">\(X\)</span>, jie bus <span class="math inline">\(|0_x \rangle\)</span> arba
+<span class="math inline">\(|1_x \rangle\)</span>. Tačiau kubitas negali būti apibrėžtoje
+Pauli-<span class="math inline">\(X\)</span> ir Pauli-<span class="math inline">\(Z\)</span> bazinių vektorių būsenoje vienu metu, nes šie
+operatoriai yra nekomutatyvūs ir todėl neturi bendrų bazinių vektorių.
+Tad, jeigu kubitai buvo <span class="math inline">\(|00\rangle\)</span> arba
+<span class="math inline">\(|11\rangle\)</span> būsenoje nuo pat pradžių (bet mes to
+nežinojome), pirmo kubito matavimo būdo pasirinkimas negali turėti
+įtakos antram kubitui. Antraip matavimo krypties pasirinkimas turėtų
+būti komunikuojamas akimirksniu, greičiau už šviesos greitį.</p>
+<p>EPR paradoksas jau buvo patvirtintas ne kartą eksperimentuose naudojant
+supintąsias fotonų būsenas. Atstumai tarp dviejų lokacijų, kuriose
+susinchronizuotai tuo pačiu metu buvo matuojamos supintųjų fotonų
+būsenos, buvo tokie, kad šviesai neužtektų laiko komunikuoti matavimo
+rezultatus, kažkaip juos paveikiant. Pagal kvantinės mechanikos
+standartinę (ortodoksinę) interpretaciją, neįmanoma žinoti, kuris
+kvantinis „kamuolys” yra kurioje dėžutėje. Būsena
+<span class="math inline">\(|\chi^{+}\rangle\)</span> nusako, kad jie yra abiejuose
+dėžutėse vienu metu. Tad pagal standartinę interpretaciją, EPR
+paradoksas neprieštarauja reliatyvumo teorijai, nes neįmanoma nuspėti,
+kokie bus pirmo kubito individualių matavimų rezultatai, žinomos tik
+tikimybės rasti <span class="math inline">\(|0\rangle\)</span> arba
+<span class="math inline">\(|1\rangle\)</span>. Todėl nusiųsti informaciją, užkoduotą
+kubitų būsenose, greičiau už šviesos greitį į planetą <span class="math inline">\(W\)</span> neįmanoma, nes
+tiesiog negalime suformuluoti žinutės – jos turinys bus atsitiktinis.
+Tik patikrinę Žemėje ir planetoje <span class="math inline">\(W\)</span> atliktų rezultatų statistiką
+matysime koreliaciją tarp matavimo rezultatų. Na, o norint palyginti
+rezultatus, tektų komunikuoti šviesos greičiu arba lėčiau, jeigu
+keliautume į planetą <span class="math inline">\(W\)</span>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="matematikos-skyrius.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kvantiniai-loginiai-vartai-grandines.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["kvantinekompiuterija.pdf", "kvantinekompiuterija.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

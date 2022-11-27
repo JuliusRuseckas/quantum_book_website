@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 skyrius. Kvantinių sistemų modeliavimas ir mašininis mokymasis | Kvantinė kompiuterija</title>
+  <meta name="description" content="8 skyrius. Kvantinių sistemų modeliavimas ir mašininis mokymasis | Kvantinė kompiuterija" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 skyrius. Kvantinių sistemų modeliavimas ir mašininis mokymasis | Kvantinė kompiuterija" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="8 skyrius. Kvantinių sistemų modeliavimas ir mašininis mokymasis | Kvantinė kompiuterija" />
+  <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 skyrius. Kvantinių sistemų modeliavimas ir mašininis mokymasis | Kvantinė kompiuterija" />
+  
+  <meta name="twitter:description" content="8 skyrius. Kvantinių sistemų modeliavimas ir mašininis mokymasis | Kvantinė kompiuterija" />
+  
+
+<meta name="author" content="Tadas Paulauskas" />
+<meta name="author" content="Julius Ruseckas" />
+
+
+<meta name="date" content="2022-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="furjė-transformacija-ir-jos-taikymai.html"/>
+<link rel="next" href="kvantinių-klaidų-aptikimas-ir-taisymas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kvantinė kompiuterija</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pratarmė</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#kaip-skaityti-šią-knygą"><i class="fa fa-check"></i>Kaip skaityti šią knygą</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#padėka"><i class="fa fa-check"></i>Padėka</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#apie-autorius"><i class="fa fa-check"></i>Apie autorius</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prisidėti-prie-knygos"><i class="fa fa-check"></i>Prisidėti prie knygos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencija"><i class="fa fa-check"></i>Licencija</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html"><i class="fa fa-check"></i><b>1</b> Kvantinės kompiuterijos apžvalga</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#įvadas"><i class="fa fa-check"></i><b>1.1</b> Įvadas</a></li>
+<li class="chapter" data-level="1.2" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys"><i class="fa fa-check"></i><b>1.2</b> Kvantinės kompiuterijos pradmenys</a></li>
+<li class="chapter" data-level="1.3" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina"><i class="fa fa-check"></i><b>1.3</b> Tiuringo mašina</a></li>
+<li class="chapter" data-level="1.4" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai"><i class="fa fa-check"></i><b>1.4</b> Skaičiavimų ištekliai</a></li>
+<li class="chapter" data-level="1.5" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai"><i class="fa fa-check"></i><b>1.5</b> Kvantiniai bitai</a></li>
+<li class="chapter" data-level="1.6" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas"><i class="fa fa-check"></i><b>1.6</b> Kvantinės informacijos apdorojimas</a></li>
+<li class="chapter" data-level="1.7" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas"><i class="fa fa-check"></i><b>1.7</b> Skaičiavimo procesas</a></li>
+<li class="chapter" data-level="1.8" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas"><i class="fa fa-check"></i><b>1.8</b> Kvantinių kompiuterių charakteristikų palyginimas</a></li>
+<li class="chapter" data-level="1.9" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris"><i class="fa fa-check"></i><b>1.9</b> Dekoherencijos trukmė ir loginių vartų tikslumas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html"><i class="fa fa-check"></i><b>2</b> Matematinių įrankių rinkinys</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesinė-algebra"><i class="fa fa-check"></i><b>2.1</b> Tiesinė algebra</a></li>
+<li class="chapter" data-level="2.2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kompleksiniai-skaičiai"><i class="fa fa-check"></i><b>2.2</b> Kompleksiniai skaičiai</a></li>
+<li class="chapter" data-level="2.3" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#vidinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.3</b> Vidinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.4" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje"><i class="fa fa-check"></i><b>2.4</b> Kubito reprezentacija Blocho sferoje</a></li>
+<li class="chapter" data-level="2.5" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos"><i class="fa fa-check"></i><b>2.5</b> Tiesiniai operatoriai ir matricos</a></li>
+<li class="chapter" data-level="2.6" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai"><i class="fa fa-check"></i><b>2.6</b> Unitariniai ir ermitiniai operatoriai</a></li>
+<li class="chapter" data-level="2.7" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija"><i class="fa fa-check"></i><b>2.7</b> Diadinė operatorių dekompozicija</a></li>
+<li class="chapter" data-level="2.8" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#matricos-pėdsakas"><i class="fa fa-check"></i><b>2.8</b> Matricos pėdsakas</a></li>
+<li class="chapter" data-level="2.9" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.9</b> Tenzorinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.10" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga"><i class="fa fa-check"></i><b>2.10</b> Tenzorinė operatorių sandauga</a></li>
+<li class="chapter" data-level="2.11" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#operatorių-funkcijos"><i class="fa fa-check"></i><b>2.11</b> Operatorių funkcijos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html"><i class="fa fa-check"></i><b>3</b> Kvantinės mechanikos pagrindai</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai"><i class="fa fa-check"></i><b>3.1</b> Kvantinės mechanikos postulatai</a></li>
+<li class="chapter" data-level="3.2" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas"><i class="fa fa-check"></i><b>3.2</b> Kvantinis supynimas</a></li>
+<li class="chapter" data-level="3.3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius"><i class="fa fa-check"></i><b>3.3</b> Tankio operatorius</a></li>
+<li class="chapter" data-level="3.4" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas"><i class="fa fa-check"></i><b>3.4</b> EPR paradoksas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html"><i class="fa fa-check"></i><b>4</b> Kvantiniai loginiai vartai ir grandinės</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai"><i class="fa fa-check"></i><b>4.1</b> Vieno kubito loginiai vartai</a></li>
+<li class="chapter" data-level="4.2" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai"><i class="fa fa-check"></i><b>4.2</b> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai</a></li>
+<li class="chapter" data-level="4.3" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas"><i class="fa fa-check"></i><b>4.3</b> Kubitų būsenų matavimas</a></li>
+<li class="chapter" data-level="4.4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot"><i class="fa fa-check"></i><b>4.4</b> Dviejų kubitų loginiai vartai <em>CNOT</em></a></li>
+<li class="chapter" data-level="4.5" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai"><i class="fa fa-check"></i><b>4.5</b> Tofoli loginiai vartai</a></li>
+<li class="chapter" data-level="4.6" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai"><i class="fa fa-check"></i><b>4.6</b> SWAP ir Fredkin loginiai vartai</a></li>
+<li class="chapter" data-level="4.7" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai"><i class="fa fa-check"></i><b>4.7</b> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai"><i class="fa fa-check"></i><b>4.8</b> Bendro tipo būsenų matavimai</a></li>
+<li class="chapter" data-level="4.9" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys"><i class="fa fa-check"></i><b>4.9</b> Universalių loginių vartų rinkinys</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html"><i class="fa fa-check"></i><b>5</b> Kvantinė informacija ir ryšiai</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas"><i class="fa fa-check"></i><b>5.1</b> Kvantinės informacijos kopijavimas</a></li>
+<li class="chapter" data-level="5.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija"><i class="fa fa-check"></i><b>5.2</b> Kvantinė teleportacija</a></li>
+<li class="chapter" data-level="5.3" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas"><i class="fa fa-check"></i><b>5.3</b> Kvantinio supynimo sukeitimas</a></li>
+<li class="chapter" data-level="5.4" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija"><i class="fa fa-check"></i><b>5.4</b> Kvantinė kriptografija</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.1</b> BB84 kvantinis rakto pasidalijimo protokolas</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
+<li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
+<li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
+<li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#algebrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.1</b> Algebrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#geometrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.2</b> Geometrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#groverio-paieška-su-n-8"><i class="fa fa-check"></i><b>6.6.3</b> Groverio paieška su <span class="math inline">\(N = 8\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamardo-swap-testai"><i class="fa fa-check"></i><b>6.7</b> Hadamardo ir SWAP testai</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris"><i class="fa fa-check"></i><b>6.7.1</b> Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#modifikuotas-hadamardo-testas"><i class="fa fa-check"></i><b>6.7.2</b> Modifikuotas Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#swap-testas"><i class="fa fa-check"></i><b>6.7.3</b> SWAP testas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html"><i class="fa fa-check"></i><b>7</b> Furjė transformacija ir jos taikymai</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinė-furjė-transformacija"><i class="fa fa-check"></i><b>7.1</b> Kvantinė Furjė transformacija</a></li>
+<li class="chapter" data-level="7.2" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#furjė-transformacijos-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>7.2</b> Furjė transformacijos realizavimas kvantinėje grandinėje</a></li>
+<li class="chapter" data-level="7.3" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#funkcijos-periodiškumo-paieška"><i class="fa fa-check"></i><b>7.3</b> Funkcijos periodiškumo paieška</a></li>
+<li class="chapter" data-level="7.4" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas"><i class="fa fa-check"></i><b>7.4</b> Kvantinis fazės nustatymo algoritmas</a></li>
+<li class="chapter" data-level="7.5" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#tiesinių-lygčių-sprendimas-hhl-algoritmu"><i class="fa fa-check"></i><b>7.5</b> Tiesinių lygčių sprendimas HHL algoritmu</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html"><i class="fa fa-check"></i><b>8</b> Kvantinių sistemų modeliavimas ir mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas"><i class="fa fa-check"></i><b>8.2</b> Erdvinės Šriodingerio lygties sprendimo algoritmas</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija"><i class="fa fa-check"></i><b>8.2.1</b> Banginė funkcija</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas"><i class="fa fa-check"></i><b>8.2.2</b> Diskretizavimas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.2.3</b> Perteikimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3</b> Mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.1</b> Klasikinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.2</b> Kvantinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius"><i class="fa fa-check"></i><b>8.3.3</b> Kvantinėmis grandinėmis paremtas klasifikatorius</a></li>
+<li class="chapter" data-level="8.3.4" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė"><i class="fa fa-check"></i><b>8.3.4</b> Pagrindinių komponentų analizė</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html"><i class="fa fa-check"></i><b>9</b> Kvantinių klaidų aptikimas ir taisymas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos"><i class="fa fa-check"></i><b>9.1</b> Klasikinės ir kvantinės klaidos</a></li>
+<li class="chapter" data-level="9.2" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#supynimas-ir-klaidu-atsiradimas"><i class="fa fa-check"></i><b>9.2</b> Kvantinis supynimas su aplinka ir klaidų atsiradimas</a></li>
+<li class="chapter" data-level="9.3" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bito-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.3</b> Bito apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.4" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#fazės-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.4</b> Fazės apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.5" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#tolydžiosios-klaidos"><i class="fa fa-check"></i><b>9.5</b> Tolydžiosios klaidos</a></li>
+<li class="chapter" data-level="9.6" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bendrieji-klaidų-taisymo-principai"><i class="fa fa-check"></i><b>9.6</b> Bendrieji klaidų taisymo principai</a></li>
+<li class="chapter" data-level="9.7" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinė-hamingo-riba"><i class="fa fa-check"></i><b>9.7</b> Kvantinė Hamingo riba</a></li>
+<li class="chapter" data-level="9.8" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#šoro-9-kubitų-kodas"><i class="fa fa-check"></i><b>9.8</b> Šoro 9 kubitų kodas</a></li>
+<li class="chapter" data-level="9.9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kodu-stabilizatoriai-poskyris"><i class="fa fa-check"></i><b>9.9</b> Kodų stabilizatoriai</a></li>
+<li class="chapter" data-level="9.10" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klaidoms-atsparus-skaičiavimas"><i class="fa fa-check"></i><b>9.10</b> Klaidoms atsparus skaičiavimas</a></li>
+<li class="chapter" data-level="9.11" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinis-tūris"><i class="fa fa-check"></i><b>9.11</b> Kvantinis tūris</a></li>
+</ul></li>
+<li class="appendix"><span><b>Priedai</b></span></li>
+<li class="chapter" data-level="A" data-path="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><a href="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><i class="fa fa-check"></i><b>A</b> Debesyje pasiekiami kvantiniai kompiuteriai ir simuliatoriai</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html"><i class="fa fa-check"></i>Literatūra</a>
+<ul>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#knygos"><i class="fa fa-check"></i>Knygos</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#moksliniai-straipsniai"><i class="fa fa-check"></i>Moksliniai straipsniai</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kvantinė kompiuterija</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sistemu-modeliavimas-ir-qml" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8 skyrius.</span> Kvantinių sistemų modeliavimas ir mašininis mokymasis<a href="sistemu-modeliavimas-ir-qml.html#sistemu-modeliavimas-ir-qml" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="dinaminių-sistemų-modeliavimas" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Dinaminių sistemų modeliavimas<a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Klasikinių bei kvantinių sistemų modeliavimas yra pagrįstas
+diferencialinių lygčių sprendinių paieška. Diferencialinės lygtys nusako
+sistemos dinamiką laike bei erdvėje ir atspindi dėsnius, kuriais šios
+sistemos pagrįstos. Klasikinėje fizikoje dažnai aptinkamos Niutono,
+Maksvelo ir Einšteino diferencialinės lygtys. Jos apibūdina sistemos
+pozicijų konfigūracijas, elektromagnetinių ir gravitacinių laukų kitimą,
+atitinkamai. Įprastai kompiuteriniai skaičiavimai diskretizuoja
+diferencialinės lygties kintamuosius, tokius kaip laiko ir erdvės. Tada
+iteracinė procedūra pradinę sistemos būseną nuveda prie ieškomosios
+galutinės. Diskretizavimo žingsnių dydis pasirenkamas atsižvelgiant į
+toleruotinus paklaidos dydžius, kuriuos dažnai galima tiksliai
+įvertinti. Modeliuojamos sistemos dydis ir jos dinamikos tikslumas bus
+nulemti prieinamų skaičiavimo išteklių.</p>
+<p>Pavienių ir sudėtinių kvantinių sistemų dinamiką apibūdina 3 skyriuje
+minėta Šriodingerio lygtis:
+<span class="math display" id="eq:schroedinger-8">\[\begin{equation}
+\mathrm{i}\hbar\frac{d|\psi(t)\rangle}{dt} = H|\psi(t)\rangle\,.
+\tag{8.1}
+\end{equation}\]</span>
+Ši lygtis tinka kvantinėms sistemoms, kuriose reliatyvistiniai efektai
+yra nereikšmingi arba gali būti aproksimuojami efektyviu hamiltonianu
+<span class="math inline">\(H\)</span>. Tokio tipo sistemas čia ir aptarsime.</p>
+<div id="ising-hamiltonian-coding" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Aizingo modelis ir hamiltoniano kodavimas<a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pirmiausia pradėkime nuo teiginio, kad sudėtinės kvantinės sistemos,
+kurių būsenos matematiškai aprašomos identiškai kubitams, natūraliai
+tinka kvantinės kompiuterijos taikymams. Tai iš principo atstoja gerai
+kontroliuojamą eksperimentą su šiomis sistemomis. Tarp jų yra medžiagų
+magnetizmą nulemiančios elementariosios bei sudėtinės dalelės
+(elektronai, protonai, neutronai), turinčios <span class="math inline">\(1/2\)</span> <strong>sūkį</strong> (angl. <em><span class="math inline">\(1/2\)</span> spin</em>).
+Šios dalelės magnetiniame lauke elgiasi panašiai kaip magnetiniai
+dipoliai. Blocho vektorius, orientuotas į ortogonaliąsias
+<span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenas,
+yra atitinkamai magnetinė „šiaurė” arba „pietūs”. Vienas pavyzdys –
+periodiškai išsidėlioję atomai kristaluose, kuriuose kiekvienoje atomo
+pozicijoje yra po vieną nesuporuotą elektroną (kubitą). <strong>Aizingo
+modelio</strong> (angl. <em>Ising model</em>) hamiltonianas apibūdina sistemos,
+sudarytos iš <span class="math inline">\(1/2\)</span> sukinių, dinamiką. <strong>Skersinio lauko Aizingo modelio</strong>
+versija (angl. <em>transverse-field Ising model</em>) turi šią formą:
+<span class="math display" id="eq:transverse-field-Ising">\[\begin{equation}
+H = - j\sum_{i = 1}^n Z_i\otimes Z_{i + 1} - g\sum_{i = 1}^n X_i\,.
+\tag{8.2}
+\end{equation}\]</span>
+Hamiltonianas apibūdina <span class="math inline">\(n\)</span> kubitų, išrikiuotų eilėje. Nariai pirmoje
+sumoje nusako magnetines sąveikas tarp vienas šalia kito (<span class="math inline">\(i\)</span>, <span class="math inline">\(i + 1\)</span>)
+esančių kubitų išilgai <span class="math inline">\(z\)</span> ašies, apibūdintas Pauli-<span class="math inline">\(Z\)</span> operatoriais ir
+sąveikos stiprumu <span class="math inline">\(j\)</span>. Pavyzdžiui, vienas toks narys, veikiantis tarp
+antrojo ir trečiojo kubito 4 kubitų sistemoje būtų
+<span class="math inline">\(-jI\otimes Z\otimes Z\otimes I\)</span>. Antra suma hamiltoniane
+apibūdina išorinio magnetinio lauko išilgai <span class="math inline">\(x\)</span> ašies efektą kiekvienam
+iš <span class="math inline">\(n\)</span> kubitų. Pavyzdžiui, veikdamas trečią kubitą 4 kubitų sistemoje
+jis būtų <span class="math inline">\(-gI\otimes I\otimes X\otimes I\)</span>. Nepaisant paprastos
+išraiškos, bendras kubitų elgesys šiame Aizingo modelyje pasižymi
+fenomenų gausa.</p>
+<p>Norėdami apskaičiuoti kubitų evoliuciją laike turime įvertinti
+unitariojo operatoriaus <span class="math inline">\(U = \mathrm{e}^{\frac{-\mathrm{i}Ht}{\hbar}}\)</span> veiksmą
+(žr. <a href="kvantines-mechanikos-pagrindai.html#kvantines-mechanikos-pagrindai">3</a> skyrių):
+<span class="math display" id="eq:evoliucija-8">\[\begin{equation}
+|\psi(t) \rangle = \mathrm{e}^{\frac{-\mathrm{i}Ht}{\hbar}}|\psi(0)\rangle
+= U|\psi(0)\rangle\,.
+\tag{8.3}
+\end{equation}\]</span>
+Čia pradinė būsena <span class="math inline">\(|\psi(0) \rangle\)</span> laiku <span class="math inline">\(t = 0\)</span> yra
+bendrai <span class="math inline">\(n\)</span> kubitų superpozicija. Unitariojo operatoriaus formavimas iš
+ermitinio operatoriaus, šiuo atveju hamiltoniano <span class="math inline">\(H\)</span>, kvantinėje
+kompiuterijoje vadinamas <strong>hamiltoniano kodavimu</strong> (angl. <em>hamiltonian
+encoding</em>). Mat iš bet kokio ermitinio operatoriaus <span class="math inline">\(A\)</span> galime
+suformuoti unitarųjį operatorių <span class="math inline">\(U\)</span> imdami jo ekponentę
+<span class="math inline">\(\mathrm{e}^{\mathrm{i}At}\)</span>, ir šį
+unitarųjį operatorių realizuoti loginiais vartais. Pavyzdžiui, mašininio
+mokymosi algoritmuose operatorių realizuojanti matrica <span class="math inline">\(A\)</span> gali nusakyti
+mokymosi duomenis, o hamiltoniano kodavimas suteikia vieną būdą duomenis
+pateikti kvantiniam kompiuteriui.</p>
+</div>
+<div id="troterizacija" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Troterizacija<a href="sistemu-modeliavimas-ir-qml.html#troterizacija" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Daugeliu atvejų hamiltonianą <span class="math inline">\(H\)</span> galime išskaidyti suma:
+<span class="math display" id="eq:h-kaip-suma">\[\begin{equation}
+H = \sum_{i = 1}^k H_i\,.
+\tag{8.4}
+\end{equation}\]</span>
+Minėtame Aizingo modelyje hamiltonianas yra sudarytas iš dviejų narių:
+<span class="math inline">\(H_1 = - j\sum_{i = 1}^n Z_i\otimes Z_{i + 1}\)</span> ir
+<span class="math inline">\(H_2 = - g\sum_{i = 1}^n X_i\)</span>. Atkreipiame dėmesį, kad nors visi
+nariai <span class="math inline">\(H_1\)</span> ir <span class="math inline">\(H_2\)</span> sumose yra komutatyvūs, tačiau <span class="math inline">\(H_1\)</span> ir
+<span class="math inline">\(H_2\)</span> yra tarpusavyje nekomutatyvūs,
+<span class="math inline">\(\lbrack H_1 , H_2\rbrack \neq 0\)</span>. Todėl negalime šio unitariojo
+operatoriaus tiesiogiai pritaikyti nustatydami sistemos evoliuciją
+laike, nes:
+<span class="math display" id="eq:negalima-lygybe-8">\[\begin{equation}
+\mathrm{e}^{\frac{-\mathrm{i}H_1t}{\hbar}}\mathrm{e}^{\frac{-\mathrm{i}H_2t}{\hbar}}
+\neq \mathrm{e}^{\frac{-\mathrm{i}(H_1 + H_2)t}{\hbar}}\,.
+\tag{8.5}
+\end{equation}\]</span>
+Vadinamoji <strong>troterizacija</strong> (angl. <em>Suzuki-Trotter approximation</em>)
+leidžia apeiti iškilusią kliūtį ir apytikriai realizuoti norimą
+operatorių. Ši aproksimacija diskretizuoja laiko intervalą <span class="math inline">\(t\)</span> į
+<span class="math inline">\(s\)</span> žingsnių, kai kiekvienas laiko intervalas trunka
+<span class="math inline">\(\Delta t = t/s\)</span>. Unitarusis operatorius tampa:
+<span class="math display" id="eq:laiko-diskretizacija-8">\[\begin{equation}
+U = \mathrm{e}^{\frac{-\mathrm{i}(H_1 + H_2)t}{\hbar}} \cong
+\left(\mathrm{e}^{\frac{-\mathrm{i}H_1\Delta t}{\hbar}}
+\mathrm{e}^{\frac{-\mathrm{i}H_2\Delta t}{\hbar}}\right)^s\,.
+\tag{8.6}
+\end{equation}\]</span>
+Naudodami pasirinktinai mažą žingsnį <span class="math inline">\(\Delta t\)</span> ir atlikdami
+iteraciją <span class="math inline">\(s\)</span> kartų, apskaičiuokime norimą sistemos laiko evoliuciją
+visame laiko intervale <span class="math inline">\(t\)</span>. 8.6 lygybėje parodyta pirmosios eilės
+aproksimacija, joje įterpiamos klaidos yra ne didesnės nei žingsnio
+dydžio kvadratas <span class="math inline">\(O(\Delta t^2)\)</span>. Troterizacija taip pat
+išsaugo laiko evoliucijos operatoriaus unitarumą ir todėl užtikrina, kad
+visame procese kvantinė būsena išlieka normuota. Galutinė sistemos
+būsena randama
+<span class="math inline">\(|\psi(t)\rangle \cong |\psi(s\Delta t)\rangle\)</span>:
+<span class="math display" id="eq:galutine-busena-trot">\[\begin{equation}
+|\psi(s\Delta t)\rangle
+= \mathrm{e}^{\frac{-\mathrm{i}H_1 \Delta t}{\hbar}}
+\mathrm{e}^{\frac{-\mathrm{i}H_2 \Delta t}{\hbar}}\cdots
+\mathrm{e}^{\frac{-\mathrm{i}H_1 \Delta t}{\hbar}}
+\mathrm{e}^{\frac{-\mathrm{i}H_2 \Delta t}{\hbar}}|\psi(0)\rangle\,.
+\tag{8.7}
+\end{equation}\]</span>
+Troterizacija natūraliai tinka realizuoti ir hamiltonianus, kurie kinta
+laike. Tai gali nusakyti, pavyzdžiui, periodines sistemos
+perturbacijas ar simuliuoti atsitiktinai jaučiamas išorines sąveikas.
+Čia taip pat pasirenkamas diskretizuotas laiko žingsnis
+<span class="math inline">\(\Delta t\)</span>, pagal kurį laiko evoliucijos operatorius <span class="math inline">\(U(t)\)</span>
+yra strobuojamas, taip pateikiant efektyvią seką:
+<span class="math display" id="eq:nuo-laiko-priklausantis-u-trot">\[\begin{equation}
+|\psi(s\Delta t)\rangle
+= U_s(\Delta t)\cdots U_2(\Delta t)U_1(\Delta t)|\psi(0)\rangle\,.
+\tag{8.8}
+\end{equation}\]</span></p>
+</div>
+<div id="aizingo-modelio-realizavimas-kvantinėje-grandinėje" class="section level3 hasAnchor" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Aizingo modelio realizavimas kvantinėje grandinėje<a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aizingo modelyje matome 1 kubito operatorių, turintį formą:
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}H_2 \Delta t}{\hbar}} = \mathrm{e}^{-\frac{\mathrm{i}\theta X}{2}} \equiv R_{x}(\theta)\)</span>.
+Tai yra pažįstamas posūkio operatorius aplink <span class="math inline">\(x\)</span> ašį, čia jis atlieka
+Blocho vektoriaus posūkį kampu
+<span class="math inline">\(\theta = - \frac{2g\Delta t}{\hbar}\)</span> kiekviename iš
+<span class="math inline">\(\Delta t\)</span> dydžio iteracijos laiko žingsnių <span class="math inline">\(s\)</span>. Taip pat turime
+realizuoti 2 kubitų loginius vartus, nusakytus operatoriumi
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}H_1 t}{\hbar}} = \mathrm{e}^{\mathrm{i}\theta Z_k\otimes Z_l}\)</span>. Čia
+<span class="math inline">\(\theta = \frac{j\Delta t}{\hbar}\)</span>, o <span class="math inline">\(Z_k\otimes Z_l\)</span>
+veikia <span class="math inline">\(k\)</span> ir <span class="math inline">\(l\)</span> kubitus kiekviename žingsnyje. Dėl paprastumo
+praleidžiame identitetus, <span class="math inline">\(\otimes I\)</span>, kurie veikia likusius kubitus.
+Tam galime panaudoti <a href="matematikos-skyrius.html#matematikos-skyrius">2</a> skyriuje
+pateiktą tenzorinės operatorių
+sanudaugos funkcijos išraišką:
+<span class="math display" id="eq:z-times-z-eksponente">\[\begin{equation}
+\mathrm{e}^{\mathrm{i}\theta Z_k\otimes Z_l}
+= \sum_{k,l} \mathrm{e}^{\mathrm{i}\theta\lambda_k\lambda_l}P_k\otimes P_l
+= \begin{bmatrix}
+\mathrm{e}^{\mathrm{i}\theta} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\theta} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \mathrm{e}^{-\mathrm{i}\theta} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\theta}
+\end{bmatrix}\,.
+\tag{8.9}
+\end{equation}\]</span>
+<a href="sistemu-modeliavimas-ir-qml.html#eq:z-times-z-eksponente">(8.9)</a> lygybės tenzorinėje sandaugoje
+<span class="math inline">\(P_{k,l} \in \big(|0\rangle\langle 0|, |1\rangle\langle 1|\big)\)</span>
+yra Pauli-<span class="math inline">\(Z\)</span> projekciniai operatoriai, o tikrinių verčių sandauga yra
+<span class="math inline">\(\lambda_k\lambda_l \in (1, -1)\)</span>. Atkreipiame dėmesį, kad lyginį
+lyginumą turinčioms 2 kubitų būsenoms (<span class="math inline">\(|00\rangle\)</span> ir
+<span class="math inline">\(|11\rangle\)</span>) yra pritaikoma fazė <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}\)</span>, o štai
+nelyginio lyginumo būsenos (<span class="math inline">\(|01\rangle\)</span> ir
+<span class="math inline">\(|10\rangle\)</span>) įgauna <span class="math inline">\(\mathrm{e}^{-\mathrm{i}\theta}\)</span>. <a href="sistemu-modeliavimas-ir-qml.html#fig:z-times-z-grandine">8.1</a> pav. parodyta grandinė,
+realizuojanti <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta Z_k\otimes Z_l}\)</span> operatorių kubitams
+<span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> pasitelkiant ancilą <span class="math inline">\(a_1\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:z-times-z-grandine"></span>
+<img src="media/image8_1.svg" alt="Loginė grandinė, realizuojanti $\mathrm{e}^{\mathrm{i}\theta Z_1\otimes Z_2}$ operatorių. Ancila kubitui pritaikomi $R_z$ posūkio loginiai vartai" width="52%" />
+<p class="caption">
+8.1 pav. Loginė grandinė, realizuojanti <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta Z_1\otimes Z_2}\)</span> operatorių. Ancila kubitui pritaikomi <span class="math inline">\(R_z\)</span> posūkio loginiai vartai
+</p>
+</div>
+<p>Pirma kvantinės grandinės užduotis yra atskirti būsenų lyginumą. Tam
+iškviečiami dveji <span class="math inline">\(cX\)</span> vartai, supinantys ancilą kubitą <span class="math inline">\(a_1\)</span> su <span class="math inline">\(k_1\)</span>
+ir <span class="math inline">\(k_2\)</span> kubitais. Norėdami tai aiškiau pamatyti, imkime, kad <span class="math inline">\(k_1\)</span> ir
+<span class="math inline">\(k_2\)</span> kubitai yra lygioje 2 kubitų skaičiuojamųjų bazinių vektorių
+superpozicijoje. Tad bendra pradinė būsena yra
+<span class="math inline">\(|\psi\rangle = |k_1 k_2\rangle\otimes|a_1\rangle\)</span>:
+<span class="math display" id="eq:bendra-pradine-busena-ising">\[\begin{equation}
+|\psi\rangle = \frac{1}{2}\big(|00\rangle + |10\rangle + |01\rangle + |11\rangle\big)\otimes|0\rangle\,.
+\tag{8.10}
+\end{equation}\]</span>
+Pritaikius pirmus dvejus <span class="math inline">\(cX\)</span> vartus su ancila adresatiniu kubitu, skaičiumi nurodant kontroliuojantį <span class="math inline">\(k\)</span> kubitą, randame:
+<span class="math display" id="eq:busena-po-dvieju-cx">\[\begin{equation}
+cX_{2}cX_{1}|\psi\rangle = \frac{1}{2}\big(|00\rangle + |11\rangle\big)\otimes|0\rangle
++ \frac{1}{2}\big(|10\rangle + |01\rangle\big)\otimes|1\rangle\,.
+\tag{8.11}
+\end{equation}\]</span>
+Matome, kad tai supina ancilos kubito būseną <span class="math inline">\(|0\rangle\)</span>
+su lyginio lyginumo <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> kubitų būsenomis, o
+<span class="math inline">\(|1\rangle\)</span> yra supinama su nelyginėmis. Atskyrę
+lyginumo būsenas, kitame žingsnyje pritaikome grandinėje parodytus
+<span class="math inline">\(R_z(\theta) = \mathrm{e}^{\mathrm{i}\theta Z}\)</span> posūkio aplink <span class="math inline">\(z\)</span> ašį loginius vartus
+ancila kubitui. Pagal 4 skyriuje apibūdintus posūkio vartus
+<span class="math inline">\(R_z(\varphi) = \mathrm{e}^{-\mathrm{i}\varphi Z/2}\)</span>, kampas čia yra
+<span class="math inline">\(\theta = -\varphi/2\)</span>. Dėl kvantinio supynimo <span class="math inline">\(R_z(\varphi)\)</span>
+efektyviai suteikia skirtingas fazes skirtingo lyginumo būsenoms:
+<span class="math display" id="eq:skirtingos-fazes-skirtingo-lyginumo-busenoms">\[\begin{equation}
+\begin{aligned}
+(I\otimes I\otimes \mathrm{e}^{\mathrm{i}\theta Z})&amp;cX_2cX_1|\psi\rangle \\
+= &amp;\frac{1}{2}\big(|00\rangle + |11\rangle\big)
+\otimes\mathrm{e}^{\mathrm{i}\theta}|0\rangle
++ \frac{1}{2}\big(|10\rangle + |01\rangle\big)
+\otimes\mathrm{e}^{-\mathrm{i}\theta}|1\rangle \\
+= &amp; \frac{1}{2}\big(\mathrm{e}^{\mathrm{i}\theta}|00\rangle
++ \mathrm{e}^{\mathrm{i}\theta}|11\rangle\big)\otimes|0\rangle
++ \frac{1}{2}\big(\mathrm{e}^{-\mathrm{i}\theta}|10\rangle
++ \mathrm{e}^{-\mathrm{i}\theta}|01\rangle\big)\otimes|1\rangle\,.
+\end{aligned}
+\tag{8.12}
+\end{equation}\]</span>
+Ancilos kubito būseną atstatome atgal su dviem <span class="math inline">\(cX\)</span> vartais kartu
+panaikindami supynimą su <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> kubitais. Gauname galutinę
+2 kubitų būseną, realizuojamą operatoriumi
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}H_1 t}{\hbar}} = \mathrm{e}^{\mathrm{i}\theta Z_k\otimes Z_l}\)</span>:
+<span class="math display" id="eq:galutine-busena-ising">\[\begin{equation}
+cX_1cX_2(I\otimes I\otimes \mathrm{e}^{\mathrm{i}\theta Z})cX_2cX_1|\psi\rangle
+= \frac{1}{2}\big(\mathrm{e}^{\mathrm{i}\theta}|00\rangle
++ \mathrm{e}^{-\mathrm{i}\theta}|10\rangle
++ \mathrm{e}^{-\mathrm{i}\theta}|01\rangle
++ \mathrm{e}^{\mathrm{i}\theta}|11\rangle)\otimes|0\rangle\,.
+\tag{8.13}
+\end{equation}\]</span>
+Tad turime visus įrankius realizuoti Aizingo modeliui kvantiniame
+kompiuteryje.</p>
+</div>
+</div>
+<div id="erdvinės-šriodingerio-lygties-sprendimo-algoritmas" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Erdvinės Šriodingerio lygties sprendimo algoritmas<a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Banginė funkcija</strong> (angl. <em>wave function</em>), kaip ir būseną
+apibūdinantis vektorius <span class="math inline">\(|\psi \rangle\)</span>, nusako viską, ką
+galima žinoti apie kvantinę sistemą. Erdvinė banginė funkcija <span class="math inline">\(\psi(x)\)</span>
+praktikoje leidžia analizuoti ir aprašyti erdvines kvantinės sistemos
+savybes, pavyzdžiui, nusakant jos poziciją, judėjimo kryptį ir greitį,
+kiek tai leidžia Haizenbergo neapibrėžtumo principas. Čia verta
+įsivaizduoti specifinę sistemą, pavyzdžiui, elektroną. Neprarasdami
+bendrumo imsime, kad elektronas juda vienoje erdvinėje dimensijoje –
+tai artimai atspindi keletą realių situacijų, kuriose yra apriboti
+erdviniai laisvės laipsniai. Norėdami apskaičiuoti, kaip ši sistema
+kinta laike, turime išspręsti Šriodingerio lygtį.</p>
+<div id="banginė-funkcija" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Banginė funkcija<a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pirmiausiai perteiksime elektrono kvantinę būseną, išreikštą vektoriumi
+<span class="math inline">\(|\psi\rangle\)</span>, į erdvinį jos atvaizdavimą. Tam įvesime
+erdvinės pozicijos operatorių <span class="math inline">\(\hat{x}\)</span> ir jo tikrinius vektorius
+<span class="math inline">\(|x\rangle\)</span>, kurie tenkina lygtį:
+<span class="math display" id="eq:pozicijos-operatorius">\[\begin{equation}
+\hat{x}|x&#39;\rangle = x&#39;|x&#39;\rangle\,.
+\tag{8.14}
+\end{equation}\]</span>
+<a href="sistemu-modeliavimas-ir-qml.html#eq:pozicijos-operatorius">(8.14)</a> lygybėje <span class="math inline">\(\hat{x}\)</span> operatorius, veikiantis vieną iš tikrinių
+vektorių <span class="math inline">\(|x&#39;\rangle\)</span>, grąžina jo sandaugą su tikrine
+verte <span class="math inline">\(x&#39;\)</span>. Tikriniai vektoriai <span class="math inline">\(|x&#39;\rangle\)</span>
+priskiriami kiekvienai erdvės pozicijai <span class="math inline">\(x&#39;\)</span> ir kadangi yra tolydūs, jų
+iš principo yra begalybė. Formaliai šios būsenos yra apibūdinamos
+pasitelkiant vadinamąją <strong>suklastotą Hilberto erdvę</strong> (angl. <em>rigged
+Hilbert space</em>). Skirtingų pozicijos tikrinių vektorių ortonormalumas
+išreiškiamas <strong>Dirako delta funkcija</strong> (angl. <em>Dirac delta function</em>),
+<span class="math inline">\(\langle x|x&#39;\rangle = \delta(x - x&#39;)\)</span>. Kvantinės
+sistemos būsena <span class="math inline">\(|\psi\rangle\)</span>, išreikšta erdviniais
+baziniais vektoriais <span class="math inline">\(\{|x\rangle\}\)</span> ir pasitelkiant
+pilnumo savybę (<a href="matematikos-skyrius.html#matematikos-skyrius">2</a> skyrius), atrodo taip:
+<span class="math display" id="eq:busena-per-erdvinius-bazinius-vektorius">\[\begin{equation}
+|\psi\rangle = \int_{-\infty}^{\infty} |x\rangle\langle x|\psi\rangle\,dx
+= \int_{-\infty}^{\infty}\psi(x)|x\rangle\,dx\,.
+\tag{8.15}
+\end{equation}\]</span>
+Pilnumo savybėje naudojame integralą, o ne sumą, kadangi <span class="math inline">\(x\)</span> kinta
+tolydžiai. Integrale matome <span class="math inline">\(\psi(x)|x\rangle\)</span> narius,
+kuriuose pozicijos vektoriaus <span class="math inline">\(|x\rangle\)</span> kompleksinė
+amplitudė yra nusakoma
+<span class="math inline">\(\psi(x) = \langle x|\psi\rangle\)</span>.
+Kvantinių būsenų pozicijos atvaizdavime amplitudžių <span class="math inline">\(\psi(x)\)</span> visuma yra
+vadinama bangine funkcija.</p>
+<p>Laike besikeičiančios kvantinės sistemos banginė funkcija yra pasklidusi
+erdvėje, ir tai formaliai nusako jos pozicijos būsenų superpoziciją.
+Banginę funkciją galima apriboti išoriniais veiksniais, pavyzdžiui,
+elektroną – elektrinio lauko barjeru. Todėl tik tam tikrame erdvės
+intervale ji turės nenulines vertes, <span class="math inline">\(\psi(x) \neq 0\)</span>. Elektroną taip
+pat galima lokalizuoti atlikus jo pozicijos matavimą. Matuojant
+elektronas yra lokalizuojamas erdvės intervale, nusakytame matavimo
+įrenginio savybėmis, pavyzdžiui, jo erdvine skiriamąja geba. Tikimybę
+rasti dalelę nykstamai mažo <span class="math inline">\(dx\)</span> dydžio erdvės intervale nusako banginės
+funkcijos <span class="math inline">\(\psi(x)\)</span> modulio kvadrato šioje pozicijoje ir intervalo <span class="math inline">\(dx\)</span>
+sandauga:
+<span class="math display" id="eq:tikimybe-rasti-erdves-intervale">\[\begin{equation}
+|\langle x|\psi\rangle |^2 dx = \psi^{*}(x)\psi(x)dx = |\psi(x)|^2 dx\,.
+\tag{8.16}
+\end{equation}\]</span>
+Susumavę (integravę) tokius narius visoje erdvėje reikalaujame, kad
+tikimybė <span class="math inline">\(p\)</span> susidėtų į 1, mat elektronas turi būti vis tiek rastas
+kažkur erdvėje:
+<span class="math display" id="eq:normavimo-salyga">\[\begin{equation}
+\int_{-\infty}^{\infty}|\psi(x)|^2\,dx = 1\,.
+\tag{8.17}
+\end{equation}\]</span>
+Praktiniuose taikymuose, banginė kvantinės sistemos funkcija <span class="math inline">\(\psi(x)\)</span>
+yra išplitusi tik tam tikroje erdvės dalyje ir nesitęsia iki begalybės.
+Todėl integraciją pakanka atlikti tik toje erdvės dalyje, kur <span class="math inline">\(\psi(x)\)</span>
+turi apčiuopiamo dydžio vertes.</p>
+</div>
+<div id="diskretizavimas" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Diskretizavimas<a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Norėdami kvantiniu kompiuteriu spręsti Šriodingerio lygtį erdvinėje
+išraiškoje, pirmiausiai atliksime erdvinių laisvės laipsnių
+diskretizavimą. Sakykime, kad mus domina <span class="math inline">\(L\)</span> dydžio erdvės intervalas
+<span class="math inline">\(- L/2 \leq x \leq \ L/2\)</span>. Šį intervalą diskretizuosime <span class="math inline">\(2^n\)</span>
+skaičiumi taškų su lygiais <span class="math inline">\(\Delta x = L/2^n\)</span> dydžio
+intervalais. Tai reiškia, kad tik šiuose <span class="math inline">\(2^n\)</span> erdvės taškuose bus
+įvertintos banginės funkcijos <span class="math inline">\(\psi(x)\)</span> reikšmės. Tokią diskretizacijos
+taškų visumą vadinsime <strong>gardele</strong> (angl. <em>lattice</em>).</p>
+<p>Kiekvienas gardelės taškas yra indeksuojamas vienu iš <span class="math inline">\(n\)</span> kubitų
+skaičiuojamųjų bazinių vektorių <span class="math inline">\(|x\rangle\)</span>. Norint
+išvengti <span class="math inline">\(x\)</span> simbolių dubliavimo su erdviniais simboliais, dešimtainėje
+sistemoje naudojamus <span class="math inline">\(x\)</span> simbolius pakeisime į <span class="math inline">\(v\)</span>. Jeigu registras yra
+sudarytas iš <span class="math inline">\(n\)</span> kubitų, tada turime <span class="math inline">\(2^n\)</span> diskretizacijos taškus,
+nusakytus <span class="math inline">\(2^n\)</span> baziniais vektoriais <span class="math inline">\(\{|v\rangle\}\)</span>.
+Pavyzdžiui, 3 kubitų registras leidžia sukurti 8 taškų gardelę
+{<span class="math inline">\(|0\rangle\)</span>, <span class="math inline">\(|1\rangle\)</span>, <span class="math inline">\(|2\rangle\)</span>, <span class="math inline">\(|3\rangle\)</span>, <span class="math inline">\(|4\rangle\)</span>,
+<span class="math inline">\(|5\rangle\)</span>, <span class="math inline">\(|6\rangle\)</span>, <span class="math inline">\(|7\rangle\)</span>}.</p>
+<p>Čia natūraliai pasitelkiame amplitudžių kodavimo metodą, kadangi banginė
+funkcija, kurios kitimą apskaičiuosime, yra bazinių vektorių
+{<span class="math inline">\(|v\rangle\)</span>} amplitudės. Atkreipiame dėmesį, kad dėl
+eksponentinio būsenų augimo <span class="math inline">\(d\)</span> skaičiui taškų tereikia <span class="math inline">\(\log_2 (d)\)</span>
+kubitų – tai yra itin efektyvus diskretizacijos būdas. Kvantinėms
+sistemoms yra papildomas privalumas, kadangi kiekviename gardelės taške
+kubito būsenos amplitudė yra natūraliai koduojama kompleksiniu
+skaičiumi.</p>
+<p>Kiekvieną (diskretizuotą) poziciją <span class="math inline">\(x\)</span> unikaliai susiejame su baziniais
+vektoriais <span class="math inline">\(|v\rangle\)</span> ir pervadindami ją
+<span class="math inline">\(x_v\)</span> turime:
+<span class="math display" id="eq:diskretizuota-pozicija">\[\begin{equation}
+x_v = -\frac{L}{2} + v\Delta x\,.
+\tag{8.18}
+\end{equation}\]</span>
+Diskretizuotąją kvantinę būseną <span class="math inline">\(|\psi\rangle\)</span> šioje
+erdvėje išreiškiame taip:
+<span class="math display" id="eq:diskretizuota-busena">\[\begin{equation}
+|\psi\rangle = \frac{1}{\sqrt{N}}\sum_{v = 0}^{2^n - 1}\psi(x_v)|v\rangle\,.
+\tag{8.19}
+\end{equation}\]</span>
+Būsena <span class="math inline">\(|\psi\rangle\)</span> yra normuojama <span class="math inline">\(L\)</span>-dydžio
+intervale faktoriumi <span class="math inline">\(\sqrt{N}\)</span>:
+<span class="math display" id="eq:diskretizuotos-busenos-normavimas">\[\begin{equation}
+N = \sum_{v = 0}^{2^n - 1} |\psi(x_v)|^2 \Delta x\,.
+\tag{8.20}
+\end{equation}\]</span>
+Siekdami supaprastinti simboliką, laikinai praleisime pozicijos <span class="math inline">\(x\)</span>
+indeksaciją <span class="math inline">\(v\)</span> simboliais. Tolesniame žingsnyje perteikiame
+Šriodingerio lygtimi apibūdinamą sistemos dinamiką į matematinę formą,
+kuri yra tinkama diskretizacijai. Naudojant
+<span class="math inline">\(\psi(x,t) = \langle x|\psi(t)\rangle\)</span>:
+<span class="math display" id="eq:schroedingerio-lygtis-banginei-funkcijai">\[\begin{equation}
+\mathrm{i}\hbar\frac{d\psi(x,t)}{dt} = H\psi(x,t)\,.
+\tag{8.21}
+\end{equation}\]</span>
+Ši lygtis nusako <span class="math inline">\(\psi(x,t)\)</span> banginės funkcijos (amplitudžių) kitimą
+erdvėje ir laike. Hamiltonianas bendrai susideda iš <strong>kinetinės
+energijos</strong> (angl. <em>kinetic energy</em>) ir <strong>potencinės energijos</strong>
+(angl. <em>potential energy</em>) operatorių:
+<span class="math display" id="eq:hamiltonianas-kinetine-potencine">\[\begin{equation}
+H = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x) \equiv K + V\,.
+\tag{8.22}
+\end{equation}\]</span>
+Čia <span class="math inline">\(d^2/dx^2\)</span> atlieka banginės funkcijos antros eilės išvestinę,
+<span class="math inline">\(m\)</span> yra kvantinės sistemos masė. Potencinės energijos funkcija <span class="math inline">\(V\)</span>
+nusako sąveikas su išorinėmis sistemomis. Imsime, kad <span class="math inline">\(V(x)\)</span> priklauso
+tik nuo erdvinės pozicijos <span class="math inline">\(x\)</span> ir nekinta laike. Pradinės banginės
+funkcijos <span class="math inline">\(\psi(x,0)\)</span> evoliucija po laiko intervalo <span class="math inline">\(t\)</span> randama:
+<span class="math display" id="eq:bangines-funkcijos-evoliucija">\[\begin{equation}
+\psi(x,t) = \mathrm{e}^{\frac{-\mathrm{i}(K + V)t}{\hbar}}\psi(x,0)\,.
+\tag{8.23}
+\end{equation}\]</span>
+Atkreipiame dėmesį, kad
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}(K + V)t}{\hbar}} \neq \mathrm{e}^{\frac{-\mathrm{i}Kt}{\hbar}}\mathrm{e}^{\frac{-\mathrm{i}Vt}{\hbar}}\)</span>.
+Šie išskaidyti unitarieji operatoriai bendroje situacijoje yra
+nekomutatyvūs. Tam vėl pasitelksime troterizaciją diskretizuodami laiko
+intervalą <span class="math inline">\(t\)</span> į <span class="math inline">\(s\)</span> skaičių žingsnių:
+<span class="math display" id="eq:psi-x-t-approx" id="eq:e-h-dt-approx">\[\begin{align}
+\mathrm{e}^{\frac{-\mathrm{i}(K + V)t}{\hbar}}
+\cong &amp; \left(\mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
+\mathrm{e}^{\frac{-\mathrm{i}V\Delta t}{\hbar}}\right)^s\,;\tag{8.24}\\
+\psi(x,t) = &amp; \mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
+\mathrm{e}^{\frac{-\mathrm{i}V\Delta t}{\hbar}}\cdots
+\mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
+\mathrm{e}^{\frac{-\mathrm{i}V\Delta t}{\hbar}}\psi(x,0)\,.\tag{8.25}
+\end{align}\]</span>
+Šioje stadijoje diskretizavome erdvės ir laiko kintamuosius, taip pat
+perteikėme banginę funkciją gardelėje. Toliau parodysime, kaip
+apskaičiuoti troterizuoto laiko evoliucijos operatoriaus efektą banginei
+funkcijai.</p>
+<p>Potencinės energijos <span class="math inline">\(V\)</span> operatoriaus eksponentė
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}V(x)\Delta t}{\hbar}}\)</span>, laiko žingsnyje
+<span class="math inline">\(\Delta t\)</span> daugindama banginę funkciją <span class="math inline">\(\psi(x,t)\)</span>, suteikia jai
+kiekvienoje diskretizuotos erdvės pozicijoje <span class="math inline">\(x_v\)</span> fazę
+<span class="math inline">\(\theta_v = \frac{V(x_v)\Delta t}{\hbar}\)</span>. Kadangi
+naudojame <span class="math inline">\(2^n\)</span> erdvės diskretizacijos taškų, nusakytų kubitų
+baziniais vektoriais, šį operatorių galime išreikšti
+<span class="math inline">\((2^n \times 2^n)\)</span> dydžio diagonaliąja matrica:
+<span class="math display" id="eq:potencialo-matrica">\[\begin{equation}
+\mathrm{e}^{\frac{-\mathrm{i}V(x)\Delta t}{\hbar}}
+= \begin{bmatrix}
+\mathrm{e}^{-\mathrm{i}\theta_0} &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+0 &amp; \mathrm{e}^{-\mathrm{i}\theta_1} &amp; \cdots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; \mathrm{e}^{-\mathrm{i}\theta_{2^n - 2}} &amp; 0 \\
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; \mathrm{e}^{-\mathrm{i}\theta_{2^n - 1}}
+\end{bmatrix}\,.
+\tag{8.26}
+\end{equation}\]</span>
+Kinetinės energijos operatoriaus eksponentės
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}\)</span> efektas banginei funkcijai
+lengviausiai apskaičiuojamas banginės funkcijos <strong>judesio kiekio
+atvaizdavime</strong> (angl. <em>momentum space representation</em>). Pritaikius
+pozicijos <span class="math inline">\(x\)</span> ir judesio kiekio <span class="math inline">\(p\)</span> <strong>konjuguojamumą</strong>
+(angl. <em>conjugation</em>), banginės funkcijos Furjė transformacija
+konvertuoja ją tarp šių atvaizdavimų:
+<span class="math display" id="eq:bangine-funkcija-impulso-per-pozicijos" id="eq:bangine-funkcija-impulso-atvaizdavime">\[\begin{align}
+U_{\mathrm{FT}}\psi(x) = &amp; \psi(p)\,;\tag{8.27}\\
+\psi(p) = &amp; \frac{1}{\sqrt{2^n}}\sum_{x = 0}^{2^n - 1}
+\psi(x) \mathrm{e}^{\mathrm{i}2\pi xp/2^n}\,.\tag{8.28}
+\end{align}\]</span>
+Jeigu <span class="math inline">\(\psi(x)\)</span> yra normuotoji, tada ir <span class="math inline">\(\psi(p)\)</span> bus normuotoji dėl
+<span class="math inline">\(U_{\mathrm{FT}}\)</span> unitarumo. Judesio kiekio operatorius pozicijos atvaizdavime
+yra <span class="math inline">\(p = -\frac{\hbar}{\mathrm{i}} \frac{d}{dx}\)</span>, tad judesio kiekio
+atvaizdavime kinetinė energija yra tiesiog <span class="math inline">\(K = \frac{p^2}{2m}\)</span>. Iš to
+išplaukia unitarinis operatorius
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}} = \mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}\)</span>,
+kuris veikia <span class="math inline">\(\psi(p)\)</span> banginę funkciją:
+<span class="math display" id="eq:kinetines-energijos-veikimas">\[\begin{equation}
+\mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}\psi(x)
+= U_{\mathrm{FT}}^{\dagger}\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}U_{\mathrm{FT}}\psi(x)\,.
+\tag{8.29}
+\end{equation}\]</span>
+Atvirkštinė Furjė transformacija <span class="math inline">\(U_{\mathrm{FT}}^{\dagger}\)</span> grąžina banginę
+funkciją <span class="math inline">\(\psi(p)\)</span> atgal į pozicijos atvaizdavimą <span class="math inline">\(\psi(x)\)</span>. Kinetinės
+energijos operatorius yra <span class="math inline">\((2^n \times 2^n)\)</span> dydžio
+diagonalioji matrica šiame atvaizdavime. Jo efektas banginei funkcijai
+apskaičiuojamas analogiškai, kaip ir potencinės energijos, tačiau
+suteikiant fazę
+<span class="math inline">\(\theta_j = \frac{p_j^2\Delta t}{2m\hbar}\)</span> kiekviename
+judesio kiekio diskretizacijos taške <span class="math inline">\(j\)</span> ir turi kvadratinę
+<span class="math inline">\(p_j^2\)</span> priklausomybę.</p>
+<p>Realizuojant šią dalį, judesio kiekio banginę funkciją
+<span class="math inline">\(\psi(p) = \langle p|\psi\rangle\)</span>
+išreiškiame gardelėje. Jis sudarytas iš tų pačių <span class="math inline">\(2^n\)</span> skaičiuojamųjų
+bazinių vektorių, gardelės taškus indeksuojame su
+<span class="math inline">\(|j\rangle\)</span>:
+<span class="math display" id="eq:diskretizuota-impulso-bangine-funkcija">\[\begin{equation}
+|\psi\rangle = \frac{1}{\sqrt{N}}\sum_{j = 0}^{2^n - 1}\psi(p_j)|j\rangle\,.
+\tag{8.30}
+\end{equation}\]</span>
+Normavimo faktorius vardiklyje <span class="math inline">\(N\)</span> išlieka nepakitęs:
+<span class="math display" id="eq:normavimo-faktorius-2">\[\begin{equation}
+N = \sum_{v = 0}^{2^n - 1}|\psi(x_v)|^2 \Delta x
+= \sum_{j = 0}^{2^n - 1}|\psi(p_j)|^2 \Delta p\,.
+\tag{8.31}
+\end{equation}\]</span>
+Nustatę erdvinį intervalo dydį ir erdvinį atstumą tarp <span class="math inline">\(2^n\)</span> taškų,
+galime tiesiogiai susieti juos su judesio kiekio gardele (arba
+atvirkščiai). Judesio kiekis bus apibrėžtas
+<span class="math inline">\(-\pi/\Delta x \leq p \leq \pi/\Delta x\)</span> ir turės
+<span class="math inline">\(\Delta p = 2\pi/L\)</span> dydžio intervalus. Judesio kiekio koordinatė
+<span class="math inline">\(p_j\)</span> gardelėje yra:
+<span class="math display" id="eq:impulso-diskretizavimas">\[\begin{equation}
+p_j = - \pi/\Delta x + j\Delta p\,.
+\tag{8.32}
+\end{equation}\]</span>
+Judesio kiekio gardelė yra paprastai centruojama apie <span class="math inline">\(p_j = 0\)</span>.</p>
+<p>Sudėję viską kartu, banginės funkcijos <span class="math inline">\(\psi(x,t)\)</span> evoliuciją laike iki
+<span class="math inline">\(t = s\Delta t\)</span> randame iteraciniu algoritmu:
+<span class="math display" id="eq:evoliucijos-iteracinis-algoritmas">\[\begin{equation}
+\psi(x,t) = U_{\mathrm{FT}}^{\dagger}
+\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}
+U_{\mathrm{FT}}\mathrm{e}^{\frac{-\mathrm{i}V(x)\Delta t}{\hbar}}
+\cdots U_{\mathrm{FT}}^{\dagger}\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}
+U_{\mathrm{FT}}\mathrm{e}^{\frac{-\mathrm{i}V(x)\Delta t}{\hbar}}\psi(x,0)\,.
+\tag{8.33}
+\end{equation}\]</span>
+Erdvinės funkcijos diskretizacijos gardelė pasirenkama didesnė negu
+banginės funkcijos išsiplėtimas skaičiavimo metu, nes Furjė
+transformacija automatiškai padaro gardelę periodinę. Mat, jeigu banginė
+funkcija plėsdamasi pasieks gardelės kraštą, ji vėl atsiras priešingame
+krašte ir plėsis į gardelės vidų, o ten gali įvesti klaidingas
+amplitudes ir padaryti banginę funkciją nebenormuotą. Erdvinio ir
+judesio kiekio gardelės žingsnių dydžiai parenkami norint pasiekti
+reikalaujamą erdvinę skiriamąją gebą ir atkurti norimus didžiausius
+sistemoje atsirandančius judesio kiekius, atitinkamai.</p>
+</div>
+<div id="perteikimas-kvantinėje-grandinėje" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Perteikimas kvantinėje grandinėje<a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Toliau pažiūrėkime, kaip kvantinėje grandinėje realizuoti
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}V(x)\Delta t}{\hbar}}\)</span> ir
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}\)</span> narius. Specifinė
+fizinė situacija diktuos, kokia yra potencinės energijos funkcijos
+<span class="math inline">\(V(x)\)</span> erdvinė priklausomybė. Kaip paprastą pavyzdį imkime 3 kubitų
+gardelės diskretizaciją ir potencinės energijos <span class="math inline">\(V(x)\)</span> funkciją, kuri
+nusako <span class="math inline">\(a\)</span> dydžio barjerus (energijos vienetai) kairiajame ir
+dešiniajame krašte (<span class="math inline">\(x = 0\)</span> ir <span class="math inline">\(x = 7\)</span>), taip pat <span class="math inline">\(b\)</span> dydžio barjerą
+<span class="math inline">\(x = 3\)</span> pozicijoje:
+<span class="math display" id="eq:energijos-barjeras">\[\begin{equation}
+V(x) = \begin{cases}
+a\,, &amp; x = 0\,\mathrm{ir}\,7 \\
+b\,, &amp; x = 3 \\
+0\,, &amp; \mathrm{likusiems}\,x
+\end{cases}\,.
+\tag{8.34}
+\end{equation}\]</span>
+Kvantinė grandinė, perteikianti
+<span class="math inline">\(\theta = \frac{V(x)\Delta t}{\hbar}\)</span> fazes
+<span class="math inline">\(\{|0\rangle , |3\rangle , |7\rangle\}\)</span>
+būsenoms, parodyta <a href="sistemu-modeliavimas-ir-qml.html#fig:potencines-energijos-grandine">8.2</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:potencines-energijos-grandine"></span>
+<img src="media/image8_2.svg" alt="Loginė grandinė, atliekanti potencinės energijos funkcijos $V(x)$ su trimis barjerais veiksmą banginei funkcijai $\psi(x)$ viename laiko intervale" width="54%" />
+<p class="caption">
+8.2 pav. Loginė grandinė, atliekanti potencinės energijos funkcijos <span class="math inline">\(V(x)\)</span> su trimis barjerais veiksmą banginei funkcijai <span class="math inline">\(\psi(x)\)</span> viename laiko intervale
+</p>
+</div>
+<p>Matome dvigubai kontroliuojamus 3 kubitų fazės <span class="math inline">\(ccP(\theta)\)</span> loginius
+vartus, kuriuose „kontrolinės” yra 1 kubito būsenos
+<span class="math inline">\(|0\rangle\)</span> (tušti apskritimai) arba
+<span class="math inline">\(|1\rangle\)</span> (užpildyti apskritimai). Šiuos aukštesnio
+lygio abstrakcijos loginius vartus, selektyviai suteikiančius fazę
+pasirinktai būsenai, galima realizuoti
+<a href="kvantiniai-loginiai-vartai-grandines.html#kvantiniai-loginiai-vartai-grandines">4</a> skyriuje parodytu Tofoli
+vartais pagrįstu metodu (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai">4.7</a> poskyrį). Šitoks metodas yra bendro
+pobūdžio, tačiau geriausiai tinka paprastoms potencinės energijos
+funkcijoms. Mat visoms skirtingoms <span class="math inline">\(2^n\)</span> būsenoms selektyviai parinkti
+reikėtų daug išteklių: papildomų <span class="math inline">\(n - 1\)</span> ancila kubitų; pritaikyti fazę
+vienam gardelės taškui reikalaujama <span class="math inline">\(2(n - 1)\)</span> Tofoli loginių vartų, o
+taškų skaičius yra eksponentinis <span class="math inline">\(2^n\)</span>.</p>
+<p>Potencinės energijos funkcijos, pasižyminčios simetrijomis, gali būti
+efektyviau išreikštos loginiais vartais. Vienas pavyzdys yra harmoninio
+osciliatoriaus funkcija <span class="math inline">\(V(x) = \gamma x^2\)</span> (<span class="math inline">\(\gamma\)</span> – realusis
+skaičius), turinti veidrodinę simetriją apie <span class="math inline">\(x = 0\)</span>. Unitarinį
+operatorių <span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}\gamma x^2\Delta t}{\hbar}}\)</span>,
+veikiantį <span class="math inline">\(n\)</span> kubitų registrą, galima realizuoti naudojant tik
+<span class="math inline">\(O(n^2)\)</span> kompleksiškumą nulemiančių 2 kubitų loginių vartų.
+Kadangi kinetinės energijos unitarusis operatorius
+<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}\)</span> taip pat turi identišką
+kvadratinę išraišką, pažiūrėsime jo perteikimą loginiais vartais:
+<span class="math display" id="eq:kinetine-energija-loginiais-vartais">\[\begin{equation}
+\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}
+= \mathrm{e}^{\frac{\mathrm{i}\theta}{2^{2n - 3}}{
+\left(1 + \sum_{k = 1}^n 2^{n - k} Z_k\right)}^2}\,.
+\tag{8.35}
+\end{equation}\]</span>
+Čia <span class="math inline">\(\theta\)</span> nusako efektinę fazę, suteikiamą kiekviename laiko
+žingsnyje <span class="math inline">\(\Delta t\)</span>, <span class="math inline">\(Z_k\)</span> yra Pauli-<span class="math inline">\(Z\)</span> loginiai vartai,
+veikiantys <span class="math inline">\(k\)</span> kubitą. Suma atliekama iki algoritme naudojamų <span class="math inline">\(n\)</span> kubitų
+skaičiaus. Norėdami tai iliustruoti, pateikiame 3 kubitų registro
+pavyzdį:
+<span class="math display" id="eq:kinetine-energija-3-kubitams">\[\begin{equation}
+\mathrm{e}^{\frac{-\mathrm{i}p^2\Delta t}{2m\hbar}}
+= \mathrm{e}^{\mathrm{i}\theta\left(Z_1 + \frac{1}{2}Z_2 + \frac{1}{4}Z_3
++ 2Z_1\otimes Z_2 + Z_1\otimes Z_3 + \frac{1}{2}Z_2\otimes Z_3\right)}\,.
+\tag{8.36}
+\end{equation}\]</span></p>
+<p>Jau žinome, kaip kvantinėje grandinėje
+loginiais vartais perteikti visus čia matomus narius. Šriodingerio
+lygties sprendime turime paruošti pradinę banginę funkciją <span class="math inline">\(\psi(x,0)\)</span>.
+Pageidautina, kad šis žingsnis nereikalautų itin didelio loginių
+operacijų skaičiaus. Banginės funkcijos, pasižyminčios simetrijomis,
+įprastai gali būti efektyviai koduojamos. Pavyzdžiui, dažnai <strong>Gauso
+funkcija</strong> (angl. <em>Gaussian</em> <em>function</em>) yra išreiškiama polinominiu
+skaičiumi loginių vartų <span class="math inline">\(O(\mathrm{pol}(n+1/\Delta))\)</span>; čia <span class="math inline">\(\Delta\)</span> nusako erdvinę
+skiriamąją gebą. Diskretizuota Gauso funkcija
+<span class="math inline">\(\psi(x_v)\)</span>, koduojama 4 kubitų registro 16-oje jų
+amplitudžių, yra pateikta <a href="sistemu-modeliavimas-ir-qml.html#fig:gauso-diskretizuota-funkcija">8.3</a> pav. Kitas galimas būdas – pasitelkti
+banginės funkcijos transformaciją iš efektyviai koduojamos funkcijos.
+Pavyzdžiui, gan komplikuotą <strong>Beselio <span class="math inline">\(J_0\)</span></strong> (angl. <em><span class="math inline">\(0^{\mathrm{th}}\)</span>-order
+Bessel function of the <span class="math inline">\(1^{\mathrm{st}}\)</span> kind</em>) funkciją galima sukurti atliekant
+Furjė transformaciją funkcijai, kurios forma turi lygias amplitudes tam
+tikru spinduliu ir yra nulinė visur kitur. Ši Beselio funkcija dažnai
+aptinkama ir praktikoje, nes ji nusako apvalios apertūros sukurtą
+tolimojo lauko difrakcijos funkciją.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:gauso-diskretizuota-funkcija"></span>
+<img src="media/image8_3.svg" alt="Gauso formos diskretizuota banginė funkcija, perteikta 16-os taškų gardelėje" width="86%" />
+<p class="caption">
+8.3 pav. Gauso formos diskretizuota banginė funkcija, perteikta 16-os taškų gardelėje
+</p>
+</div>
+<p>Erdvinės Šriodingerio lygties algoritmo pabaigoje turime banginę
+funkciją <span class="math inline">\(\psi(x,t)\)</span> arba, ekvivalentiškai, jos judesio kiekio
+atvaizdavimą <span class="math inline">\(\psi(p,t)\)</span>. Kadangi taikome amplitudžių kodavimo metodą
+perteikti banginei funkcijai, tiesiogiai visos banginės funkcijos vienu
+matavimu sužinoti neįmanoma. Pavyzdžiui, galime pasirinkti atlikti
+kiekvieno kubito standartinį Pauli-<span class="math inline">\(Z\)</span> matavimą, formaliai toks
+<span class="math inline">\(n\)</span> kubitų matavimas nusakomas apskaičiuojant
+<span class="math inline">\(\langle\psi |Z^{\otimes n}|\psi\rangle\)</span>.
+Dešimtainėje sistemoje rasime vieną iš galimų pozicijos būsenų
+<span class="math inline">\(|x&#39;\rangle\)</span> su tikimybe
+<span class="math inline">\(p(x&#39;) = \psi^{*}(x&#39;)\psi(x&#39;)dx = |\psi(x)|^2 dx\)</span>.
+Pakartoję algoritmą daug kartų ir atlikę tokį matavimą, apytikriai
+rasime visą <strong>tikimybių tankio funkciją</strong> <span class="math inline">\(|\psi(x)|^2\)</span>
+(angl. <em>probability density function</em>), kuri nusako tikimybes rasti
+kvantinę sistemą kiekviename erdvės taške <span class="math inline">\(x\)</span>.</p>
+<p>Vietoj šio matavimo galima apskaičiuoti globalius banginės funkcijos
+parametrus, <span class="math inline">\(\langle\psi |M|\psi\rangle\)</span>;
+čia <span class="math inline">\(M\)</span> yra kvantinis operatorius. Pavyzdžiui, <span class="math inline">\(M\)</span> gali būti
+hamiltonianas arba judesio kiekio momento operatorius. Tai suteiks
+sistemos, esančios būsenoje <span class="math inline">\(\psi(x),\)</span> vidutinę energiją bei judesio
+kiekio momentą, atitinkamai. Globalių parametrų nustatymui gali pakakti
+kartoti algoritmą vos keletą kartų.</p>
+</div>
+</div>
+<div id="mašininis-mokymasis" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Mašininis mokymasis<a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Mašininis mokymasis</strong> (angl. <em>machine learning,</em> ML) yra tyrimų
+sritis, kurianti metodus, įgalinančius vis geriau atlikti nurodytas
+užduotis panaudojant duomenis. Mašininio mokymosi algoritmai,
+remiantis duomenų pavyzdžiais, sukuria prognozę atliekantį ar
+sprendimus priimantį modelį, tų užduočių neprogramuojant. Mašininis
+mokymasis yra plačiai taikomas įvairiose srityse, įskaitant kalbos
+atpažinimą, kompiuterinę regą, mašininį vertimą.</p>
+<div id="klasikinis-mašininis-mokymasis" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Klasikinis mašininis mokymasis<a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Klasikinio mašininio mokymosi metodai gali
+būti sugrupuoti į tris sritis: <strong>prižiūrimasis mokymasis</strong>
+(angl. <em>supervised learning</em>), <strong>neprižiūrimasis mokymasis</strong>
+(angl. <em>unsupervised learning</em>) ir <strong>skatinamasis mokymasis</strong>
+(angl. <em>reinforcement learning</em>). Iš visų mašininio mokymosi metodų
+prižiūrimojo mokymosi algoritmai yra labiausiai ištobulinti ir
+dažniausiai taikomi praktikoje. Tačiau prižiūrimasis mokymasis turi tą
+trūkumą, kad jam reikia sužymėtų duomenų, kuriuos gali būti brangu ar
+sunku gauti. Kai kurie dažniausiai taikomi mašininio mokymosi metodai
+pavaizduoti <a href="sistemu-modeliavimas-ir-qml.html#fig:klasikinio-ml-metodai">8.4</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:klasikinio-ml-metodai"></span>
+<img src="media/image8_4.svg" alt="Klasikinio mašininio mokymosi metodai" width="88%" />
+<p class="caption">
+8.4 pav. Klasikinio mašininio mokymosi metodai
+</p>
+</div>
+<p>Prižiūrimojo mokymosi atveju modelio kūrimui panaudojami duomenys,
+kuriuose kiekvienas pavyzdys yra pateikiamas kartu su norima išvestimi.
+Optimizuojant tikslo funkciją, kuri nusako, kiek modelio išvestis yra
+arti norimos, prižiūrimojo mokymosi algoritmas išmoksta prognozuoti
+išvestį, susijusią su nauja įvestimi. Yra sukurta daug prižiūrimojo
+mokymosi algoritmų, kai kuriuos jų paminėsime toliau.</p>
+<p><strong>Sprendimų medis</strong> (angl. <em>decision tree</em>) ir su juo susijęs
+<strong>atsitiktinis miškas</strong> (angl. <em>random forest</em>) yra modelis, pagrįstas
+srauto diagramomis, kuriose kiekvienas mazgas atitinka duomenų atributo
+testą, o šakos vaizduoja testo rezultatus. Sprendimų medžių parametrai
+yra norimas medžio gylis ir mazgų skaičius. Šis modelis nereikalauja
+išankstinių žinių apie duomenis ir yra atsparus labai nukrypusiems
+duomenų įrašams ar triukšmui žymėse. <strong>Atraminių vektorių mašinos</strong>
+(angl. <em>support vector machines</em>, SVM) naudoja treniravimo duomenis
+surasti hiperplokštumai, kuri atskiria dvi duomenų klases taip, kad
+atstumas iki kraštinių skirtingų klasių duomenis vaizduojančių taškų
+būtų kuo didesnis. Šie taškai yra vadinami atraminiais vektoriais ir
+nusako galutinį modelį. Kai gera atskyrimo plokštuma negali būti rasta,
+dažniausiai yra pritaikomi branduolio metodai, projektuojantys duomenis
+į aukštesnės dimensijos erdvę, kur skirtingos duomenų klasės tampa
+tiesiškai atskiriamos. Tinkamas branduolio parametrų parinkimas yra
+svarbus geram modelio veikimui; šių parametrų paieška apsunkina metodo
+pritaikymą. Atraminių vektorių mašinos pasižymi didele sparta, kai
+duomenų nedaug, tačiau skaičiavimo ir atminties išteklių poreikis
+sparčiai auga didėjant duomenų apimčiai.</p>
+<p>Dabartiniu metu plačiai taikomas dirbtinis neuroninis tinklas yra
+modelis, sudarytas iš tarpusvyje sujungtų mazgų, vadinamų neuronais.
+Kiekvienas neuronas susumuoja informaciją iš kitų neuronų ir duoda
+išvestį, priklausomą nuo neurono netiesinės aktyvacijos funkcijos. Ryšių
+tarp skirtingų neuronų stiprumą nusako adaptyvūs svoriai. Neuroninio
+tinklo mokymo metu tinklo svoriai yra keičiami tol, kol tinklo išvestis
+pasidaro beveik lygi norimai. Pagal neuronų sujungimo pobūdį, dar
+vadinamą tinklo architektūra, neuroniniai tinklai skirstomi į tipus.
+<strong>Konvoliucinis neuroninis tinklas</strong> (angl. <em>convolutional neural
+network</em>, CNN) naudoja konvoliucijos operacijas su filtrų rinkiniu,
+užuot pilnai sujungus neuronų sluoksnius. Tokie neuroniniai tinklai
+naudojami erdviniams duomenims apdoroti, nes konvoliucijos operacijos
+išlaiko invariantiškumą duomenų erdvinio poslinkio atžvilgiu. Kitas
+neuroninių tinklų tipas yra <strong>rekurentiniai neuroniniai tinklai</strong>
+(angl. <em>reccurent</em> <em>neural network</em>), skirti nuosekliems duomenims
+apdoroti. Rekurentiniai neuroniniai tinklai naudoja grįžtamąsias jungtis
+tarp neuronų sluoksnio ir prieš jį einančių sluoksnių. Mokant paprastos
+architektūros rekurentinius neuroninius tinklus iškyla gęstančių ar
+sprogstančių gradientų problemos, kurios apsunkina mokymą. Tam išvengti
+yra pasiūlytas specialus rekurentinių tinklų tipas <strong>LSTM</strong> (angl. <em>long
+short-term memory</em>), kuris į modelį įveda sklendžių rinkinį. Taigi
+sujungimas tarp skirtingų neuronų sluoksnių, jungčių svorių atnaujinimo
+procesas bei taikomos aktyvacijos funkcijos yra svarbiausi neuroninio
+tinklo parametrai. Neuroniniai tinklai pasižymi daugeliu lokalių
+minimumų, todėl gali pateikti klaidingus rezultatus įvedant kitokius
+duomenis negu treniravimo metu.</p>
+<p>Neprižiūrimojo mokymosi atveju yra pateikiami nesužymėti duomenys.
+Kuriamo modelio tikslas – aptikti struktūrą duomenyse, pavyzdžiui, juos
+sugrupuoti. Dažniausi neprižiūrimojo mokymosi pritaikymai yra duomenų
+klasterizavimas, matmenų sumažinimas bei anomalijų aptikimas.
+Klasterizavimo tikslas – sugrupuoti duomenis. Tarp populiariausių
+klasterizavimo metodų yra <strong><em>k</em> vidurkių klasterizacija</strong>
+(angl. <em>k-means clustering</em>) ir <strong>save organizuojantys žemėlapiai</strong>
+(angl. <em>self-organizing maps</em>, SOM). <em>K</em> vidurkių klasterizavimo metu
+duomenys dalijami į klasterius taip, kad kiekvienas duomenų taškas
+priklauso klasteriui su artimiausiu taškų vidurkiu, klasterio viduje
+taškų dispersija minimizuojama. Klasteriams surasti dažniausiai
+naudojamas iteratyvusis algoritmas: sukuriama <em>k</em> klasterių, kiekvienas
+taškas susiejamas su artimiausiu vidurkiu, tada kiekvieno iš naujų
+<em>k</em> klasterių centrai tampa naujais vidurkiais. Saveorganizuojančių
+žemėlapių metodu duomenys yra pateikiami neuroniniam tinklui, o jis
+sukuria duomenų erdvės mažos dimensijos vaizdą. Matmenų sumažinimo
+metodai iš didelės dimensijos duomenų sukuria mažos dimensijos modelius.
+Pavyzdžiui, <strong>pagrindinių komponentų analizė</strong> (angl. <em>principal
+component analysis</em>, PCA) sukuria naujas duomenų požymių kombinacijas.
+Kombinacijos, turinčios didžiausią dispersiją, yra paliekamos, o visos
+kitos pašalinamos, taip sumažinant dimensiją.</p>
+<p>Skatinamojo mokymosi tikslas – programiniam agentui, esančiam
+nurodytoje aplinkoje, išmokti pasirinkti veiksmus, maksimizuojančius
+gautą atlygį. Skatinamojo mokymosi modelis yra sudarytas iš aplinkos
+būsenų, galimų agento veiksmų, perėjimų tarp aplinkos būsenų taisyklių,
+atlygių už perėjimus tarp būsenų ir stebėjimo taisyklių. Agentas
+sąveikauja su aplinka pasirinkdamas veiksmus. Aplinka keičiasi
+atsakydama į tuos veiksmus, ir agentas gauna skaitinį atlygį.
+Skatinamajame mokyme agentas siekia maksimizuoti atlygį bėgant laikui.
+Mokymasis gali būti sukoncentruotas viename agente, arba paskirstytas
+keliuose. Skatinamasis mokymasis yra naudingas kontrolės uždaviniuose,
+kai negalima pateikti išreikštų taisyklių, o žinoma tik atlygio
+funkcija. Yra daug skatinamojo mokymosi algoritmų. Vienas iš populiarių
+metodų yra <em>Q</em> mokymasis. Jame algoritmas skaičiuoja tikėtiną atlygį
+(<em>Q</em>) veiksmo, atlikto esant nurodytai aplinkos būsenai, nepriklausomai
+nuo taikomos veiksmų strategijos. Kitas veiksmas yra pasirenkamas
+remiantis <em>Q</em> verte. Gautas atlygis yra naudojamas <em>Q</em> atnaujinimui
+imant senos vertės bei naujos informacijos pasvertą vidurkį.</p>
+</div>
+<div id="kvantinis-mašininis-mokymasis" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Kvantinis mašininis mokymasis<a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kvantinis mašininis mokymasis panaudoja kvantinį įrenginį mašininio
+mokymosi uždaviniams išspręsti su didesniu greičiu ar didesniu tikslumu,
+negu leidžia klasikiniai mašininio mokymosi metodai. Yra pasiūlyta
+įvairių klasikinio mašininio mokymosi kvantinių analogų, kurie
+paspartina klasterizavimą ar atraminių vektorių mašinas. Galimas dar
+platesnis apibrėžimas, kai kvantinio mašininio mokymosi algoritmai
+naudoja kvantinį įrenginį klasifikuoti kvantinėms būsenoms, o ne
+klasikiniams duomenims. Pavyzdžiui, kvantinė pagrindinių komponentų
+analizė suranda tikrinius vektorius, atitinkančius didžiausias tikrines
+vertes. Nemažai mašininio mokymosi algoritmų taiko tiesinių lygčių
+sistemų sprendimą. Kadangi kvantinis HHL algoritmas potencialiai gali
+greičiau išspręsti tiesinių lygčių sistemą negu klasikiniai algoritmai,
+kvantinis kompiuteris gali būti panaudojamas mašininiam mokymuisi
+spartinti. HHL algoritmą naudoja kvantinis <em>k</em> vidurkių metodas bei
+kvantinės atraminių vektorių mašinos.</p>
+<p>Klasikiniai neuroniniai tinklai turi netiesines aktyvacijos funkcijas, o
+štai kvantinių sistemų evoliucija, kaip žinome, yra aprašoma tiesinėmis
+lygtimis. Kyla klausimas, kaip padaryti kvantinį klasikinio neuroninio
+tinklo analogą? Vienas iš sprendimo būdų – naudoti hibridinius (iš
+dalies kvantinius, iš dalies klasikinius) algoritmus. Juose netiesiškumą
+į evoliuciją įveda kvantinės sistemos matavimas ir su juo susijęs
+būsenos vektoriaus kolapsas.</p>
+<p>Nemažai kvantinio mašininio mokymosi metodų naudoja hibridinius
+algoritmus: parametrizuotos kvantinės grandinės yra treniruojamos
+taikant klasikinius optimizavimo metodus. Tačiau čia iškyla problema:
+inicializuojant parametrus visiškai atsitiktinai, dėl eksponentiškai
+didelės būsenų erdvės gradientas parametrų atžvilgiu dažniausiai yra
+eksponentiškai mažas didėjant kubitų skaičiui. Šis reiškinys, pavadintas
+<strong>nederlingų plynaukščių</strong> (angl. <em>barren plateaus</em>) buvimu, apsunkina
+kvantinių grandinių treniravimą. Toks nykstamai mažų gradientų buvimas
+taip pat gali atsirasti dėl triukšmo ar dėl per didelio supynimo tarp
+kubitų kvantinėje grandinėje. Kvantinis supynimas informaciją patalpina
+nelokaliai, koreliacijose tarp kubitų. Matuojant tik išvesties kubitus,
+dalis informacijos prarandama.</p>
+<p>Visais atvejais, kai kvantinio mašininio mokymosi algoritmas apdoroja
+klasikinius duomenis, iš pradžių reikia duomenis užkoduoti į kvantinę
+būseną. Dažniausiai taikomi kodavimo būdai yra bitų kodavimas ir
+amplitudžių kodavimas (žr. 6.4 poskyrį). Bitų kodavime <span class="math inline">\(l\)</span>-tasis įrašas
+yra <span class="math inline">\(N\)</span> bitų seka
+<span class="math inline">\(b^{(l)} = \{b_1 , b_2, \ldots , b_{N} \}\)</span>, <span class="math inline">\(b_i \in \{ 0, 1\}\)</span>.
+Operatorius <span class="math inline">\(O\)</span>, dar vadinamas kvantiniu orakulu arba kvantine
+atmintimi, yra naudojamas iškviesti <span class="math inline">\(l\)</span>-tajį įrašą iš duomenų bazės
+kvantinėje būsenoje:
+<span class="math display" id="eq:kvantines-atminties-orakulas">\[\begin{equation}
+O|l\rangle\otimes|0\rangle = |l\rangle\otimes|b^{(l)}\rangle\,.
+\tag{8.37}
+\end{equation}\]</span>
+Toks vaizdavimas taikomas kvantinėse atraminių vektorių mašinose ir
+artimiausių kaimynų klasifikatoriuje. Bitų kodavimo privalumas yra tas,
+kad jis pateikia duomenis tuo pačiu pavidalu, kaip ir atitinkamam
+klasikiniam mašininio mokymosi algoritmui. Tačiau trūkumas  – didelio
+kubitų skaičiaus poreikis, jeigu bitų skaičius <span class="math inline">\(N\)</span> didelis. Kitas
+kodavimo būdas – tai amplitudės kodavimas, kai duomenys pavaizduojami
+kvantinės bazinių vektorių <span class="math inline">\(|i\rangle\)</span> superpozicijos
+amplitudėse <span class="math inline">\(x_i\)</span>.</p>
+</div>
+<div id="kvantinėmis-grandinėmis-paremtas-klasifikatorius" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Kvantinėmis grandinėmis paremtas klasifikatorius<a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kaip pavyzdį panagrinėkime vieną iš kvantinio mašininio mokymosi
+algoritmų – kvantinėmis grandinėmis paremtą klasifikatorių. Tai
+prižiūrimojo mokymosi algoritmas, kuriame yra pateikiami treniravimo
+duomenys kartu su teisingomis žymomis. Naudojant treniravimo duomenis
+klasifikatorius apmokomas priskirti žymę dar nematytiems duomenims. Šis
+hibridinis klasikinis-kvantinis algoritmas, pristatytas Shuld, Wiebe ir
+bendraautorių iš <em>Microsoft</em> nereikalauja didelio kubitų skaičiaus bei
+gilių grandinių ir todėl yra tinkamas ankstyvosios raidos kvantiniams
+procesoriams. Algoritme yra panaudojamas duomenų amplitudžių kodavimas
+(žr. 6.4 poskyrį), tad <span class="math inline">\(N = 2^n\)</span> dydžio duomenų bazė perteikiama tik
+su <span class="math inline">\(n\)</span> kubitų. Darant prielaidą, kad duomenis galima efektyviai užrašyti
+į kvantinę registro būseną, kvantinis paralelizmas leidžia sparčią šios
+būsenos transformaciją ir rezultatų apskaičiavimą. Be to, dėl unitariųjų
+būsenų transformacijų, toks klasifikatorius nestiprina triukšmo, esančio
+duomenyse ir jų žymose.</p>
+<p>Kaip ir dauguma prižiūrimųjų mašininio mokymosi algoritmų, šis
+hibridinis algoritmas išmoko modelį, formaliai perteikiamą funkcija
+<span class="math inline">\(f(x, \theta) = y\)</span>, pateikiant duomenis <span class="math inline">\(x\)</span> ir pažymint juos <span class="math inline">\(y\)</span>.
+Binariosios klasifikacijos atveju duomenys priklauso grupei <span class="math inline">\(a\)</span> arba
+<span class="math inline">\(b\)</span>,<span class="math inline">\(y \in {a,b}\)</span>. Tam yra optimizuojamas modelio parametrų rinkinys <span class="math inline">\(\theta\)</span>.
+Gerai apmokytas modelis <span class="math inline">\(f(x, \theta)\)</span> turėtų gebėti teisingai priskirti
+nematytus duomenis <span class="math inline">\(x\)</span> grupei <span class="math inline">\(y \in {a,b}\)</span>.
+Kvantinėmis grandinėmis paremtas klasifikatorius yra
+pavaizduotas <a href="sistemu-modeliavimas-ir-qml.html#fig:kvantiniu-grandiniu-klasifikatorius">8.5</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantiniu-grandiniu-klasifikatorius"></span>
+<img src="media/image8_5.svg" alt="Kvantinėmis grandinėmis paremtas klasifikatorius. Loginių operacijų grandinė $A$ atlieka pradinės būsenos paruošimą; ji yra toliau apdorojama modelio $U(\theta)$ grandinėje optimizuojant klasifikatorių. Galiausiai, atliekama binarinė klasifikacija išmatuojant pirmojo kubito būseną" width="46%" />
+<p class="caption">
+8.5 pav. Kvantinėmis grandinėmis paremtas klasifikatorius. Loginių operacijų grandinė <span class="math inline">\(A\)</span> atlieka pradinės būsenos paruošimą; ji yra toliau apdorojama modelio <span class="math inline">\(U(\theta)\)</span> grandinėje optimizuojant klasifikatorių. Galiausiai, atliekama binarinė klasifikacija išmatuojant pirmojo kubito būseną
+</p>
+</div>
+<p>Kvantinė grandinė yra parametrizuota parametrų rinkiniu <span class="math inline">\(\theta\)</span>. Pradinė
+<span class="math inline">\(n\)</span> kubitų būsena <span class="math inline">\(|0\rangle^{\otimes n}\)</span> naudojama
+koduoti įvesčiai <span class="math inline">\(x\)</span> pasitelkiant būsenos paruošimo unitarųjį operatorių
+<span class="math inline">\(A\)</span>. Operatorius <span class="math inline">\(A\)</span> gali būti ir minėta orakulo funkcija, iškviečianti
+kvantinėje atmintyje laikomą duomenų bazės įvestį <span class="math inline">\(|\varphi(x)\rangle\)</span>. Šios
+būsenos transformacija yra aprašoma unitariuoju operatoriumi <span class="math inline">\(U(\theta)\)</span>.
+Kvantinės grandinės parametrai <span class="math inline">\(\theta\)</span> optimizuojami taip, kad klasifikavimo
+rezultatas atitiktų treniravimo duomenyse pateiktą teisingą žymę.
+Duomenų klasifikavimo rezultatas <span class="math inline">\(f(x, \theta)\)</span> yra nuskaitomas iš
+būsenos <span class="math inline">\(U(\theta)|\varphi(x)\rangle\)</span> atliekant kubitų matavimą. Jeigu
+klasifikacija yra binarioji, pakanka išmatuoti tik vieną kubitą,
+pavyzdžiui, grandinėje parodytą pirmąjį, kurio būsena
+<span class="math inline">\(|1\rangle\)</span> indikuoja teisingą pateiktų duomenų
+klasifikavimą. Ši būsena bus randama su tam tikra tikimybe, kurią norima
+modeliu maksimizuoti. Visgi, norint šią statistiką pamatyti, visą
+grandinę reikia atlikti keletą kartų.</p>
+<p>Grandinės parametrams <span class="math inline">\(\theta\)</span> optimizuoti yra naudojamas klasikinis
+gradientinio nusileidimo algoritmas. Šiam algoritmui reikalingos
+unitariojo operatoriaus išvestinės <span class="math inline">\(\partial_{\theta}U(\theta)\)</span> parametrų <span class="math inline">\(\theta\)</span> atžvilgiu.
+Kvantinė algoritmo dalis yra naudojama gradientų ir <span class="math inline">\(f(x, \theta)\)</span>
+rezultatams apskaičiuoti, klasikinė – parametrams <span class="math inline">\(\theta\)</span> atnaujinti.
+Nuodugnus mokymo procesas yra
+pavaizduotas <a href="sistemu-modeliavimas-ir-qml.html#fig:hibridinis-ml-algoritmas">8.6</a> pav. Klasikinė modelio
+mokymo dalis pavaizduota brūkšnine linija.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hibridinis-ml-algoritmas"></span>
+<img src="media/image8_6.svg" alt="Hibridinis kvantinis-klasikinis mokymo algoritmas. Kvantinis įrenginys yra naudojamas išvesties ir gradientų suskaičiavimui; kvantinės grandinės parametrai $\theta$ atnaujinami naudojantis klasikiniu algoritmu" width="61%" />
+<p class="caption">
+8.6 pav. Hibridinis kvantinis-klasikinis mokymo algoritmas. Kvantinis įrenginys yra naudojamas išvesties ir gradientų suskaičiavimui; kvantinės grandinės parametrai <span class="math inline">\(\theta\)</span> atnaujinami naudojantis klasikiniu algoritmu
+</p>
+</div>
+<p>Panagrinėkime algoritmą išsamiau. Įvesties duomenys <span class="math inline">\(x\)</span> yra
+pavaizduojami į <span class="math inline">\(n\)</span> kubitų pradinę būseną taiknt amplitudžių kodavimą.
+Duomenų įrašas <span class="math inline">\(x = \{x_1 , x_2 , \ldots, x_N \}\)</span>,
+<span class="math inline">\(x\in\mathbb{R}\)</span>, turintis <span class="math inline">\(N = 2^n\)</span> elementų, yra pavaizduojamas
+bazinių vektorių <span class="math inline">\(|i\rangle\)</span> superpozicijos amplitudėse
+<span class="math inline">\(x_i\)</span>:
+<span class="math display" id="eq:duomenu-irasas-ml">\[\begin{equation}
+|\varphi(x)\rangle = \frac{1}{\chi} \sum_{i = 1}^N x_i|i\rangle\,,
+\tag{8.38}
+\end{equation}\]</span>
+kur
+<span class="math display" id="eq:normavimas-ml">\[\begin{equation}
+\chi = \sqrt{\sum_{i = 1}^N x_i^2}\,.
+\tag{8.39}
+\end{equation}\]</span>
+Prognozuojamos žymos <span class="math inline">\(\ell(x)=\lambda_1 , \lambda_2 ,\ldots\)</span>, atitinkančios
+duomenis <span class="math inline">\(x\)</span>, yra nuskaitomos taikant išvesties būsenos matavimą. Šį
+matavimą atitinka ermitinis operatorius <span class="math inline">\(C\)</span>, kurio tikrinės vertės yra
+<span class="math inline">\(\lambda_{1},\lambda_{2},\ldots\)</span>:
+<span class="math display" id="eq:matavimo-op-ml">\[\begin{equation}
+C = \sum_j \lambda_j P_j\,.
+\tag{8.40}
+\end{equation}\]</span>
+Čia <span class="math inline">\(P_j\)</span> yra projekcinis operatorius, projektuojantis į atitinkamą
+poerdvį. Klasifikatoriaus mokymo tikslas yra teisingos žymos <span class="math inline">\(y\)</span>
+prognozavimo maksimizavimas. Tam naudojama tikslo funkcija
+<span class="math inline">\(\mathcal{L}(\theta)\)</span>:
+<span class="math display" id="eq:tikslo-funkcija">\[\begin{equation}
+\mathcal{L}(\theta)=\frac{1}{M}\sum_{\lambda_j}\sum_{x:\ell(x)=\lambda_j}
+\langle\varphi(x)|U^{\dagger}(\theta)P_{\lambda_j}U(\theta)|\varphi(x)\rangle\,,
+\tag{8.41}
+\end{equation}\]</span>
+čia <span class="math inline">\(M\)</span> – duomenų rinkinio dydis. Binariosios klasifikacijos atveju,
+kai yra dvi žymos <span class="math inline">\(\lambda_1\)</span> ir <span class="math inline">\(\lambda_2\)</span>, tikslo funkciją galime
+užrašyti taip:
+<span class="math display" id="eq:tikslo-funkcija-binary">\[\begin{equation}
+\begin{aligned}
+\mathcal{L}(\theta) = &amp; \frac{1}{M}\sum_{x:\ell(x) = \lambda_j}
+\langle\varphi(x)|U^{\dagger}(\theta)P_1 U(\theta)|\varphi(x)\rangle \\
+&amp; - \frac{1}{M}\sum_{x:\ell(x) = \lambda_2}
+\langle\varphi(x)|U^{\dagger}(\theta)P_2 U(\theta)|\varphi(x)\rangle\,.
+\end{aligned}
+\tag{8.42}
+\end{equation}\]</span>
+Vidines sandaugas galima efektyviai apskaičiuoti pasitelkiant papildomą
+ancila kubitą, kaip aprašyta Hadamardo teste. Tikslo
+funkcija <span class="math inline">\(\mathcal{L}(\theta)\)</span> yra maksimizuojama taikant klasikinį
+gradientinio nusileidimo algoritmą. Kvantinė grandinė, realizuojanti
+<span class="math inline">\(U(\theta)\)</span>, konstruojama taip, kad sparčiai sukurtų kvantinį supynimą ir
+nepareikalautų gilių grandinių. Kaip pamename, didžioji dalis <span class="math inline">\(2^n\)</span>
+būsenų yra supintosios, tad panaudojant supintąsias būsenas atsiranda
+didesnė tikimybė teisingai apmokyti klasifikatorių. Operatorių <span class="math inline">\(U(\theta)\)</span>
+realizuojanti grandinė yra sudaroma iš blokų:
+<span class="math display" id="eq:ml-grandines-blokas">\[\begin{equation}
+U(\theta)=G_{\mathrm{out}}(\theta_{\mathrm{out}})B_L(\theta_L)\cdots B_2(\theta_2)B_1(\theta_1)\,.
+\tag{8.43}
+\end{equation}\]</span>
+Kiekvienas blokas <span class="math inline">\(B_j(\theta_j)\)</span> yra sudarytas iš
+<span class="math inline">\(n\)</span> skaičiaus 1 kubito loginių vartų, <span class="math inline">\(n\)</span> skaičiaus sąlyginių 2 kubitų
+loginių vartų. Užbaigiama 1 kubito loginiais vartais <span class="math inline">\(G_{\mathrm{out}}\)</span>
+matavimui, skirtam pirmajam grandinės kubitui. Vieno kubito loginiai
+vartai yra bendriausio tipo <span class="math inline">\(U_3 (\alpha,\beta,\gamma) \equiv G\)</span>
+(žr. <a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai">4.1</a> poskyrį). O štai 2 kubitų sąlyginius <span class="math inline">\(cG\)</span> galime užrašyti:
+<span class="math display" id="eq:salyginiai-diadomis-ml">\[\begin{equation}
+cG = |0\rangle\langle 0|\otimes I + |1\rangle\langle 1|\otimes G\,.
+\tag{8.44}
+\end{equation}\]</span></p>
+<p>Sąlyginiai vartai čia sudaro ciklinį kodą,
+kuris yra charakterizuojamas artumo parametru <span class="math inline">\(r\)</span> (<span class="math inline">\(0 &lt; r &lt; n\)</span>).
+Kiekvienam kubitui, kurio numeris <span class="math inline">\(j\)</span>, pritaikomi sąlyginiai loginiai
+vartai, kuriuose <span class="math inline">\(j\)</span>-tasis kubitas yra adresatas, o
+<span class="math inline">\((j + r)\mod(n)\)</span>-tas kubitas kontroliuojantis. Trijų kubitų
+atveju, kai <span class="math inline">\(r = 1\)</span>, toks blokas pavaizduotas <a href="sistemu-modeliavimas-ir-qml.html#fig:triju-kubitu-blokas">8.7</a> pav.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:triju-kubitu-blokas"></span>
+<img src="media/image8_7.svg" alt="3 kubitų kvantinį supynimą sudarančios grandinės blokas. $G_j$ yra 1 kubito loginiai vartai" width="58%" />
+<p class="caption">
+8.7 pav. 3 kubitų kvantinį supynimą sudarančios grandinės blokas. <span class="math inline">\(G_j\)</span> yra 1 kubito loginiai vartai
+</p>
+</div>
+<p>Tikslo funkcijos <span class="math inline">\(\mathcal{L}(\theta)\)</span> maksimizavimui taikant
+gradientinio nusileidimo metodą reikia operatorių <span class="math inline">\(U(\theta)\)</span> išvestinių
+<span class="math inline">\(\theta\)</span> parametrų atžvilgiu. Kadangi realizuojame
+<span class="math inline">\(U(\theta) \rightarrow U_3(\alpha,\beta,\gamma)\)</span>, tai savo ruožtu
+reiškia išvestines <span class="math inline">\((\alpha,\beta,\gamma)\)</span> atžvilgiu. Vieno kubito
+loginių vartų išvestinės, pvz.,
+<span class="math inline">\(I\otimes\partial_{\theta}G\otimes I\otimes\cdots\otimes I\)</span>,
+yra taip pat vieno kubito loginiai vartai, tačiau sąlyginių loginių
+vartų išvestinės <span class="math inline">\(\partial_{\theta}(cG)\)</span> nėra unitarusis operatorius.
+Vis dėlto <span class="math inline">\(\partial_{\theta}(cG)\)</span> gali būti realizuojamas kaip dviejų
+unitariųjų operatorių suma:
+<span class="math display" id="eq:salyginiu-vartu-isvestine">\[\begin{equation}
+\partial_{\theta}(cG) = |1\rangle\langle 1|\otimes\partial_{\theta}G
+= \frac{1}{2}(I\otimes\partial_{\theta}G - Z\otimes\partial_{\theta}G)\,.
+\tag{8.45}
+\end{equation}\]</span>
+Kiekviena iš šių grandinių, turinčių <span class="math inline">\(I\otimes\partial_{\theta}G\)</span> bei
+<span class="math inline">\(Z\otimes\partial_{\theta}G\)</span> narius, yra įvykdoma atskirai, o jų
+skirtumas suskaičiuojamas klasikinėje algoritmo optimizavimo dalyje.
+Galop, norint įvertinti tikimybes, kvantinė grandinė turi būti
+pakartotinai įvykdoma kelis kartus. Pakartojimų skaičius auga su norimu
+tikslumu <span class="math inline">\(\epsilon\)</span> kaip <span class="math inline">\(O(1/\epsilon^2)\)</span>.</p>
+</div>
+<div id="pagrindinių-komponentų-analizė" class="section level3 hasAnchor" number="8.3.4">
+<h3><span class="header-section-number">8.3.4</span> Pagrindinių komponentų analizė<a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Kvantinė pagrindinių komponentų analizė</strong> (angl. <em>quantum principal
+component analysis</em>¸ trumpinys qPCA) leidžia nustatyti nežinomos
+kvantinės būsenos, apibūdinamos tankio matrica <span class="math inline">\(\rho\)</span>, tikrinius
+vektorius, atitinkančius didžiausias tikrines vertes. Tankio matrica
+<span class="math inline">\(\rho\)</span> yra išskaidoma tikriniais vektoriais:
+<span class="math display" id="eq:tankio-matrica-tikriniais-vektoriais">\[\begin{equation}
+\rho = \sum_{k = 1}^N \lambda_k|a_k\rangle\langle a_k|\,,
+\tag{8.46}
+\end{equation}\]</span>
+čia <span class="math inline">\(N\)</span> – erdvės dydis; <span class="math inline">\(|a_k \rangle\)</span> – tikriniai
+vektoriai; <span class="math inline">\(\lambda_k\)</span> – atitinkamos tikrinės vertės. Kvantinės
+pagrindinių komponentų analizės tikslas – išrinkti
+<span class="math inline">\(|a_k\rangle\)</span> atitinkančius didžiausius <span class="math inline">\(\lambda_k\)</span>.
+Kadangi tankio matrica <span class="math inline">\(\rho\)</span> yra ermitinė, operatorius
+<span class="math inline">\(U = \mathrm{e}^{-\mathrm{i}\rho t}\)</span>
+yra unitarusis. Tikrinių vektorių nustatymui kvantiniu
+kompiuteriu galima pritaikyti hamiltoniano kodavimą, aprašytą
+<a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding">8.1.1</a> skyriuje. Operatoriaus <span class="math inline">\(U\)</span> tikrines vertes <span class="math inline">\(\mathrm{e}^{\mathrm{i}\lambda_k t}\)</span> randamos
+panaudojant kvantinį fazės nustatymo algoritmą,
+aprašytą <a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas">7.4</a> poskyryje.</p>
+<p>Šiuose alogritmuose reikia apskaičiuoti matricos <span class="math inline">\(\rho\)</span> eksponentę. Šį skaičiavimą paspartina
+paprastas matematinis triukas pasitelkiant bet kokią pagalbinę
+tankio matricą <span class="math inline">\(\sigma\)</span>. Laiką <span class="math inline">\(t\)</span> padalijame į <span class="math inline">\(s\)</span> dalių, <span class="math inline">\(t = s\Delta t\)</span>, ir darome prielaidą, kad turime daug būsenos <span class="math inline">\(\rho\)</span> kopijų.
+Galima pastebėti, kad galioja tokia lygybė:
+<span class="math display" id="eq:swap-eksponente-pca">\[\begin{equation}
+\mathrm{Tr}_P\mathrm{e}^{-\mathrm{i}W\Delta t}\rho\otimes\sigma
+\mathrm{e}^{\mathrm{i}W\Delta t} = \sigma - \mathrm{i}\Delta t\lbrack\rho,\sigma\rbrack
++ O(\Delta t^2) = \mathrm{e}^{-\mathrm{i}\rho\Delta t}\sigma
+\mathrm{e}^{\mathrm{i}\rho\Delta t} + O(\Delta t^2)\,,
+\tag{8.47}
+\end{equation}\]</span>
+kur <span class="math inline">\(\mathrm{Tr}_P\)</span> yra dalinis pėdsakas per pirmą kintamąjį, o <span class="math inline">\(W\)</span> – SWAP
+operatorius. SWAP operatoriaus eksponentė gali būti efektyviai realizuota
+kvantinėse grandinėse, todėl, naudojantis <a href="sistemu-modeliavimas-ir-qml.html#eq:swap-eksponente-pca">(8.47)</a> lygtimi,
+galima efektyviai realizuoti ir tankio matricos eksponentės skaičiavimą.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="furjė-transformacija-ir-jos-taikymai.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kvantinių-klaidų-aptikimas-ir-taisymas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["kvantinekompiuterija.pdf", "kvantinekompiuterija.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

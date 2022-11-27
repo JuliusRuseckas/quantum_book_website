@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 skyrius. Kvantinė informacija ir ryšiai | Kvantinė kompiuterija</title>
+  <meta name="description" content="5 skyrius. Kvantinė informacija ir ryšiai | Kvantinė kompiuterija" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 skyrius. Kvantinė informacija ir ryšiai | Kvantinė kompiuterija" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="5 skyrius. Kvantinė informacija ir ryšiai | Kvantinė kompiuterija" />
+  <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 skyrius. Kvantinė informacija ir ryšiai | Kvantinė kompiuterija" />
+  
+  <meta name="twitter:description" content="5 skyrius. Kvantinė informacija ir ryšiai | Kvantinė kompiuterija" />
+  
+
+<meta name="author" content="Tadas Paulauskas" />
+<meta name="author" content="Julius Ruseckas" />
+
+
+<meta name="date" content="2022-11-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="kvantiniai-loginiai-vartai-grandines.html"/>
+<link rel="next" href="skaičiavimai-kvantiniu-kompiuteriu.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kvantinė kompiuterija</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pratarmė</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#kaip-skaityti-šią-knygą"><i class="fa fa-check"></i>Kaip skaityti šią knygą</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#padėka"><i class="fa fa-check"></i>Padėka</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#apie-autorius"><i class="fa fa-check"></i>Apie autorius</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prisidėti-prie-knygos"><i class="fa fa-check"></i>Prisidėti prie knygos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencija"><i class="fa fa-check"></i>Licencija</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html"><i class="fa fa-check"></i><b>1</b> Kvantinės kompiuterijos apžvalga</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#įvadas"><i class="fa fa-check"></i><b>1.1</b> Įvadas</a></li>
+<li class="chapter" data-level="1.2" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-kompiuterijos-pradmenys"><i class="fa fa-check"></i><b>1.2</b> Kvantinės kompiuterijos pradmenys</a></li>
+<li class="chapter" data-level="1.3" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#tiuringo-mašina"><i class="fa fa-check"></i><b>1.3</b> Tiuringo mašina</a></li>
+<li class="chapter" data-level="1.4" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimų-ištekliai"><i class="fa fa-check"></i><b>1.4</b> Skaičiavimų ištekliai</a></li>
+<li class="chapter" data-level="1.5" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantiniai-bitai"><i class="fa fa-check"></i><b>1.5</b> Kvantiniai bitai</a></li>
+<li class="chapter" data-level="1.6" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinės-informacijos-apdorojimas"><i class="fa fa-check"></i><b>1.6</b> Kvantinės informacijos apdorojimas</a></li>
+<li class="chapter" data-level="1.7" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#skaičiavimo-procesas"><i class="fa fa-check"></i><b>1.7</b> Skaičiavimo procesas</a></li>
+<li class="chapter" data-level="1.8" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#kvantinių-kompiuterių-charakteristikų-palyginimas"><i class="fa fa-check"></i><b>1.8</b> Kvantinių kompiuterių charakteristikų palyginimas</a></li>
+<li class="chapter" data-level="1.9" data-path="kvantinės-kompiuterijos-apžvalga.html"><a href="kvantinės-kompiuterijos-apžvalga.html#dekoherencija-poskyris"><i class="fa fa-check"></i><b>1.9</b> Dekoherencijos trukmė ir loginių vartų tikslumas</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html"><i class="fa fa-check"></i><b>2</b> Matematinių įrankių rinkinys</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesinė-algebra"><i class="fa fa-check"></i><b>2.1</b> Tiesinė algebra</a></li>
+<li class="chapter" data-level="2.2" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kompleksiniai-skaičiai"><i class="fa fa-check"></i><b>2.2</b> Kompleksiniai skaičiai</a></li>
+<li class="chapter" data-level="2.3" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#vidinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.3</b> Vidinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.4" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#kubito-reprezentacija-blocho-sferoje"><i class="fa fa-check"></i><b>2.4</b> Kubito reprezentacija Blocho sferoje</a></li>
+<li class="chapter" data-level="2.5" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tiesiniai-operatoriai-ir-matricos"><i class="fa fa-check"></i><b>2.5</b> Tiesiniai operatoriai ir matricos</a></li>
+<li class="chapter" data-level="2.6" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#unitariniai-ir-ermitiniai-operatoriai"><i class="fa fa-check"></i><b>2.6</b> Unitariniai ir ermitiniai operatoriai</a></li>
+<li class="chapter" data-level="2.7" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#diadinė-operatorių-dekompozicija"><i class="fa fa-check"></i><b>2.7</b> Diadinė operatorių dekompozicija</a></li>
+<li class="chapter" data-level="2.8" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#matricos-pėdsakas"><i class="fa fa-check"></i><b>2.8</b> Matricos pėdsakas</a></li>
+<li class="chapter" data-level="2.9" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-vektorių-sandauga"><i class="fa fa-check"></i><b>2.9</b> Tenzorinė vektorių sandauga</a></li>
+<li class="chapter" data-level="2.10" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#tenzorinė-operatorių-sandauga"><i class="fa fa-check"></i><b>2.10</b> Tenzorinė operatorių sandauga</a></li>
+<li class="chapter" data-level="2.11" data-path="matematikos-skyrius.html"><a href="matematikos-skyrius.html#operatorių-funkcijos"><i class="fa fa-check"></i><b>2.11</b> Operatorių funkcijos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html"><i class="fa fa-check"></i><b>3</b> Kvantinės mechanikos pagrindai</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinės-mechanikos-postulatai"><i class="fa fa-check"></i><b>3.1</b> Kvantinės mechanikos postulatai</a></li>
+<li class="chapter" data-level="3.2" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#kvantinis-supynimas"><i class="fa fa-check"></i><b>3.2</b> Kvantinis supynimas</a></li>
+<li class="chapter" data-level="3.3" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#tankio-operatorius"><i class="fa fa-check"></i><b>3.3</b> Tankio operatorius</a></li>
+<li class="chapter" data-level="3.4" data-path="kvantines-mechanikos-pagrindai.html"><a href="kvantines-mechanikos-pagrindai.html#epr-paradoksas"><i class="fa fa-check"></i><b>3.4</b> EPR paradoksas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html"><i class="fa fa-check"></i><b>4</b> Kvantiniai loginiai vartai ir grandinės</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#vieno-kubito-vartai"><i class="fa fa-check"></i><b>4.1</b> Vieno kubito loginiai vartai</a></li>
+<li class="chapter" data-level="4.2" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kvantinių-grandinių-lygybės-ir-atvirkštiniai-loginiai-vartai"><i class="fa fa-check"></i><b>4.2</b> Kvantinių grandinių lygybės ir atvirkštiniai loginiai vartai</a></li>
+<li class="chapter" data-level="4.3" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas"><i class="fa fa-check"></i><b>4.3</b> Kubitų būsenų matavimas</a></li>
+<li class="chapter" data-level="4.4" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#dviejų-kubitų-loginiai-vartai-cnot"><i class="fa fa-check"></i><b>4.4</b> Dviejų kubitų loginiai vartai <em>CNOT</em></a></li>
+<li class="chapter" data-level="4.5" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai"><i class="fa fa-check"></i><b>4.5</b> Tofoli loginiai vartai</a></li>
+<li class="chapter" data-level="4.6" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#swap-ir-fredkin-loginiai-vartai"><i class="fa fa-check"></i><b>4.6</b> SWAP ir Fredkin loginiai vartai</a></li>
+<li class="chapter" data-level="4.7" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai"><i class="fa fa-check"></i><b>4.7</b> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span></a></li>
+<li class="chapter" data-level="4.8" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-būsenų-matavimai"><i class="fa fa-check"></i><b>4.8</b> Bendro tipo būsenų matavimai</a></li>
+<li class="chapter" data-level="4.9" data-path="kvantiniai-loginiai-vartai-grandines.html"><a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys"><i class="fa fa-check"></i><b>4.9</b> Universalių loginių vartų rinkinys</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html"><i class="fa fa-check"></i><b>5</b> Kvantinė informacija ir ryšiai</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas"><i class="fa fa-check"></i><b>5.1</b> Kvantinės informacijos kopijavimas</a></li>
+<li class="chapter" data-level="5.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija"><i class="fa fa-check"></i><b>5.2</b> Kvantinė teleportacija</a></li>
+<li class="chapter" data-level="5.3" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas"><i class="fa fa-check"></i><b>5.3</b> Kvantinio supynimo sukeitimas</a></li>
+<li class="chapter" data-level="5.4" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija"><i class="fa fa-check"></i><b>5.4</b> Kvantinė kriptografija</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.1</b> BB84 kvantinis rakto pasidalijimo protokolas</a></li>
+<li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
+<li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
+<li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
+<li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#algebrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.1</b> Algebrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#geometrinė-interpretacija"><i class="fa fa-check"></i><b>6.6.2</b> Geometrinė interpretacija</a></li>
+<li class="chapter" data-level="6.6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#groverio-paieška-su-n-8"><i class="fa fa-check"></i><b>6.6.3</b> Groverio paieška su <span class="math inline">\(N = 8\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamardo-swap-testai"><i class="fa fa-check"></i><b>6.7</b> Hadamardo ir SWAP testai</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris"><i class="fa fa-check"></i><b>6.7.1</b> Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#modifikuotas-hadamardo-testas"><i class="fa fa-check"></i><b>6.7.2</b> Modifikuotas Hadamardo testas</a></li>
+<li class="chapter" data-level="6.7.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#swap-testas"><i class="fa fa-check"></i><b>6.7.3</b> SWAP testas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html"><i class="fa fa-check"></i><b>7</b> Furjė transformacija ir jos taikymai</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinė-furjė-transformacija"><i class="fa fa-check"></i><b>7.1</b> Kvantinė Furjė transformacija</a></li>
+<li class="chapter" data-level="7.2" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#furjė-transformacijos-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>7.2</b> Furjė transformacijos realizavimas kvantinėje grandinėje</a></li>
+<li class="chapter" data-level="7.3" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#funkcijos-periodiškumo-paieška"><i class="fa fa-check"></i><b>7.3</b> Funkcijos periodiškumo paieška</a></li>
+<li class="chapter" data-level="7.4" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#kvantinis-fazes-nustatymas"><i class="fa fa-check"></i><b>7.4</b> Kvantinis fazės nustatymo algoritmas</a></li>
+<li class="chapter" data-level="7.5" data-path="furjė-transformacija-ir-jos-taikymai.html"><a href="furjė-transformacija-ir-jos-taikymai.html#tiesinių-lygčių-sprendimas-hhl-algoritmu"><i class="fa fa-check"></i><b>7.5</b> Tiesinių lygčių sprendimas HHL algoritmu</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html"><i class="fa fa-check"></i><b>8</b> Kvantinių sistemų modeliavimas ir mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas"><i class="fa fa-check"></i><b>8.1</b> Dinaminių sistemų modeliavimas</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding"><i class="fa fa-check"></i><b>8.1.1</b> Aizingo modelis ir hamiltoniano kodavimas</a></li>
+<li class="chapter" data-level="8.1.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#troterizacija"><i class="fa fa-check"></i><b>8.1.2</b> Troterizacija</a></li>
+<li class="chapter" data-level="8.1.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#aizingo-modelio-realizavimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.1.3</b> Aizingo modelio realizavimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#erdvinės-šriodingerio-lygties-sprendimo-algoritmas"><i class="fa fa-check"></i><b>8.2</b> Erdvinės Šriodingerio lygties sprendimo algoritmas</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#banginė-funkcija"><i class="fa fa-check"></i><b>8.2.1</b> Banginė funkcija</a></li>
+<li class="chapter" data-level="8.2.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#diskretizavimas"><i class="fa fa-check"></i><b>8.2.2</b> Diskretizavimas</a></li>
+<li class="chapter" data-level="8.2.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#perteikimas-kvantinėje-grandinėje"><i class="fa fa-check"></i><b>8.2.3</b> Perteikimas kvantinėje grandinėje</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3</b> Mašininis mokymasis</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#klasikinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.1</b> Klasikinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.2" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinis-mašininis-mokymasis"><i class="fa fa-check"></i><b>8.3.2</b> Kvantinis mašininis mokymasis</a></li>
+<li class="chapter" data-level="8.3.3" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#kvantinėmis-grandinėmis-paremtas-klasifikatorius"><i class="fa fa-check"></i><b>8.3.3</b> Kvantinėmis grandinėmis paremtas klasifikatorius</a></li>
+<li class="chapter" data-level="8.3.4" data-path="sistemu-modeliavimas-ir-qml.html"><a href="sistemu-modeliavimas-ir-qml.html#pagrindinių-komponentų-analizė"><i class="fa fa-check"></i><b>8.3.4</b> Pagrindinių komponentų analizė</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html"><i class="fa fa-check"></i><b>9</b> Kvantinių klaidų aptikimas ir taisymas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos"><i class="fa fa-check"></i><b>9.1</b> Klasikinės ir kvantinės klaidos</a></li>
+<li class="chapter" data-level="9.2" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#supynimas-ir-klaidu-atsiradimas"><i class="fa fa-check"></i><b>9.2</b> Kvantinis supynimas su aplinka ir klaidų atsiradimas</a></li>
+<li class="chapter" data-level="9.3" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bito-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.3</b> Bito apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.4" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#fazės-apvertimo-klaidos-aptikimas-ir-taisymas"><i class="fa fa-check"></i><b>9.4</b> Fazės apvertimo klaidos aptikimas ir taisymas</a></li>
+<li class="chapter" data-level="9.5" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#tolydžiosios-klaidos"><i class="fa fa-check"></i><b>9.5</b> Tolydžiosios klaidos</a></li>
+<li class="chapter" data-level="9.6" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#bendrieji-klaidų-taisymo-principai"><i class="fa fa-check"></i><b>9.6</b> Bendrieji klaidų taisymo principai</a></li>
+<li class="chapter" data-level="9.7" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinė-hamingo-riba"><i class="fa fa-check"></i><b>9.7</b> Kvantinė Hamingo riba</a></li>
+<li class="chapter" data-level="9.8" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#šoro-9-kubitų-kodas"><i class="fa fa-check"></i><b>9.8</b> Šoro 9 kubitų kodas</a></li>
+<li class="chapter" data-level="9.9" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kodu-stabilizatoriai-poskyris"><i class="fa fa-check"></i><b>9.9</b> Kodų stabilizatoriai</a></li>
+<li class="chapter" data-level="9.10" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klaidoms-atsparus-skaičiavimas"><i class="fa fa-check"></i><b>9.10</b> Klaidoms atsparus skaičiavimas</a></li>
+<li class="chapter" data-level="9.11" data-path="kvantinių-klaidų-aptikimas-ir-taisymas.html"><a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinis-tūris"><i class="fa fa-check"></i><b>9.11</b> Kvantinis tūris</a></li>
+</ul></li>
+<li class="appendix"><span><b>Priedai</b></span></li>
+<li class="chapter" data-level="A" data-path="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><a href="debesyje-pasiekiami-kvantiniai-kompiuteriai-ir-simuliatoriai.html"><i class="fa fa-check"></i><b>A</b> Debesyje pasiekiami kvantiniai kompiuteriai ir simuliatoriai</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html"><i class="fa fa-check"></i>Literatūra</a>
+<ul>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#knygos"><i class="fa fa-check"></i>Knygos</a></li>
+<li class="chapter" data-level="" data-path="literatūra.html"><a href="literatūra.html#moksliniai-straipsniai"><i class="fa fa-check"></i>Moksliniai straipsniai</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kvantinė kompiuterija</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kvantinė-informacija-ir-ryšiai" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5 skyrius.</span> Kvantinė informacija ir ryšiai<a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-informacija-ir-ryšiai" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="kvantinės-informacijos-kopijavimas" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Kvantinės informacijos kopijavimas<a href="kvantinė-informacija-ir-ryšiai.html#kvantinės-informacijos-kopijavimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Klasikinės informacijos kopijavimas (skaitmeniniu ar kitokiu pavidalu)
+yra kasdieninis dalykas. Tai atliekame kopijuodami failus kompiuterio
+atminties laikmenose, informacijos kopijomis yra apsikeičiama tarp
+kompiuterių naudojant internetą. Nors skamba paradoksaliai, tačiau
+kvantinės informacijos kopijavimas yra fundamentaliai neįmanomas.
+<strong>Uždraustojo kopijavimo teorema</strong> (angl. <em>no-cloning theorem</em>) nusako,
+kad neįmanoma sukurti nežinomos bendros kvantinės būsenos identiškos
+kopijos (klono). Dėl šios teoremos svarbos bei gan paprastų argumentų
+pateiksime jos įrodymą.</p>
+<p><strong>Įrodymas:</strong> darome prielaidą, kad vis dėlto egzistuoja tokia unitarinė
+transformacija <span class="math inline">\(U\)</span>, kuri gali sukurti identišką nežinomos kvantinės
+būsenos <span class="math inline">\(|\psi\rangle\)</span> kopiją. Kopijavimui atlikti
+naudojame kvantinį registrą, esantį sutartinėje būsenoje
+<span class="math inline">\(|\phi\rangle\)</span>, o <span class="math inline">\(U\)</span> veikia tarp šio registro ir
+kopijuojamos kvantinės sistemos. Pagal kopijavimo apibūdinimą, <span class="math inline">\(U\)</span>
+formaliai atlieka:
+<span class="math display" id="eq:kopijavimo-apibrezimas">\[\begin{equation}
+U|\psi\rangle\otimes |\phi\rangle = |\psi\rangle\otimes |\psi\rangle\,.
+\tag{5.1}
+\end{equation}\]</span>
+Kitaip tariant, antrojo registro būsena yra pakeičiama į identišką
+pirmojo registro <span class="math inline">\(|\psi\rangle\)</span> būsenos kopiją,
+<span class="math inline">\(|\phi\rangle \rightarrow |\psi \rangle\)</span>.
+Toliau imkime bet kokias dvi normuotas būsenas
+<span class="math inline">\(|\kappa\rangle\)</span> ir <span class="math inline">\(|\tau\rangle\)</span>,
+kurių kopijavimą norime atlikti. Kopijuojančios unitarinės
+transformacijos efektas šioms būsenoms individualiai yra:
+<span class="math display" id="eq:kopijavimo-efektas">\[\begin{equation}
+U|\kappa\rangle\otimes |\phi\rangle = |\kappa\rangle\otimes |\kappa\rangle\,,\quad
+U|\tau\rangle\otimes |\phi\rangle = |\tau\rangle\otimes |\tau \rangle\,.
+\tag{5.2}
+\end{equation}\]</span>
+Tolesniame žingsnyje įvertinkime
+<span class="math inline">\(|\kappa\rangle\otimes|\kappa\rangle\)</span>
+ir <span class="math inline">\(|\tau\rangle\otimes |\tau\rangle\)</span>
+būsenų vidinę sandaugą:
+<span class="math display" id="eq:kopijavimas-vidine-sandauga">\[\begin{equation}
+\begin{aligned}
+\big(\langle\kappa |\otimes\langle\kappa |\big)\big(|\tau\rangle\otimes |\tau\rangle\big) = &amp;
+\langle\kappa |\tau\rangle^2 = \langle\phi|\otimes\langle\kappa |U^{\dagger}U|\tau\rangle\otimes |\phi\rangle \\
+= &amp; \langle\kappa |\tau\rangle\langle\phi |\phi\rangle = \langle\kappa |\tau\rangle\,.
+\end{aligned}
+\tag{5.3}
+\end{equation}\]</span>
+Viršuje, neprarasdami bendrumo, panaudojome unitarumą <span class="math inline">\(U^{\dagger}U = I\)</span>
+bei registro būsenos normuotumą
+<span class="math inline">\(\langle\phi |\phi\rangle = 1\)</span>. Tad randame šią
+lygtį:
+<span class="math display" id="eq:lygtis-vidinei-sandaugai">\[\begin{equation}
+\langle\kappa | \tau\rangle^2 = \langle\kappa | \tau\rangle\,.
+\tag{5.4}
+\end{equation}\]</span>
+Tai yra formaliai kvadratinė lygtis, <span class="math inline">\(x^2 = x\)</span>, kuri turi du
+sprendinius: <span class="math inline">\(x = 0\)</span> ir <span class="math inline">\(x = 1\)</span>. Pirmasis sprendinys (<span class="math inline">\(x = 0\)</span>) nusako,
+kad <span class="math inline">\(|\kappa\rangle\)</span> ir <span class="math inline">\(|\tau\rangle\)</span>
+yra ortogonaliosios būsenos
+<span class="math inline">\(\langle\kappa |\tau\rangle = 0\)</span>. Antrasis
+sprendinys (<span class="math inline">\(x = 1\)</span>) nusako, kad jos vienodos
+<span class="math inline">\(\langle\kappa |\tau\rangle = 1\)</span>,
+<span class="math inline">\(\rightarrow |\kappa\rangle = |\tau\rangle\)</span>
+(iki nesvarbios globalios fazės <span class="math inline">\(\mathrm{e}^{\mathrm{i}\alpha}\)</span>). Antrasis sprendinys mūsų
+nedomina, nes pasirinkome skirtingas būsenas,
+<span class="math inline">\(|\kappa\rangle \neq |\tau \rangle\)</span>.
+Pirmasis sprendinys rodo, kad transformacija <span class="math inline">\(U\)</span> gali atlikti tik
+ortogonaliųjų būsenų kopijavimą ir todėl prieštarauja prielaidai, kad
+egzistuoja universali unitarioji transformacija <span class="math inline">\(U\)</span>, galinti kopijuoti
+bet kokią būseną.</p>
+<p>Kvantiniu kompiuteriu galima kopijuoti klasikinę informaciją. Jau žinome
+tokį <span class="math inline">\(U\)</span>, kuris sugeba kopijuoti bazinių vektorių būsenas
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>, tai <span class="math inline">\(cX\)</span>
+loginiai vartai. Tačiau <span class="math inline">\(cX\)</span> negali nukopijuoti 1 kubito būsenos, kuri
+yra <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijoje. Imkime pirmąjį kubitą, esantį lygioje
+<span class="math inline">\(|0 \rangle\)</span> ir <span class="math inline">\(|1 \rangle\)</span>
+superpozicijoje, taip pat antrojo registro kubitą
+<span class="math inline">\(|0\rangle\)</span> būsenoje. Randame:
+<span class="math display" id="eq:cx-superpozicija-2">\[\begin{equation}
+cX\frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes |0\rangle =
+\frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle)\,.
+\tag{5.5}
+\end{equation}\]</span>
+Šiuo atveju gauname supintąją Belo būseną. Tačiau, jeigu <span class="math inline">\(cX\)</span> iš tiesų
+atliktų kopijavimą į antrojo kubito vietą, mes turėtume gauti:
+<span class="math display" id="eq:tikro-kopijavimo-rezultatas">\[\begin{equation}
+\frac{1}{2}\big(|0\rangle + |1\rangle\big)\otimes\big(|0\rangle + |1\rangle\big) =
+\frac{1}{2}\big(|00\rangle + |01\rangle + |10\rangle + |11\rangle\big)\,.
+\tag{5.6}
+\end{equation}\]</span>
+Be unitariųjų transformacijų taip pat yra matavimų tipo
+nedeterministinės transformacijos. Jos irgi nėra tinkamos atlikti
+kopijavimą, nes matavimų rezultatai yra atsitiktiniai.</p>
+</div>
+<div id="kvantinė-teleportacija" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Kvantinė teleportacija<a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-teleportacija" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Klasikinė skaitmeninė informacija ryšiuose yra perduodama siunčiant
+signalus tuščia erdve, elektros kabeliais bei šviesolaidžiais. Norint
+persiųsti kvantinę informaciją, kuri yra koduojama kubito būsenoje
+<span class="math inline">\(|\psi\rangle = a|0\rangle + b|1\rangle\)</span>,
+reikia, kad perduotume amplitudžių vertes <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>. Jeigu žinome
+<span class="math inline">\(|\psi \rangle\)</span> būsenos paruošimo žingsnius, tada taip
+pat galime klasikiniu būdu komunikuoti būsenos loginių operacijų seką,
+kurią atkartojęs gavėjas turės efektyviai identišką kvantinę informaciją
+savo kubite. Didesnis keblumas iškyla norint persiųsti informaciją,
+laikomą nežinomoje kvantinėje būsenoje. Šios informacijos iš esmės
+sužinoti negalime, tad ir ją komunikuoti klasikiniu būdu neįmanoma.</p>
+<p>Egzistuoja keletas būdų, kaip persiųsti nežinomo turinio kvantinę
+informaciją. Pirmasis būdas  – kubitų fizinis apsikeitimas tarp
+lokacijų kvantinio ryšio priemonėmis. Kvantinis ryšys įprastai naudoja
+fotonus, dar vadinamus <strong>skraidančiaisiais kubitais</strong> (angl. <em>flying
+qubits</em>) ir, pavyzdžiui, jų poliarizacijos būsenas, kuriose koduojama
+informacija. Fotonus galima siųsti dideliais atstumais naudojant
+įprastus telekomunikacijoms skirtus šviesolaidžius bei tuščia erdve.
+Tačiau delikačios fotonų būsenos yra lengvai pažeidžiamos siunčiant juos
+dideliais atstumais. Atsirandanti depoliarizacijos tikimybė gali
+pakeisti amplitudes ir įvesti klaidas į siunčiamą informaciją. Didėjant
+atstumui, taip pat didėja fotonų praradimo tikimybė dėl absorbcijos ir
+sklaidos. Kitaip nei klasikiniuose ryšiuose, siunčiamo kvantinio signalo
+stiprinti neįmanoma dėl uždrausto kvantinių būsenų kopijavimo. Jeigu šie
+neigiami efektai nėra per daug žymūs, tada kvantinių klaidų taisymo
+algoritmais sėkmingo ryšio tikimybę galima itin padidinti.</p>
+<p>Kvantinė teleportacija yra praktinės svarbos metodas siunčiant
+informaciją, koduojamą nežinomoje kubitų būsenoje. Šis metodas
+nereikalauja tiesioginio dvipusio kvantinių ryšių kanalo tarp
+bendraujančių šalių, tačiau jos turi turėti kvantinį ryšį su joms bendru
+supintųjų fotonų šaltiniu. Tai leidžia persiųsti kvantinę informaciją
+pasitelkiant klasikinių ryšių kanalą tarp bendraujančių šalių, o
+supintųjų kubitų poros atlieka teleportacijos ištekliaus vaidmenį.
+Klasikiniu kanalu tereikia nusiųsti po du bitus informacijos siekiant
+teleportuoti kiekviename kubite tolydžiai kintančiose amplitudėse
+koduojamą informaciją. Pirmiausiai įvardinkime, ką šiame kontekste
+reiškia žodis „teleportacija”.</p>
+<p>Pagal kvantinę mechaniką dalelės, turinčios vienodas vidines fizikines
+savybes tokias kaip krūvis, masė ar sukinys, yra <strong>identiškos</strong>
+(angl. <em>identical particles</em>) ir negali būti atskirtos viena nuo kitos.
+Elektronai gali būti atskirti nuo pozitronų, nes pirmieji turi
+neigiamąjį, o antrieji – teigiamąjį krūvį; tačiau elektronai negali
+būti atskirti vienas nuo kito. Tad, jeigu turime du elektronus
+skirtingose lokacijose, tačiau identiškose sukinio būsenose, sukeitus
+juos vietomis fundamentaliai neįmanoma pasakyti, kad jie buvo sukeisti.
+Teleportacijos pavyzdys būtų, jeigu pradėdami nuo dviejų elektronų
+skirtingose lokacijose ir sukinio būsenose identiškai atkurtume pirmojo
+elektrono sukinio būseną antrajame elektrone. Teleportacija nėra
+ribojama vien tik vidiniams laisvės laipsniams, nors ir dažniausiai
+nagrinėjama jų kontekste. Šis procesas išsaugo visus fizikos
+principus – čia aktualūs kvantinės informacijos kopijavimo draudimas,
+energijos tvermė ir kad niekas negali keliauti greičiau už šviesos
+greitį. Fizinės sistemos akimirksniu nepradingsta ir kitur
+neatsiranda – tik pakeičia savo būsenas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantine-teleportacija"></span>
+<img src="media/image5_1.svg" alt="Kvantinė $k_1$ kubito būsenos $|\psi\rangle$ teleportacija į $k_3$ kubitą" width="65%" />
+<p class="caption">
+5.1 pav. Kvantinė <span class="math inline">\(k_1\)</span> kubito būsenos <span class="math inline">\(|\psi\rangle\)</span> teleportacija į <span class="math inline">\(k_3\)</span> kubitą
+</p>
+</div>
+<p>Standartiniame teleportacijos scenarijuje
+(žr. <a href="kvantinė-informacija-ir-ryšiai.html#fig:kvantine-teleportacija">5.1</a> pav.) Agnė turi kubitą <span class="math inline">\(k_1\)</span> būsenoje
+<span class="math inline">\(|\psi\rangle = a|0\rangle + b|1\rangle\)</span>,
+<span class="math inline">\(|a|^2 + |b|^2 = 1\)</span>, kurio amplitudžių <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> ji nežino, tačiau
+nori <span class="math inline">\(|\psi\rangle\)</span> nusiųsti Benui. Agnė ir Benas turi
+galimybę tarpusavyje komunikuoti klasikiniu būdu ir tam naudoja bitus.
+Jie taip pat turi prieigą prie išorinio šaltinio, kuris proceso
+pradžioje sugeneruoja 2 kubitų supintą Belo būseną
+<span class="math inline">\(|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\)</span>
+ir išsiunčia pirmą kubitą (<span class="math inline">\(k_2\)</span>) Agnei, o antrą (<span class="math inline">\(k_3\)</span>) Benui. Abu
+žino, kad yra gavę vieną iš <span class="math inline">\(|\chi^{+}\rangle\)</span> būsenos
+kubitų. Viso proceso pabaigoje Agnės <span class="math inline">\(|\psi\rangle\)</span>
+kubito būsena yra teleportuojama į Beno turimą <span class="math inline">\(k_3\)</span> kubitą.</p>
+<p>Bendrą pradinę šių trijų kubitų būseną galime užrašyti taip:
+<span class="math display" id="eq:bendra-pradine-3-busena">\[\begin{equation}
+\begin{aligned}
+|\Psi\rangle = &amp; |\psi\rangle\otimes |\chi^{+}\rangle =
+\frac{1}{\sqrt{2}}\Big\lbrack a|0\rangle\otimes\big(|00\rangle + |11\rangle\big)
++ b |1\rangle\otimes\big(|00\rangle + |11\rangle\big)\Big\rbrack \\
+= &amp; \frac{1}{\sqrt{2}}\Big\lbrack a\big(|000\rangle + |011\rangle\big)
++ b\big(|100\rangle + |111\rangle\big)\Big\rbrack\,.
+\end{aligned}
+\tag{5.7}
+\end{equation}\]</span>
+Superpozicijos būsenose kubitai yra sunumeruoti taip:
+<span class="math inline">\(|k_1 k_2 k_3 \rangle\)</span>. Pradinėje būsenoje
+<span class="math inline">\(|\Psi \rangle\)</span> nėra nei klasikinių, nei kvantinių
+koreliacijų tarp Agnės <span class="math inline">\(k_1\)</span> kubito būsenoje
+<span class="math inline">\(|\psi\rangle\)</span> ir Belo poros kubitų <span class="math inline">\(k_2\)</span> ir <span class="math inline">\(k_3\)</span>.
+Agnė atlieka dvejus kvantinius loginius vartus savo turimiems kubitams.
+Pirmiausia ji atlieka <span class="math inline">\(cX\)</span> vartus, kuriame
+<span class="math inline">\(|\psi \rangle\)</span> kubitas yra „kontrolinis”. Randame naują
+būseną <span class="math inline">\(|\Psi&#39;\rangle\)</span>:
+<span class="math display" id="eq:busena-po-cx">\[\begin{equation}
+|\Psi&#39;\rangle = (cX_{12}\otimes I)|\Psi\rangle =
+\frac{1}{\sqrt{2}}\Big\lbrack a\big(|000\rangle + |011\rangle\big)
++ b\big(|110\rangle + |101\rangle\big)\Big\rbrack\,.
+\tag{5.8}
+\end{equation}\]</span>
+Kitame žingsnyje ji atlieka norimam nusiųsti
+<span class="math inline">\(|\psi\rangle\)</span> kubitui Hadamardo transformaciją:
+<span class="math display" id="eq:busena-po-h-cx">\[\begin{equation}
+\begin{aligned}
+|\Psi&#39;&#39;\rangle = &amp; (H\otimes I\otimes I)|\Psi&#39;\rangle \\
+= &amp; \frac{1}{2}\Big\lbrack a\big(|000\rangle + |011\rangle + |100\rangle + |111\rangle\big) \\
+&amp; + b\big(|010\rangle + |001\rangle - |110\rangle - |101\rangle\big)\Big\rbrack\,.
+\end{aligned}
+\tag{5.9}
+\end{equation}\]</span>
+Nedarant jokių kitų transformacijų, šią būseną galima pergrupuoti
+atskiriant Agnės ir Beno kubitus tenzorių ženklu:
+<span class="math display" id="eq:busena-pergrupavimas">\[\begin{equation}
+\begin{split}
+|\Psi&#39;&#39;\rangle = &amp; \frac{1}{2}\Big\lbrack |00\rangle\otimes\big(a|0\rangle + b|1\rangle\big)
++ |10\rangle\otimes\big(a|0\rangle - b|1\rangle\big) \\
+&amp; + |01\rangle\otimes\big(b|0\rangle + a|1\rangle\big)
++ |11\rangle\otimes\big( -b|0\rangle + a|1\rangle\big)\Big\rbrack\,.
+\end{split}
+\tag{5.10}
+\end{equation}\]</span>
+Tai leidžia lengviau pamatyti, kad Agnei atlikus dvi minėtas
+transformacijas Beno kubito <span class="math inline">\(k_3\)</span> būsena šioje trijų kubitų
+superpozicijoje jau primena <span class="math inline">\(|\psi\rangle\)</span>. Toliau Agnė
+atlieka savo dviejų kubitų būsenos matavimą. Ji gali rasti vieną iš
+keturių skirtingų dviejų bitų kombinacijų su lygiomis 0.25 tikimybėmis.
+Pagal tai, kurią kombinaciją Agnė aptiks savo kubituose
+<span class="math inline">\(|k_1 k_2 \rangle\)</span>, tai automatiškai turės įtakos,
+kokia bus galutinė Beno kubito <span class="math inline">\(|k_3 \rangle\)</span> būsena:
+<span class="math display" id="eq:busna-po-matavimo-4" id="eq:busna-po-matavimo-3" id="eq:busna-po-matavimo-2" id="eq:busna-po-matavimo-1">\[\begin{align}
+|k_1 k_2\rangle = &amp; |00\rangle\rightarrow |k_3 \rangle = a|0\rangle + b|1\rangle\,;\tag{5.11} \\
+|k_1 k_2\rangle = &amp; |10\rangle\rightarrow |k_3 \rangle = a|0\rangle - b|1\rangle\,;\tag{5.12} \\
+|k_1 k_2\rangle = &amp; |01\rangle\rightarrow |k_3 \rangle = b|0\rangle + a|1\rangle\,;\tag{5.13} \\
+|k_1 k_2\rangle = &amp; |11\rangle\rightarrow |k_3\rangle = - b|0\rangle + a|1\rangle\,.\tag{5.14}
+\end{align}\]</span>
+Norėdama užbaigti teleportaciją, Agnė klasikiniu kanalu nusiunčia du
+bitus informacijos Benui pranešti, kokį rezultatą gavo. Jeigu ji rado
+<span class="math inline">\(|00\rangle\)</span>, siunčiami bitai 00, jeigu
+<span class="math inline">\(|01\rangle\)</span> – bitai 01, ir atitinkamai su kitais
+dviem. Jeigu Benas gavo bitus 00, jam daryti nieko nereikia,
+<span class="math inline">\(|\psi\rangle\)</span> jau yra teleportuota ir jo „rankose”.
+Visais kitais atvejais Beno kubitas <span class="math inline">\(k_3\)</span> yra susietas su norima
+teleportuoti būsena <span class="math inline">\(|\psi\rangle\)</span> paprasta
+transformacija – Blocho vektoriaus posūkiu 180° kampu aplink <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>,
+arba <span class="math inline">\(z\)</span> ašis. Pavyzdžiui, jeigu Benas gavo bitus 01, savo kubitui
+<span class="math inline">\(k_3\)</span> jis atlieka kvantinius loginius vartus <span class="math inline">\(X\)</span>, kurie sukeičia
+amplitudes vietomis ir taip gaunama <span class="math inline">\(|\psi\rangle\)</span>.
+Jeigu gauti bitai yra 10, jis atlieka <span class="math inline">\(Z\)</span> loginius vartus, o jeigu 11 –
+<span class="math inline">\(Y\)</span> vartus.</p>
+<p>Panagrinėkime, kas šiame procese įvyko. Pirmiausiai matome, kad Agnės
+kubito <span class="math inline">\(k_1\)</span> būsena <span class="math inline">\(|\psi\rangle\)</span>, esanti bendrai
+<span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijoje, matavimo metu yra panaikinama. Pas ją lieka kubitai
+<span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span>, esantys viename iš skaičiuojamųjų bazinių vektorių.
+Todėl <span class="math inline">\(|\psi\rangle\)</span> būsenos kopijavimas neįvyksta ir
+Agnė nesužino <span class="math inline">\(|\psi\rangle\)</span> būsenos <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>
+amplitudžių, taip patvirtinama uždraustojo kopijavimo teorema.
+Teleportacijoje pagrindinį vaidmenį atlieka supintoji kubitų pora, kuria
+Agnė ir Benas pasidalijo proceso pradžioje. Agnės atliekama <span class="math inline">\(cX\)</span>
+transformacija tarp jos supinto kubito <span class="math inline">\(k_2\)</span> bei teleportuojamo <span class="math inline">\(k_1\)</span>
+supina ir šiuos kubitus. Taip sukuriama trijų kubitų supintoji būsena.
+Dėl naujai įvestų trijų kubitų kvantinių koreliacijų, Agnės atliekami
+Hadamardo vartai jos kubitui nelokaliai paveikia bendrą trijų kubitų
+būseną. Tai ir yra matoma lygtyje Beno kubito amplitudėse. Prieš Agnei
+atliekant savo kubitų matavimą, Beno kubitas yra superpozicijoje,
+sudarytoje iš keturių skirtingų būsenų. Dėl įvestų koreliacijų, Agnės
+matavimas nulemia Beno kubito būsenos pasikeitimą į vieną iš šių keturių
+galimų. Tai galime interpretuoti kaip projekcinį Belo būsenų matavimą –
+antri <span class="math inline">\(cX\)</span> ir <span class="math inline">\(H\)</span> vartai tai formaliai realizuoja. Galutinė Beno
+transformacija <span class="math inline">\(k_3\)</span> kubitui atlieka minimalius pataisymus atstatyti
+<span class="math inline">\(|\psi\rangle\)</span>.</p>
+<p>Teleportacija yra praktinis būdas siųsti kvantinę informaciją ryšių
+tikslais ar skaičiavimams kvantinių kompiuterių tinkluose. Galime
+įsivaizduoti scenarijų, kuriame Agnės turimas kvantinis procesorius yra
+pranašesnis už Beno. Nors Beno kompiuteris turi ribotas skaičiavimų
+galimybes, tačiau gali patikimai atlikti Pauli-<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> ir <span class="math inline">\(Z\)</span>
+transformacijas kubitams. Tad Benas gali atlikti jam rūpimus kvantinius
+skaičiavimus pas Agnę kvantiniame debesyje. Parsisiųsti
+<span class="math inline">\(|\psi\rangle\)</span> būseną tolimesniam apdorojimui Benui
+tereikia bendros prieigos su Agne prie Belo būsenų generavimo šaltinio
+ir klasikinių ryšių kanalo. Teleportacijos metodas gali būti naudojamas
+persiųsti ne vien pavienių kubitų būsenoms, bet ir sudėtinėms kubitų
+supintosioms kvantinėms būsenoms.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantine-teleportacija-2"></span>
+<img src="media/image5_2.svg" alt="Loginė grandinė, realizuojanti kvantinę teleportaciją.  Paskutiniame žingsnyje kubitui $k_3$ pritaikomi sąlyginiai Pauli loginiai vartai, kontroliuojami klasikinio registro, kurio būseną nulemia pirmų dviejų kubitų matavimo rezultatai" width="86%" />
+<p class="caption">
+5.2 pav. Loginė grandinė, realizuojanti kvantinę teleportaciją. Paskutiniame žingsnyje kubitui <span class="math inline">\(k_3\)</span> pritaikomi sąlyginiai Pauli loginiai vartai, kontroliuojami klasikinio registro, kurio būseną nulemia pirmų dviejų kubitų matavimo rezultatai
+</p>
+</div>
+<p>Teleportaciją galime atlikti ir
+kvantiniame procesoriuje tarp kubitų. Vienas būdas tai užrašyti
+loginiais vartais yra parodytas <a href="kvantinė-informacija-ir-ryšiai.html#fig:kvantine-teleportacija-2">5.2</a> pav. Matome Agnės kubitą <span class="math inline">\(k_1\)</span>
+pradinėje <span class="math inline">\(|\psi\rangle\)</span> būsenoje,
+<span class="math inline">\(|\chi^{+}\rangle\)</span> Belo būsenos generavimą tarp <span class="math inline">\(k_2\)</span>
+ir <span class="math inline">\(k_3\)</span>, bei Belo matavimą. Pagal 2 bitų kombinaciją, gautą atlikus
+Agnės kubitų <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> matavimus, kubitui <span class="math inline">\(k_3\)</span> pritaikomi
+klasiškai kontroliuojami atitinkami sąlyginiai vartai Pauli-<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>,
+arba <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="kvantinio-supynimo-sukeitimas" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Kvantinio supynimo sukeitimas<a href="kvantinė-informacija-ir-ryšiai.html#kvantinio-supynimo-sukeitimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Norint atlikti supynimą tarp dviejų kubitų, paprastai yra naudojama
+2 kubitų unitarinė transformacija, pavyzdžiui, <span class="math inline">\(cX\)</span> loginiai vartai.
+<strong>Kvantinio supynimo sukeitimo metodas</strong> (angl. <em>entanglement swapping</em>)
+leidžia supinti vieną nuo kito nutolusius kubitus nereikalaujant jų
+tiesioginės tarpusavio sąveikos. Čia taip pat pasitelkiamos supintosios
+Belo būsenos, atliekančios svarbią rolę kvantiniuose ryšiuose, jų
+generatorius įprasta vadinti EPR šaltiniais (angl. <em>EPR source</em>,
+trumpinys nuo <em>Einstein-Podolsky-Rosen</em>).</p>
+<p>Kvantinio supynimo sukeitimas praktiškai
+pritaikomas kvantiniuose tinkluose, nes gali atlikti <strong>signalo kartotuvo
+funkciją</strong> (angl. <em>quantum repeater</em>). Norint išvengti signalo sumenkimo
+nuostolių ir padidinti atstumą tarp kvantinės komunikacijos galutinių
+taškų, viena išeitis yra pastatyti tarpinius signalo kartotuvus. Gavę
+supintus kubitus iš nutolusių EPR šaltinių kartotuvai atlieka supynimo
+sukeitimą (žr. <a href="kvantinė-informacija-ir-ryšiai.html#fig:kvantinio-supynimo-sukeitimas">5.3</a> pav.). Tai leidžia efektyviai padidinti kvantinio
+ryšio atstumą ir realizuoti teleportaciją ar kitus protokolus,
+naudojančius supintąsias būsenas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantinio-supynimo-sukeitimas"></span>
+<img src="media/image5_3.svg" alt="Kvantinio supynimo sukeitimo protokolo iliustracija.  Supintosios Belo būsenos kubitų porose $(k_1 , k_2)$" width="55%" />
+<p class="caption">
+5.3 pav. Kvantinio supynimo sukeitimo protokolo iliustracija. Supintosios Belo būsenos kubitų porose <span class="math inline">\((k_1 , k_2)\)</span>
+</p>
+</div>
+<p>Supynimo sukeitimo scenarijuje dalyvauja Agnė, Benas ir Cita. Panašiai
+kaip ir kvantinėje teleportacijoje, Agnė ir Benas turi pasidaliję po
+vieną kubitą iš supintos <span class="math inline">\(|\chi_1^{+}\rangle\)</span> Belo
+būsenos. Benas ir Cita taip pat turi po vieną kubitą iš antros
+sugeneruotos Belo būsenos <span class="math inline">\(|\chi_2^{+}\rangle\)</span>.
+Protokolo pradžioje tarp šių dviejų Belo porų nėra jokių koreliacijų.
+Kvantinio supynimo sukeitimo tikslas yra supinti Agnės ir Citos kubitus.
+Bendrą pradinę 4 kubitų būseną galime užrašyti taip:
+<span class="math display" id="eq:pradine-4-busena">\[\begin{equation}
+\begin{aligned}
+|\Psi\rangle = &amp; |\chi_1^{+}\rangle\otimes|\chi_2^{+}\rangle
+= \frac{1}{\sqrt{2}}\Big\lbrack\big(|00\rangle + |11\rangle\big)\otimes\big(|00\rangle + |11\rangle\big)\Big\rbrack \\
+= &amp; \frac{1}{2}\big\lbrack |0000\rangle + |0011\rangle + |1100\rangle + |1111\rangle\big\rbrack\,.
+\end{aligned}
+\tag{5.15}
+\end{equation}\]</span>
+Superpozicijos būsenose kubitai sunumeruoti
+<span class="math inline">\(|k_1 k_2 k_3 k_4 \rangle\)</span>. Agnės kubitas <span class="math inline">\(k_1\)</span> yra
+supintas su Beno kubitu <span class="math inline">\(k_2\)</span>, Beno kubitas <span class="math inline">\(k_3\)</span> yra supintas su
+Citos kubitu <span class="math inline">\(k_4\)</span>. Stebint kvantinės teleportacijos žingsnius, Benas
+atlieka <span class="math inline">\(cX\)</span> loginius vartus tarp savo turimos kubitų poros <span class="math inline">\(k_2\)</span> ir
+<span class="math inline">\(k_3\)</span>, kuriuose kubitas <span class="math inline">\(k_2\)</span> atlieka „kontrolinę” rolę. Randame naują
+būseną <span class="math inline">\(|\Psi&#39;\rangle\)</span>:
+<span class="math display" id="eq:cx-2-3-busena">\[\begin{equation}
+|\Psi&#39;\rangle = (I\otimes cX_{23}\otimes I)|\Psi\rangle =
+\frac{1}{2}\big\lbrack |0000\rangle + |0011\rangle + |1110\rangle + |1101\rangle\big\rbrack\,.
+\tag{5.16}
+\end{equation}\]</span>
+Kitame žingsnyje Benas atlieka Hadamardo transformaciją savo kubitui
+<span class="math inline">\(k_2\)</span>:
+<span class="math display" id="eq:h-k2-busena">\[\begin{equation}
+|\Psi&#39;&#39;\rangle = (I\otimes I\otimes H\otimes I)|\Psi&#39;\rangle\,.
+\tag{5.17}
+\end{equation}\]</span>
+Norėdami lengviau pamatyti rezultatą, sugrupuosime narius
+<span class="math inline">\(|\Psi&#39;&#39;\rangle\)</span> skliausteliuose:
+<span class="math display" id="eq:busena-sugrupavimas-4">\[\begin{equation}
+\begin{split}
+|\Psi&#39;&#39;\rangle = &amp; \frac{1}{\sqrt{8}}\Big\lbrack\big(|0\rangle\otimes |00\rangle\otimes |0\rangle
++ |1\rangle\otimes |00\rangle\otimes |1\rangle\big) \\
+&amp; + \big(|0\rangle\otimes |01\rangle\otimes |1\rangle
++ |1\rangle\otimes |01\rangle\otimes |0\rangle\big) \\
+&amp; + \big(|0\rangle\otimes |10\rangle\otimes |0\rangle
+- |1\rangle\otimes |10\rangle\otimes |1\rangle\big) \\
+&amp; + \big(|0\rangle\otimes |11\rangle\otimes |1\rangle
+- |1\rangle\otimes |11\rangle\otimes |0\rangle\big)\Big\rbrack\,.
+\end{split}
+\tag{5.18}
+\end{equation}\]</span>
+Kiekvienoje šios superpozicijos būsenoje 4 kubitai yra užrašyti šia
+forma
+<span class="math inline">\(|k_1 \rangle\otimes |k_2 k_3 \rangle\otimes |k_4 \rangle\)</span>.
+Benas galiausiai atlieka savo abiejų kubitų matavimą, taigi gali rasti
+vieną iš keturių kombinacijų <span class="math inline">\(|k_2 k_3 \rangle\)</span> su
+lygiomis 0.25 tikimybėmis. Matome, kad pagal jo rastą kubitų būseną
+galutinė Agnės ir Citos kubitų būsena
+<span class="math inline">\(|k_1 k_4 \rangle\)</span> pasikeičia:
+<span class="math display" id="eq:k1k4-pasikeitimas-4" id="eq:k1k4-pasikeitimas-3" id="eq:k1k4-pasikeitimas-2" id="eq:k1k4-pasikeitimas-1">\[\begin{align}
+|k_2 k_3 \rangle = &amp; |00\rangle\rightarrow |k_1 k_4 \rangle = \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big) = |\chi^{+}\rangle\,;\tag{5.19}\\
+|k_2 k_3 \rangle = &amp; |01\rangle\rightarrow |k_1 k_4 \rangle = \frac{1}{\sqrt{2}}\big(|01\rangle + |10\rangle\big) = |\eta^{+}\rangle\,;\tag{5.20}\\
+|k_2 k_3 \rangle = &amp; |10\rangle\rightarrow |k_1 k_4 \rangle = \frac{1}{\sqrt{2}}\big(|00\rangle - |11\rangle\big) = |\chi^{-}\rangle\,;\tag{5.21}\\
+|k_2 k_3 \rangle = &amp; |11\rangle\rightarrow |k_1 k_4 \rangle = \frac{1}{\sqrt{2}}\big(|01\rangle - |10\rangle\big) = |\eta^{-}\rangle\,.\tag{5.22}
+\end{align}\]</span>
+Agnės ir Citos kubitai <span class="math inline">\(|k_1 k_4 \rangle\)</span> visais
+atvejais lieka vienoje iš supintųjų Belo būsenų. Benas matavimo
+rezultatus perduoda Agnei ir Citai klasikiniu būdu; tai leidžia
+sužinoti, kokią supintąją būseną jos turi. Kad Agnė ir Cita pakeistų
+savo gautą būseną į bet kurią kitą Belo būseną, jos gali atlikti
+atitinkamas lokalias Pauli transformacijas savo turimiems kubitams.
+Atkreipiame dėmesį, kad šio proceso metu kvantiniai supynimai tarp Agnės
+ir Beno kubitų poros <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span>, taip pat Beno ir Citos kubitų
+<span class="math inline">\(k_3\)</span> ir <span class="math inline">\(k_4\)</span> yra panaikinami.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantinio-supynimo-sukeitimas-2"></span>
+<img src="media/image5_4.svg" alt="Kvantinio supynimo sukeitimo realizacija loginėje grandinėje" width="86%" />
+<p class="caption">
+5.4 pav. Kvantinio supynimo sukeitimo realizacija loginėje grandinėje
+</p>
+</div>
+<p>Kvantinė grandinė, atliekanti supynimo sukeitimo algoritmą, yra
+pavaizduota <a href="kvantinė-informacija-ir-ryšiai.html#fig:kvantinio-supynimo-sukeitimas-2">5.4</a> pav. Grandinės pabaigoje įdėti klasiškai kontroliuojami
+loginiai vartai, atliekantys <span class="math inline">\(k_4\)</span> kubito transformaciją. Ši
+transformacija leidžia pakeisti Agnės ir Citos supintąją būseną į bet
+kurią kitą Belo būseną. Kaip matysime vėliau šiame skyriuje, pakanka
+vienos lokaliosios transformacijos, atliekamos bet kuriam kubitui
+supintoje poroje, norint pakeisti jų bendrą Belo būseną į bet kurią kitą
+Belo būseną.</p>
+</div>
+<div id="kvantinė-kriptografija" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Kvantinė kriptografija<a href="kvantinė-informacija-ir-ryšiai.html#kvantinė-kriptografija" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Įsivaizduokime scenarijų, kuriame Agnė ir Benas ketina apsikeisti
+svarbia informacija. Norint užtikrinti, kad Evelina, kuri yra
+slapukavusi tarp jų anksčiau, nepamatytų ryšių turinio, Agnė ir Benas
+nusprendžia jį užšifruoti. Tokiu atveju, nors Evelina ir perimtų
+siunčiamą turinį, ji negalėtų suprasti, kas jame sakoma. Siekdami
+užšifruoti turinį Agnė ir Benas naudoja raktą. Kaip paprastą to pavyzdį
+imkime, kad turinys (<span class="math inline">\(t\)</span>) yra išreikštas dvejetaine forma <span class="math inline">\(t = 001011010\)</span>, o šifravimas atliekamas sudedant kiekvieną turinio bitą
+modulo(2) su atitinkamu rakto <span class="math inline">\(r = 011101100\)</span> bitu. Taip turinys
+pasikeičia į šią šifruotą seką: <span class="math inline">\(t\oplus r = 0101110110\)</span>. Norint
+turinį iššifruoti, tereikia vėl mod(2) sudėti šifruotą turinį su tuo
+pačiu raktu, nes <span class="math inline">\((t\oplus r)\oplus r = t\)</span>.</p>
+<p>Agnė ir Benas gali pasirinkti, ar jie naudos privataus, ar atvirojo
+rakto kriptografinę sistemą. Privataus rakto kriptografijoje Agnė ir
+Benas susitikę pasirenka raktą, arba paprašo, kad raktą jiems perduotų
+trečiasis asmuo, Cita. Nors privataus rakto metodas yra saugus
+(naudojant pakankamai ilgą raktą), jam reikalingas apsikeitimas nėra
+praktiškas ir turi savo saugumo spragų. Pavyzdžiui, gali būti neįmanoma
+susitikti apsikeisti raktu ar tai atlikti kiekvieną kartą prieš
+inicijuojant ryšį. Antraip jie dar turėtų užtikrinti ilgai laikomo ir
+naudojamo rakto saugumą nuo įsibrovimų. Trečiojo asmens naudojimas
+apsikeitimui irgi neužtikrina saugumo, nes Cita gali raktą pasidalyti ar
+perduoti Evelinai.</p>
+<p>Atvirojo rakto kriptografijos metodas buvo sukurtas 1970-aisiais ir yra
+plačiai taikomas interneto tinkluose. Šiuo metodu naudojamas asimetrinis
+rakto pasidalijimas. Norėdama suteikti Benui galimybę saugiai nusiųsti
+informaciją jai, Agnė atvirai paskelbia raktą, kuriuo reikia užšifruoti
+siunčiamą turinį. Tačiau Agnė pas save turi kitą raktą, žinomą tik jai,
+kuriuo galima iššifruoti turinį užšifruotu jos viešai paskelbtu raktu.
+Šie raktai yra sugeneruojami automatiškai kiekvienos sesijos metu, ir
+tam naudojamas atsitiktinių skaičių generatorius. Atvirojo rakto
+kriptografijos saugumas yra pagrįstas matematiškai sunkiai
+apskaičiuojamomis funkcijomis. Vis dėlto yra parodyta, kad plačiai
+paplitusi <strong>RSA kriptografijos sistema</strong>
+(angl. <em>Rivest-Shamir-Adleman</em>), pagrįsta pirminių skaičių
+faktorizacija, yra efektyviai įveikiama Šoro algoritmu kvantiniuose
+kompiuteriuose. Agnė ir Benas tiki, kad Evelina dar neturi pakankamai
+galingo kvantinio kompiuterio įveikti RSA, ir todėl yra linkę naudoti šį
+kriptografijos protokolą. Tačiau, jeigu Evelina tokį įrenginį turės
+artimoje ateityje, perimtą Agnės ir Beno ryšį ji galės nuskaityti ir
+vėliau.</p>
+<p>Trečiasis būdas, apie kurį sužinojo Agnė ir Benas, yra naudoti privatų
+<strong>kvantinį rakto pasidalijimo protokolą</strong> (angl. <em>quantum key
+distribution</em>, trumpinys QKD). Šiame protokole užšifruoti ir iššifruoti
+turiniui taip pat naudojamas klasikinis raktas (dvejetainis kodas),
+tačiau rakto pasidalijimui yra naudojami kvantiniai ryšiai. Privatų
+rakto pasidalijimą jie gali atlikti per atvirą kanalą nebijodami, kad
+Evelina raktą sužinos, kadangi kvantiniuose ryšiuose rakto atskleidimas
+pakeičia raktą, na, o kopijuoti kvantinio rakto fundamentaliai
+neįmanoma. Atlikę kvantinį rakto pasidalijimą jie gali toliau naudoti
+klasikinį ryšių kanalą simetriškai užšifruodami ir iššifruodami
+siunčiamą turinį. Toliau pateikiame BB84 ir EPR kvantinius rakto
+pasidalijimo protokolus.</p>
+<div id="bb84-kvantinis-rakto-pasidalijimo-protokolas" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> BB84 kvantinis rakto pasidalijimo protokolas<a href="kvantinė-informacija-ir-ryšiai.html#bb84-kvantinis-rakto-pasidalijimo-protokolas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dvejetainio rakto persiuntimui <strong>BB84</strong> (angl. <em>C. Bennet ir G.
+Brassard,</em> 1984) protokole yra naudojamas vienpusis kvantinis kanalas
+nuo Agnės iki Beno ir klasikinis dvipusis ryšių kanalas. Klasikinis
+kanalas yra viešas ir gali būti pasiklausomas, kvantiniu kanalu
+siunčiama informacija taip pat gali būti perimta. Kaip matysime, tai
+netrukdo inicijuoti saugų ryšį.</p>
+<p>Jeigu norimo rakto ilgis yra <span class="math inline">\(n\)</span> bitų, tada Agnė, pirmiausiai naudodama
+atsitiktinių skaičių generatorių, sugeneruoja dvi <span class="math inline">\(4n\)</span> bitų ilgio sekas,
+kurias vadinsime <span class="math inline">\(a_A\)</span> ir <span class="math inline">\(b_A\)</span>. Pirmoji bitų seka <span class="math inline">\(a_A\)</span> nusako patį
+raktą, o antroji <span class="math inline">\(b_A\)</span> – kokią šifravimo sistemą naudoti kiekvienam
+<span class="math inline">\(a_A\)</span> rakto bitui. Šias dvi vienodo ilgio sekas galima sugrupuoti
+poromis <span class="math inline">\(\{a_A , b_A\}=\{(a_1 , b_1 ), (a_2, b_2 ),\ldots, (a_{4n}, b_{4n})\}\)</span>, pagal kurias Agnė paruoš <span class="math inline">\(4n\)</span> kubitų siųsti Benui.
+Jeigu <span class="math inline">\(b_A\)</span> bitas yra 0, tada išreikšti <span class="math inline">\(a_A\)</span> bitui (kurio
+sugeneruota vertė yra 0 arba 1) Agnė taiko Pauli-<span class="math inline">\(Z\)</span> bazinių vektorių
+šifravimą. Tai yra, jeigu rakto bito vertė yra <span class="math inline">\(a_A= 0\)</span>, jis
+perteikiamas kubito <span class="math inline">\(|0\rangle\)</span> būsena, o <span class="math inline">\(a_A= 1\)</span>
+bitas perteikiamas būsena <span class="math inline">\(|1\rangle\)</span>. Jeigu šifravimo
+bitas <span class="math inline">\(b_A = 1\)</span>, Agnė išreiškia atitinkamą <span class="math inline">\(a_A\)</span> rakto bitą Pauli-<span class="math inline">\(X\)</span>
+baziniais vektoriais {<span class="math inline">\(|0_x \rangle\)</span>,
+<span class="math inline">\(|1_x \rangle\)</span>}. Taip Agnė nusiunčia Benui <span class="math inline">\(4n\)</span> kubitų
+<span class="math inline">\(|\psi_{ab}\rangle\)</span>, kurių kiekvienas yra vienoje iš šių
+būsenų:
+<span class="math display" id="eq:psi-11-bb84" id="eq:psi-01-bb84" id="eq:psi-10-bb84" id="eq:psi-00-bb84">\[\begin{align}
+|\psi_{00}\rangle = &amp; |0\rangle\,;\tag{5.23} \\
+|\psi_{10}\rangle = &amp; |1\rangle\,;\tag{5.24} \\
+|\psi_{01}\rangle = &amp; |0_x \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\,;\tag{5.25} \\
+|\psi_{11}\rangle = &amp; |1_x \rangle = \frac{1}{\sqrt{2}}\big(|0\rangle - |1\rangle\big)\,.\tag{5.26}
+\end{align}\]</span>
+Gavęs kubitus Benas neturi informacijos, kokiose būsenose jie yra. Benas
+imasi atlikti kubitų būsenų matavimus ir atsitiktiniu būdu pasirenka
+atlikti Pauli-<span class="math inline">\(Z\)</span> arba Pauli-<span class="math inline">\(X\)</span> projekcinius matavimus. Kaip minėjome
+4 skyriuje, norint atlikti Pauli-<span class="math inline">\(X\)</span> projekcinį matavimą tereikia
+atlikti gautiems kubitams Hadamardo transformaciją ir toliau jiems
+vykdyti standartinį (Pauli-<span class="math inline">\(Z\)</span>) matavimą. Atkreipiame dėmesį, kad šios
+keturios kubitų būsenos nėra visos viena kitai ortogonalios, todėl
+negali būti patikimai atskirtos atliekant tik vieno tipo matavimą.
+Matome, kad (atsitiktinai) atlikęs Pauli-<span class="math inline">\(Z\)</span> matavimą kubitams,
+esantiems <span class="math inline">\(|\psi_{00}\rangle\)</span> arba
+<span class="math inline">\(|\psi_{10}\rangle\)</span> būsenose, Benas (pats nežinodamas)
+teisingai išmatuoja šias būsenas ir gauna sutapimą su jais, koduojamais
+Agnės rakto <span class="math inline">\(a\)</span> bitais. Tačiau, jeigu būsenos yra
+<span class="math inline">\(|\psi_{01}\rangle\)</span> arba
+<span class="math inline">\(|\psi_{11}\rangle\)</span>, tikimybė, kad atlikdamas Pauli-<span class="math inline">\(Z\)</span>
+matavimą Benas teisingai iššifruos rakto bitus, tėra 0.5, kadangi
+<span class="math inline">\(|0_x \rangle\)</span> ir <span class="math inline">\(|1_x \rangle\)</span> yra
+lygios <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+superpozicijos. Analogiška situacija atsiranda, kai Benas atlieka
+Pauli-<span class="math inline">\(X\)</span> matavimą. Jis gauna sutapimus su atitinkamais Agnės rakto
+bitais, jeigu matuoja <span class="math inline">\(|\psi_{01}\rangle\)</span> ir
+<span class="math inline">\(|\psi_{11}\rangle\)</span> būsenas, tačiau atsiranda 0.5 rakto
+iššifravimo paklaidos tikimybė matuojant
+<span class="math inline">\(|\psi_{00}\rangle\)</span> ir
+<span class="math inline">\(|\psi_{10}\rangle\)</span> būsenas. Taip atlikęs matavimus
+Benas sugeneruoja {<span class="math inline">\(a_B\)</span>, <span class="math inline">\(b_B\)</span>} bitų porų seką, kurioje <span class="math inline">\(a_B\)</span> bitas
+(0 arba 1) nusako gautą būsenos matavimo rezultatą, o <span class="math inline">\(b_B\)</span> bitas
+užrašo, ar šis matavimas naudojo Pauli-<span class="math inline">\(Z\)</span> (bito vertė 0) ar Pauli-<span class="math inline">\(X\)</span>
+(bito vertė 1).</p>
+<p>Kitame žingsnyje Agnė ir Benas, komunikuodami per atvirą klasikinį
+kanalą, palygina šifravimo <span class="math inline">\(4n\)</span> bitų <span class="math inline">\(b_A\)</span> ir <span class="math inline">\(b_B\)</span> sekas. Taip jie
+turėtų rasti, kad tarp jų bitų vidutiniškai <span class="math inline">\(2n\)</span> buvo atsitiktiniu būdu
+pasirinkti vienodai. Tai reiškia, kad Beno naudojamas matavimo būdas bei
+Agnės bitų šifravimo būdas šiais <span class="math inline">\(2n\)</span> atvejais sutapo, ir jie abu žino,
+kad buvo teisingai iššifruoti šie atitinkami <span class="math inline">\(a\)</span> rakto bitai. Jie
+atsikrato <span class="math inline">\(a_A\)</span> ir <span class="math inline">\(a_B\)</span> bitų, kurių porose esantys <span class="math inline">\(b_A\)</span> ir <span class="math inline">\(b_B\)</span>
+nesutampa ir pasilieka likusią <span class="math inline">\(2n\)</span> raktų seką (<span class="math inline">\(a_A = a_B\)</span>)
+neatskleisdami jos.</p>
+<p>Norėdami patikrinti, kad Evelina
+neslapukavo perimdama Agnės siunčiamus kubitus, jiedu atsitiktinai
+pasirenka iš turimų <span class="math inline">\(2n\)</span> rakto bitų <span class="math inline">\(n\)</span> bitų ir per klasikinį kanalą
+palygina, ar jie sutampa. Jeigu priimtinas bitų skaičius sutampa, jiedu
+užbaigia rakto apsikeitimo protokolą ir gali saugiai naudoti likusius
+<span class="math inline">\(n\)</span> bitų šifruoti ryšių turiniui.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bb84-iliustracija"></span>
+<img src="media/image5_5.svg" alt="BB84 protokolo iliustracija" width="65%" />
+<p class="caption">
+5.5 pav. BB84 protokolo iliustracija
+</p>
+</div>
+<p>Panagrinėkime BB84 protokolo (žr. <a href="kvantinė-informacija-ir-ryšiai.html#fig:bb84-iliustracija">5.5</a> pav.) saugumą. Pirmiausia,
+uždraustojo kvantinių būsenų kopijavimo teorema garantuoja, kad Evelina
+negali patikimai kopijuoti Agnės siunčiamų kubitų. Jeigu tai būtų
+įmanoma, turėdama siunčiamų kubitų būsenų kopijas ir perėmus <span class="math inline">\(b_A\)</span> ir
+<span class="math inline">\(b_B\)</span> sekų komunikavimą tarp Agnės ir Beno ji galėtų atkurti raktą bei
+turinį. Sakykime, kad Evelina visgi pamėgina atlikti Agnės siunčiamų
+kubitų kopijavimą naudodama <span class="math inline">\(cX\)</span> vartus. Jos pradinės kubitų būsenos yra
+<span class="math inline">\(|0\rangle\)</span>, o po <span class="math inline">\(cX\)</span> vartų ji toliau persiunčia Agnės
+kubitus Benui. Po šios transformacijos 2-kubitų būsenos yra:
+<span class="math display" id="eq:cx-psi-11-bb84" id="eq:cx-psi-01-bb84" id="eq:cx-psi-10-bb84" id="eq:cx-psi-00-bb84">\[\begin{align}
+cX|\psi_{00}\rangle = &amp; |00\rangle\,;\tag{5.27} \\
+cX|\psi_{10}\rangle = &amp; |11\rangle\,;\tag{5.28} \\
+cX|\psi_{01}\rangle = &amp; \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\,;\tag{5.29} \\
+cX|\psi_{11}\rangle = &amp; \frac{1}{\sqrt{2}}\big(|00\rangle - |11\rangle\big)\,.\tag{5.30}
+\end{align}\]</span>
+Evelina laukia, kol Benas atliks kubitų matavimą, galiausiai tai
+paveikia ir jos kubitų būseną. Toliau ji perima Agnės ir Beno klasikinę
+komunikaciją, kurioje jiedu atskleidžia, kokie baziniai vektoriai buvo
+naudojami šifruoti raktui ir atlikti matavimams. Evelina kartu su Agne
+ir Benu atmeta tuos kubitus, kuriuose <span class="math inline">\(b_A\)</span> ir <span class="math inline">\(b_B\)</span> nesutampa. Jos
+strategija yra toliau atlikti tokius pačius matavimus su savo turimais
+kubitais, kuriuos atliko Benas. Matome, kad Evelina sėkmingai atkuria
+<span class="math inline">\(|\psi_{00}\rangle\)</span> ir
+<span class="math inline">\(|\psi_{10}\rangle\)</span> būsenas, kurioms Benas atliko
+Pauli-<span class="math inline">\(Z\)</span> matavimus. Deja, kvantinis supynimas paveikia Benui
+<span class="math inline">\(|\psi_{01}\rangle\)</span> ir
+<span class="math inline">\(|\psi_{11}\rangle\)</span> būsenų matavimo rezultatus, kurioms
+teisingai atkurti jis (atsitiktinai) pasirinktų Pauli-<span class="math inline">\(X\)</span> matavimus.
+Pažvelkime į galimus Beno matavimo rezultatus, prieš tai atlikę <span class="math inline">\(H\)</span>
+transformaciją:
+<span class="math display" id="eq:h-psi01-bb84">\[\begin{equation}
+\begin{aligned}
+(H\otimes I)|\psi_{01}\rangle
+= &amp; \frac{1}{\sqrt{2}}\Big\lbrack\big(|0\rangle + |1\rangle\big)\otimes |0\rangle
++ \big(|0\rangle - |1\rangle\big)\otimes |1\rangle\Big\rbrack \\
+= &amp; \frac{1}{\sqrt{2}}\Big\lbrack |0\rangle\otimes\big(|0\rangle + |1\rangle)
++ |1\rangle\otimes\big(|0\rangle - |1\rangle\big)\Big\rbrack\,.
+\end{aligned}
+\tag{5.31}
+\end{equation}\]</span>
+Antroje eilutėje pergrupavome narius, norėdami parodyti, kad yra 0.5
+tikimybė, jog Benas atlikdamas matavimus ras
+<span class="math inline">\(|0_x \rangle\)</span> arba <span class="math inline">\(|1_x \rangle\)</span>,
+nes <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> yra
+lygios <span class="math inline">\(|0_x \rangle\)</span> ir
+<span class="math inline">\(|1_x \rangle\)</span> superpozicijos. Tačiau atlikdamas
+teisingą matavimą Agnės siųstai <span class="math inline">\(|\psi_{01}\rangle\)</span>
+būsenai jis turėtų rasti <span class="math inline">\(|0_x \rangle\)</span> kiekvieną
+kartą. Šis nesutapimas tarp jųdviejų turimų <span class="math inline">\(a_A\)</span> ir <span class="math inline">\(a_B\)</span> bitų bus
+aptiktas Agnei ir Benui atliekant atsitiktinių <span class="math inline">\(a\)</span> rakto bitų palyginimą
+protokolo pabaigoje. Tad nors Evelina šioje BB84 protokolo atakoje
+sugeba teisingai atkurti kiekvieną iš keturių skirtingų būsenų, kurias
+Benas randa pas save, tačiau kvantinis supynimas pakeičia Beno
+rezultatus ir įveda neatitikimus.</p>
+<p>Kadangi unitariosios transformacijos neatitinka norimo tikslo, antra
+galima Evelinos taktika – naudoti matavimo tipo transformacijas. BB84
+protokolas uždaro ir šią spragą, kadangi naudoja neortogonaliąsias
+kvantines būsenas. Nežinodama, kokį matavimo būdą naudoti, Evelina gali
+pasirinkti, pavyzdžiui, visus perimtus Agnės kubitus pamatuoti Pauli-<span class="math inline">\(Z\)</span>
+projekcija. Atlikus matavimą Evelina šiuos kubitus toliau persiunčia
+Benui, norėdama neišsiduoti, kad pasiklauso ryšio. Tačiau Pauli-<span class="math inline">\(Z\)</span>
+matavimas, atliekamas <span class="math inline">\(|0_x \rangle\)</span> ir
+<span class="math inline">\(|1_x \rangle\)</span> būsenoms, neleidžia atskleisti, kokia
+yra būsena, kadangi atsitiktinai randamas <span class="math inline">\(|0\rangle\)</span>
+arba <span class="math inline">\(|1\rangle\)</span> su vienodomis tikimybėmis. Dar blogiau,
+kad Evelinos Pauli-<span class="math inline">\(Z\)</span> matavimas negrįžtamai pakeičia
+<span class="math inline">\(|0_x \rangle\)</span> ir <span class="math inline">\(|1_x \rangle\)</span>
+kubitų būsenas į <span class="math inline">\(|0\rangle\)</span> arba
+<span class="math inline">\(|1\rangle\)</span>. Agnė ir Benas, atlikdami atsitiktinai
+pasirinktų rakto bitų palyginimą protokolo pabaigoje, gali įvertinti, ar
+jų buvo pasiklausoma ir nutraukti arba kartoti protokolą iš naujo esant
+dideliam bitų nesutapimui.</p>
+</div>
+<div id="epr-kvantinis-rakto-pasidalijimo-protokolas" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> EPR kvantinis rakto pasidalijimo protokolas<a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>EPR protokolas (žr. <a href="kvantinė-informacija-ir-ryšiai.html#fig:epr-rakto-iliustracija">5.6</a> pav.) yra dauguma aspektų panašus į BB84, tačiau
+tarp Agnės ir Beno nėra tiesioginio kvantinio ryšio kanalo. Vietoj jo
+naudojamas EPR šaltinis, paskirstantis tarp jų supintuosius kubitus. EPR
+protokole šis šaltinis paruošia <span class="math inline">\(4n\)</span> supintąsias
+<span class="math inline">\(|\chi^{+}\rangle\)</span> kubitų poras ir iš kiekvienos poros
+nusiunčia po vieną kubitą Agnei ir Benui. Pradžioje jie abu turi po <span class="math inline">\(4n\)</span>
+supintųjų kubitų, kurių kiekvienas yra būsenoje:
+<span class="math display" id="eq:chi-plus-epr">\[\begin{equation}
+|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\,.
+\tag{5.32}
+\end{equation}\]</span>
+Agnė ir Benas atsitiktiniu būdu pasirenka išmatuoti savo visus turimus
+kubitus santykinai su Pauli-<span class="math inline">\(Z\)</span> arba Pauli-<span class="math inline">\(X\)</span> baziniais vektoriais.
+Taip jie sugeneruoja bitų sekas {<span class="math inline">\(a_A\)</span>, <span class="math inline">\(b_A\)</span>} ir {<span class="math inline">\(a_B\)</span>, <span class="math inline">\(b_B\)</span>};
+čia <span class="math inline">\(b\)</span> bitas nusako, ar buvo pasirinktas Pauli-<span class="math inline">\(Z\)</span> (0) ar Pauli-<span class="math inline">\(X\)</span> (1)
+matavimas, o <span class="math inline">\(a\)</span> bitas nusako gautą rezultatą (0 arba 1). Iš to matome,
+kad jeigu Agnės ir Beno atsitiktiniai matavimo būdo pasirinkimai sutapo,
+šių kubitų porų būsenas jie visada ras vienodas, ir todėl jų atitinkami
+rakto bitai sutaps. Tai akivaizdu žvelgiant į
+<span class="math inline">\(|\chi^{+}\rangle\)</span> ir naudojant Pauli-<span class="math inline">\(Z\)</span> matavimus.
+Norėdami atlikti Pauli-<span class="math inline">\(X\)</span> matavimus abiem kubitams
+<span class="math inline">\(|\chi^{+}\rangle\)</span> Belo būsenoje pirmiausia atlikime
+Hadamardo vartus:
+<span class="math display" id="eq:h-h-chi-plus">\[\begin{equation}
+\begin{aligned}
+H\otimes H|\chi^{+}\rangle
+= &amp; \frac{1}{2\sqrt{2}}\Big\lbrack\big(|0\rangle + |1\rangle\big)\otimes\big(|0\rangle + |1\rangle\big)
++ \big(|0\rangle - |1\rangle\big)\otimes\big(|0\rangle - |1\rangle\big)\Big\rbrack \\
+= &amp; \frac{1}{\sqrt{2}}\big\lbrack|0\rangle\otimes |0\rangle
++ |1\rangle\otimes |1\rangle\big\rbrack\,.
+\end{aligned}
+\tag{5.33}
+\end{equation}\]</span>
+Matome, kad Pauli-<span class="math inline">\(X\)</span> matavimuose taip pat yra ideali
+koreliacija tarp dviejų kubitų būsenų, tad atlikus norimus matavimus jų
+vertės visada sutaps. Tolimesni žingsniai paremti BB84 protokolu: Agnė
+ir Benas per klasikinį kanalą palygina <span class="math inline">\(b_A\)</span> ir <span class="math inline">\(b_B\)</span> šifravimo bitus
+ir pasilieka tuos <span class="math inline">\(2n\)</span> rakto bitų, kuriems šifravimo bitai sutapo,
+<span class="math inline">\(a_A = a_B\)</span>. Galiausiai jiedu atsitiktinai pasirenka iš turimų <span class="math inline">\(2n\)</span>
+rakto bitų <span class="math inline">\(n\)</span> bitų ir palygina, ar jie sutampa, siekdami įvertinti, ar
+ryšys patikimas.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:epr-rakto-iliustracija"></span>
+<img src="media/image5_6.svg" alt="EPR protokolo iliustracija" width="65%" />
+<p class="caption">
+5.6 pav. EPR protokolo iliustracija
+</p>
+</div>
+<p>Šiuo atveju Evelina gali pabandyti įsiterpti perimdama abu kubitus
+poroje, skirtus Agnei ir Benui. Evelina atlieka kubitų būsenų matavimą
+ir toliau jiems persiunčia jau nebesupintus, o klasiškai koreliuotus
+kubitus, taip tiksliai žinodama, kokie bus Agnės ir Beno rezultatai.
+Tačiau Evelinos įsiterpimas pakeičia jų rezultatus. Pavyzdžiui, jeigu
+Evelina atlikusi Pauli-<span class="math inline">\(Z\)</span> matavimus randa <span class="math inline">\(|00\rangle\)</span>
+kubitų būseną, tada Agnė ir Benas, atlikę Pauli-<span class="math inline">\(Z\)</span> neaptinka
+nesutapimų. Na, o jeigu jie atsitiktinai abu pasirenka Pauli-<span class="math inline">\(X\)</span>
+matavimą <span class="math inline">\(|00\rangle\)</span> būsenai, tada 0.5 jų matavimų
+rezultatai nesutaps, nes yra lygi tikimybė rasti
+<span class="math inline">\(|0_x \rangle\)</span> arba <span class="math inline">\(|1_x \rangle\)</span>
+būsenas. Atlikdami šifravimo ir rakto bitų patikrą Agnė ir Benas tai
+gali pastebėti ir nutraukti protokolą.</p>
+<p>Agnės ir Beno matavimo rezultatų nesutapimai gali atsirasti ir dėl kitų
+išorinių veiksnių, kurie įveda ryšio signalui triukšmą. Praktikoje jiems
+reikia būdo patikrinti supintosios kvantinės būsenos tikslumą. Kituose
+poskyriuose smulkiau panagrinėsime supintųjų kubitų savybes ir
+aptarsime, kaip įmanoma patikrinti būsenų tikslumą, taip pat ar jos
+pasižymi ryšiuose pageidaujamomis kvantinėmis koreliacijomis.</p>
+</div>
+</div>
+<div id="lokalios-operacijos-ir-klasikiniai-ryšiai" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Lokalios operacijos ir klasikiniai ryšiai<a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>EPR šaltiniai kvantiniuose tinkluose yra nepamainomi, ir dėl to svarbu
+įvertinti jų tikslumą. Jeigu yra galimybė tai atlikti kubitams vos
+palikus EPR šaltinį, tada galime apskaičiuoti <strong>būsenų tikslumą</strong>
+(angl. <em>state fidelity</em>) palygindami sugeneruotą 2-kubitų būseną su grynąja
+Belo būsena <span class="math inline">\(|\psi\rangle\)</span>, kuri, tikimasi, turėtų būti
+ir EPR šaltinio sugeneruota. Vienas būdas tai apskaičiuoti:
+<span class="math display" id="eq:fidelity-apibrezimas">\[\begin{equation}
+F\lbrack\rho ,|\psi\rangle\rbrack = \sqrt{\langle\psi |\rho |\psi\rangle}\,.
+\tag{5.34}
+\end{equation}\]</span>
+Tikslumas <span class="math inline">\(F\)</span> nusako būsenų persiklojimą ir yra apibrėžtas intervale
+<span class="math inline">\(0 \leq F \leq 1\)</span>. <span class="math inline">\(F = 0\)</span> reiškia, kad būsenos yra ortogonaliosios
+(maksimaliai skirtingos), o <span class="math inline">\(F = 1\)</span> – kad jos fiziškai vienodos. Čia
+išreiškiame EPR sugeneruotą būseną tankio operatoriumi
+<span class="math inline">\(\rho = |\phi\rangle\langle\phi |\)</span>, nes
+dėl paruošimo netikslumų ar kitų mums nežinomų veiksnių ji gali būti
+mišri. Matome, kad tikslumas <span class="math inline">\(F\)</span> nusako persiklojimo tarp būsenų <span class="math inline">\(\rho\)</span>
+ir <span class="math inline">\(|\psi\rangle\)</span> šaknį.</p>
+<p>Supintųjų kubitų patikrinimą taip pat galima atlikti teleportuojant Beno
+kubitą pas Agnę, šitaip ji atliktų Belo matavimą. Tačiau tam reikalinga
+dar viena Belo būsena. Jeigu Agnė ir Benas yra galutiniai Belo būsenų
+vartotojai, neturintys tokios galimybės, tada patikrinti šaltinio
+tikslumui ar kvantinio ryšio kanalo švarumui jiems reikalingas kitas
+būdas. Imkime standartinį scenarijų, kuriame Agnė ir Benas neturi
+tarpusavyje kvantinio kanalo ir gali savo individualiems kubitams,
+gautiems iš EPR šaltinio, atlikti tik lokalias unitariąsias
+transformacijas bei matavimus ir tarpusavyje komunikuoti klasikiniu
+būdu. Pavyzdžiui, atlikęs norimą matavimą Benas gali rezultatą pranešti
+Agnei. Pagal gautą rezultatą, ji savo ruožtu pasirenka norimą
+transformaciją ar matavimo būdą, siekdama sužinoti kuo daugiau
+informacijos apie jų turimą kvantinę būseną. Tai yra vadinamasis
+<strong>lokalių operacijų ir klasikinių ryšių metodas kvantinėje
+informatikoje</strong> (angl. <em>local operations classical communication</em>,
+trumpinys LOCC). Toliau aptarkime, kokias LOCC operacijas Agnė ir Benas
+gali atlikti norėdami patikrinti keturias Belo būsenas:
+<span class="math display" id="eq:loc-belo-2" id="eq:loc-belo-1">\[\begin{align}
+|\chi^{+}\rangle = &amp; \frac{1}{\sqrt{2}}\big(|00\rangle + |11\rangle\big)\,,\quad
+|\chi^{-}\rangle =   \frac{1}{\sqrt{2}}\big(|00\rangle - |11\rangle\big)\,;\tag{5.35}\\
+|\eta^{+}\rangle = &amp; \frac{1}{\sqrt{2}}\big(|01\rangle + |10\rangle\big)\,,\quad
+|\eta^{-}\rangle =   \frac{1}{\sqrt{2}}\big(|01\rangle - |10\rangle\big)\,.\tag{5.36}
+\end{align}\]</span>
+Kaip ir skaičiuojamieji 2 kubitų baziniai vektoriai
+{<span class="math inline">\(|00\rangle\)</span>, <span class="math inline">\(|01\rangle\)</span>,
+<span class="math inline">\(|10\rangle\)</span>, <span class="math inline">\(|11\rangle\)</span>}, Belo
+baziniai vektoriai {<span class="math inline">\(|\chi^{+}\rangle\)</span>,
+<span class="math inline">\(|\chi^{-}\rangle\)</span>, <span class="math inline">\(|\eta^{+}\rangle\)</span>,
+<span class="math inline">\(|\eta^{-}\rangle\)</span>} kiekvienas individualiai savyje
+koduoja maksimaliai du bitus klasikinės informacijos. Standartiniame
+rinkinyje kiekvieną iš dviejų kubitų unikaliai nusako jų reikšmės 0
+ir 1. Norint nusakyti supintąsias Belo būsenas akivaizdu, kad tai
+netinka dėl esamų superpozicijų. Belo rinkinyje pirmasis bitas nusako
+<strong>būsenų lyginumą</strong> (angl. <em>parity bit</em>), kuris parodo, ar kubitų
+būsenos nariuose vienodos, ar skirtingos. Lyginį lyginumą (angl. <em>even</em>
+<em>parity</em>) turi <span class="math inline">\(|\chi^{+}\rangle\)</span> ir
+<span class="math inline">\(|\chi^{-}\rangle\)</span> būsenos, nes abu kubitai jų nariuose
+<span class="math inline">\(|00\rangle\)</span> ir <span class="math inline">\(|11\rangle\)</span> yra lygūs.
+Nelyginius lyginumus (angl. <em>odd</em> <em>parity</em>) turi
+<span class="math inline">\(|\eta^{+}\rangle\)</span> ir
+<span class="math inline">\(|\eta^{-}\rangle\)</span>, sudaryti iš
+<span class="math inline">\(|01\rangle\)</span> ir <span class="math inline">\(|10\rangle\)</span> narių
+superpozicijos nelygiose būsenose. Antrasis bitas informacijos Belo
+būsenose yra vadinamas <strong>fazės bitu</strong> (angl. <em>phase bit</em>). Būsenos
+<span class="math inline">\(|\chi^{+}\rangle\)</span> ir <span class="math inline">\(|\eta^{+}\rangle\)</span>
+turi tokį patį fazės bitą (+), nes nariai yra sudedami (santykinė fazė
+lygi nuliui). Būsenose <span class="math inline">\(|\chi^{-}\rangle\)</span> ir
+<span class="math inline">\(|\eta^{-}\rangle\)</span> nariai yra atimami (santykinė fazė
+<span class="math inline">\(\pi\)</span>) ir todėl jų fazės bitas yra priešingas
+<span class="math inline">\(|\chi^{+}\rangle\)</span> ir <span class="math inline">\(|\eta^{+}\rangle\)</span>
+būsenoms (-). Tad norėdami nusakyti Belo būsenas dviem bitais
+informacijos galime susieti lyginį ir nelyginį lyginumą su pirmo bito 0
+ir 1 vertėmis, taip pat + ir – fazės bitus su antro bito 0 ir 1
+vertėmis. Tai leidžia unikaliai įvardyti visas keturias Belo būsenas.</p>
+<p>Kitas svarbus aspektas yra tai, kad supintosiose Belo būsenose lyginumo
+ir fazės bitus galima keisti atliekant vien lokalias unitariąsias
+transformacijas vienam iš pasirinktų kubitų, nepaisant atstumo tarp
+dviejų kubitų. Pavyzdžiui, Agnė, turinti
+<span class="math inline">\(|\chi^{+}\rangle\)</span> būseną, gali pakeisti lyginumo bitą
+iš 0 į 1 atlikdama savo kubitui Pauli-<span class="math inline">\(X\)</span> transformaciją. Arba tą patį
+gali padaryti Benas. Norėdami pakeisti fazės bitą iš 0 į 1, bet kuris iš
+jų atliktų Pauli-<span class="math inline">\(Z\)</span> transformaciją. Pauli-<span class="math inline">\(Y\)</span> transformacija pakeistų
+lyginumo ir fazės bitus kartu. Apačioje pateikiame lyginumo ir fazės
+bitų keitimo transformacijas pirmam kubitui
+<span class="math inline">\(|\chi^{+}\rangle\)</span> būsenoje:
+<span class="math display" id="eq:keitmas-pirmam-kubitui-3" id="eq:keitmas-pirmam-kubitui-2" id="eq:keitmas-pirmam-kubitui-1">\[\begin{align}
+(X\otimes I)|\chi^{+}\rangle = &amp;            |\eta^{+}\rangle\,;\tag{5.37} \\
+(Y\otimes I)|\chi^{+}\rangle = &amp; -\mathrm{i}|\eta^{-}\rangle\,;\tag{5.38} \\
+(Z\otimes I)|\chi^{+}\rangle = &amp;            |\chi^{-}\rangle\,.\tag{5.39}
+\end{align}\]</span>
+Primename, kad globali būsenos fazė nėra svarbi, tad
+<span class="math inline">\(-\mathrm{i}|\eta^{-}\rangle\)</span> ir
+<span class="math inline">\(|\eta^{-}\rangle\)</span> nusako identiškas kvantines būsenas.
+Tad vien lokaliomis transformacijomis viena iš dalyvaujančių šalių gali
+Belo būseną pakeisti į bet kurią kitą Belo būseną. Atkreipiame dėmesį,
+kad lokalios unitarinės trasformacijos negali panaikinti supynimo, tad
+pradedant iš Belo būsenų visos taip pasiekiamos būsenos yra supintosios.
+Šį rezultatą galima palyginti su faktorizuojamomis būsenomis
+standartiniuose baziniuose vektoriuose, pavyzdžiui,
+<span class="math inline">\(|00\rangle\)</span>. Agnė gali keisti savo turimo kubito vertę
+tarp 0 ir 1, todėl jos lokalios transformacijos leidžia pasiekti
+<span class="math inline">\(|00\rangle\)</span> ir <span class="math inline">\(|10\rangle\)</span> būsenas.
+Tačiau be Beno pagalbos ji negali globaliai pakeisti
+<span class="math inline">\(|00\rangle\)</span> būsenos į <span class="math inline">\(|01\rangle\)</span> arba
+<span class="math inline">\(|11\rangle\)</span>. Individualiomis lokaliomis
+transformacijomis nesupintojoje būsenoje šiuo atveju įmanoma keisti tik
+vieną bitą informacijos, o ne du, kaip supintosiose.</p>
+<p>Grįžtant prie būsenų patikros, imkime situaciją, kurioje Agnė ir Benas,
+turėdami po vieną kubitą iš nežinomos Belo būsenos ir taikydami LOCC
+metodą nori sužinoti, kokia tai būsena. Pradėdama paprasčiausiu būdu,
+Agnė pasirenka atsitiktinai pamatuoti savo kubitą naudodama
+<span class="math inline">\(P = |0\rangle\langle 0| \otimes I\)</span>.
+Dėl šios priežasties nežinoma Belo būsena pasikeis į
+<span class="math inline">\(|00\rangle\)</span> arba <span class="math inline">\(|01\rangle\)</span>.
+Akivazdu, kad nežiūrint, kokį matavimą pasirinks Benas, jie galės
+pasakyti tik turimos Belo būsenos lyginumo bitą. Fazės bito šiais
+matavimais jie sužinoti negali, tad ir įvardyti Belo būsenos nepavyks.
+Agnė ir Benas vis dėlto gali sužinoti supintosios būsenos lyginumo ir
+fazės bitus LOCC metodu paaukodami dvi supintąsias būsenas, o ne vieną.
+Tam darome prielaidą, kad EPR šaltinis siunčia identiškas būsenas. Gavę
+po vieną kubitą iš pirmosios Belo būsenos poros, jie abu atlieka
+Pauli-<span class="math inline">\(Z\)</span> matavimą savo kubitams, o tikrines vertes sudaugina.
+Primename, kad atliekant Pauli-<span class="math inline">\(Z\)</span> matavimus individualiems kubitams
+galimos tikrinės vertės yra +1 (<span class="math inline">\(|0\rangle\)</span> būsena) arba
+-1 (<span class="math inline">\(|1\rangle\)</span> būsena). Matome, kad jeigu Belo būsenos
+lyginumas yra lyginis, tada Pauli-<span class="math inline">\(Z\)</span> tikrinių verčių sandauga yra 1, o
+jeigu nelyginis, gaunama -1. Naudojant Pauli-<span class="math inline">\(X\)</span> matavimą antrajai
+(identiškai) Belo būsenai jie gali rasti ir fazės bitą. Šiuo atveju,
+jeigu būsenos fazė yra 0, tada tikrinių verčių sandauga yra 1, o jeigu
+<span class="math inline">\(\pi\)</span> – gaunama -1. Norėdami pademonstruoti fazės bitų matavimą imkime
+<span class="math inline">\(|\chi^{+}\rangle\)</span> ir <span class="math inline">\(|\chi^{-}\rangle\)</span>
+būsenas. Pauli-<span class="math inline">\(X\)</span> matavimas atliekamas pirmiausia pritaikius abiems
+kubitams Hadamardo vartus:
+<span class="math display" id="eq:h-abiems-kubitams-2" id="eq:h-abiems-kubitams-1">\[\begin{align}
+(H\otimes H)|\chi^{+}\rangle = &amp; \frac{1}{\sqrt{2}}\big\lbrack|0\rangle\otimes |0\rangle
++ |1\rangle\otimes |1\rangle\big\rbrack\,;\tag{5.40}\\
+(H\otimes H)|\chi^{-}\rangle = &amp; \frac{1}{\sqrt{2}}\big\lbrack|0\rangle\otimes |1\rangle
++ |1\rangle\otimes |0\rangle\big\rbrack\,.\tag{5.41}
+\end{align}\]</span>
+Tada atlikę įprastą Pauli-<span class="math inline">\(Z\)</span> matavimą matome, kad
+<span class="math inline">\(|\chi^{+}\rangle\)</span> ir <span class="math inline">\(|\chi^{-}\rangle\)</span>
+būsenose tikrinių verčių sandauga bus +1 ir -1, atitinkamai. Agnė ir
+Benas, paaukoję dalį supintųjų kubitų, gali dviem matavimo būdais ir
+tarpusavio ryšiu tiksliai pasakyti, kokią būseną jiems siunčia EPR
+šaltinis. Neatitikimai tarp Agnės ir Beno matavimų yra indikatorius, kad
+šaltinis nėra tikslus ar būsenos yra pažeidžiamos duomenims keliaujant
+kvantiniu kanalu.</p>
+<p>Pabandykime suprasti, kodėl LOCC metodu reikia paaukoti du kubitus. Kaip
+žinome, 1 kubito skaičiuojamieji baziniai vektoriai yra Pauli-<span class="math inline">\(Z\)</span>
+operatoriaus tikriniai vektoriai,
+<span class="math inline">\(Z|0\rangle = |0\rangle\)</span>,
+<span class="math inline">\(Z|1\rangle = -|1\rangle\)</span>. Todėl
+Pauli-<span class="math inline">\(Z\)</span> matavimas, atliekamas vienam iš jo bazinių vektorių,
+nepakeičia šio vektoriaus ir užtikrintai nusako, kokia tai būsena.
+Tačiau lokalūs Pauli matavimai vienam iš kubitų Belo būsenose pakeičia
+bendrą 2 kubitų būseną ir sunaikina supynimą, kadangi jos nėra lokaliųjų
+Pauli operatorių tikriniai vektoriai. Tad reikalingos dvi supintosios
+būsenos kopijos ir du lokalūs matavimai, nusakantys lyginumo ir fazės
+bitus.</p>
+<p>Belo būsenos yra operatorių <span class="math inline">\(\bar{X} = X\otimes X\)</span>,
+<span class="math inline">\(\bar{Y} = Y\otimes Y\)</span> ir <span class="math inline">\(\bar{Z} = Z\otimes Z\)</span>
+tikriniai vektoriai:
+<span class="math display" id="eq:belo-busenos-kaip-tikriniai-2" id="eq:belo-busenos-kaip-tikriniai-1">\[\begin{align}
+\bar{X}|\chi^{\pm}\rangle = &amp; \pm |\chi^{\pm}\rangle\,,\quad
+\bar{Y}|\chi^{\pm}\rangle =   \mp |\chi^{\pm}\rangle\,,\quad
+\bar{Z}|\chi^{\pm}\rangle =       |\chi^{\pm}\rangle\,;\tag{5.42}\\
+\bar{X}|\eta^{\pm}\rangle = &amp; \pm |\eta^{\pm}\rangle\,,\quad
+\bar{Y}|\eta^{\pm}\rangle =   \pm |\eta^{\pm}\rangle\,,\quad
+\bar{Z}|\eta^{\pm}\rangle =      -|\eta^{\pm}\rangle\,.\tag{5.43}
+\end{align}\]</span>
+Trys operatoriai <span class="math inline">\(\bar{X}, \bar{Y}\)</span> ir <span class="math inline">\(\bar{Z}\)</span> yra
+tarpusavyje komutatyvūs, todėl atlikus <span class="math inline">\(\bar{X}\)</span> ir <span class="math inline">\(\bar{Z}\)</span>
+matavimus sekoje Belo būsenai dvi gautos tikrinės vertės ją unikaliai
+atskirtų nuo kitų nesugriaunant pačios būsenos. Tačiau
+<span class="math inline">\(\bar{X}, \bar{Y}\)</span> ar <span class="math inline">\(\bar{Z}\)</span> projekciniai matavimai
+yra nelokalūs – tai yra ne tas pats, kas atlikti du lokalius matavimus
+ir tikrines vertes sudauginti. Kvantiniame kompiuteryje projekciniai
+Belo būsenų matavimai atliekami kombinacija, susidedančia iš nelokalios
+unitarinės transformacijos <span class="math inline">\(cX\)</span>, lokalių <span class="math inline">\(H\)</span> bei įprastinio Pauli-<span class="math inline">\(Z\)</span>
+matavimo abiem kubitams.</p>
+</div>
+<div id="belo-nelygybės-testas" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Belo nelygybės testas<a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A. Einšteinas nepasidavė idėjai, kad gamtoje fundamentaliai gali
+egzistuoti nedeterminizmas ir <strong>nuotolinė įtaka</strong> (angl. <em>spooky action
+at a distance</em>), apsireiškiantys supintų kvantinių būsenų matavimuose.
+Dėl to jis laikėsi pozicijos, kad kvantinė mechanika nors ir teisinga,
+bet vis dėlto negali būti išsami teorija. Siekdamas patikrinti, ar
+alternatyvios deterministinės teorijos, įkomponuojančios paslėptus
+lokalius kintamuosius, sugebėtų atkurti kvantinių koreliacijų efektus,
+Johnas Bellas 1970-aisiais išvedė vadinamąją <strong>Belo nelygybę</strong>
+(angl. <em>Bell inequality</em>).</p>
+<p>Be fundamentaliųjų tyrimų srities, Belo nelygybių klasės testai yra
+taikomi praktiškai siekiant patikrinti, ar sugeneruotos 2 kubitų būsenos
+yra supintosios. Eksperimentuose standartiškai naudojama Belo nelygybės
+versija, vadinama CHSH (angl. <em>J. Clauser, M. Horne, A. Shimony,
+R. Holt</em>), kuri labiau tinka atlikti testams su šviesos nešėjais
+fotonais. Toliau pateikiame CHSH nelygybės supaprastintą įrodymą ir jos
+testo protokolą, naudojantį supintuosius fotoninius kubitus.</p>
+<p>Įsivaizduokime scenarijų, kuriame Cita paruošia dvi sistemas ir
+neatskleisdama paruošimo būdo pateikia vieną Agnei, o kitą Benui. Šioje
+stadijoje nedarome jokių prielaidų, kokios tai sistemos ir kokiaiss
+gamtos dėsniais jos paremtos. Agnė ir Benas, abu gavę po vieną sistemą,
+atsitiktiniu būdu renkasi pamatuoti šių sistemų vieną iš savybių. Šitos
+savybės yra objektyvios ir gali būti atskleistos atlikus matavimus.
+Klasikinės savybės būtų, pavyzdžiui, geometrinė forma ar svoris. Agnės
+galimus pasirinkimus vadinsime <span class="math inline">\(A_1\)</span> ir <span class="math inline">\(A_2\)</span>, Beno – <span class="math inline">\(B_1\)</span> ir
+<span class="math inline">\(B_2\)</span>. Kiekvienos iš šių keturių savybių galimi matavimų rezultatai yra
+įvardijami skaitmeniškai, +1 arba -1. Beno sistema bei jos matuojamos
+savybės <span class="math inline">\(B_1\)</span> ir <span class="math inline">\(B_2\)</span> gali skirtis nuo Agnės <span class="math inline">\(A_1\)</span> ir <span class="math inline">\(A_2\)</span>, tai
+nėra svarbu. Svarbu tik tai, kad Cita gali paruošti šias dvi sistemas
+identiškai <span class="math inline">\(n\)</span> kartų. Kiekvieno paruošimo metu ji savo nuožiūra
+pasirenka, kokios bus matuojamų sistemų savybės (<span class="math inline">\(A_1\)</span> ar <span class="math inline">\(A_2\)</span>,
+<span class="math inline">\(B_1\)</span> ar <span class="math inline">\(B_2\)</span>). Agnė ir Benas atlieka atsitiktiniu būdu pasirinktos
+savybės matavimus tuo pačiu metu ir būdami labai toli vienas nuo kito.</p>
+<p>Agnė ir Benas pakartoja šiuos matavimus <span class="math inline">\(n\)</span> kartų ir susitikę
+apskaičiuoja aritmetinius vidurkius keturių skirtingų narių:
+<span class="math inline">\(A_1 B_1\)</span>, <span class="math inline">\(A_2B_1\)</span>, <span class="math inline">\(A_1 B_2\)</span>, <span class="math inline">\(A_2 B_2\)</span>. Pavyzdžiui,
+jeigu vienam iš bandymų Agnė pasirinko <span class="math inline">\(A_1\)</span> savybės matavimą
+(rezultatas +1 arba -1), o Benas <span class="math inline">\(B_2\)</span> matavimą (rezultatas +1 arba
+-1), tada šios <span class="math inline">\(A_1 B_2\)</span> matavimų poros rezultatus jie sudaugina ir
+gauna +1 arba -1. Aritmetinį <span class="math inline">\(A_1 B_2\)</span> matavimo porų vidurkį,
+vadinsime jį <span class="math inline">\(\langle A_1 B_2 \rangle\)</span>, jie randa sudėję
+visus šios atsirandančios sandaugos rezultatus ir padaliję iš skaičiaus,
+kuris nusako, kiek kartų <span class="math inline">\(A_1 B_2\)</span> matavimo pora buvo atlikta. Nariai
+<span class="math inline">\(\langle A_1 B_2 \rangle\)</span> nusako koreliacijas tarp šių
+matuojamų savybių. Jeigu, pavyzdžiui, <span class="math inline">\(A_1\)</span> ir <span class="math inline">\(B_2\)</span> matavimais rastos
+savybės idealiai koreliuoja (antikoreliuoja), tada jų sandauga
+<span class="math inline">\(A_1 B_2\)</span> ir vidurkis <span class="math inline">\(\langle A_1 B_2 \rangle\)</span> visada
+bus +1 (-1). Tačiau, jeigu <span class="math inline">\(A_1\)</span> ir <span class="math inline">\(B_2\)</span> matavimų rezultatai ir todėl
+jų sandaugų vertės vis atsitiktinai keičiasi tarp +1 ir -1, tada
+koreliacija tarp šių pamatuotų savybių bus mažesnė arba koreliacijos
+išvis nebus.</p>
+<p>Nežiūrėdami į Agnės ir Beno rezultatus pabandykime įvertinti Citos
+paruoštos vienos atskiros serijos galimus atsakymus. Tam sudėsime tris
+pirmus narius bei atimsime paskutinįjį:
+<span class="math display" id="eq:belo-nelygybe-c">\[\begin{equation}
+C = A_1 B_1 + A_2 B_1 + A_1 B_2 - A_2 B_2 = (A_1 + A_2)B_1 + (A_1 - A_2)B_2\,.
+\tag{5.44}
+\end{equation}\]</span>
+Matome, kad jeigu <span class="math inline">\(A_1\)</span> ir <span class="math inline">\(A_2\)</span> vertės yra skirtingos, gausime
+<span class="math inline">\(A_1 + A_2 = 0\)</span> ir <span class="math inline">\(A_1 - A_2 = \pm 2\)</span>. Tačiau, jeigu jos yra
+vienodos, <span class="math inline">\(A_1 + A_2 = \pm 2\)</span> ir <span class="math inline">\(A_1 - A_2 = 0\)</span>. Todėl,
+priklauso nuo rastų <span class="math inline">\(A_1\)</span> ir <span class="math inline">\(A_2\)</span> verčių, <span class="math inline">\(C\)</span> gali būti tik +2 arba
+-2. Akivaizdu, kad atskirų <span class="math inline">\(C\)</span> serijų vidurkio absoliučioji vertė
+<span class="math inline">\(|\langle C\rangle|\)</span> gali būti ir mažiau nei 2, tad bendrai
+<span class="math inline">\(|\langle C\rangle| \leq 2\)</span>. Panaudodami vidurkių
+apibrėžimą,
+<span class="math inline">\(\langle C\rangle = \langle A_1 B_1 \rangle + \langle A_2 B_1 \rangle + \langle A_1 B_2 \rangle - \langle A_2 B_2 \rangle\)</span>,
+gauname CHSH nelygybę:
+<span class="math display" id="eq:chsh-nelygybe">\[\begin{equation}
+|\langle A_1 B_1 \rangle + \langle A_2 B_1 \rangle + \langle A_1 B_2 \rangle - \langle A_2 B_2 \rangle| \leq 2\,.
+\tag{5.45}
+\end{equation}\]</span>
+Agnė ir Benas, po daugelio matavimų radę individualius vidurkius
+<span class="math inline">\(\langle A_i B_j \rangle,\)</span> gali įvertinti, ar koreliacijos
+tarp jų matuojamų sistemų savybių tenkina CHSH nelygybę.</p>
+<p>CHSH nelygybė buvo išvesta darant dvi prielaidas apie sistemas, kurių
+koreliacijas ji analizuoja. Pirmoji prielaida, vadinama <strong>realizmu</strong>
+(angl. <em>realism</em>), įvardija, kad sistemos savybės yra tiksliai
+apibrėžtos ir egzistuoja nepriklausomai nuo to, ar jos yra stebimos, ar
+ne. Tai matome iš prielaidos, kad visos keturios savybės
+<span class="math inline">\(\{A_1 , A_2 , B_1 , B_2 \}\)</span> jau prieš Agnei ir Benui jas
+atskleidžiant turi deterministines vertes +1 arba -1, nustatytas iš
+anksto Citos. Antra, vadinamoji <strong>lokalumo</strong> (angl. <em>locality</em>),
+prielaida įvardija, kad tik artimoji sistemos aplinka gali daryti įtaką
+jos būsenai ( to reikalauja reliatyvumo teorija). Dėl didelio atstumo
+tarp Agnės ir Beno lokacijų, kuriose jiedu atlieka sistemos savybių
+matavimus, jų rasti rezultatai negali paveikti vienas kito. Antraip
+reliatyvumo teorijos pamatinė aksioma, tvirtinanti, kad niekas negali
+sklisti greičiau už šviesos greitį, būtų pažeista. Priimant realizmą bei
+lokalumą, visos gamtoje egzistuojančios sistemos turėtų tenkinti CHSH
+nelygybę. Klasikinės sistemos tenkina šias, mums visiems intuityvias,
+prielaidas.</p>
+<p>Panagrinėkime, ar šią nelygybę tenkina kvantinės sistemos. Imkime dviejų
+fotonų Belo būseną <span class="math inline">\(|\chi^{+}\rangle\)</span>, kurioje kubitų
+būsenos <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
+nusako fotono vertikalią ir horizontalią poliarizacijas, atitinkamai.
+Pervadiname būsenas taip
+<span class="math inline">\(|0\rangle\rightarrow |V\rangle\)</span>,
+<span class="math inline">\(|1\rangle\rightarrow |H\rangle\)</span>:
+<span class="math display" id="eq:poliarizaciju-superpozicija">\[\begin{equation}
+|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|VV\rangle + |HH\rangle\big)\,.
+\tag{5.46}
+\end{equation}\]</span>
+Siekdami patikrinti CHSH nelygybę, Agnė ir
+Benas taiko keturias detektorių poliarizacijos matavimo konfigūracijas,
+kurios yra <span class="math inline">\(A_1 , A_2 , B_1 , B_2\)</span> sistemos savybių atitikmuo.
+Šiame eksperimente atstumai tarp Agnės ir Beno detektorių vėlgi yra
+dideli, užtikrinant, kad gauti poliarizacijos rezultatai negali paveikti
+vienas kito. Kiekvienam bandymui Agnė savo detektoriuje atsitiktiniu
+būdu pasirenka kampą <span class="math inline">\(\alpha_1\)</span> arba <span class="math inline">\(\alpha_2\)</span>, o Benas <span class="math inline">\(\beta_1\)</span>
+arba <span class="math inline">\(\beta_2\)</span>. <a href="kvantinė-informacija-ir-ryšiai.html#fig:pasukti-detektoriai">5.7</a> pav. iliustruojame dvi tokias detektorių
+konfigūracijas, pasuktas kampu <span class="math inline">\(\alpha\)</span> ir <span class="math inline">\(\beta\)</span>:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pasukti-detektoriai"></span>
+<img src="media/image5_7.svg" alt="Koordinačių sistemos pasukimas kampais $\alpha$ ir $\beta$ pradinės koordinačių sistemos atžvilgiu.  Pradinė koordinačių sistema apibrėžia horizontaliosios ir vertikaliosios poliarizacijos kryptis" width="37%" />
+<p class="caption">
+5.7 pav. Koordinačių sistemos pasukimas kampais <span class="math inline">\(\alpha\)</span> ir <span class="math inline">\(\beta\)</span> pradinės koordinačių sistemos atžvilgiu. Pradinė koordinačių sistema apibrėžia horizontaliosios ir vertikaliosios poliarizacijos kryptis
+</p>
+</div>
+<p>Matome, kad poliarizacijos matavimai Agnės ir Beno detektoriuose yra
+pasukami pagal laikrodžio rodyklę nurodytais kampais vertikalios ašies
+lygiagrečios <span class="math inline">\(|V\rangle\)</span> atžvilgiu, išlaikant statųjį
+kampą tarp naujų <span class="math inline">\(|V\rangle\)</span> ir
+<span class="math inline">\(|H\rangle\)</span> ašių. Naujos vertikali ir horizontali
+poliarizacijos būsenos, pasuktos kampu <span class="math inline">\(\alpha\)</span> pradinių būsenų
+<span class="math inline">\(|V\rangle\)</span> ir <span class="math inline">\(|H\rangle\)</span> atžvilgiu yra
+lengvai randamos:
+<span class="math display" id="eq:horizontali-alpha" id="eq:vertikali-alpha">\[\begin{align}
+|V^{\alpha}\rangle = &amp;  \cos(\alpha)|V\rangle + \sin(\alpha)|H\rangle\,;\tag{5.47} \\
+|H^{\alpha}\rangle = &amp; -\sin(\alpha)|V\rangle + \cos(\alpha)|H\rangle\,.\tag{5.48}
+\end{align}\]</span>
+Tada ermitinis operatorius <span class="math inline">\(P(\alpha)\)</span>, nusakantis poliarizacijos
+dydžius išilgai naujų, pasuktų kampu <span class="math inline">\(\alpha\)</span> ašių, išreikštas
+spektrinėje dekompozicijoje, yra:
+<span class="math display" id="eq:p-alpha">\[\begin{equation}
+P(\alpha) = |V^{\alpha}\rangle\langle V^{\alpha}| - |H^{\alpha}\rangle\langle H^{\alpha}|\,.
+\tag{5.49}
+\end{equation}\]</span>
+Lygtyje <a href="kvantinė-informacija-ir-ryšiai.html#eq:p-alpha">(5.49)</a>
+<span class="math inline">\(|V^{\alpha}\rangle\langle V^{\alpha}|\)</span>
+ir
+<span class="math inline">\(|H^{\alpha}\rangle\langle H^{\alpha}|\)</span>
+yra diados, nusakančios projekcijas į vertikaliai ir horizontaliai
+poliarizuotų būsenų poerdves. Šie operatoriai nusako
+<span class="math inline">\(|V\rangle\)</span> ir <span class="math inline">\(|H\rangle\)</span> būsenų
+matavimą skirtinguose baziniuose vektoriuose – analogišku principu
+naudojami ir Pauli-<span class="math inline">\(Z\)</span> arba Pauli-<span class="math inline">\(X\)</span> matavimai kriptografijos
+protokoluose. Kaip ir Pauli-<span class="math inline">\(Z\)</span> operatoriuje, jeigu randama vertikali
+<span class="math inline">\(|V^{\alpha}\rangle\)</span> arba horizontali
+<span class="math inline">\(|H^{\alpha}\rangle\)</span> poliarizacija, tada fiksuojama
+atitinkamai +1 arba -1 vertės. Identiškai randami ir kiti trys matavimo
+operatoriai, nusakantys skirtingus Agnės ir Beno detektoriaus pasukimo
+kampus <span class="math inline">\(\alpha\)</span> ir <span class="math inline">\(\beta\)</span>. Siekdami įvertinti
+<span class="math inline">\(\langle AB\rangle\)</span> koreliacijų koeficientus skirtingose
+fotonų matavimo konfigūracijose apskaičiuojame:
+<span class="math display" id="eq:alpha-beta-koreliacija">\[\begin{equation}
+\langle\alpha\beta\rangle = \langle\chi^{+}|P(\alpha)\otimes P(\beta)|\chi^{+}\rangle\,.
+\tag{5.50}
+\end{equation}\]</span>
+Panaudoję viršuje išreikštus <span class="math inline">\(P(\alpha)\)</span> ir atlikę šiek tiek algebros
+veiksmų randame, kad dviejų matavimų tikrinių verčių sandaugos vidurkis
+priklauso tik nuo skirtumo tarp detektorių pasukimo kampų:
+<span class="math display" id="eq:alpha-beta-koreliacija-2">\[\begin{equation}
+\langle\alpha\beta\rangle = \cos\lbrack 2(\alpha - \beta)\rbrack\,.
+\tag{5.51}
+\end{equation}\]</span>
+Fotoninėse Belo būsenose CHSH nelygybė yra pažeidžiama didžiausia verte,
+kai skirtumai tarp kampų keturiose konfigūracijose skiriasi <span class="math inline">\(22.5^{\circ}\)</span>
+laipsnio. Čia renkamės <span class="math inline">\(\alpha_1 = 22.5^{\circ}\)</span>,
+<span class="math inline">\(\alpha_2 = 45^{\circ}\)</span>, <span class="math inline">\(\beta_1 = 67.5^{\circ}\)</span>,
+<span class="math inline">\(\beta_2 = 90^{\circ}\)</span>. Tada koreliacijos koeficientai yra
+<span class="math inline">\(\langle\alpha_1 \beta_1 \rangle = \langle\alpha_2 \beta_1 \rangle = \langle\alpha_1 \beta_2 \rangle = 1/\sqrt{2}\)</span>,
+<span class="math inline">\(\langle\alpha_2 \beta_2 \rangle = - 1/\sqrt{2}\)</span>, ir
+randame <span class="math inline">\(|\langle C \rangle\)</span>|:
+<span class="math display" id="eq:alpha-beta-koreliacija-max">\[\begin{equation}
+|\langle\alpha_1 \beta_1 \rangle + \langle\alpha_2 \beta_1 \rangle
++ \langle\alpha_1 \beta_2 \rangle - \langle\alpha_2 \beta_2 \rangle | = 2\sqrt{2}\,.
+\tag{5.52}
+\end{equation}\]</span>
+Akivaizdu, kad CHSH nelygybė, <span class="math inline">\(|\langle C\rangle| \leq 2\)</span>,
+nėra tenkinama supintosiose kvantinėse sistemose. Tai parodo, kad CHSH
+nelygybės įrodyme daromos realizmo ir lokalumo prielaidos apie sistemą
+negali būti teisingos. Realizmo prielaida atsiremia į kvantinės
+mechanikos trečiąjį postulatą, kuris teigia, kad matavimas priverčia
+sistemą, esančią būsenų superpozicijoje, pasirinkti (nedeterministiškai)
+vieną iš galimų būsenų. Kvantinė mechanika taip pat meta iššūkį mums
+suprantam lokalumui.</p>
+<p>Belo nelygybės eksperimentiniai testai ne kartą parodė, kad kvantinei
+mechanikai alternatyvios deterministinės lokalios paslėptų kintamųjų
+teorijos nesugeba atkurti stebimų koreliacijų. Tai palaiko argumentą,
+kad nėra paslėptų ar kažkaip mums pro pirštus praslydusių veiksnių,
+kuriuos įtraukus būtų galima visada tiksliai atspėti būsenų matavimo
+rezultatus. Kadangi koreliacijų supintuosiuose kubituose negali imituoti
+jokia klasikinė sistema ar klasiškai koreliuota kvantinė sistema, CHSH
+nelygybės testas suteikia būdą įvertinti kvantinio supynimo
+egzistavimui, reikalingą vykdyti kvantinių ryšių protokolus.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="kvantiniai-loginiai-vartai-grandines.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="skaičiavimai-kvantiniu-kompiuteriu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["kvantinekompiuterija.pdf", "kvantinekompiuterija.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
