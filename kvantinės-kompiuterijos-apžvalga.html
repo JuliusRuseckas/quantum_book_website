@@ -498,12 +498,9 @@ naudojant nitrogenazės fermentą. Šio organinio cheminio proceso
 supratimas galėtų padaryti trąšų gamybą energetiškai žymiai efektyvesnę.
 Tačiau jis yra neįkandamas klasikiniams superkompiuteriams dėl per
 didelio laisvės laipsnių skaičiaus net ir sąlygiškai mažoje molekulėje.</p>
-<p>Antroji priežastis slypi neįveikiamų klasikinių užduočių skaičiavimuose
-kvantiniu kompiuteriu. Jau dabar yra atrasta eksponentiškai laiko
-išteklių atžvilgiu greitesnių kvantinių algoritmų už geriausius žinomus
-klasikinius tam tikroms problemoms spręsti ir naujų algoritmų skaičius sparčiai auga. Tai
-padaro klasikiniams kompiuteriams fundamentiškai neįveikiamas problemas įveikiamas
-kvantiniams.</p>
+<p>Antroji priežastis slypi sunkių ar neįveikiamų klasikinių užduočių skaičiavimuose
+kvantiniu kompiuteriu. Jau dabar yra atrasta ženkliai greitesnių kvantinių algoritmų už geriausius žinomus
+klasikinius. Tarp gerai žinomų yra pirminių skaičių skaidymas, tiesinių lygčių sprendimas, paieška duomenų bazėse ir jų sąrašas sparčiai auga.</p>
 <p>Galiausiai <strong>skaičiavimų sudėtingumo</strong> (angl. <em>computational
 complexity</em>) teorijos argumentai teigia, kad kvantiniu kompiuteriu
 galima efektyviau testuoti reikšmes iš <strong>koreliuotųjų tikimybinių
@@ -897,30 +894,21 @@ vektorių erdvėje ir bendrai užrašoma taip:
 <span class="math display" id="eq:kubito-busena">\[\begin{equation}
 |\psi \rangle = a|0\rangle + b|1\rangle\,.
 \tag{1.1}
-\end{equation}\]</span>
-Formaliai šis objektas leidžia apskaičiuoti rezultatų tikimybes
-nustatant kvantinės sistemos būseną, kuri buvo paruošta taikant žinomą
-procedūrų seką. Nei daugiau, nei mažiau. Kaip ir klasikinis bitas,
-kubitas gali būti būsenoje 0, nusakomoje
-<span class="math inline">\(|0\rangle\)</span>, būsenoje 1, nusakomoje
-<span class="math inline">\(|0\rangle\)</span>, tačiau kartu ir begalybėje kitų skirtingų
-būsenų kombinacijų tolydžiai keičiant koeficientus <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>. Terminai
-„kvantinė būsena” ir „vektorius” šiame kontekste dažnai vartojami
+\end{equation}\]</span></p>
+<p>Terminai „kvantinė būsena” ir „vektorius” dažnai vartojami
 pakaitomis ir reiškia tą patį, nes kvantinė būsena yra visiškai nusakoma
-vektoriumi. Vartojami skliausteliai <span class="math inline">\(|\ldots\rangle\)</span>
+vektoriumi. Skliausteliai <span class="math inline">\(|\ldots\rangle\)</span>
 indikuoja, kad šis objektas yra vektorius. Kubito būseną žymime savo
-nuožiūra pasirinktu simboliu, šiuo atveju viršuje graikiška raide <span class="math inline">\(\psi\)</span>
-(tariama <em>psi</em>).</p>
-<p>Vektorius <span class="math inline">\(|\psi\rangle\)</span> yra kitų dviejų vektorių,
+nuožiūra pasirinktu simboliu, šiuo atveju graikiška raide <span class="math inline">\(\psi\)</span>
+(tariama <em>psi</em>). Vektorius <span class="math inline">\(|\psi\rangle\)</span> yra kitų dviejų vektorių,
 <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>, vadinamų
 <strong>skaičiuojamaisiais baziniais vektoriais</strong> (angl. <em>computational basis
 vectors</em>), kombinacija. Baziniai vektoriai atlieka panašią funkciją kaip
 ilguma ir platuma geografinėje sistemoje nusakyti objekto padėčiai Žemės
 paviršiuje. Santykinai su baziniais vektoriais yra įvardijama
-<span class="math inline">\(|\psi\rangle\)</span> orientacija vektorių erdvėje.
-Koeficientai <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>, formaliai vadinami amplitudėmis, yra
-kompleksiniai skaičiai (turi realiąją ir menamąją dalis). Amplitudės
-gali kisti tolydžiai, tačiau yra tarpusavyje susietos taip, kad jų
+<span class="math inline">\(|\psi\rangle\)</span> orientacija vektorių erdvėje. Koeficientai <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span>, formaliai vadinami amplitudėmis, yra
+kompleksiniai skaičiai (turi realiąją ir menamąją dalis). Klasikinio bito būsenų 0 ir 1 kvantinis atitikmuo būtų <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> nustačius <span class="math inline">\(b=0\)</span> ir <span class="math inline">\(a=0\)</span> amplitudes, atitinkamai. Bendroje situacijoje, kubitas <span class="math inline">\(|\psi\rangle\)</span> yra šių būsenų superpozicijoje.
+Amplitudės gali kisti tolydžiai, tačiau yra tarpusavyje susietos taip, kad jų
 (kompleksinių) kvadratų suma susidėtų į vienetą (sakoma, kad yra
 normuotos):
 <span class="math display" id="eq:normavimas">\[\begin{equation}
@@ -941,15 +929,15 @@ jos būtų parametrizuotos kampais <span class="math inline">\(\theta\)</span> i
 \end{equation}\]</span>
 Kubito būsena yra nusakoma Blocho vektoriumi, pavaizduotu nuo centro iki
 Blocho sferos paviršiaus. Matome, kad skirtingos kubito būsenos nusako
-skirtingą vektoriaus orientaciją, tačiau išlaiko vienetinį jo ilgį.
+skirtingą vektoriaus orientaciją išlaikant vienetinį jo ilgį.
 Pavyzdžiui, būsenos <span class="math inline">\(|0\rangle\)</span> ir
 <span class="math inline">\(|1\rangle\)</span> yra Blocho vektoriaus pozicijos išilgai <span class="math inline">\(z\)</span>
 ašies ir nukreiptos į viršų arba į apačią (<span class="math inline">\(\theta = 0^{\circ}\,,180^{\circ}\)</span>), atitinkamai.
 Sferos pusiaujas (<span class="math inline">\(\theta = 90^{\circ}\)</span>) nusako visas <span class="math inline">\(|0\rangle\)</span> ir
-<span class="math inline">\(|1\rangle\)</span> būsenų superpozicijas, kurios skiriasi viena
+<span class="math inline">\(|1\rangle\)</span> būsenų lygias superpozicijas, kurios skiriasi viena
 nuo kitos tik santykiniu <span class="math inline">\(\mathrm{e}^{\mathrm{i}\varphi}\)</span> fazės nariu, parametrizuojamu
 azimutiniu kampu <span class="math inline">\(\varphi\)</span>. Visi įmanomi vektoriai nuo centro iki bet
-kurio taško sferos paviršiuje įvardija visas galimas kubito būsenas.</p>
+kurio taško sferos paviršiuje įvardija visas skirtingas kubito būsenas, kurių iš esmės yra begalybė.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:blocho-sfera"></span>
 <img src="media/image1_3.svg" alt="Blocho sfera" width="40%" />
 <p class="caption">
@@ -988,8 +976,8 @@ būsenų matavimus, 0.7 visų kartų bus rasta būsena
 monetos metimą begalę kartų. Trumpoje sekoje ši statistika gali
 drastiškai skirtis nuo <span class="math inline">\(p = 0.5\)</span>, kadangi atskiri monetos metimo
 rezultatai nėra priklausomi vienas nuo kito.</p>
-<p>Net ir paruošus identišką kubito būseną ir ją pamatavus begalę kartų,
-koeficientų <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> unikaliai įvardyti taip nepavyks. Žinosime tik jų
+<p>Net ir paruošus begalę kubitų identiškose būsenose ir visus pamatavus,
+amplitudžių <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> įvardyti taip nepavyks. Žinosime tik jų
 (kompleksinius) kvadratus <span class="math inline">\(|a|^2\)</span> ir
 <span class="math inline">\(|b|^2\)</span>, nusakančius tikimybes rasti
 <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span> būsenas. Mat
@@ -998,8 +986,7 @@ užrašome <span class="math inline">\(z = |z| \mathrm{e}^{\mathrm{i}\varphi}\)<
 skaičiaus <span class="math inline">\(z\)</span> modulis, o narys <span class="math inline">\(\mathrm{e}^{\mathrm{i}\varphi}\)</span> nusako santykinę fazę.
 Santykinė fazė tarp kubitų būsenų <span class="math inline">\(|0\rangle\)</span> ir
 <span class="math inline">\(|1\rangle\)</span> yra svarbi ir turi fiziškai stebimą efektą,
-tačiau informacija apie ją kompleksiniame kvadrate ir matavimo proceso
-metu yra prarandama.</p>
+tačiau informacija apie ją kompleksiniame kvadrate yra prarandama.</p>
 <p>Tad galime klausti, jeigu neįmanoma atskleisti bendros kubito
 superpozicijos būsenos, kaip žinoti, kad visas šis reikalas nėra
 susigalvota matematinė iliuzija? Nors matavimas pakeičia kubito būseną
