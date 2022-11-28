@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-11-27" />
+<meta name="date" content="2022-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -758,10 +758,13 @@ bei reikalauja <span class="math inline">\(O(1/\epsilon)\)</span> sąlyginių lo
 pavardžių trumpinys) leidžia spręsti tiesinių lygčių sistemas ir
 suteikia žymų paspartinimą prieš klasikinius algoritmus: <strong>Gauso
 pašalinimą</strong> (angl. <em>Gauss elimination</em>) ir <strong>konjuguotojo gradiento
-metodą</strong> (angl. <em>conjugate gradient method</em>). HHL algoritmas yra aptinkamas kaip modulis kituose
-kvantiniuose algoritmuose, įskaitant mašininio mokymosi.
-Apžvelgsime šio algoritmo bendruosius veikimo principus ir
-pateiksime jo realizaciją kvantinėje grandinėje.</p>
+metodą</strong> (angl. <em>conjugate gradient method</em>). HHL algoritmo laiko vykdymo trukmė auga kaip
+<span class="math inline">\(O(\kappa^2\log 2^m)\)</span> ir suteikia eksponentinį paspartinimą sistemos
+dydžio <span class="math inline">\(2^m\)</span> atžvilgiu prieš klasikinius algoritmus, kurie pasižymi
+<span class="math inline">\(O(\kappa 2^m)\)</span>. Čia <span class="math inline">\(\kappa\)</span> yra <strong>matricos
+sąlygos skaičius</strong> (angl. <em>condition number</em>), kuris nusako didžiausios ir
+mažiausios matricos <span class="math inline">\(A\)</span> tikrinių verčių santykį,
+<span class="math inline">\(\kappa =\lambda_{\max}/\lambda_{\min}\)</span>. Algoritmo stabilumas mažėja, kai <span class="math inline">\(\lambda_{\min} \rightarrow 0\)</span>. Apžvelgsime HHL algoritmo bendruosius veikimo principus ir pateiksime jo realizaciją kvantinėje grandinėje.</p>
 <p>Tiesinių lygčių sistema yra išreiškiama lygtimi:
 <span class="math display" id="eq:tiesiniu-lygciu-sistema">\[\begin{equation}
 A|x\rangle = |b\rangle\,.
@@ -955,7 +958,7 @@ matomas antrajame registre:
 = \frac{1}{\sqrt{N}}\sum_k |0\rangle\otimes b_k \lambda_k^{-1}|a_k\rangle\otimes|1\rangle\,.
 \tag{7.45}
 \end{equation}\]</span>
-Su būsenos normavimo konstanta <span class="math inline">\(N\)</span>:
+Su būsenos normavimo koeficientu <span class="math inline">\(N\)</span>:
 <span class="math display" id="eq:normavimas-hhl">\[\begin{equation}
 N =\sum_k |b_k \lambda_k^{-1}|^2\,.
 \tag{7.46}
@@ -969,15 +972,6 @@ savybes, vidutines vertes, momentus, santykinę būsenos orientaciją
 sprendinių erdvėje. Pasitelkdami Hadamardo testą (<a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris">6.7.1</a> poskyrį) galime apskaičiuoti sprendinio
 funkciją <span class="math inline">\(f(x) =\langle x|M|x\rangle\)</span>,
 realizuojant ją atitinkamai suformuluotu kvantiniu operatoriumi <span class="math inline">\(M\)</span>.</p>
-<p>Vadinamasis <strong>matricos
-sąlygos skaičius</strong> (angl. <em>condition number</em>) nusako didžiausios ir
-mažiausios matricos <span class="math inline">\(A\)</span> tikrinių verčių santykį,
-<span class="math inline">\(\kappa =\lambda_{\max}/\lambda_{\min}\)</span>. Didėjant <span class="math inline">\(\kappa\)</span> tampa
-sunkiau invertuoti matricą <span class="math inline">\(A\)</span> ir mažėja HHL algoritmo
-stabilumas. HHL algoritmo laiko vykdymo trukmė auga kaip
-<span class="math inline">\(O(\kappa^2\log 2^m)\)</span> ir suteikia eksponentinį paspartinimą sistemos
-dydžio <span class="math inline">\(2^m\)</span> atžvilgiu prieš klasikinius algoritmus, kurie pasižymi
-<span class="math inline">\(O(\kappa 2^m)\)</span>.</p>
 
 </div>
 </div>
