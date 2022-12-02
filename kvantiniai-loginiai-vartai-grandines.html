@@ -331,7 +331,7 @@ Operatorius <span class="math inline">\(U_3\)</span> veikia abu kubitus, o <span
 nusakoma vienetiniu operatoriumi <span class="math inline">\(I\)</span>.</p>
 <p>Pradėsime nuo Pauli-<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> ir <span class="math inline">\(Z\)</span>
 loginių vartų, kurių matematinės išraiškos ir savybės buvo pristatytos
-II skyriuje. Pauli-<span class="math inline">\(X\)</span> loginiai vartai yra klasikinių NE loginių vartų
+2 skyriuje. Pauli-<span class="math inline">\(X\)</span> loginiai vartai yra klasikinių NE loginių vartų
 atitikmuo, jie sukeičia 0 ir 1 vertes (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:pauli-x-vartai">4.3</a> pav.)</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:pauli-x-vartai"></span>
 <img src="media/image4_3.svg" alt="Pauli-$X$ loginių vartų efektas skaičiuojamiesiems baziniams vektoriams" width="37%" />
@@ -423,8 +423,7 @@ būsenai, bet prideda fazę <span class="math inline">\(\theta\)</span> būsenai
 Pavyzdžiui, jeigu ši būsena būtų
 <span class="math inline">\(|\psi\rangle = a|0\rangle + \mathrm{e}^{\mathrm{i}\alpha}b|1\rangle\)</span>,
 tada
-<span class="math inline">\(R_z(\theta)|\psi\rangle = a|0\rangle + \mathrm{e}^{\mathrm{i}(\alpha + \theta)} b|1\rangle\)</span>,
-tai yra <span class="math inline">\(\alpha \rightarrow \alpha + \theta\)</span>. Dėl šios savybės
+<span class="math inline">\(R_z(\theta)|\psi\rangle = a|0\rangle + \mathrm{e}^{\mathrm{i}(\alpha + \theta)} b|1\rangle\)</span>. Dėl šios savybės
 <span class="math inline">\(R_z(\theta)\)</span> yra dažnai vadinami 1 kubito <strong>fazės vartais</strong>
 (angl. <em>phase gate</em>). Pauli-<span class="math inline">\(Z\)</span> loginiai vartai yra ne kas kita, kaip
 <span class="math inline">\(R_z(\theta)\)</span> su <span class="math inline">\(\theta=\pi\)</span> (iki globalios fazės). Algoritmuose
@@ -498,20 +497,17 @@ SXS^{\dagger} = &amp; Y\,,\quad SYS^{\dagger} = -X\,,\quad SZS^{\dagger} = Z\,.\
 \end{align}\]</span>
 Kaip galime pastebėti, viršuje pateikiamos tokios operatorių sekos:
 <span class="math inline">\(KPK^{\dagger} = P&#39;\)</span>. Čia <span class="math inline">\(P\)</span> ir <span class="math inline">\(P&#39;\)</span> yra Pauli operatoriai {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>},
-o <span class="math inline">\(K\)</span> ir ermitinė jungtis <span class="math inline">\(K^{\dagger}\)</span> yra parenkama iš vadinamosios
-<strong>Klifordo grupės</strong> (angl. <em>Clifford group</em>) operatorių. Įprasti
-1 kubito Klifordo grupės operatoriai yra Pauli {<span class="math inline">\(I\)</span>, <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}, taip
-pat <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span>. Viena iš Klifordo grupės savybių yra ta, kad jie
-transformuoja vieną Pauli operatorių į kitą ir gali pridėti tik fazę
-<span class="math inline">\(\pm 1\)</span>. Ši operatorių grupė yra itin svarbi kvantiniuose algoritmuose
-bei klaidų taisymo koduose, pagrįstuose būsenų stabilizatoriais.
-Atkreipiame dėmesį, kad vien Klifordo vartais <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> galima
-realizuoti Pauli operatorius {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}:
+o <span class="math inline">\(K\)</span> yra parenkamas iš 1 kubito
+<strong>Klifordo grupės</strong> (angl. <em>Clifford group</em>) operatorių.
+Klifordo grupę generuojančiais <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> galima
+realizuoti ir Pauli operatorius {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}:
 <span class="math display" id="eq:pauli-per-h-s">\[\begin{equation}
 HSSH = X\,,\quad SXS^{\dagger} = Y\,,\quad SS = Z\,.
 \tag{4.15}
 \end{equation}\]</span>
-Norėdami patikrinti, ar lygybės egzistuoja tarp skirtingų vartų sekų,
+Viena Klifordo grupės savybių yra ta, kad jie
+transformuoja vieną Pauli operatorių į kitą iki <span class="math inline">\(\pm 1\)</span> faktoriaus.</p>
+<p>Norėdami patikrinti, ar lygybės egzistuoja tarp skirtingų vartų sekų,
 galime jas nusakančias matricas papračiausiai sudauginti ir palyginti,
 ar jos vienodos, pavyzdžiui:
 <span class="math display" id="eq:patikrinimas-hxh">\[\begin{equation}
@@ -583,15 +579,14 @@ seka.</p>
 <div id="kubitų-būsenų-matavimas" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Kubitų būsenų matavimas<a href="kvantiniai-loginiai-vartai-grandines.html#kubitų-būsenų-matavimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Norint sužinoti kubito būseną, algoritmo vykdymo metu ar jo pabaigoje
-atliekamas matavimas. Matavimo operacija yra žymima pusapskritimiu su
+atliekamas matavimas. Šioje knygoje matavimo operacija yra žymima pusapskritimiu su
 rodyklyte, nukreipta į klasikinį registrą, žymimą brūkšniuota linija ir
-raide <span class="math inline">\(c\)</span>. Taip pat taikomas principas, kad algoritmo gale visi kubitai
+raide <span class="math inline">\(c\)</span>. Praktikoje dažnai taikomas principas, kad algoritmo gale visi kubitai
 yra pamatuojami, net jeigu tai nėra parodoma simboliais kvantinės
 grandinės pabaigoje. Matavimai standartiškai atliekami santykinai su
 Pauli-<span class="math inline">\(Z\)</span> operatoriaus tikriniais vektoriais, tai yra skaičiuojamaisiais
 baziniais vektoriais <span class="math inline">\(|0\rangle\)</span> ir
-<span class="math inline">\(|1\rangle\)</span>. Esant šių bazinių vektorių superpozicijos
-būsenai, galimi matavimo rezultatai yra Pauli-<span class="math inline">\(Z\)</span> tikrinės vertės +1
+<span class="math inline">\(|1\rangle\)</span>. Kubitui esant šių bazinių vektorių superpozicijoje, galimi matavimo rezultatai yra Pauli-<span class="math inline">\(Z\)</span> tikrinės vertės +1
 arba -1. Radus +1 indikuojama, kad būsena yra
 <span class="math inline">\(|0\rangle\)</span>, bei <span class="math inline">\(|1\rangle\)</span>, jeigu
 tikrinė vertė yra -1. Tai nusako vieną klasikinį bitą informacijos, o
@@ -617,7 +612,7 @@ Pamatavus šią būseną tikimybės rasti <span class="math inline">\(|0\rangle\
 \big|\langle 0|\psi\rangle\big|^2 = \big|\langle 1|\psi\rangle\big|^2 = \frac{1}{2}\,.
 \tag{4.22}
 \end{equation}\]</span>
-Tad po kiekvieno šio algoritmo įvykdymo yra sugeneruojama atsitiktinė
+Tad po pakartotinio šio algoritmo įvykdymo yra sugeneruojama atsitiktinė
 dvejetainė 0 ir 1 skaičių seka. Dėl kvantinio atsitiktinumo matavimo
 procese, šios sekos fundamentaliai neįmanoma nuspėti.</p>
 </div>
