@@ -679,7 +679,7 @@ skaičiavimai-kvantiniu-kompiuteriu
 bazinių-vektorių-numeracija
 funkcinis-skaičiavimas
 kvantinis-paralelizmas
-duomenų-kodavimo-būdai
+duomenu-kodavimas
 doičo-algoritmas
 kvantinė-paieška-ir-groverio-algoritmas
 algebrinė-interpretacija

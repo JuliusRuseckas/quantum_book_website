@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-01" />
+<meta name="date" content="2022-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,7 +166,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
 <li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
 <li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
-<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenu-kodavimas"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
 <li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
 <li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
 <ul>
@@ -438,7 +438,7 @@ Vartai <span class="math inline">\(W\)</span> panaudojami grandinės pabaigoje, 
 sukeičia kubitų indeksavimą aplink centrinius kubitus. Šiuo atveju
 <span class="math inline">\(k_1\)</span> sukeičiamas su <span class="math inline">\(k_3\)</span>, tad <span class="math inline">\(W\)</span>, panaudoti grandinės pabaigoje,
 atstato juos atgal į standartinę <span class="math inline">\(\{k_1, k_2, k_3\}\)</span> seką. Aišku,
-nebūtina to daryti, jeigu toliau atliekami loginiai vartai atsižvelgiant
+nebūtina to daryti, jeigu toliau atliekami loginiai vartai atsižvelgia
 į indeksavimo pasikeitimą.</p>
 <p>Atvirkštinė Furjė transformacija <span class="math inline">\(\mathrm{FT}^{\dagger}\)</span> yra realizuojama atvirkštine
 loginių vartų seka panaudojant atvirkštinius loginius vartus. Hadamardo
@@ -465,7 +465,7 @@ likusiais kubitais, paskutiniajam atliekant tik <span class="math inline">\(H\)<
 </div>
 <p>Kaip minėjome, galima FT užbaigti <span class="math inline">\(W\)</span> loginiais vartais siekiant
 atstatyti visų kubitų indeksavimo eiliškumą. Apibendrinus, norint
-atlikti FT <span class="math inline">\(n\)</span> kubitų registrui yra panaudojami <span class="math inline">\(n\)</span> <span class="math inline">\(H\)</span> vartų,
+atlikti FT <span class="math inline">\(n\)</span> kubitų registrui yra panaudojami <span class="math inline">\(n\)</span> skaičius <span class="math inline">\(H\)</span> vartų,
 <span class="math inline">\(n(n - 1)/2\)</span> sąlyginių <span class="math inline">\(cP_k\)</span>, ir ne daugiau nei <span class="math inline">\(n/2\)</span> <span class="math inline">\(W\)</span>
 vartų. Šie vartai gali būti realizuojami trimis <span class="math inline">\(cX\)</span>, o <span class="math inline">\(cP_k\)</span> galima
 realizuoti pasitelkus ne daugiau negu 6 elementariuosius loginius
@@ -479,7 +479,7 @@ mažėja su didėjančiu <span class="math inline">\(k\)</span>. Todėl FT atlie
 didelio skaičiaus kubitų, nuo tam tikro <span class="math inline">\(k\)</span> skaičiaus galima
 atitinkamiems kubitams nebetaikyti <span class="math inline">\(cP_k\)</span>, nes <span class="math inline">\(\theta\)</span> bus
 nereikšmingai maža. Tai leidžia dar labiau sumažinti loginių vartų
-skaičių, atkreipiant dėmesį, kad didėjantis <span class="math inline">\(k\)</span> nusako atliekamus
+skaičių, atkreipiant dėmesį dar ir į tai, kad didėjantis <span class="math inline">\(k\)</span> nusako atliekamus
 <span class="math inline">\(cP_k\)</span> tarp vis toliau vienas nuo kito esančių kubitų.</p>
 </div>
 <div id="funkcijos-periodiškumo-paieška" class="section level2 hasAnchor" number="7.3">
@@ -573,7 +573,7 @@ Kadangi <span class="math inline">\(\langle y&#39;|y&#39;&#39;\rangle =\delta_{y
 pamatavę įvesties registrą rasime būsenas <span class="math inline">\(|0\rangle\)</span>
 arba <span class="math inline">\(|4\rangle\)</span> su <span class="math inline">\(p(0) = p(4) = 0.5\)</span> tikimybe. Būsena
 <span class="math inline">\(|0\rangle\)</span> nepriklauso nuo periodo, tad radus ją nėra
-suteikiama informacijos, tad teks kartoti žingsnius kol, šiuo atveju,
+suteikiama informacijos ir teks kartoti žingsnius kol, šiuo atveju,
 bus rasta <span class="math inline">\(|4\rangle\)</span>. Tai prisideda prie algoritmo
 laiko sudėtingumo. Būsena <span class="math inline">\(|4\rangle\)</span> tiesiogiai
 atspindi <span class="math inline">\(P = 2\)</span> periodiškumą, nes pritaikius šį algoritmą <span class="math inline">\(n\)</span> kubitų
@@ -665,7 +665,7 @@ Kvantinė grandinė, realizuojanti fazės nustatymą, yra parodyta <a href="furj
 <p>Pirmasis registras yra sudarytas iš <span class="math inline">\(n\)</span> kubitų, čia skaičius <span class="math inline">\(n\)</span> yra
 parenkamas pagal tai, kokį norima pasiekti fazės <span class="math inline">\(\theta\)</span> tikslumą
 bitais. Atkreipiame dėmesį, kad naudojamas bazinių vektorių kodavimo
-metodas (žr. 6.4 poskyrį). Antrasis registras sudarytas iš <span class="math inline">\(m\)</span> kubitų,
+metodas (žr. <a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenu-kodavimas">6.4</a> poskyrį). Antrasis registras sudarytas iš <span class="math inline">\(m\)</span> kubitų,
 reikalingų <span class="math inline">\(U\)</span> operatoriaus tikriniam vektoriui
 <span class="math inline">\(|u\rangle\)</span> perteikti. Pritaikę <span class="math inline">\(H^{\otimes n}\)</span> bei
 <span class="math inline">\(cU^{2^n}\)</span> vartų sekas, randame šią bendrą būseną:

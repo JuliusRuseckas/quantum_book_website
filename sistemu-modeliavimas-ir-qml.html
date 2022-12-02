@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-01" />
+<meta name="date" content="2022-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,7 +166,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#bazinių-vektorių-numeracija"><i class="fa fa-check"></i><b>6.1</b> Bazinių vektorių numeracija</a></li>
 <li class="chapter" data-level="6.2" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#funkcinis-skaičiavimas"><i class="fa fa-check"></i><b>6.2</b> Funkcinis skaičiavimas</a></li>
 <li class="chapter" data-level="6.3" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas"><i class="fa fa-check"></i><b>6.3</b> Kvantinis paralelizmas</a></li>
-<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenų-kodavimo-būdai"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
+<li class="chapter" data-level="6.4" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenu-kodavimas"><i class="fa fa-check"></i><b>6.4</b> Duomenų kodavimo būdai</a></li>
 <li class="chapter" data-level="6.5" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#doičo-algoritmas"><i class="fa fa-check"></i><b>6.5</b> Doičo algoritmas</a></li>
 <li class="chapter" data-level="6.6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinė-paieška-ir-groverio-algoritmas"><i class="fa fa-check"></i><b>6.6</b> Kvantinė paieška ir Groverio algoritmas</a>
 <ul>
@@ -291,8 +291,8 @@ dipoliai. Blocho vektorius, orientuotas į ortogonaliąsias
 <span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenas,
 yra atitinkamai magnetinė „šiaurė” arba „pietūs”. Vienas pavyzdys –
 periodiškai išsidėlioję atomai kristaluose, kuriuose kiekvienoje atomo
-pozicijoje yra po vieną nesuporuotą elektroną (kubitą). <strong>Aizingo
-modelio</strong> (angl. <em>Ising model</em>) hamiltonianas apibūdina sistemos,
+pozicijoje yra po vieną nesuporuotą elektroną (kubitą).</p>
+<p><strong>Aizingo modelio</strong> (angl. <em>Ising model</em>) hamiltonianas leidžia apibūdinti sistemos,
 sudarytos iš <span class="math inline">\(1/2\)</span> sukinių, dinamiką. <strong>Skersinio lauko Aizingo modelio</strong>
 versija (angl. <em>transverse-field Ising model</em>) turi šią formą:
 <span class="math display" id="eq:transverse-field-Ising">\[\begin{equation}
@@ -300,16 +300,16 @@ H = - j\sum_{i = 1}^n Z_i\otimes Z_{i + 1} - g\sum_{i = 1}^n X_i\,.
 \tag{8.2}
 \end{equation}\]</span>
 Hamiltonianas apibūdina <span class="math inline">\(n\)</span> kubitų, išrikiuotų eilėje. Nariai pirmoje
-sumoje nusako magnetines sąveikas tarp vienas šalia kito (<span class="math inline">\(i\)</span>, <span class="math inline">\(i + 1\)</span>)
+suminėje dedamojoje nusako magnetines sąveikas tarp vienas šalia kito (<span class="math inline">\(i\)</span>, <span class="math inline">\(i + 1\)</span>)
 esančių kubitų išilgai <span class="math inline">\(z\)</span> ašies, apibūdintas Pauli-<span class="math inline">\(Z\)</span> operatoriais ir
 sąveikos stiprumu <span class="math inline">\(j\)</span>. Pavyzdžiui, vienas toks narys, veikiantis tarp
 antrojo ir trečiojo kubito 4 kubitų sistemoje būtų
-<span class="math inline">\(-jI\otimes Z\otimes Z\otimes I\)</span>. Antra suma hamiltoniane
+<span class="math inline">\(-jI\otimes Z\otimes Z\otimes I\)</span>. Antra dedamoji hamiltoniane
 apibūdina išorinio magnetinio lauko išilgai <span class="math inline">\(x\)</span> ašies efektą kiekvienam
-iš <span class="math inline">\(n\)</span> kubitų. Pavyzdžiui, veikdamas trečią kubitą 4 kubitų sistemoje
+iš <span class="math inline">\(n\)</span> kubitų; veikdamas trečią kubitą 4 kubitų sistemoje
 jis būtų <span class="math inline">\(-gI\otimes I\otimes X\otimes I\)</span>. Nepaisant paprastos
-išraiškos, bendras kubitų elgesys šiame Aizingo modelyje pasižymi
-fenomenų gausa.</p>
+išraiškos, kubitų elgesys Aizingo modelyje ir jo variacijose pasižymi
+fenomenų gausa. Pavyzdžiui, taip vadinamas laiko kristalas (angl. <em>time crystal</em>) buvo realizuotas kvantiniuose kompiuteriuose naudojant Aizingo modelį su periodinėmis išorinio lauko perturbacijomis ir lokaliomis netvarkos dedamosiomis. 2 dimensijose šis modelis leidžia apibūdinti feroelektrinį tvarkos-netvarkos fazinį virsmą (angl. <em>ferroelectric order-disorder phase transition</em>).</p>
 <p>Norėdami apskaičiuoti kubitų evoliuciją laike turime įvertinti
 unitariojo operatoriaus <span class="math inline">\(U = \mathrm{e}^{\frac{-\mathrm{i}Ht}{\hbar}}\)</span> veiksmą
 (žr. <a href="kvantines-mechanikos-pagrindai.html#kvantines-mechanikos-pagrindai">3</a> skyrių):
@@ -319,7 +319,7 @@ unitariojo operatoriaus <span class="math inline">\(U = \mathrm{e}^{\frac{-\math
 \tag{8.3}
 \end{equation}\]</span>
 Čia pradinė būsena <span class="math inline">\(|\psi(0) \rangle\)</span> laiku <span class="math inline">\(t = 0\)</span> yra
-bendrai <span class="math inline">\(n\)</span> kubitų superpozicija. Sekančiame poskyryje matysime vieną universalų metodą, kaip apskaičiuoti operatoriaus <span class="math inline">\(U\)</span> veiksmą.</p>
+bendrai <span class="math inline">\(n\)</span> kubitų superpozicija. Toliau matysime vieną universalų metodą, kaip apskaičiuoti kubitų būsenos laiko evoliuciją kvantiniame kompiuteryje.</p>
 </div>
 <div id="troterizacija" class="section level3 hasAnchor" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Troterizacija<a href="sistemu-modeliavimas-ir-qml.html#troterizacija" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -344,7 +344,7 @@ laike, nes:
 Vadinamoji <strong>troterizacija</strong> (angl. <em>Suzuki-Trotter approximation</em>)
 leidžia apeiti iškilusią kliūtį ir apytikriai realizuoti norimą
 operatorių. Ši aproksimacija diskretizuoja laiko intervalą <span class="math inline">\(t\)</span> į
-<span class="math inline">\(s\)</span> žingsnių, kai kiekvienas laiko intervalas trunka
+<span class="math inline">\(s\)</span> žingsnių, kuriame kiekvienas laiko intervalas trunka
 <span class="math inline">\(\Delta t = t/s\)</span>. Unitarusis operatorius tampa:
 <span class="math display" id="eq:laiko-diskretizacija-8">\[\begin{equation}
 U = \mathrm{e}^{\frac{-\mathrm{i}(H_1 + H_2)t}{\hbar}} \cong
@@ -353,8 +353,8 @@ U = \mathrm{e}^{\frac{-\mathrm{i}(H_1 + H_2)t}{\hbar}} \cong
 \tag{8.6}
 \end{equation}\]</span>
 Naudodami pasirinktinai mažą žingsnį <span class="math inline">\(\Delta t\)</span> ir atlikdami
-iteraciją <span class="math inline">\(s\)</span> kartų, apskaičiuokime norimą sistemos laiko evoliuciją
-visame laiko intervale <span class="math inline">\(t\)</span>. 8.6 lygybėje parodyta pirmosios eilės
+iteraciją <span class="math inline">\(s\)</span> kartų, apskaičiuosime norimą sistemos laiko evoliuciją
+visame laiko intervale <span class="math inline">\(t\)</span>. Viršuje parodyta pirmosios eilės <span class="math inline">\(U\)</span>
 aproksimacija, joje įterpiamos klaidos yra ne didesnės nei žingsnio
 dydžio kvadratas <span class="math inline">\(O(\Delta t^2)\)</span>. Troterizacija taip pat
 išsaugo laiko evoliucijos operatoriaus unitarumą ir todėl užtikrina, kad
@@ -371,13 +371,12 @@ būsena randama
 \end{equation}\]</span>
 Troterizacija natūraliai tinka realizuoti ir hamiltonianus, kurie kinta
 laike. Tai gali nusakyti, pavyzdžiui, periodines sistemos
-perturbacijas ar simuliuoti atsitiktinai jaučiamas išorines sąveikas.
-Čia taip pat pasirenkamas diskretizuotas laiko žingsnis
-<span class="math inline">\(\Delta t\)</span>, pagal kurį laiko evoliucijos operatorius <span class="math inline">\(U(t)\)</span>
-yra strobuojamas, taip pateikiant efektyvią seką:
+perturbacijas ar kintančio stiprumo ir krypties išorines sąveikas.
+Tam vėlgi pasirenkamas diskretizuotas laiko žingsnis
+<span class="math inline">\(\Delta t\)</span>, pagal kurį laiko evoliucija yra strobuojama, taip pateikiant efektyvią seką:
 <span class="math display" id="eq:nuo-laiko-priklausantis-u-trot">\[\begin{equation}
 |\psi(s\Delta t)\rangle
-= U_s(\Delta t)\cdots U_2(\Delta t)U_1(\Delta t)|\psi(0)\rangle\,.
+= U_s(\Delta t)\cdots U_3(\Delta t)U_2(\Delta t)U_1(\Delta t)|\psi(0)\rangle\,.
 \tag{8.8}
 \end{equation}\]</span></p>
 </div>
@@ -465,8 +464,7 @@ efektyviai suteikia skirtingas fazes skirtingo lyginumo būsenoms:
 \end{equation}\]</span>
 Ancilos kubito būseną atstatome atgal su dviem <span class="math inline">\(cX\)</span> vartais kartu
 panaikindami supynimą su <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span> kubitais. Gauname galutinę
-2 kubitų būseną, realizuojamą operatoriumi
-<span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}H_1 t}{\hbar}} = \mathrm{e}^{\mathrm{i}\theta Z_k\otimes Z_l}\)</span>:
+2 kubitų būseną, veikiamą laiko evoliucijos operatoriumi <span class="math inline">\(\mathrm{e}^{\frac{-\mathrm{i}H_1 t}{\hbar}} = \mathrm{e}^{\mathrm{i}\theta Z_k\otimes Z_l}\)</span>:
 <span class="math display" id="eq:galutine-busena-ising">\[\begin{equation}
 cX_1cX_2(I\otimes I\otimes \mathrm{e}^{\mathrm{i}\theta Z})cX_2cX_1|\psi\rangle
 = \frac{1}{2}\big(\mathrm{e}^{\mathrm{i}\theta}|00\rangle
@@ -843,13 +841,13 @@ kiekvieno kubito standartinį Pauli-<span class="math inline">\(Z\)</span> matav
 <span class="math inline">\(n\)</span> kubitų matavimas nusakomas apskaičiuojant
 <span class="math inline">\(\langle\psi |Z^{\otimes n}|\psi\rangle\)</span>.
 Dešimtainėje sistemoje rasime vieną iš galimų pozicijos būsenų
-<span class="math inline">\(|x&#39;\rangle\)</span> su tikimybe
-<span class="math inline">\(p(x&#39;) = \psi^{*}(x&#39;)\psi(x&#39;)dx = |\psi(x)|^2 dx\)</span>.
+<span class="math inline">\(|x\rangle\)</span> su tikimybe
+<span class="math inline">\(p(x) = \psi^{*}(x)\psi(x)dx = |\psi(x)|^2 dx\)</span>.
 Pakartoję algoritmą daug kartų ir atlikę tokį matavimą, apytikriai
 rasime visą <strong>tikimybių tankio funkciją</strong> <span class="math inline">\(|\psi(x)|^2\)</span>
 (angl. <em>probability density function</em>), kuri nusako tikimybes rasti
 kvantinę sistemą kiekviename erdvės taške <span class="math inline">\(x\)</span>.</p>
-<p>Vietoj šio matavimo galima apskaičiuoti globalius banginės funkcijos
+<p>Vietoj šio matavimo, pasitelkiant Hadamardo testą (žr. <a href="skaičiavimai-kvantiniu-kompiuteriu.html#hadamard-testas-poskyris">6.7.1</a> poskyrį), galima apskaičiuoti globalius banginės funkcijos
 parametrus, <span class="math inline">\(\langle\psi |M|\psi\rangle\)</span>;
 čia <span class="math inline">\(M\)</span> yra kvantinis operatorius. Pavyzdžiui, <span class="math inline">\(M\)</span> gali būti
 hamiltonianas arba judesio kiekio momento operatorius. Tai suteiks
@@ -1044,7 +1042,7 @@ hibridinis klasikinis-kvantinis algoritmas, pristatytas Shuld, Wiebe ir
 bendraautorių iš <em>Microsoft</em> nereikalauja didelio kubitų skaičiaus bei
 gilių grandinių ir todėl yra tinkamas ankstyvosios raidos kvantiniams
 procesoriams. Algoritme yra panaudojamas duomenų amplitudžių kodavimas
-(žr. 6.4 poskyrį), tad <span class="math inline">\(N = 2^n\)</span> dydžio duomenų bazė perteikiama tik
+(žr. <a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenu-kodavimas">6.4</a> poskyrį), tad <span class="math inline">\(N = 2^n\)</span> dydžio duomenų bazė perteikiama tik
 su <span class="math inline">\(n\)</span> kubitų. Darant prielaidą, kad duomenis galima efektyviai užrašyti
 į kvantinę registro būseną, kvantinis paralelizmas leidžia sparčią šios
 būsenos transformaciją ir rezultatų apskaičiavimą. Be to, dėl unitariųjų
