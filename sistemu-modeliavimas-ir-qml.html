@@ -256,14 +256,13 @@ div.csl-indent {
 <h1><span class="header-section-number">8 skyrius.</span> Kvantinių sistemų modeliavimas ir mašininis mokymasis<a href="sistemu-modeliavimas-ir-qml.html#sistemu-modeliavimas-ir-qml" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="dinaminių-sistemų-modeliavimas" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Dinaminių sistemų modeliavimas<a href="sistemu-modeliavimas-ir-qml.html#dinaminių-sistemų-modeliavimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Klasikinių bei kvantinių sistemų modeliavimas yra pagrįstas
-diferencialinių lygčių sprendinių paieška. Diferencialinės lygtys nusako
-sistemos dinamiką laike bei erdvėje ir atspindi dėsnius, kuriais šios
+<p>Klasikinių bei kvantinių sistemų modeliavimas fizikoje yra pagrįstas
+diferencialinių lygčių sprendinių paieška. Jie apibūdina
+dinamiką laike bei erdvėje ir atspindi dėsnius, kuriais šios
 sistemos pagrįstos. Klasikinėje fizikoje dažnai aptinkamos Niutono,
 Maksvelo ir Einšteino diferencialinės lygtys. Jos apibūdina sistemos
-pozicijų konfigūracijas, elektromagnetinių ir gravitacinių laukų kitimą,
-atitinkamai. Įprastai kompiuteriniai skaičiavimai diskretizuoja
-diferencialinės lygties kintamuosius, tokius kaip laiko ir erdvės. Tada
+pozicijų, elektromagnetinių ir gravitacinių laukų, atitinkamai, konfigūracijas bei kitimą. Tik itin speficinėse situacijose sprendinius galima rasti ir užrašyti žinomomis funkcijomis, tad yra pasitelkiami kompiuteriniai skaičiavimai. Įprastai, kompiuteriniai skaičiavimai diskretizuoja
+diferencialinės lygties kintamuosius, tokius kaip laiko ir erdvės. Tuomet
 iteracinė procedūra pradinę sistemos būseną nuveda prie ieškomosios
 galutinės. Diskretizavimo žingsnių dydis pasirenkamas atsižvelgiant į
 toleruotinus paklaidos dydžius, kuriuos dažnai galima tiksliai
@@ -280,17 +279,14 @@ yra nereikšmingi arba gali būti aproksimuojami efektyviu hamiltonianu
 <span class="math inline">\(H\)</span>. Tokio tipo sistemas čia ir aptarsime.</p>
 <div id="ising-hamiltonian-coding" class="section level3 hasAnchor" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Aizingo modelis<a href="sistemu-modeliavimas-ir-qml.html#ising-hamiltonian-coding" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Pirmiausia pradėkime nuo teiginio, kad sudėtinės kvantinės sistemos,
-kurių būsenos matematiškai aprašomos identiškai kubitams, natūraliai
+<p>Pirmiausia pradėkime nuo pastebėjimo, kad sudėtinių kvantinių sistemų modeliavimas,
+kurių posistemės būsenos aprašomos identiškai kubitams, natūraliai
 tinka kvantinės kompiuterijos taikymams. Tai iš principo atstoja gerai
-kontroliuojamą eksperimentą su šiomis sistemomis. Tarp jų yra medžiagų
-magnetizmą nulemiančios elementariosios bei sudėtinės dalelės
-(elektronai, protonai, neutronai), turinčios <span class="math inline">\(1/2\)</span> <strong>sūkį</strong> (angl. <em><span class="math inline">\(1/2\)</span> spin</em>).
-Šios dalelės magnetiniame lauke elgiasi panašiai kaip magnetiniai
+kontroliuojamą eksperimentą su šiomis sistemomis. Tarp tokių yra elektronas, protonas ir neutronas, turintys <span class="math inline">\(1/2\)</span> <strong>sūkį</strong> (angl. <em><span class="math inline">\(1/2\)</span> spin</em>). Šios dalelės magnetiniame lauke elgiasi panašiai kaip magnetiniai
 dipoliai. Blocho vektorius, orientuotas į ortogonaliąsias
 <span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenas,
 yra atitinkamai magnetinė „šiaurė” arba „pietūs”. Vienas pavyzdys –
-periodiškai išsidėlioję atomai kristaluose, kuriuose kiekvienoje atomo
+periodiškai išsidėlioję atomai kristale, kuriame kiekvienoje atomo
 pozicijoje yra po vieną nesuporuotą elektroną (kubitą).</p>
 <p><strong>Aizingo modelio</strong> (angl. <em>Ising model</em>) hamiltonianas leidžia apibūdinti sistemos,
 sudarytos iš <span class="math inline">\(1/2\)</span> sukinių, dinamiką. <strong>Skersinio lauko Aizingo modelio</strong>
@@ -309,7 +305,7 @@ apibūdina išorinio magnetinio lauko išilgai <span class="math inline">\(x\)</
 iš <span class="math inline">\(n\)</span> kubitų; veikdamas trečią kubitą 4 kubitų sistemoje
 jis būtų <span class="math inline">\(-gI\otimes I\otimes X\otimes I\)</span>. Nepaisant paprastos
 išraiškos, kubitų elgesys Aizingo modelyje ir jo variacijose pasižymi
-fenomenų gausa. Pavyzdžiui, taip vadinamas laiko kristalas (angl. <em>time crystal</em>) buvo realizuotas kvantiniuose kompiuteriuose naudojant Aizingo modelį su periodinėmis išorinio lauko perturbacijomis ir lokaliomis netvarkos dedamosiomis. 2 dimensijose šis modelis leidžia apibūdinti feroelektrinį tvarkos-netvarkos fazinį virsmą (angl. <em>ferroelectric order-disorder phase transition</em>).</p>
+fenomenų gausa. Pavyzdžiui, taip vadinamas laiko kristalas (angl. <em>time crystal</em>) gali būti realizuojamas kvantiniame procesoriuje naudojant Aizingo hamiltonianą su periodinėmis išorinio lauko perturbacijomis ir lokaliomis netvarkos dedamosiomis. Aizingo modelis 2 dimensijose leidžia stebėti feroelektrinį tvarkos-netvarkos fazinį virsmą (angl. <em>ferroelectric order-disorder phase transition</em>).</p>
 <p>Norėdami apskaičiuoti kubitų evoliuciją laike turime įvertinti
 unitariojo operatoriaus <span class="math inline">\(U = \mathrm{e}^{\frac{-\mathrm{i}Ht}{\hbar}}\)</span> veiksmą
 (žr. <a href="kvantines-mechanikos-pagrindai.html#kvantines-mechanikos-pagrindai">3</a> skyrių):
@@ -995,8 +991,8 @@ kvantinės atraminių vektorių mašinos.</p>
 lygtimis. Kyla klausimas, kaip padaryti kvantinį klasikinio neuroninio
 tinklo analogą? Vienas iš sprendimo būdų – naudoti hibridinius (iš
 dalies kvantinius, iš dalies klasikinius) algoritmus. Juose netiesiškumą
-į evoliuciją įveda kvantinės sistemos matavimas ir su juo susijęs
-būsenos vektoriaus kolapsas.</p>
+į evoliuciją įveda kvantinės sistemos matavimas ir su juo susijęs superpozicijos
+būsenos suirimas.</p>
 <p>Nemažai kvantinio mašininio mokymosi metodų naudoja hibridinius
 algoritmus: parametrizuotos kvantinės grandinės yra treniruojamos
 taikant klasikinius optimizavimo metodus. Tačiau čia iškyla problema:
