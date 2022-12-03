@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-02" />
+<meta name="date" content="2022-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -495,21 +495,18 @@ HXH = &amp; Z\,,\quad HYH = -Y\,,\quad HZH = X\,; \tag{4.12}\\
 ZXZ = &amp; -X\,,\quad ZYZ = -Y\,,\quad ZZZ = Z\,;\tag{4.13} \\
 SXS^{\dagger} = &amp; Y\,,\quad SYS^{\dagger} = -X\,,\quad SZS^{\dagger} = Z\,.\tag{4.14}
 \end{align}\]</span>
-Kaip galime pastebėti, viršuje pateikiamos tokios operatorių sekos:
-<span class="math inline">\(KPK^{\dagger} = P&#39;\)</span>. Čia <span class="math inline">\(P\)</span> ir <span class="math inline">\(P&#39;\)</span> yra Pauli operatoriai {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>},
+Kaip galime pastebėti, viršuje pateikiamos tokios loginių vartų sekos:
+<span class="math inline">\(KPK^{\dagger} = P&#39;\)</span>. Čia <span class="math inline">\(P\)</span> ir <span class="math inline">\(P&#39;\)</span> yra Pauli operatoriai,
 o <span class="math inline">\(K\)</span> yra parenkamas iš 1 kubito
 <strong>Klifordo grupės</strong> (angl. <em>Clifford group</em>) operatorių.
-Klifordo grupę generuojančiais <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> galima
-realizuoti ir Pauli operatorius {<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}:
+Šiai grupei priklausančius 1 kubito loginius vartus, tarp kurių yra ir Pauli-{<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}, galima sugeneruoti vien tik <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> loginių vartų sekomis. Viršuje matėme kaip realizuoti Pauli-<span class="math inline">\(Y\)</span>, na o <span class="math inline">\(X\)</span> ir <span class="math inline">\(Z\)</span> gaunami:
 <span class="math display" id="eq:pauli-per-h-s">\[\begin{equation}
-HSSH = X\,,\quad SXS^{\dagger} = Y\,,\quad SS = Z\,.
+HSSH = X\,,\quad SS = Z\,.
 \tag{4.15}
-\end{equation}\]</span>
-Viena Klifordo grupės savybių yra ta, kad jie
-transformuoja vieną Pauli operatorių į kitą iki <span class="math inline">\(\pm 1\)</span> faktoriaus.</p>
+\end{equation}\]</span></p>
 <p>Norėdami patikrinti, ar lygybės egzistuoja tarp skirtingų vartų sekų,
-galime jas nusakančias matricas papračiausiai sudauginti ir palyginti,
-ar jos vienodos, pavyzdžiui:
+galime jas nusakančias matricas tiesiog sudauginti ir palyginti,
+ar jos vienodos. Iliustracijai:
 <span class="math display" id="eq:patikrinimas-hxh">\[\begin{equation}
 HXH = \frac{1}{2}\begin{bmatrix}
 1 &amp; 1 \\
@@ -527,7 +524,7 @@ HXH = \frac{1}{2}\begin{bmatrix}
 \tag{4.16}
 \end{equation}\]</span>
 Klifordo vartais taip pat galima tarpusavyje transformuoti tolydžiai
-parametrizuotus loginius vartus <span class="math inline">\(R_z(\theta)\)</span> ir <span class="math inline">\(R_x(\theta)\)</span>:
+parametrizuotus posūkio loginius vartus, pavyzdžiui <span class="math inline">\(R_z(\theta)\)</span> ir <span class="math inline">\(R_x(\theta)\)</span>:
 <span class="math display" id="eq:hrzh">\[\begin{equation}
 HR_z(\theta)H = R_x(\theta)\,.
 \tag{4.17}
@@ -541,8 +538,8 @@ H\big\lbrack \cos(\theta/2)I - \mathrm{i}\sin(\theta/2)Z \big\rbrack H
 = &amp; \cos(\theta/2)I - \mathrm{i}\sin(\theta/2)X = R_x(\theta)\,.
 \end{aligned}
 \tag{4.18}
-\end{equation}\]</span>
-Trys Pauli bei Hadamardo loginiai vartai yra ermitiniai operatoriai
+\end{equation}\]</span></p>
+<p>Trys Pauli bei Hadamardo loginiai vartai yra ermitiniai operatoriai
 (<span class="math inline">\(U=U^{\dagger}\)</span>) ir todėl patys sau atvirkštiniai. Atliekant du ermitinius
 operatorius vieną po kito anuliuojamas jų efektas, pavyzdžiui, <span class="math inline">\(ZZ = I\)</span>,
 <span class="math inline">\(HH = I\)</span>. Kitaip nei Pauli ir Hadamardo vartai, dauguma kitų kvantinių
@@ -586,10 +583,10 @@ yra pamatuojami, net jeigu tai nėra parodoma simboliais kvantinės
 grandinės pabaigoje. Matavimai standartiškai atliekami santykinai su
 Pauli-<span class="math inline">\(Z\)</span> operatoriaus tikriniais vektoriais, tai yra skaičiuojamaisiais
 baziniais vektoriais <span class="math inline">\(|0\rangle\)</span> ir
-<span class="math inline">\(|1\rangle\)</span>. Kubitui esant šių bazinių vektorių superpozicijoje, galimi matavimo rezultatai yra Pauli-<span class="math inline">\(Z\)</span> tikrinės vertės +1
-arba -1. Radus +1 indikuojama, kad būsena yra
+<span class="math inline">\(|1\rangle\)</span>. Kubitui esant šių bazinių vektorių superpozicijoje, galimi matavimo rezultatai yra Pauli-<span class="math inline">\(Z\)</span> tikrinės vertės <span class="math inline">\(+1\)</span>
+arba <span class="math inline">\(-1\)</span>. Radus <span class="math inline">\(+1\)</span> indikuojama, kad būsena yra
 <span class="math inline">\(|0\rangle\)</span>, bei <span class="math inline">\(|1\rangle\)</span>, jeigu
-tikrinė vertė yra -1. Tai nusako vieną klasikinį bitą informacijos, o
+tikrinė vertė yra <span class="math inline">\(-1\)</span>. Tai nusako vieną klasikinį bitą informacijos, o
 atlikus matavimą gautas rezultatas yra įrašomas klaisikiniame bitų
 registre.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:grandine-bito-matavimas"></span>
@@ -621,13 +618,13 @@ procese, šios sekos fundamentaliai neįmanoma nuspėti.</p>
 <p>Dviejų kubitų vartai, veikdami
 <span class="math inline">\(|k_1\rangle\otimes |k_2\rangle\)</span>
 būseną, atlieka sąlygines logines operacijas: „Jeigu kubitas <span class="math inline">\(k_1\)</span> yra
-būsenoje <span class="math inline">\(|x\rangle\)</span>, tada su kubitu <span class="math inline">\(k_2\)</span> atliekama
+būsenoje <span class="math inline">\(|x\rangle\)</span>, tada kubitui <span class="math inline">\(k_2\)</span> atliekama
 operacija <span class="math inline">\(U\)</span>“. Čia <span class="math inline">\(U\)</span> gali būti bet kokia 1 kubito būsenos unitarioji
 transformacija. Vienas iš plačiausiai naudojamų 2 kubitų vartų yra
 <em>CNOT</em> (angl. <em>controlled not,</em> trumpinys <em>CNOT</em>), kuriuos grandinėse
 vadinsime <span class="math inline">\(cX\)</span>. Pasirinktas pirmas kubitas yra naudojamas kaip
 <strong>kontrolinis</strong> (angl. <em>control</em>), nuo kurio būsenos priklauso ar
-antram, adresatiniam kubitui, bus taikomi Pauli-<span class="math inline">\(X\)</span> loginiai vartai.
+antram, <strong>adresatiniam</strong> (angl. <em>target</em>) kubitui, bus taikomi Pauli-<span class="math inline">\(X\)</span> loginiai vartai.
 Vartai <span class="math inline">\(cX\)</span> yra iliustruojami <a href="kvantiniai-loginiai-vartai-grandines.html#fig:cnot-vartai">4.10</a> pav.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:cnot-vartai"></span>
 <img src="media/image4_10.svg" alt="2 kubitų sąlyginiai loginiai vartai $cX$ (arba *CNOT*)" width="33%" />
@@ -685,8 +682,7 @@ pamatyti žvelgiant į diadų formą, kurioje Pauli-<span class="math inline">\(
 tik su pirmo kubito <span class="math inline">\(|1\rangle\)</span> būsena. <span class="math inline">\(cX\)</span> vartų
 efektą baziniams vektoriams galima interpretuoti ir kaip modulio(2) bitų
 sudėtį (<span class="math inline">\(0 + 0 = 0\)</span>, <span class="math inline">\(0 + 1 = 1\)</span>, <span class="math inline">\(1 + 0 = 1\)</span>, <span class="math inline">\(1 + 1 = 0\)</span>), naudojančią simbolį
-<span class="math inline">\(\oplus\)</span>. Pritaikius <span class="math inline">\(cX\)</span> tarp kubitų <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span>, kurių vertės
-yra bet kuri iš 0 ir 1 kombinacijų, tada mod(2) sudėtis yra užrašoma
+<span class="math inline">\(\oplus\)</span>. Pritaikius <span class="math inline">\(cX\)</span> tarp kubitų <span class="math inline">\(k_1\)</span> ir <span class="math inline">\(k_2\)</span>, mod(2) sudėtis yra užrašoma
 antro kubito būsenoje:
 <span class="math display" id="eq:cx-mod2">\[\begin{equation}
 cX|k_1 \rangle\otimes |k_2 \rangle = |k_1 \rangle\otimes |k_1 \oplus k_2 \rangle\,.

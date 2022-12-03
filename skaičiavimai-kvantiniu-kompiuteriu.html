@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-02" />
+<meta name="date" content="2022-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -367,7 +367,7 @@ todėl kiekvienai <span class="math inline">\(f\)</span> reikšmei yra du skirti
 skaičiavimams atlikti yra dažnai pasitelkiami du kubitų registrai,
 vadinami <strong>įvesties</strong> (angl. <em>input register</em>) ir <strong>išvesties</strong>
 (angl. <em>output register</em>) registrais. Kvantinis skaičiavimas, naudojant
-du registrus, dažnai turi tokią formą:
+du registrus, turi tokią formą:
 <span class="math display" id="eq:skaiciavimas-du-registrai">\[\begin{equation}
 U_f|x\rangle\otimes|0\rangle = |x\rangle\otimes|f(x)\rangle\,.
 \tag{6.8}
@@ -385,7 +385,7 @@ U_f|x\rangle\otimes|y\rangle = |x\rangle\otimes|y\oplus f(x)\rangle\,.
 <p>Šiuo atveju naudojame dvejetainę formą, tad išvesties
 registre yra atliekama <span class="math inline">\(y\)</span> ir <span class="math inline">\(f(x)\)</span> mod(2) bitų sudėtis, žymima ženklu
 <span class="math inline">\(\oplus\)</span>. Paprasčiausią funkcinio skaičiavimo pavyzdį matėme
-IV skyriuje naudojant <span class="math inline">\(U_f = cX\)</span>, kuris atlieka mod(2) bitų sudėtį.
+4 skyriuje naudojant <span class="math inline">\(U_f = cX\)</span>, kuris atlieka mod(2) bitų sudėtį.
 <a href="skaičiavimai-kvantiniu-kompiuteriu.html#fig:kvantine-grandine-u-f">6.1</a> pav. iliustruojame šį bendrą skaičiavimo principą kvantine grandine.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:kvantine-grandine-u-f"></span>
 <img src="media/image6_1.svg" alt="Kvantinė grandinė, realizuojanti funkcinį skaičiavimą $U_f|x\rangle\otimes|y\rangle = |x\rangle\otimes|y\oplus f(x)\rangle$" width="45%" />
@@ -396,13 +396,11 @@ IV skyriuje naudojant <span class="math inline">\(U_f = cX\)</span>, kuris atli
 </div>
 <div id="kvantinis-paralelizmas" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Kvantinis paralelizmas<a href="skaičiavimai-kvantiniu-kompiuteriu.html#kvantinis-paralelizmas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Norint klasikiniu kompiuteriu apskaičiuoti funkcijos <span class="math inline">\(f(x)\)</span> reikšmes
-<span class="math inline">\(n\)</span> skirtingų argumentų <span class="math inline">\(x_1 , x_2 , \ldots , x_n\)</span>, reikia šią
-funkciją pateikti ir įvertinti <span class="math inline">\(n\)</span> kartų. Kvantinis kompiuteris leidžia
+<p>Norint klasikiniu kompiuteriu apskaičiuoti <span class="math inline">\(n\)</span> skirtingų argumentų <span class="math inline">\(x_1 , x_2 , \ldots , x_n\)</span> funkcijos <span class="math inline">\(f(x)\)</span> reikšmes, įprastgai reikia šią funkciją pateikti ir įvertinti <span class="math inline">\(n\)</span> kartų. Kvantinis kompiuteris leidžia
 <span class="math inline">\(f(x)\)</span> įvertinti lygiagrečiai visuose <span class="math inline">\(n\)</span>-argumentuose vienu funkcijos
 iškvietimu. Norėdami tai pamatyti, pradėkime vėl nuo 2 kubitų sistemos,
 turinčios po vieną kubitą įvesties ir išvesties registre siekiant
-apskaičiuoti funkciją argumentuose <span class="math inline">\(f(0)\)</span> ir <span class="math inline">\(f(1)\)</span>. Unitarusis
+apskaičiuoti funkciją argumentuose <span class="math inline">\(f(0)\)</span> ir <span class="math inline">\(f(1)\)</span>. Nelokalus unitarusis
 operatorius <span class="math inline">\(U_f\)</span> atlieka funkcijos <span class="math inline">\(f\)</span> įvertinimą, randame:
 <span class="math display" id="eq:u-f-superpozicija">\[\begin{equation}
 U_f\frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes|0\rangle
@@ -412,11 +410,11 @@ U_f\frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes|0\rangle
 Matome, kad jeigu įvesties registras yra paruoštas į
 <span class="math inline">\(|0\rangle\)</span> ir <span class="math inline">\(|1\rangle\)</span>
 superpoziciją, tada dėl operatorių tiesiškumo yra lygiagrečiai
-įvertinamos <span class="math inline">\(f(0)\)</span> ir <span class="math inline">\(f(1)\)</span> vertės vienu funkcijos <span class="math inline">\(f\)</span> pritaikymu. Šį
-principą galima praplėsti ir atlikti funkcijos įvertinimą <span class="math inline">\(2^n\)</span>
-argumentų paruošiant pradinę įvesties registro būseną į lygią visų
-<span class="math inline">\(n\)</span>-kubitų <span class="math inline">\(2^n\)</span> skaičiuojamųjų bazinių vektorių superpoziciją. Tai
-atliekama kiekvienam kubitui registre pritaikius Hadamardo loginius
+įvertinamos <span class="math inline">\(f(0)\)</span> ir <span class="math inline">\(f(1)\)</span> vertės vienu funkcijos <span class="math inline">\(f\)</span> pritaikymu.</p>
+<p>Šį principą galima praplėsti ir atlikti funkcijos įvertinimą <span class="math inline">\(2^n\)</span>
+argumentuose paruošiant pradinę įvesties registro būseną į lygią visų
+<span class="math inline">\(n\)</span>-kubitų <span class="math inline">\(2^n\)</span> skaičiuojamųjų bazinių vektorių superpoziciją. Superpozicija paruošiama
+atliekant kiekvienam kubitui Hadamardo loginius
 vartus. Pavyzdžiui, registre sudarytame iš 2-kubitų
 <span class="math inline">\(H\otimes H|00\rangle\)</span>:
 <span class="math display" id="eq:2-kubitu-superpozicija">\[\begin{equation}
@@ -427,9 +425,7 @@ vartus. Pavyzdžiui, registre sudarytame iš 2-kubitų
 \end{aligned}
 \tag{6.11}
 \end{equation}\]</span>
-Lokaliomis <span class="math inline">\(H\)</span> transformacijomis paruoštos būsenos superpozicijoje yra
-faktorizuojamos, tad galime išmatuoti kiekvieną kubitą nepaveikdami kitų
-būsenos. Jeigu rašysime
+Jeigu rašysime
 <span class="math inline">\(H^{\otimes n} = H\otimes H\otimes\cdots\otimes H\)</span>
 nusakyti Hadamardo transformaciją kiekvienam iš <span class="math inline">\(n\)</span>-kubitų, kurių bendra
 pradinė būsena dešimtainėje sistemoje yra <span class="math inline">\(|0\rangle\)</span>,
@@ -474,28 +470,18 @@ nėra svarbu, kurį registrą pasirinksime matuoti pirmą. Pavyzdžiui,
 pirmiausia išmatavus išvesties registro kubitus ir radus
 <span class="math inline">\(|f(x_0)\rangle\)</span>, bendra būsena tampa
 <span class="math inline">\(\big(|x_m\rangle + \cdots + |x_l\rangle\big)\otimes|f(x_0)\rangle\)</span>.
-Matome įvesties registrą, esantį būsenų superpozicijoje, kurios nusako
+Matome įvesties registrą esantį būsenų superpozicijoje, kurios nusako
 argumentus su vienodomis funkcijos reikšmėmis <span class="math inline">\(f(x_0)\)</span>. Tikimybė rasti
-bet kurią vieną būseną yra lygi kitoms. Tad šiame procese atsitiktiniu
+bet kurią vieną būseną yra lygi kitoms. Šiame procese atsitiktiniu
 būdu randame vieną iš <span class="math inline">\(f(x)\)</span> reikšmių, negalėdami pasirinkti, kuriame
 argumente <span class="math inline">\(x\)</span> norime įvertinti <span class="math inline">\(f\)</span>.</p>
-<p>Pirmiausiai atkreipiame dėmesį, kad atliekant funkcinius skaičiavimus
-retai yra būtinybė nuskaityti visas funkcijos reikšmes. Praktiškai
-įrašyti minėtų <span class="math inline">\(\sim 10^{30}\)</span> bitų informacijos, kurias saugo superpozicijoje
-100 kubitų, nepakaktų visos pasiekiamos klasikinės kompiuterių
-atminties. Dažnai yra svarbiau nustatyti tam tikras funkcijos savybes –
+<p>Kvantiniai algoritmai pasitelkia papildomus triukus ir turi būti formuluojami kitaip ne klasikiniai. Viena tokia algoritminė strategija, vadinama <strong>amplitudės amplifikacija</strong>
+(angl. <em>amplitude amplification</em>), leidžia padidinti
+registro būsenų, koduojančių ieškomus atsakymus, amplitudes. To pavyzdį matysime šiame skyriuje Groverio paieškos
+algoritme. Kitas būdas yra tiesiogiai nustatyti tam tikras funkcijos savybes –
 jos globalius parametrus, minimalias ar maksimalias vertes, periodiškumą
-ir panašiai. Kvantinių skaičiavimų užduotis yra išnaudoti jų
-fundamentalų masišką paralelizmą bei papildomais algoritminiais triukais
-padidinti tikimybę rasti būsenas, koduojančias ieškomus atsakymus. Viena
-tokia algoritminė strategija yra vadinama <strong>amplitudės amplifikacija</strong>
-(angl. <em>amplitude amplification</em>), kuri leidžia padidinti dominančių
-registro būsenų amplitudes. To pavyzdį matysime Groverio paieškos
-algoritme. Kitas būdas yra tiesiogiai įvertinti globalius funkcijos
-parametrus taikant interferenciją ar koreliacijas tarp kvantinių būsenų.
-Šią strategiją taiko nemaža dalis algoritmų, įskaitant Doičo bei Šoro
-algoritmus, Hadamardo ir SWAP testus, fazės nustatymo algoritmą, kai
-kuriuos mašininio mokymosi metodus, kvantinių klaidų taisymo kodus.</p>
+ir panašiai. Ši strategija išnaudoja interferenciją ar koreliacijas tarp kvantinių būsenų. Ją taiko nemaža dalis algoritmų, įskaitant Doičo bei Šoro algoritmus, Hadamardo ir SWAP testai, fazės nustatymo algoritmas, kai
+kurie mašininio mokymosi metodai ir kvantinių klaidų taisymo kodai.</p>
 </div>
 <div id="duomenu-kodavimas" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Duomenų kodavimo būdai<a href="skaičiavimai-kvantiniu-kompiuteriu.html#duomenu-kodavimas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -509,9 +495,7 @@ sudėtingumą tenka atsižvelgti į tai, kad būsenos paruošimo žingsniai
 gali savaime pareikalauti daug resursų. Blogiausiu atveju, perteikti
 bendrai <span class="math inline">\(n\)</span> kubitų būsenai gali prireikti eksponentiškai didelio
 <span class="math inline">\(O(2^n)\)</span> loginių operacijų skaičiaus nustatant visiems <span class="math inline">\(2^n\)</span>
-skaičiuojamiesiems baziniams vektoriams skirtingas amplitudes. Koduojant
-yra pageidautinas tiesiškai arba logaritmiškai su kubitų skaičiumi
-augantis operacijų skaičius.</p>
+skaičiuojamiesiems baziniams vektoriams skirtingas amplitudes.</p>
 <p>Duomenų tipas bei kodavimo metodas nulemia kodavimo žingsnio
 sudėtingumą. Egzistuoja ne vienas kodavimo metodas – plačiausiai
 taikomi yra <strong>bazinių vektorių kodavimas</strong> (angl. <em>basis encoding</em>) ir
@@ -587,8 +571,9 @@ narius.</p>
 paprasčiausių pavyzdžių, iliustruojantis kvantinio algoritmo pranašumą
 prieš klasikinį. Doičo algoritmas nėra savaime ypač naudingas, tačiau
 parodo esminį būsenų superpozicijos ir interferencijos panaudojimą
-kvantiniuose skaičiavimuose. Įsivaizduokime scenarijų, kuriame Agnė turi
-juodąją dėžę, atliekančią vieno bito manipuliacijas. Ši dėžė
+kvantiniuose skaičiavimuose.</p>
+<p>Įsivaizduokime scenarijų, kuriame Agnė turi
+juodąją dėžę (angl. <em>black box</em>), atliekančią vieno bito manipuliacijas. Ši dėžė
 apskaičiuoja funkciją <span class="math inline">\(f\)</span>, kuriai pateikus bitą su verte 0 arba 1, ji
 išveda kitą bitą, taip pat 0 arba 1. Egzistuoja iš viso keturios
 skirtingos 1 bito funkcijos <span class="math inline">\(f:\{0, 1\}\rightarrow\{0, 1\}\)</span>:
@@ -705,14 +690,10 @@ prireikti <span class="math inline">\(N - 1\)</span> patikrų, o tikimybė ras
 bandymų yra <span class="math inline">\(k/N\)</span>. Bet štai kvantiniu kompiuteriu pakanka <span class="math inline">\(\sqrt{N}\)</span>
 įrašų patikrinimų norint rasti norimą su praktiškai 100% tikimybe. Šis
 kvadratinis paspartinimas gali suteikti esminį pranašumą didėjant įrašų
-skaičiui duomenų bazėje.</p>
-<p>Įrodyta, kad Groverio algoritmas yra optimaliausias kvantinės paieškos
+skaičiui duomenų bazėje. Įrodyta, kad Groverio algoritmas yra optimaliausias kvantinės paieškos
 nestruktūrizuotoje duomenų bazėje algoritmas. Bet koks kitas gali nebent
 pakeisti <span class="math inline">\(O(\sqrt{N})\)</span> algoritmo laiko sudėtingumą bendrąja
-konstanta. Groverio paieškoje naudojamas amplitudžių amplifikacijos
-metodas yra taikomas kaip modulis įvarios paskirties kvantiniuose
-algoritmuose, įskaitant mašininio mokymosi, ir kvantinėje
-kriptografijoje.</p>
+konstanta.</p>
 <p>Paieškos problemą galima formaliai apibūdinti Būlio funkcija
 <span class="math inline">\(f:\{0, 1\}^n \rightarrow\{0, 1\}\)</span>, kuriai pateikus <span class="math inline">\(n\)</span>-bitų
 seką (funkcijos argumentą) funkcijos reikšmė yra 1, jeigu <span class="math inline">\(x\)</span> argumentas
