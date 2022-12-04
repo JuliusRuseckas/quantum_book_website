@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-03" />
+<meta name="date" content="2022-12-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -499,7 +499,7 @@ Kaip galime pastebėti, viršuje pateikiamos tokios loginių vartų sekos:
 <span class="math inline">\(KPK^{\dagger} = P&#39;\)</span>. Čia <span class="math inline">\(P\)</span> ir <span class="math inline">\(P&#39;\)</span> yra Pauli operatoriai,
 o <span class="math inline">\(K\)</span> yra parenkamas iš 1 kubito
 <strong>Klifordo grupės</strong> (angl. <em>Clifford group</em>) operatorių.
-Šiai grupei priklausančius 1 kubito loginius vartus, tarp kurių yra ir Pauli-{<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}, galima sugeneruoti vien tik <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> loginių vartų sekomis. Viršuje matėme kaip realizuoti Pauli-<span class="math inline">\(Y\)</span>, na o <span class="math inline">\(X\)</span> ir <span class="math inline">\(Z\)</span> gaunami:
+Šiai grupei priklausančius 1 kubito loginius vartus, tarp kurių yra ir Pauli-{<span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>}, galima sugeneruoti vien tik <span class="math inline">\(H\)</span> ir <span class="math inline">\(S\)</span> loginių vartų sekomis. Viršuje matėme kaip realizuoti Pauli-<span class="math inline">\(Y\)</span>, na o <span class="math inline">\(X\)</span> ir <span class="math inline">\(Z\)</span> randami:
 <span class="math display" id="eq:pauli-per-h-s">\[\begin{equation}
 HSSH = X\,,\quad SS = Z\,.
 \tag{4.15}
@@ -1376,34 +1376,32 @@ interferencijos loginėse Belo matavimo operacijose.</p>
 <div id="universalių-loginių-vartų-rinkinys" class="section level2 hasAnchor" number="4.9">
 <h2><span class="header-section-number">4.9</span> Universalių loginių vartų rinkinys<a href="kvantiniai-loginiai-vartai-grandines.html#universalių-loginių-vartų-rinkinys" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Skirtingų loginių vartų rinkinys, leidžiantis įvykdyti bet kokią
-<em>n </em>kubitų registro būsenų transformaciją norimu tikslumu, yra vadinamas
+<em>n</em> kubitų registro būsenų transformaciją norimu tikslumu, yra vadinamas
 universaliu. Barenko teorema (angl. <em>Barenco theorem</em>) teigia, kad
 kvantinių loginių vartų rinkinys
-<span class="math inline">\(\big\{ U_3(\theta,\gamma,\varphi), cX\big\}\)</span> yra universalus. Todėl
+<span class="math inline">\(\big\{ U_3(\theta,\gamma,\varphi), cX\big\}\)</span> yra universalus. Todėl vien tik
 1 kubito <span class="math inline">\(U_3(\theta,\gamma,\varphi)\)</span> bei 2 kubitų <span class="math inline">\(cX\)</span> loginių vartų
-kombinacijomis galima įvykdyti bet kokį suformuluojamą algoritmą
+kombinacijomis galima įvykdyti visus algoritmus
 kvantiniame kompiuteryje. Matematiškai tai reiškia, kad bet kokią
 <span class="math inline">\((2^n\times 2^n)\)</span> dydžio unitarinę matricą <span class="math inline">\(U\)</span>, nusakančią vektoriaus
-transformaciją kompleksinėje <span class="math inline">\(d = 2^n\)</span> dimensijų vektorių erdvėje
-<span class="math inline">\(V^d\)</span>, galima išskaidyti į paprastesnes <span class="math inline">\((2^n \times 2^n)\)</span> matricas,
+transformaciją <span class="math inline">\(d = 2^n\)</span> dimensijų Hilberto erdvėje, galima išskaidyti į paprastesnes <span class="math inline">\((2^n \times 2^n)\)</span> matricas,
 kurių kiekviena netrivialiai veikia tik 1 kubito (2 dimensijų) ir
 2 kubitų (4 dimensijų) poerdvius. Jos yra vadinamos <strong>dviejų lygių
 unitariosiomis matricomis</strong> (angl. <em>two-level unitary matrix</em>).
-Tiksliau, <span class="math inline">\(U\)</span> galima išskaidyti į <span class="math inline">\(U = U_1 U_2\cdots U_N\)</span>, čia
+Tiksliau, galima išskaidyti <span class="math inline">\(U = U_1 U_2\cdots U_N\)</span>, čia
 <span class="math inline">\(U_i\)</span> yra 2 lygių unitariosios matricos, atlikti dekompozicijai
 reikalingas jų skaičius <span class="math inline">\(N\)</span> tenkina <span class="math inline">\(N \leq d(d - 1)/2\)</span>.</p>
 <p>Norint įvykdyti visas įmanomas 1 kubito unitarines transformacijas
 <span class="math inline">\(U_3(\theta,\gamma,\varphi)\)</span> reikia, kad parametrizuoti loginiai
 vartai galėtų tolydžiai pasukti Blocho vektorių. Tačiau nėra žinoma,
 kaip atlikti tolydžiąsias transformacijas su begaliniu tikslumu turint
-ribotus išteklius. Tai yra viena iš priežasčių, kodėl klaidų taisymo
-algoritmai tokie svarbūs kvantinei kompiuterijai. Praktiškai yra
-naudingiau pakeisti riboto tikslumo tolydžiai parametrizuotas
-transformacijas diskrečiosiomis, bet tiksliau sukalibruotomis
-transformacijomis. Solovėjaus-Kitaevo teorema (angl. <em>Solovay-Kitaev
+ribotus išteklius. Tam tikrose situacijose gali būti
+naudingiau pakeisti riboto tikslumo tolydžiai parametrizuotus
+loginius vartus diskrečiaisiais, bet tiksliau veikiančiais
+loginiais vartais. Solovėjaus-Kitaevo teorema (angl. <em>Solovay-Kitaev
 theorem</em>) teigia, kad tolydžias 1 kubito transformacijas galima
 apytikriai pakeisti naudojant vien tik <span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, ir <span class="math inline">\(T\)</span> loginių vartų
-kombinacijas. Pageidaujamai mažo dydžio 1 kubito loginių vartų paklaida
+kombinacijas. Pageidaujamai mažo dydžio bet kokių 1 kubito loginių vartų paklaida
 <span class="math inline">\(\varepsilon\)</span> (angl. <em>arbitrarily small error</em>) gali būti pasiekta su
 <span class="math inline">\(O\big(\log^2(1/\varepsilon)\big)\)</span> skaičiumi loginių vartų iš šio rinkinio.
 Tai bendrai yra priimtinas loginių vartų skaičiaus padidėjimas. Keturių
@@ -1411,16 +1409,14 @@ loginių vartų rinkinys {<span class="math inline">\(H\)</span>, <span class="m
 (angl. <em>Clifford-T group</em>), yra universalus ir dažnai aptinkamas
 praktikoje. Egzistuoja ir kitų universaliųjų rinkinių, pavyzdžiui, {<span class="math inline">\(H\)</span>,
 <span class="math inline">\(ccX\)</span>} ir {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>, <span class="math inline">\(ccX\)</span>}.</p>
-<p>Svarbi Gotsmano-Nilo teorema (angl. <em>Gottesman-Knill theorem</em>) teigia,
-kad kvantiniai algoritmai, naudojantys vien tik Klifordo grupės 1 ir
-2 kubitų loginius vartus {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>} gali būti efektyviai modeliuojami
-klasikiniu kompiuteriu su polinominiu laiko kompleksiškumu. Nors
-Klifordo grupe pagrįsti kvantiniai algoritmai gali sukurti daug įvairių
-supintųjų registro būsenų, tačiau šie algoritmai nesuteikia pranašumo
-prieš klasikinius algoritmus. Yra gerai žinoma, kad Klifordo grupė
+<p>Šiame skyriuje trumpai paminėjome Klifordo loginių vartų grupę. Klifordo grupės 1 ir
+2 kubitų loginių vartų rinkinys yra sudarytas iš {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>}. Ši grupė yra plačiai naudojama kvantinių klaidų taisymo algoritmuose. Nors jais pagrįsti kvantiniai algoritmai gali sukurti daug įvairių
+supintųjų registro būsenų, tačiau Klifordo grupė
 nesudaro universalaus loginių vartų rinkinio. Būtent <span class="math inline">\(T\)</span> loginiai
 vartai, įtraukti Klifordo-<em>T</em> grupėje, negali būti pageidaujamai
-tiksliai išreikšti vien su {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>}.</p>
+tiksliai išreikšti vien su {<span class="math inline">\(H\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(cX\)</span>}. Gotsmano-Nilo teorema (angl. <em>Gottesman-Knill theorem</em>) teigia,
+kad Klifordo grupe pagrįsti kvantiniai algoritmai gali būti efektyviai modeliuojami
+klasikiniu kompiuteriu su polinominiu laiko kompleksiškumu.</p>
 
 </div>
 </div>
