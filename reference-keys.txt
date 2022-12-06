@@ -674,7 +674,7 @@ kvantinė-kriptografija
 bb84-kvantinis-rakto-pasidalijimo-protokolas
 epr-kvantinis-rakto-pasidalijimo-protokolas
 lokalios-operacijos-ir-klasikiniai-ryšiai
-belo-nelygybės-testas
+belo-nelygybė
 skaičiavimai-kvantiniu-kompiuteriu
 bazinių-vektorių-numeracija
 funkcinis-skaičiavimas

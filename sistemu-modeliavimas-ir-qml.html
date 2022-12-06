@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-04" />
+<meta name="date" content="2022-12-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,7 +159,7 @@ div.csl-indent {
 <li class="chapter" data-level="5.4.2" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#epr-kvantinis-rakto-pasidalijimo-protokolas"><i class="fa fa-check"></i><b>5.4.2</b> EPR kvantinis rakto pasidalijimo protokolas</a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#lokalios-operacijos-ir-klasikiniai-ryšiai"><i class="fa fa-check"></i><b>5.5</b> Lokalios operacijos ir klasikiniai ryšiai</a></li>
-<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybės-testas"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybės testas</a></li>
+<li class="chapter" data-level="5.6" data-path="kvantinė-informacija-ir-ryšiai.html"><a href="kvantinė-informacija-ir-ryšiai.html#belo-nelygybė"><i class="fa fa-check"></i><b>5.6</b> Belo nelygybė</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="skaičiavimai-kvantiniu-kompiuteriu.html"><a href="skaičiavimai-kvantiniu-kompiuteriu.html"><i class="fa fa-check"></i><b>6</b> Skaičiavimai kvantiniu kompiuteriu</a>
 <ul>
@@ -628,7 +628,7 @@ intervalą <span class="math inline">\(t\)</span> į <span class="math inline">\
 \mathrm{e}^{\frac{-\mathrm{i}(K + V)t}{\hbar}}
 \cong &amp; \left(\mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
 \mathrm{e}^{\frac{-\mathrm{i}V\Delta t}{\hbar}}\right)^s\,;\tag{8.24}\\
-\psi(x,t) = &amp; \mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
+\psi(x,s\Delta t) = &amp; \mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
 \mathrm{e}^{\frac{-\mathrm{i}V\Delta t}{\hbar}}\cdots
 \mathrm{e}^{\frac{-\mathrm{i}K\Delta t}{\hbar}}
 \mathrm{e}^{\frac{-\mathrm{i}V\Delta t}{\hbar}}\psi(x,0)\,.\tag{8.25}
@@ -805,11 +805,11 @@ pavyzdį:
 \tag{8.36}
 \end{equation}\]</span></p>
 <p>Jau žinome, kaip kvantinėje grandinėje
-loginiais vartais perteikti visus čia matomus narius. Šriodingerio
-lygties sprendime turime paruošti pradinę banginę funkciją <span class="math inline">\(\psi(x,0)\)</span>.
+loginiais vartais perteikti visus čia matomus narius.</p>
+<p>Šriodingerio lygties sprendime turime paruošti pradinę banginę funkciją <span class="math inline">\(\psi(x,0)\)</span>.
 Pageidautina, kad šis žingsnis nereikalautų itin didelio loginių
-operacijų skaičiaus. Banginės funkcijos, pasižyminčios simetrijomis,
-įprastai gali būti efektyviai koduojamos. Pavyzdžiui, dažnai <strong>Gauso
+operacijų skaičiaus. Vėlgi, funkcijos, pasižyminčios simetrijomis,
+įprastai gali būti efektyviai koduojamos. Pavyzdžiui, <strong>Gauso
 funkcija</strong> (angl. <em>Gaussian</em> <em>function</em>) yra išreiškiama polinominiu
 skaičiumi loginių vartų <span class="math inline">\(O(\mathrm{pol}(n+1/\Delta))\)</span>; čia <span class="math inline">\(\Delta\)</span> nusako erdvinę
 skiriamąją gebą. Diskretizuota Gauso funkcija
