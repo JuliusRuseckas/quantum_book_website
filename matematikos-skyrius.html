@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-06" />
+<meta name="date" content="2022-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1038,7 +1038,7 @@ Operatoriai, veikdami vektoriais nusakytas kvantines būsenas, apibūdina
 šių vektorių transformacijas. Pavyzdžiui, 1 kubito Blocho sferos
 reprezentacijoje operatoriaus veiksmas yra keisti Blocho vektoriaus
 orientaciją sferoje. Formaliai, operatorius <span class="math inline">\(A\)</span> (vartojame didžiąsias
-raides žymėti operatoriams) transformuoja kiekvieną vektorių
+raides žymėti operatoriams) transformuoja vektorių
 <span class="math inline">\(|v\rangle \in V\)</span> į kitą vektorių
 <span class="math inline">\(|u\rangle\)</span>, priklausantį tai pačiai vektorių erdvei,
 <span class="math inline">\(|u\rangle \in V\)</span>:
@@ -1604,9 +1604,7 @@ c &amp; d \\
 \tag{2.83}
 \end{equation}\]</span>
 Kiekviena iš keturių <span class="math inline">\((2\times 2)\)</span> matricų yra vektoriaus stulpelio ir
-vektoriaus eilutės, vadinamosios išorinės sandaugos, rezultatas,
-<span class="math inline">\((2\times 1)(1\times 2)(2\times 2)\)</span>. Pavyzdžiui, šios išorinės sandaugos rezultatas
-yra antra matrica:
+vektoriaus eilutės sandaugos rezultatas. Pavyzdžiui, antra matrica viršuje gaunama:
 <span class="math display" id="eq:isorine-sandauga-pvz">\[\begin{equation}
 \begin{bmatrix}
 1 \\
@@ -1620,13 +1618,13 @@ yra antra matrica:
 \end{bmatrix} = |1\rangle\langle 0|\,.
 \tag{2.84}
 \end{equation}\]</span>
-Tai priešinga vidinei vektorių sandaugai, kuri gaunama sudauginus eilutę
-ir stulpelį, o jos rezultatas yra skaičius. Prisiminę, kad vektorius
+Tai galima palyginti su vidine vektorių sandauga, kuri yra vektoriaus eilutės
+ir vektoriaus stulpelio sandauga, o jos rezultatas yra skaičius. Prisiminę, kad vektorius
 stulpelis nusako <em>ket</em>, o eilutė <em>bra</em>, matome, kad viršuje pavyzdyje
-pateikta išorinė sandauga ir matrica gali būti užrašoma glaustai
+pateikta išorinė sandauga ir jos matricos išraiška gali būti užrašoma glaustai
 <span class="math inline">\(|1\rangle\langle 0|\)</span>. Čia
 <span class="math inline">\(|1\rangle\)</span> ir <span class="math inline">\(\langle 0|\)</span> yra kubito
-Pauli-<span class="math inline">\(Z\)</span> <em>ket</em> (<em>bra</em>) baziniai vektoriai. Todėl bet kokia <span class="math inline">\((2\times 2)\)</span>
+Pauli-<span class="math inline">\(Z\)</span> <em>ket</em> (<em>bra</em>) tikriniai vektoriai. Tad bet kokia <span class="math inline">\((2\times 2)\)</span>
 matrica yra išreiškiama diadine dekompozicija taip:
 <span class="math display" id="eq:2-2-diadine-dekompozicija">\[\begin{equation}
 \begin{bmatrix}
@@ -1653,24 +1651,20 @@ az|\nu\rangle + bc|\nu\rangle \\
 \end{aligned}
 \tag{2.86}
 \end{equation}\]</span>
-Diada veikiant vektorių yra gaunamas kitas vektorius, analogiškai kaip
-veikiant vektorių operatoriumi. Matome, kad diada
+Diada veikianti vektorių jį transformuoja į kitą vektorių. Matome, kad diada
 <span class="math inline">\(|\nu\rangle\langle\omega|\)</span> pasuka
 vektorius <span class="math inline">\(|\psi\rangle\)</span> ir
 <span class="math inline">\(|\phi\rangle\)</span> į <span class="math inline">\(|\nu\rangle\)</span>
-vektoriaus kryptį, priklauso nuo to, ar jie persikloja su
+vektoriaus kryptį, jeigu jie persikloja su
 <span class="math inline">\(|\omega\rangle\)</span>. Persiklojimą atspindi skaičius, gautas
-vidinėje sandaugoje,
-<span class="math inline">\(z = \langle\omega|\psi\rangle\)</span>,
+vidinėje sandaugoje, čia <span class="math inline">\(z = \langle\omega|\psi\rangle\)</span> ir
 <span class="math inline">\(c = \langle\omega|\phi\rangle\)</span>. Dėl
-daugybos asociatyvumo į
+daugybos asociatyvumo, <span class="math inline">\(|\nu\rangle\big(\langle\omega|\psi\rangle\big) = \big(|\nu\rangle\langle\omega|\big)|\psi\rangle\)</span>, į
 <span class="math inline">\(|\nu\rangle\langle\omega|\psi\rangle\)</span>
-galime žvelgti dviem būdais, nes
-<span class="math inline">\(|\nu\rangle\big(\langle\omega|\psi\rangle\big) = \big(|\nu\rangle\langle\omega|\big)|\psi\rangle\)</span>.
-Pirmuoju būdu nusakoma vektoriaus ir skaičiaus sandauga, antruoju –
-vektoriaus veikimas operatoriumi. Diada
-<span class="math inline">\(|\nu\rangle\langle\omega|\)</span> taip pat
-gali operuoti virš <em>bra</em> vektoriaus iš dešinės, pavyzdžiui, naryje
+galime žvelgti dviem būdais. Pirmuoju būdu nusakoma vektoriaus ir skaičiaus sandauga, antruoju –
+vektoriaus veikimas diada. Diada
+<span class="math inline">\(|\nu\rangle\langle\omega|\)</span>
+gali operuoti <em>bra</em> vektorius iš dešinės, pavyzdžiui, naryje
 <span class="math inline">\(\langle\psi|\nu\rangle\langle\omega|\)</span>.
 Šiuo atveju vidinė sandauga atliekama su <span class="math inline">\(|\nu\rangle\)</span>,
 o <em>bra</em> <span class="math inline">\(\langle\psi|\)</span> būtų pasuktas į
@@ -1692,7 +1686,7 @@ I = \sum_m |m\rangle\langle m|\,.
 Atkreipiame dėmesį, kad vienodi <em>bra</em> ir <em>ket</em> simboliai diadoje
 nurodo matricos pagrindinės įstrižainės elementus <span class="math inline">\(a_{mm}\)</span>. Visi
 tiesiniai operatoriai turi diadinę dekompoziciją. Šią dekompoziciją
-galime formaliai išreikšti įterpę <span class="math inline">\(A\)</span> operatorių tarp vienetinių
+galime formaliai išreikšti įterpę norimą <span class="math inline">\(A\)</span> operatorių tarp vienetinių
 operatorių ir panaudodami vienetinio operatoriaus diadines
 dekompozicijas:
 <span class="math display" id="eq:tiesinio-operatoriaus-diadine-dekompozicija">\[\begin{equation}
@@ -1704,8 +1698,8 @@ A = &amp; IAI = \sum_{m,n} |m\rangle\langle m|A|n\rangle\langle n| =
 \tag{2.89}
 \end{equation}\]</span>
 Čia <span class="math inline">\(a_{mn} = \langle m|A|n\rangle\)</span> yra
-jau matyta operacija. Ji įvardija matricos elementą <span class="math inline">\(a_{mn}\)</span>, <span class="math inline">\(m\)</span>
-eilutėje ir <span class="math inline">\(n\)</span> stulpelyje, pasirinktoje vektorių bazėje.
+jau matytas objektas, jis įvardija <span class="math inline">\(a_{mn}\)</span> matricos elementą <span class="math inline">\(m\)</span>
+eilutėje ir <span class="math inline">\(n\)</span> stulpelyje.
 Pauli operatorius ir Hadamardo transformaciją galima paprastai
 išreikšti diadomis vektorių
 <span class="math inline">\(\big\{|0\rangle , |1\rangle\big\}\)</span> bazėje:
@@ -1782,7 +1776,7 @@ equation</em>) teigia, kad susumavę visus vektorių erdvės projekcinius
 operatorius gausime vienetinį operatorių <span class="math inline">\(I\)</span>. Antroji savybė rodo, kad
 dviejų skirtingų projekcinių operatorių sandauga yra nulinė
 (<span class="math inline">\(i \neq j\)</span>), arba lygia pačiam operatoriui (<span class="math inline">\(i = j\)</span>). Taip yra todėl,
-kad skirtingi <span class="math inline">\(P_k\)</span> atlieka vektorių projekcijas į ortogonaliuosius
+kad taip apibūdinti skirtingi <span class="math inline">\(P_k\)</span> atlieka vektorių projekcijas į ortogonaliuosius
 poerdvius.</p>
 <p>Verta paminėti, kad unitariniai operatoriai <span class="math inline">\(U\)</span> turi spektrinę
 dekompoziciją, kurios forma yra:
@@ -1911,10 +1905,7 @@ Gautas vektorius stulpelis yra sudarytas iš keturių elementų. Naudodami
 Skaičiuojamasis ortogonalus 2 kubitų rinkinys yra sudarytas iš <span class="math inline">\(V\)</span> ir
 <span class="math inline">\(U\)</span> erdvių <span class="math inline">\(\big\{|1\rangle , |0\rangle\big\}\)</span>
 bazinių vektorių tenzorinių sandaugų
-<span class="math inline">\(|0\rangle\otimes|0\rangle\)</span>,
-<span class="math inline">\(|1\rangle\otimes|0\rangle\)</span>,
-<span class="math inline">\(|0\rangle\otimes|1\rangle\)</span>,
-<span class="math inline">\(|1\rangle\otimes|1\rangle\)</span>:
+<span class="math inline">\(\{|0\rangle\otimes|0\rangle, |1\rangle\otimes|0\rangle, |0\rangle\otimes|1\rangle, |1\rangle\otimes|1\rangle \}\)</span>:
 <span class="math display" id="eq:baziniu-vektoriu-tenzorines-sandaugos">\[\begin{equation}
 \begin{aligned}
 |0\rangle\otimes|0\rangle = &amp; \begin{bmatrix}
@@ -2143,10 +2134,10 @@ ir <span class="math inline">\(\big\{|k\rangle\otimes |l\rangle\big\}\)</span>
 rinkinys pateikia juos visus. Šie vektoriai yra tarpusavyje ortogonalūs:
 <span class="math display" id="eq:tenzorines-sandaugos-tikriniu-verciu-ortogonalumas">\[\begin{equation}
 \big(\langle k&#39;|\otimes\langle l&#39;|\big)\big(|k\rangle\otimes|l \rangle\big)
-= \langle k&#39;|k\rangle\langle l&#39;|l\rangle = \delta_{k&#39;k}\delta_{l&#39;l}\,.
+= \langle k&#39;|k\rangle\langle l&#39;|l\rangle = \delta_{k&#39;k}\delta_{l&#39;l}\,,
 \tag{2.127}
 \end{equation}\]</span>
-Ir todėl gali būti naudojami kaip bazinių vektorių rinkinys. Toliau
+ir todėl gali būti naudojami kaip bazinių vektorių rinkinys. Toliau
 imkime normalųjį operatorių <span class="math inline">\(A\)</span>, išreikštą spektrine dekompozicija:
 <span class="math display" id="eq:operatoriaus-spektrine-dekompozicija-2">\[\begin{equation}
 A = \sum_k \lambda_k |k\rangle\langle k| = \sum_k \lambda_k P_k\,.
@@ -2190,11 +2181,7 @@ Z\otimes Z = &amp; |0\rangle\langle 0|\otimes |0\rangle\langle 0| -
 \end{equation}\]</span>
 Matome, kad yra tik dvi skirtingos operatoriaus <span class="math inline">\(Z\otimes Z\)</span> tikrinės
 vertės, <span class="math inline">\(\lambda_k \lambda_l \in (1, -1)\)</span>, ir keturi tikriniai
-vektoriai,
-<span class="math inline">\(|0\rangle\otimes |0\rangle\)</span>,
-<span class="math inline">\(|1\rangle\otimes |0\rangle\)</span>,
-<span class="math inline">\(|0\rangle\otimes |1\rangle\)</span>,
-<span class="math inline">\(|1\rangle\otimes |1\rangle\)</span>. Tad su
+vektoriai. Tad su
 šiomis tikrinėmis vertėmis susieti poerdviai yra dvigubai išsigimę.</p>
 <p>Kvantinėje kompiuterijoje dažnai aptinkami operatoriai, kurie vienu metu
 keičia tik vieno kubito būseną. Pavyzdžiui, operatorius trečiam kubitui
@@ -2279,8 +2266,7 @@ prieiname prie tos pačios išraiškos:
 \tag{2.137}
 \end{equation}\]</span>
 Taikydami spektrinę dekompoziciją galime taip pat rasti ir normaliųjų
-operatorių tenzorinės sandaugos funkcijas. Jos turi turi identiškas
-formas, pavyzdžiui, dviejų operatorių <span class="math inline">\(A\otimes B\)</span> funkcija:
+operatorių tenzorinės sandaugos funkcijas. Pavyzdžiui, dviejų operatorių <span class="math inline">\(A\otimes B\)</span> funkcija:
 <span class="math display" id="eq:tenzorines-sandaugos-funkcija">\[\begin{equation}
 f(A\otimes B) = \sum_{k,l} f(\lambda_k \lambda_l )P_k \otimes P_l\,.
 \tag{2.138}
