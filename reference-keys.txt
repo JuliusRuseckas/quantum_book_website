@@ -282,6 +282,7 @@ fig:swap-vartai
 eq:fredkin-vartai
 fig:fredkin-vartai
 fig:swap-realizavimas
+eq:iswap-vartai
 eq:bendri-salyginiai-diadom
 fig:bendro-tipo-salyginiai-vartai
 eq:bendro-tipo-1-kubito-vartai

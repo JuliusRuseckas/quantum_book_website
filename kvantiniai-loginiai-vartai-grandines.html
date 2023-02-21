@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="https://kvantinekompiuterija.lt/media/cover.png" />
   <meta property="og:description" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
   <meta name="github-repo" content="JuliusRuseckas/quantum_book" />
 
@@ -18,13 +18,13 @@
   <meta name="twitter:title" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
   
   <meta name="twitter:description" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
-  
+  <meta name="twitter:image" content="https://kvantinekompiuterija.lt/media/cover.png" />
 
 <meta name="author" content="Tadas Paulauskas" />
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2022-12-21" />
+<meta name="date" content="2023-02-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -877,9 +877,8 @@ cW = |0\rangle\langle 0|\otimes I\otimes I + |1\rangle\langle 1|\otimes W\,.
 4.16 pav. Fredkin, arba kontroliuojami SWAP, loginiai vartai
 </p>
 </div>
-<p>Kaip ir Tofoli loginiai vartai, SWAP bei
-Fredkin paprastai nėra elementarios kubitų transformacijos fiziniame
-lygmenyje, tačiau yra konstruojami iš 1 kubito ir 2 kubitų loginių vartų
+<p>SWAP bei Fredkin paprastai nėra elementarios kubitų transformacijos fiziniame
+lygmenyje, tačiau gali būti realizuojamas iš 1 kubito ir 2 kubitų loginių vartų
 sekų. Vienas būdas atlikti SWAP 2 kubitų būsenai naudojant <span class="math inline">\(cX\)</span> vartus
 parodytas <a href="kvantiniai-loginiai-vartai-grandines.html#fig:swap-realizavimas">4.17</a> pav.:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:swap-realizavimas"></span>
@@ -888,6 +887,16 @@ parodytas <a href="kvantiniai-loginiai-vartai-grandines.html#fig:swap-realizavim
 4.17 pav. SWAP loginių vartų realizavimas pasitelkiant tris <em>cX</em> loginius vartus
 </p>
 </div>
+<p>Loginiai vartai iSWAP, sutrumpintai juos vadinsime <span class="math inline">\(iW\)</span>, yra tiesiogiai
+realizuojami kai kuriuose kvantinių procesorių architektūruose, tarp jų -
+grįstuose superlaidžiomis grandinėmis. Loginius vartus <span class="math inline">\(iW\)</span> galime išreikšti
+diadų forma taip:
+<span class="math display" id="eq:iswap-vartai">\[\begin{equation}
+iW = |00\rangle\langle 00| + \mathrm{i}(|01\rangle\langle 10| + |10\rangle\langle 01|)
++ |11\rangle\langle 11|\,.
+\tag{4.44}
+\end{equation}\]</span>
+Lyginant su <span class="math inline">\(W\)</span> matome, kad būsenoms <span class="math inline">\(|01rangle\)</span> ir <span class="math inline">\(|10rangle\)</span> papildomai pritaikoma <span class="math inline">\(\mathrm{i}\)</span> fazė.</p>
 </div>
 <div id="bendro-tipo-salyginiai-vartai" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -897,7 +906,7 @@ transformacija <span class="math inline">\(U\)</span>, jeigu pirmas kubitas yra 
 būsenoje. Šiuos vartus diadų forma ir grandinėje išreiškiame:
 <span class="math display" id="eq:bendri-salyginiai-diadom">\[\begin{equation}
 cU = |0\rangle\langle 0|\otimes I + |1\rangle\langle 1|\otimes U\,.
-\tag{4.44}
+\tag{4.45}
 \end{equation}\]</span></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bendro-tipo-salyginiai-vartai"></span>
 <img src="media/image4_18.svg" alt="Bendro tipo 2 kubitų loginiai vartai $cU$, kuriuose antram kubitui pritaikomi bendro tipo 1 kubito loginiai vartai $U$, kontroliuojant pirmu kubitu" width="30%" />
@@ -916,7 +925,7 @@ U_3 = \begin{bmatrix}
 a &amp; - b^{*} \\
 b &amp; a^{*}
 \end{bmatrix}\,.
-\tag{4.45}
+\tag{4.46}
 \end{equation}\]</span>
 Čia <span class="math inline">\(a\)</span> ir <span class="math inline">\(b\)</span> yra kompleksiniai skaičiai, o matricos <span class="math inline">\(U_3\)</span>
 determinantas <span class="math inline">\(\det U_3 = |a|^{2} + |b|^{2} = 1\)</span>. Visos unitarinės
@@ -948,13 +957,13 @@ kubitui posūkio operatorių <span class="math inline">\(R_z(\theta)\)</span>, j
 </div>
 <p><span class="math display" id="eq:salyginiai-z-matrica" id="eq:salyginiai-z-diadom">\[\begin{align}
 cR_z(\theta) = &amp; |0\rangle\langle 0|\otimes I
-+ |1\rangle\langle 1|\otimes R_z(\theta)\,; \tag{4.46} \\
++ |1\rangle\langle 1|\otimes R_z(\theta)\,; \tag{4.47} \\
 cR_{z}(\theta) = &amp; \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; \mathrm{e}^{-\mathrm{i}\theta/2} &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\theta/2} \\
-\end{bmatrix}\,.  \tag{4.47}
+\end{bmatrix}\,.  \tag{4.48}
 \end{align}\]</span>
 Pritaikę <span class="math inline">\(cR_z(\theta)\)</span> 2 kubitų bazinių vektorių superpozicijos
 būsenai
@@ -968,7 +977,7 @@ cR_z(\theta)|\psi\rangle = &amp;
 = &amp; \frac{1}{2}\left\lbrack |00\rangle + \mathrm{e}^{-\mathrm{i}\theta/2}|10\rangle
 + |01\rangle + \mathrm{e}^{\mathrm{i}\theta/2}|11\rangle \right\rbrack\,.
 \end{aligned}
-\tag{4.48}
+\tag{4.49}
 \end{equation}\]</span>
 Šio skyriaus pirmoje dalyje analizuodami 1 kubito vartus <span class="math inline">\(R_z(\theta)\)</span>
 iškėlėme fazės narį <span class="math inline">\(\mathrm{e}^{-\mathrm{i}\theta/2}\)</span>. Tačiau šioje situacijoje
@@ -985,7 +994,7 @@ cP(\theta) = \begin{bmatrix}
 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\theta} \\
 \end{bmatrix}\,.
-\tag{4.49}
+\tag{4.50}
 \end{equation}\]</span>
 Pritaikę juos tai pačiai visų 2 kubitų bazinių vektorių superpozicijos
 būsenai <span class="math inline">\(|\psi\rangle\)</span> randame, kad fazė suteikiama tik
@@ -993,7 +1002,7 @@ būsenai <span class="math inline">\(|\psi\rangle\)</span> randame, kad fazė su
 <span class="math display" id="eq:salyginiai-fazes-superpozicija">\[\begin{equation}
 cP(\theta)|\psi\rangle = \frac{1}{2}\big\lbrack |00\rangle + |10\rangle +
 |01\rangle + \mathrm{e}^{\mathrm{i}\theta}|11\rangle\big\rbrack\,.
-\tag{4.50}
+\tag{4.51}
 \end{equation}\]</span>
 Vartų <span class="math inline">\(cP(\theta)\)</span> efektas skiriasi nuo <span class="math inline">\(cR_z(\theta)\)</span> santykine
 2 kubitų faze, kuri yra „globali” antrojo kubito fazė. Norėdami
@@ -1007,7 +1016,7 @@ formaliau perteikti 1 kubito „globalią” fazę <span class="math inline">\(
 1 &amp; 0 \\
 0 &amp; 1 \\
 \end{bmatrix} = \mathrm{e}^{\mathrm{i}\eta}I\,.
-\tag{4.51}
+\tag{4.52}
 \end{equation}\]</span>
 Sąlyginiai <span class="math inline">\(c\Phi(\eta)\)</span> vartai, kurie perteikia „globalią” <span class="math inline">\(\mathrm{e}^{\mathrm{i}\eta}\)</span>
 fazę adresatinio kubito <span class="math inline">\(|0\rangle\)</span> ir
@@ -1019,11 +1028,11 @@ c\Phi(\eta) = &amp; \begin{bmatrix}
 0 &amp; \mathrm{e}^{\mathrm{i}\eta} &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; \mathrm{e}^{\mathrm{i}\eta}
-\end{bmatrix}\,; \tag{4.52} \\
+\end{bmatrix}\,; \tag{4.53} \\
 c\Phi(\eta) = &amp; |0\rangle\langle 0|\otimes I + |1\rangle\langle 1|\otimes\Phi(\eta)
 = \big( |0\rangle\langle 0| +
 \mathrm{e}^{\mathrm{i}\eta}|1\rangle\langle 1| \big)\otimes I\,.
-\tag{4.53}
+\tag{4.54}
 \end{align}\]</span>
 Iš diadinės <span class="math inline">\(c\Phi(\eta)\)</span> dekompozicijos galima atkreipti dėmesį, kad iš
 tiesų nereikia vykdyti 2 kubitų sąlyginių vartų. Šie loginiai vartai
@@ -1037,22 +1046,22 @@ kubitą, su identitetu <span class="math inline">\(\otimes I\)</span> adresatini
 \mathrm{e}^{\mathrm{i}\eta/2}|1\rangle\langle 1|\big) \\
 = &amp; |0\rangle\langle 0| + \mathrm{e}^{\mathrm{i}\eta}|1\rangle\langle 1|\,.
 \end{aligned}
-\tag{4.54}
+\tag{4.55}
 \end{equation}\]</span>
 Tad sąlyginius 2 kubitų fazės vartus <span class="math inline">\(c\Phi(\eta)\)</span> galime perteikti
 1 kubito vartais, <span class="math inline">\(\Phi(\eta/2)R_z(\eta) \equiv D\)</span>:
 <span class="math display" id="eq:salyginiai-D">\[\begin{equation}
 c\Phi(\eta) = D\otimes I\,.
-\tag{4.55}
+\tag{4.56}
 \end{equation}\]</span>
 Dabar akivaizdu, kad sąlyginius 2 kubitų santykinės fazės vartus
 <span class="math inline">\(cP(\theta)\)</span> galime realizuoti pasitelkdami <span class="math inline">\(cR_z(\theta)\)</span> ir
-<span class="math inline">\(c\Phi(\eta)\)</span>. <a href="kvantiniai-loginiai-vartai-grandines.html#eq:salyginiai-z-superpozicija">(4.48)</a> lygtyje gautai būsenai
+<span class="math inline">\(c\Phi(\eta)\)</span>. <a href="kvantiniai-loginiai-vartai-grandines.html#eq:salyginiai-z-superpozicija">(4.49)</a> lygtyje gautai būsenai
 <span class="math inline">\(cR_z(\theta)|\psi\rangle\)</span> pritaikome <span class="math inline">\(c\Phi(\eta)\)</span> su
 faze <span class="math inline">\(\eta = \theta/2\)</span>:
 <span class="math display" id="eq:salyginiai-faze-realizavimas">\[\begin{equation}
 c\Phi(\theta/2)cR_z(\theta)|\psi\rangle = cP(\theta)|\psi\rangle\,.
-\tag{4.56}
+\tag{4.57}
 \end{equation}\]</span>
 Realiame kvantiniame kompiuteryje 2 kubitų sąlyginių loginių vartų
 asortimentas gali būti itin ribotas, o bendro tipo sąlyginiai vartai
@@ -1066,7 +1075,7 @@ loginius vartus bei <span class="math inline">\(cX\)</span>.</p>
 <p>Pirma dekompozicija, realizuojanti <span class="math inline">\(cU\)</span>, yra:
 <span class="math display" id="eq:dekompozicija-realizuojanti-cu">\[\begin{equation}
 cU = AcXBcXC\,.
-\tag{4.57}
+\tag{4.58}
 \end{equation}\]</span>
 Čia <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> ir <span class="math inline">\(C\)</span> yra 1 kubito loginiai vartai, kurie veikdami būseną
 <span class="math inline">\(|\psi\rangle\)</span> tenkina lygybę
@@ -1140,7 +1149,7 @@ yra:
 |\psi\rangle = \frac{1}{\sqrt{8}}\big(|000\rangle + |001\rangle + |010\rangle +
 |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle\big)\otimes
 |00\rangle\,.
-\tag{4.58}
+\tag{4.59}
 \end{equation}\]</span>
 Paskutiniai du kubitai yra minėtos ancilos, atskirtos tenzorių daugybos
 ženklu dėl aiškumo. Tolesniuose žingsniuose pritaikysime dvejus Tofoli
@@ -1154,7 +1163,7 @@ ccX_1|\psi\rangle = &amp;
 |100\rangle + |101\rangle\big)\otimes|00\rangle \\
 &amp; + \frac{1}{\sqrt{8}}\big(|110\rangle + |111\rangle\big)\otimes|10\rangle\,.
 \end{split}
-\tag{4.59}
+\tag{4.60}
 \end{equation}\]</span>
 Šie vartai parenka būsenas <span class="math inline">\(|11k_3\rangle\)</span> ir jas
 supina su pirmu ancila kubitu, kuriam būsena pakeičiama į
@@ -1169,7 +1178,7 @@ adresatinis yra antrasis ancila kubitas <span class="math inline">\(a_2\)</span>
 &amp; + \frac{1}{\sqrt{8}}|110\rangle\otimes|10\rangle
 + \frac{1}{\sqrt{8}}|111\rangle\otimes|11\rangle\,.
 \end{split}
-\tag{4.60}
+\tag{4.61}
 \end{equation}\]</span>
 Šie vartai supina <span class="math inline">\(|111\rangle\)</span> būseną su ancilų
 <span class="math inline">\(|11\rangle\)</span> būsena. Trečiame žingsnyje pritaikome
@@ -1184,7 +1193,7 @@ cP(\theta)(ccX_2)(ccX_1)|\psi\rangle = &amp;
 &amp; + \frac{1}{\sqrt{8}}|110\rangle\otimes|10\rangle
 + \frac{\mathrm{e}^{\mathrm{i}\theta}}{\sqrt{8}}|111\rangle\otimes|11\rangle\,.
 \end{split}
-\tag{4.61}
+\tag{4.62}
 \end{equation}\]</span>
 Šie trys loginiai žingsniai efektyviai pritaikė fazę <span class="math inline">\(\mathrm{e}^{\mathrm{i}\theta}\)</span>
 būsenai <span class="math inline">\(|111\rangle\)</span>. Tolesniuose dviejuose žingsniuose
@@ -1198,7 +1207,7 @@ paruošiant jas potencialiai tolimesniems skaičiavimams:
 &amp; + |011\rangle + |100\rangle + |101\rangle + |110\rangle +
 \mathrm{e}^{\mathrm{i}\theta}|111\rangle\big)\otimes|00\rangle\,.
 \end{split}
-\tag{4.62}
+\tag{4.63}
 \end{equation}\]</span>
 Bet kokia <span class="math inline">\(k\)</span> kontroliuojamų sąlyginių loginių vartų <span class="math inline">\(c^{k}U\)</span>
 dekompozicija, pagrįsta Tofoli vartais <span class="math inline">\(ccX\)</span>, paremta iliustruotu
@@ -1219,7 +1228,7 @@ būsenos.</p>
 superpozicijoje, o bendra būsena:
 <span class="math display" id="eq:busena-pries-matavima">\[\begin{equation}
 |\psi\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes|0\rangle\,.
-\tag{4.63}
+\tag{4.64}
 \end{equation}\]</span>
 Atlikus būsenos matavimą su <span class="math inline">\(k_1\)</span> kubitu, yra lygi tikimybė rasti jį
 <span class="math inline">\(|0\rangle\)</span> arba <span class="math inline">\(|1\rangle\)</span> būsenoje.
@@ -1235,7 +1244,7 @@ Grandinė generuoja mišrią kvantinę būseną, kurią galima užrašyti tankio
 operatoriumi:
 <span class="math display" id="eq:generuota-misri-busena">\[\begin{equation}
 \rho = \frac{1}{2}|00\rangle\langle 00| + \frac{1}{2}|11\rangle\langle 11|\,.
-\tag{4.64}
+\tag{4.65}
 \end{equation}\]</span>
 Atkreipiame dėmesį, kad <span class="math inline">\(\rho\)</span> yra nekoherentinė būsena, nes <span class="math inline">\(1/2\)</span>
 nusako klasikines tikimybes, o ne kvantines amplitudes. Tačiau, jeigu
@@ -1269,7 +1278,7 @@ projekcinius matavimus Pauli-X tikrinių vektorių bazėje:
 <span class="math display" id="eq:pauli-x-tikrines-4">\[\begin{equation}
 |0_x\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\,,\quad
 |1_x\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle - |1\rangle\big)\,.
-\tag{4.65}
+\tag{4.66}
 \end{equation}\]</span>
 Hadamardo loginiai vartai atlieka norimą transformaciją tarp šių bazinių
 vektorių: <span class="math inline">\(H|0\rangle = |0_x\rangle\)</span>,
@@ -1331,7 +1340,7 @@ su ja asocijuotą 2 kubitų skaičiuojamąjį bazinį vektorių:
 |\chi^{-}\rangle \rightarrow |10\rangle\,,\quad
 |\eta^{+}\rangle \rightarrow |01\rangle\,,\quad
 |\eta^{-}\rangle \rightarrow |11\rangle\,.
-\tag{4.66}
+\tag{4.67}
 \end{equation}\]</span>
 Po šios transformacijos, atlikus Pauli-<span class="math inline">\(Z\)</span>
 projekcinius matavimus su abiem kubitais galima užtikrintai sužinoti,
@@ -1356,7 +1365,7 @@ aptinkamą <span class="math inline">\(cX\)</span> ir <span class="math inline">
 = &amp; \frac{1}{2}\big(|0\rangle + |1\rangle\big)\big(\langle 0| + \langle 1|\big)\otimes
 |0\rangle\langle 0|\,.
 \end{aligned}
-\tag{4.67}
+\tag{4.68}
 \end{equation}\]</span>
 Akivaizdu, kad šis tankio operatorius yra faktorizuojamas
 <span class="math inline">\(\rho = \rho_1\otimes\rho_2\)</span>. Atlikus Pauli-<span class="math inline">\(Z\)</span> matavimą, antras
