@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 skyrius. Kvantinių klaidų aptikimas ir taisymas | Kvantinė kompiuterija</title>
   <meta name="description" content="9 skyrius. Kvantinių klaidų aptikimas ir taisymas | Kvantinė kompiuterija" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 skyrius. Kvantinių klaidų aptikimas ir taisymas | Kvantinė kompiuterija" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2023-02-21" />
+<meta name="date" content="2023-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,6 +56,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -256,27 +260,23 @@ div.csl-indent {
 <h1><span class="header-section-number">9 skyrius.</span> Kvantinių klaidų aptikimas ir taisymas<a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#kvantinių-klaidų-aptikimas-ir-taisymas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Klaidų taisymas iš pirmo žvilgsnio neatrodo itin estetiškas ar įdomus
 užsiėmimas. Tačiau kvantinėje kompiuterijoje tai yra viena iš labiausiai
-apšviečiančių ir stebinančių sričių. Dekoherencija yra artimai susijusi
+apšviečiančių ir stebinančių sričių. Dekoherencija, viena iš pagrindinių klaidų priežasčių, yra susijusi
 su mus supančių klasikinių reiškinių atsiradimu iš pasaulio, kuris
-fundamentaliai vadovaujasi kvantinėmis taisyklėmis. Dekoherencija –
-pagrindinė priežastis, kuri neleidžia realizuoti makroskopinio dydžio
-objektų, esančių superpozicijos būsenose. Atliekant klaidų analizę ir
+fundamentaliai vadovaujasi kvantinėmis taisyklėmis. Dekoherencija neleidžia realizuoti makroskopinio dydžio
+objektų, esančių kvantinės superpozicijos būsenose. Atliekant klaidų analizę ir
 taisymą taip pat geriau atsiskleidžia gili informacijos sąvokos reikšmė
-ir kvantinio supynimo svarba. Informacijos atskleidimas gali sugriauti
-sistemos superpozicijos būseną net ir tada, jeigu su šia sistema nėra
-tiesioginės sąveikos.</p>
+ir supynimo svarba kvantinėje kompiuterijoje.</p>
 <div id="klasikinės-ir-kvantinės-klaidos" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Klasikinės ir kvantinės klaidos<a href="kvantinių-klaidų-aptikimas-ir-taisymas.html#klasikinės-ir-kvantinės-klaidos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Kvantinė kompiuterija pasikliauja delikačiomis kubitų superpozicijos
-būsenomis. Praktikoje kubitai nėra idealiai izoliuoti nuo aplinkos, jų
+būsenomis. Praktikoje, kubitai nėra idealiai izoliuoti nuo aplinkos, jų
 neišvengiama sąveika su išorinėmis sistemomis mažina gebėjimą išlikti
 superpozicijos būsenose ilgą laiką. Pirmame skyriuje minėtos <span class="math inline">\(T_1\)</span> ir <span class="math inline">\(T_2\)</span>
 dekoherencijos trukmės atspindi, kaip intensyviai išorinės sąveikos
 vyksta su kubitais, taip pat įvardija laiko skalę, pagal kurią galima
 spręsti, kiek loginių operacijų įmanoma atlikti iki tol, kol neatsiras
 didelė klaidų tikimybė. Dekoherencija nėra vienintelis klaidų
-šaltinis – atliekamų loginių vartų netikslumai taip pat praktiškai
-neišvengiami. Unitariosios operacijos yra nusakomos tolydžiai
+šaltinis – atliekamų loginių vartų netikslumai taip pat neišvengiami. Unitariosios operacijos yra nusakomos tolydžiai
 kintančiais parametrais, todėl praktikoje atsiremiama į ribotą loginių
 vartų tikslumą. Nepaisant šių klaidų šaltinių, praktinės svarbos pageidaujamo
 ilgumo kvantiniai skaičiavimai gali būti atlikti pasitelkiant klaidų
@@ -284,7 +284,7 @@ taisymo algoritmus. Tam yra reikalaujama, kad dekoherencijos trukmės
 nebūtų per daug trumpos, o loginių vartų netikslumai – per daug dideli.
 Tada pasitelkus papildomus išteklius – kubitus ir logines operacijas –
 galima formaliai pasiekti klaidoms atsparius skaičiavimus. Šiame procese
-klaidos yra taisomos dinaminėje situacijoje viso skaičiavimo proceso
+klaidos yra taisomos dinaminiškai viso skaičiavimo proceso
 metu. Žinoma, kvantines būsenas norima apsaugoti ir statinėse
 situacijose – siunčiant kubitus kvantiniais ryšiais ar saugant
 kvantinio kompiuterio atmintyje. Kaip matysime, panašūs principai yra
