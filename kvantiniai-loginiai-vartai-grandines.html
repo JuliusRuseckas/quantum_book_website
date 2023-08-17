@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija</title>
   <meta name="description" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 skyrius. Kvantiniai loginiai vartai ir grandinės | Kvantinė kompiuterija" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Julius Ruseckas" />
 
 
-<meta name="date" content="2023-05-28" />
+<meta name="date" content="2023-08-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -268,12 +268,12 @@ grandinės.</p>
 <p>Pradėkime nuo paprasčiausių loginių
 elementų, atliekančių 1 kubito būsenų transformacijas. Kaip pamename,
 kvantiniai loginiai vartai yra nusakomi unitariniais operatoriais. Tokio
-operatoriaus veiksmas būsenai <span class="math inline">\(|\psi\rangle\)</span> yra
+operatoriaus veikimas į būseną <span class="math inline">\(|\psi\rangle\)</span> yra
 pavaizduojamas grafiškai (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:loginiu-vartu-veikimas-kubita">4.1</a> pav.).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:loginiu-vartu-veikimas-kubita"></span>
-<img src="media/image4_1.svg" alt="Loginių vartų $U$ veiksmas kubito būsenai $|\psi\rangle$." width="41%" />
+<img src="media/image4_1.svg" alt="Loginiai vartai $U$ veikiantys būsenos $|\psi\rangle$ kubitą." width="41%" />
 <p class="caption">
-4.1 pav. Loginių vartų <span class="math inline">\(U\)</span> veiksmas kubito būsenai <span class="math inline">\(|\psi\rangle\)</span>.
+4.1 pav. Loginiai vartai <span class="math inline">\(U\)</span> veikiantys būsenos <span class="math inline">\(|\psi\rangle\)</span> kubitą.
 </p>
 </div>
 <p>Kiekvienam kubitui yra priskiriama atskira
@@ -760,19 +760,13 @@ cX|\chi^{+}\rangle = \frac{1}{\sqrt{2}}\big(|0\rangle + |1\rangle\big)\otimes
 |0\rangle\,.
 \tag{4.36}
 \end{equation}\]</span></p>
+<p>Kitą visiškai supintą 3 kubitų vadinamą
+GHZ būseną (angl. <em>Greenberger-Horne-Zeilinger</em>) galima gauti
+atlikę <a href="kvantiniai-loginiai-vartai-grandines.html#fig:ghz-grandine">4.12</a> pav. parodytą grandinę.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ghz-grandine"></span>
 <img src="media/image4_12.svg" alt="Kvantinį 2 kubitų supynimą atliekanti grandinė" width="49%" />
 <p class="caption">
 4.12 pav. Kvantinį 2 kubitų supynimą atliekanti grandinė
-</p>
-</div>
-<p>Kita gerai žinoma visiškai supinta
-3 kubitų GHZ būseną (angl. <em>Greenberger-Horne-Zeilinger</em>) galima gauti
-atlikę <a href="kvantiniai-loginiai-vartai-grandines.html#fig:ghz-grandine">4.12</a> pav. parodytą grandinę.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cx0-grandine"></span>
-<img src="media/image4_13.svg" alt="2 kubitų salyginių loginių vartų $cX$ variacija, kurioje antro kubito būsena keičiama, jeigu pirmojo būsena $|0\rangle$" width="72%" />
-<p class="caption">
-4.13 pav. 2 kubitų salyginių loginių vartų <span class="math inline">\(cX\)</span> variacija, kurioje antro kubito būsena keičiama, jeigu pirmojo būsena <span class="math inline">\(|0\rangle\)</span>
 </p>
 </div>
 <p><span class="math display" id="eq:ghz-busena">\[\begin{equation}
@@ -793,6 +787,12 @@ cX_0 = |0\rangle\langle 0|\otimes X + |1\rangle\langle 1|\otimes I\,.
 paprastai konvertuojami iš standartinio <span class="math inline">\(cX\)</span> pasitelkiant dvejus Pauli-<span class="math inline">\(X\)</span>
 vartus (žr. <a href="kvantiniai-loginiai-vartai-grandines.html#fig:cx0-grandine">4.13</a> pav.). Pirmieji Pauli-<span class="math inline">\(X\)</span> sukeičia kontrolinio kubito būsenas
 <span class="math inline">\(|0\rangle \leftrightarrow |1\rangle\)</span>, o antrieji atstato jas atgal po atliktų standartinių <span class="math inline">\(cX\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cx0-grandine"></span>
+<img src="media/image4_13.svg" alt="2 kubitų salyginių loginių vartų $cX$ variacija, kurioje antro kubito būsena keičiama, jeigu pirmojo būsena $|0\rangle$" width="72%" />
+<p class="caption">
+4.13 pav. 2 kubitų salyginių loginių vartų <span class="math inline">\(cX\)</span> variacija, kurioje antro kubito būsena keičiama, jeigu pirmojo būsena <span class="math inline">\(|0\rangle\)</span>
+</p>
+</div>
 </div>
 <div id="tofoli-loginiai-vartai" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Tofoli loginiai vartai<a href="kvantiniai-loginiai-vartai-grandines.html#tofoli-loginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -891,7 +891,7 @@ parodytas <a href="kvantiniai-loginiai-vartai-grandines.html#fig:swap-realizavim
 4.17 pav. SWAP loginių vartų realizavimas pasitelkiant tris <em>cX</em> loginius vartus
 </p>
 </div>
-<p>Loginiai vartai iSWAP, sutrumpintai juos vadinsime <span class="math inline">\(iW\)</span>, yra tiesiogiai
+<p>Loginiai vartai iSWAP, sutrumpintai <span class="math inline">\(iW\)</span>, yra tiesiogiai
 realizuojami kai kuriuose kvantinių procesorių architektūruose, tarp jų -
 grįstuose superlaidžiomis grandinėmis. Loginius vartus <span class="math inline">\(iW\)</span> galime išreikšti
 diadų forma taip:
@@ -900,7 +900,7 @@ iW = |00\rangle\langle 00| + \mathrm{i}(|01\rangle\langle 10| + |10\rangle\langl
 + |11\rangle\langle 11|\,.
 \tag{4.44}
 \end{equation}\]</span>
-Lyginant su <span class="math inline">\(W\)</span> matome, kad būsenoms <span class="math inline">\(|01rangle\)</span> ir <span class="math inline">\(|10rangle\)</span> papildomai pritaikoma <span class="math inline">\(\mathrm{i}\)</span> fazė.</p>
+Lyginant su <span class="math inline">\(W\)</span> matome, kad būsenoms <span class="math inline">\(|01\rangle\)</span> ir <span class="math inline">\(|10\rangle\)</span> papildomai pritaikoma <span class="math inline">\(\mathrm{i}\)</span> fazė.</p>
 </div>
 <div id="bendro-tipo-salyginiai-vartai" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Bendro tipo sąlyginiai loginiai vartai <span class="math inline">\(\boldsymbol{cU}\)</span><a href="kvantiniai-loginiai-vartai-grandines.html#bendro-tipo-salyginiai-vartai" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1455,8 +1455,8 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
-"twitter": true,
+"facebook": false,
+"twitter": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
